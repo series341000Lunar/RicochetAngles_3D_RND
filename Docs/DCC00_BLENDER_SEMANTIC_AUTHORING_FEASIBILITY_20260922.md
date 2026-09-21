@@ -6,8 +6,9 @@
 Branch: `dcc-00-semantic-authoring`, starting at baseline
 `b61739ee43ff733da12a4a0f3e5e593b01daabe3`.
 No merge to main. Blender has not been promoted to long-term spatial source of truth.
-No H5E import/export/schema/mainline read, Unity adapter, combat, physics, AI,
-mission engine, or production gameplay implementation was added.
+No H5E import/export/schema adoption, Unity adapter, combat, physics, AI,
+mission engine, or production gameplay implementation was added. MainlineReference
+code was not consulted; snapshot bytes were read only for preservation hashes.
 
 ## Implementation
 
