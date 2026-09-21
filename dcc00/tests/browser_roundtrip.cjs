@@ -1,6 +1,6 @@
 const {chromium}=require('C:/Users/LunarGagarin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const assert=require('assert'),fs=require('fs'),path=require('path');
-const root=path.resolve(__dirname,'..'),out=path.join(root,'test-output');
+const root=path.resolve(__dirname,'..'),out=process.env.DCC00_TEST_OUTPUT||path.join(root,'test-output');
 (async()=>{
  const browser=await chromium.launch({channel:'chrome',headless:true});const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(String(e)));
  await page.goto('http://127.0.0.1:18766/dcc00/html/editor.html');await page.waitForFunction(()=>window.dccEditor?.document);

@@ -19,3 +19,11 @@ for screen in bpy.data.screens:
             area.spaces.active.region_3d.view_rotation=Quaternion((1,0,0,0))
             area.spaces.active.region_3d.view_perspective='ORTHO'
             area.spaces.active.shading.color_type='MATERIAL'
+
+
+# Session-local native editor; no preferences or keymaps change.
+if not bpy.app.background:
+    def open_editor():
+        bpy.ops.dcc00.open_authoring()
+        return None
+    bpy.app.timers.register(open_editor,first_interval=1.0)

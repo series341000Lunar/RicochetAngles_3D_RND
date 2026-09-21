@@ -1,0 +1,190 @@
+{
+  "native-window.json": {
+    "blender": "5.2.1 LTS",
+    "steps": [
+      "open_native_same_scene",
+      "browser_selection_typed_edit_validation",
+      "dedicated_window_save_reload_review_blend",
+      "duplicate_open_reused",
+      "close_preserves_main_scene",
+      "recall_from_npanel_operator",
+      "main_selection_syncs_inspector",
+      "actual_f3_search_recall"
+    ],
+    "pass": true
+  },
+  "blender-create.json": {
+    "pass": true,
+    "actualGLB": true,
+    "duplicateBlock": true,
+    "missingSceneBlock": true,
+    "missingAssetProxy": true,
+    "missingAssetSave": true,
+    "unknownPathPointPreserved": true,
+    "unknownTopologyBlocked": true,
+    "decorationDelete": true,
+    "tombstone": true,
+    "timelineMovement": 50.357142461372845,
+    "stableID": "tank-scout",
+    "newActor": "ad6255e0-f114-48a3-a3ef-34964b72ef32"
+  },
+  "blender-reopen.json": {
+    "pass": true,
+    "blendReopened": true,
+    "htmlEditReceived": true,
+    "unknownPreserved": true,
+    "idPreserved": "ad6255e0-f114-48a3-a3ef-34964b72ef32"
+  },
+  "browser-roundtrip.json": {
+    "pass": true,
+    "htmlEditReload": true,
+    "unknownPreserved": true,
+    "gameplayUnchanged": true,
+    "presentationMoved": true,
+    "blenderPathParity": true,
+    "canvasVisible": true,
+    "missingAssetFallback": {
+      "missing": 3,
+      "ids": [
+        "tank-scout",
+        "tank-guard",
+        "trigger-entry",
+        "checkpoint-a",
+        "ambient-vehicle",
+        "ad6255e0-f114-48a3-a3ef-34964b72ef32"
+      ],
+      "proxy": true
+    },
+    "actual": 4,
+    "missing": 0,
+    "actors": 9,
+    "world": {
+      "width": 1280,
+      "height": 3600
+    },
+    "startup": "READY",
+    "errors": []
+  },
+  "G1_isolation.json": {
+    "checks": {
+      "legacyExact": true,
+      "legacyRenderIsolation": true,
+      "remapRenderIsolation": true,
+      "functionsUnchanged": true
+    },
+    "frames": 600,
+    "functions": [
+      "getShellHitWithBoss",
+      "updateShells",
+      "resolveArmorHit",
+      "applyPenetration",
+      "detonateRndHE",
+      "updatePlayerArtillery",
+      "updateBoss",
+      "updateTimeModeTimers"
+    ],
+    "pass": true
+  },
+  "G1_interactions.json": {
+    "rows": [
+      {
+        "preset": "LEGACY",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "\uc67c\ucabd \uada4\ub3c4"
+      },
+      {
+        "preset": "LEGACY",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "\uc624\ub978\ucabd \uada4\ub3c4"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "\uc67c\ucabd \uada4\ub3c4"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "\uc624\ub978\ucabd \uada4\ub3c4"
+      }
+    ],
+    "checks": {
+      "Q_LEGACY": true,
+      "Q_TIGER_REMAP": true,
+      "tracks": true,
+      "UI": true,
+      "restart": true
+    },
+    "pass": true
+  },
+  "blender-path-samples.json": [
+    {
+      "seconds": 0,
+      "x": 239.99999237060547,
+      "y": 1599.999984741211,
+      "z": 0.0
+    },
+    {
+      "seconds": 3,
+      "x": 592.4999694824219,
+      "y": 1599.999984741211,
+      "z": 0.0
+    },
+    {
+      "seconds": 6,
+      "x": 945.0,
+      "y": 1599.999984741211,
+      "z": 0.0
+    },
+    {
+      "seconds": 12,
+      "x": 239.99999237060547,
+      "y": 1599.999984741211,
+      "z": 0.0
+    },
+    {
+      "seconds": 15,
+      "x": 592.4999694824219,
+      "y": 1599.999984741211,
+      "z": 0.0
+    }
+  ],
+  "primaryTarget": "Blender 5.2.x LTS",
+  "actualVersion": "Blender 5.2.1 LTS",
+  "executable": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+  "installed522Found": false,
+  "contractTests": {
+    "passed": 13
+  },
+  "historicalAndUserFilesPreserved": 21,
+  "schemaAndDataContractFilesUnchanged": [
+    "dcc00/blender_addon/ricochetangles_dcc00/core.py",
+    "dcc00/blender_addon/ricochetangles_dcc00/properties.py",
+    "dcc00/blender_addon/ricochetangles_dcc00/io_authoring.py",
+    "dcc00/blender_addon/ricochetangles_dcc00/presentation.py",
+    "dcc00/registry/classes.json",
+    "dcc00/registry/assets.json",
+    "dcc00/fixtures/seed.authoring.json",
+    "dcc00/server/authoring_server.py",
+    "dcc00/html/editor.html",
+    "dcc00/html/src/editor.js",
+    "dcc00/html/src/path.js",
+    "dcc00/html/src/style.css",
+    "dcc00/html/src/testbed.js",
+    "dcc00/html/testbed.html"
+  ],
+  "userUXGate": "PENDING",
+  "mainMerged": false
+}

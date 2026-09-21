@@ -1,5 +1,10 @@
 import bpy,json,uuid
 from . import core,io_authoring,preview,presentation
+def semantic_object(context):
+    obj=context.object or context.view_layer.objects.active
+    while obj and not obj.get('dcc_anchor'):obj=obj.parent
+    return obj
+
 class DCC_OT_reload(bpy.types.Operator):
     bl_idname='dcc00.reload';bl_label='Reload Workspace';bl_description='Replace DCC-00 scene edits with saved workspace; unrelated objects are preserved'
     def invoke(self,context,event):return context.window_manager.invoke_confirm(self,event)
@@ -29,7 +34,7 @@ class DCC_OT_delete(bpy.types.Operator):
     bl_idname='dcc00.delete';bl_label='Delete Semantic Actor';bl_options={'REGISTER','UNDO'}
     def invoke(self,context,event):return context.window_manager.invoke_confirm(self,event)
     def execute(self,context):
-        obj=context.object
+        obj=semantic_object(context)
         if not obj or not obj.get('dcc_anchor'):return {'CANCELLED'}
         if obj.dcc_actor.class_id!='Decoration':
             ident=obj.dcc_actor.ra_id
@@ -39,7 +44,7 @@ class DCC_OT_delete(bpy.types.Operator):
 class DCC_OT_new_id(bpy.types.Operator):
     bl_idname='dcc00.new_id';bl_label='Assign New ID to Duplicate';bl_options={'REGISTER','UNDO'}
     def execute(self,context):
-        obj=context.object
+        obj=semantic_object(context)
         if not obj or not obj.get('dcc_anchor') or obj.dcc_actor.class_id=='Decoration':return {'CANCELLED'}
         ident=obj.dcc_actor.ra_id
         if ident and sum(o.get('dcc_anchor',False) and o.dcc_actor.ra_id==ident for o in context.scene.objects)<2:self.report({'ERROR'},'Stable unique IDs must not be replaced');return {'CANCELLED'}
@@ -47,19 +52,22 @@ class DCC_OT_new_id(bpy.types.Operator):
 class DCC_OT_preview(bpy.types.Operator):
     bl_idname='dcc00.preview';bl_label='Rebuild Preview'
     def execute(self,context):
-        if context.object and context.object.get('dcc_anchor'):preview.rebuild(context.object);presentation.frame_change(context.scene);return {'FINISHED'}
+        obj=semantic_object(context)
+        if obj:preview.rebuild(obj);presentation.frame_change(context.scene);return {'FINISHED'}
         return {'CANCELLED'}
 class DCC_OT_bind(bpy.types.Operator):
     bl_idname='dcc00.bind';bl_label='Bind Selected Asset'
     def execute(self,context):
-        if context.object and context.object.get('dcc_anchor'):context.object.dcc_actor.asset=context.scene.dcc_settings.asset_choice;return {'FINISHED'}
+        obj=semantic_object(context)
+        if obj:obj.dcc_actor.asset=context.scene.dcc_settings.asset_choice;return {'FINISHED'}
         return {'CANCELLED'}
 class DCC_OT_path(bpy.types.Operator):
     bl_idname='dcc00.path';bl_label='Add Presentation Path';bl_options={'REGISTER','UNDO'}
     def execute(self,context):
         pid='path-'+uuid.uuid4().hex[:8];c=context.scene.cursor.location;x=c.x*14;y=-c.y*14
         obj=io_authoring.create_path(context.scene,{'id':pid,'points':[{'x':x,'y':y,'z':0},{'x':x+350,'y':y,'z':0},{'x':x+350,'y':y+300,'z':0}]})
-        if context.object and context.object.get('dcc_anchor') and context.object.dcc_actor.class_id=='PresentationActor':context.object.dcc_actor.path=pid
+        actor=semantic_object(context)
+        if actor and actor.dcc_actor.class_id=='PresentationActor':actor.dcc_actor.path=pid
         for o in context.selected_objects:o.select_set(False)
         obj.select_set(True);context.view_layer.objects.active=obj;return {'FINISHED'}
 class DCC_OT_bind_path(bpy.types.Operator):

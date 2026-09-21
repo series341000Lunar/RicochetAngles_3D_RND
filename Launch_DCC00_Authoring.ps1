@@ -21,8 +21,15 @@ try {
     Write-Host "Testbed: $base/dcc00/html/testbed.html"
     if(-not $NoBrowser){Start-Process "$base/dcc00/html/editor.html";Start-Process "$base/dcc00/html/testbed.html"}
     if($Blender){
-        $exe='C:\Program Files\Blender Foundation\Blender 4.5\blender.exe'
-        if(-not(Test-Path $exe)){throw 'Blender 4.5 not found; no installation was attempted.'}
+        $candidates=@(Get-ChildItem 'C:\Program Files\Blender Foundation' -Filter blender.exe -Recurse -ErrorAction SilentlyContinue)
+        $installed=@(foreach($candidate in $candidates){
+            $versionLine=(& $candidate.FullName --version | Select-Object -First 1)
+            if($versionLine -match '^Blender (5\.2\.\d+)'){[pscustomobject]@{Path=$candidate.FullName;Version=[version]$Matches[1]}}
+        })
+        $selected=$installed | Sort-Object Version -Descending | Select-Object -First 1
+        if(-not $selected){throw 'Blender 5.2.x primary target not found; no installation or 4.5 fallback was attempted.'}
+        $exe=$selected.Path
+        Write-Host "Primary Blender: $($selected.Version) - $exe"
         $blend=Join-Path $root 'dcc00\workspace\dcc00.review.blend'
         $args=@('--factory-startup');if(Test-Path $blend){$args+=('"'+$blend+'"')}
         $args+=@('--python',('"'+(Join-Path $root 'dcc00\blender_addon\open_authoring.py')+'"'))

@@ -1,11 +1,11 @@
-import bpy,sys,json,math
+import bpy,sys,json,math,os
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'blender_addon'))
 import ricochetangles_dcc00 as addon
 addon.register()
 from ricochetangles_dcc00 import core,io_authoring as io,preview,presentation
 io.URL='http://127.0.0.1:18766/api/workspace'
-phase=sys.argv[sys.argv.index('--')+1];out=ROOT/'test-output';out.mkdir(exist_ok=True)
+phase=sys.argv[sys.argv.index('--')+1];out=Path(os.environ.get('DCC00_TEST_OUTPUT',str(ROOT/'test-output')));out.mkdir(exist_ok=True)
 def anchors():return [o for o in bpy.context.scene.objects if o.get('dcc_anchor')]
 def find(ident):return next(o for o in anchors() if o.dcc_actor.ra_id==ident)
 def activate(obj):

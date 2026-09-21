@@ -35,7 +35,7 @@ def rebuild(anchor):
     anchor['dcc_preview_state']='GLB' if loaded else 'MISSING_ASSET' if missing else 'PROXY'
     if not loaded:
         bpy.ops.mesh.primitive_cube_add(size=1)
-        obj=bpy.context.object;obj.name='MISSING_ASSET proxy' if missing else p.class_id+' proxy'
+        obj=bpy.context.view_layer.objects.active;obj.name='MISSING_ASSET proxy' if missing else p.class_id+' proxy'
         obj.parent=motion;obj.location=(0,0,.5);obj['dcc_preview']=True;obj.hide_select=True
         if p.class_id=='Trigger': obj.scale=(p.sizeX/14,p.sizeY/14,1);obj.display_type='WIRE';obj.color=(1,.55,.1,1)
         elif p.class_id=='Checkpoint': obj.scale=(1,1,2);obj.color=(.1,.8,1,1)

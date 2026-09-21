@@ -5,8 +5,9 @@ HTML gameplay, H5E, Unity, 장기 spatial source of truth의 권한을 갖지 �
 
 ## 시작
 
-저장소 루트의 `Launch_DCC00_Authoring.bat`를 실행합니다. 별도 Blender 4.5 LTS
-창과 브라우저 Editor/Testbed를 엽니다. 기존 Blender 창과 사용자 preferences는
+저장소 루트의 `Launch_DCC00_Authoring.bat`를 실행합니다. 설치된 최신 Blender 5.2.x LTS
+세션과 브라우저 Editor/Testbed를 엽니다. 같은 Blender 인스턴스 안에
+**RicochetAngles Authoring Editor** native floating window가 기본 편집 화면으로 열립니다. 기존 Blender 창과 사용자 preferences는
 수정하지 않습니다. Add-on은 이 실행에서 소스로 등록되므로 설치·JSON 편집이
 필요하지 않습니다. Blender를 다시 열 때에도 이 launcher를 사용하십시오.
 
@@ -16,15 +17,20 @@ HTML gameplay, H5E, Unity, 장기 spatial source of truth의 권한을 갖지 �
 - Blender 없이 서버만: `Launch_DCC00_Authoring.ps1 -NoBrowser`
 - source activation: `blender --factory-startup --python dcc00/blender_addon/open_authoring.py`
 
-Blender 4.5 실행파일과 기존 Codex Python 위치는 launcher에 명시되어 있습니다.
+PRIMARY DEVELOPMENT / TEST TARGET은 **Blender 5.2.x LTS**입니다. Launcher는
+Blender Foundation 설치 경로의 실행파일 버전을 비교해 가장 높은 5.2.x를 선택합니다.
+현재 확인·검증한 실행파일은 **5.2.1 LTS**이며, 5.2.2는 확인된 설치 경로에 없었습니다.
+4.5.1 결과는 historical evidence이며 현재 구현의 제약 조건으로 사용하지 않습니다.
 설치나 환경 변경을 자동 수행하지 않습니다. 새 clone에는 모델이 없으므로 registry의
 경로로 local asset을 별도 공급하거나 MISSING_ASSET proxy를 사용하십시오.
 
 ## 사용자 체험 — 10단계
 
 1. `Launch_DCC00_Authoring.bat` 실행. 8766 서버와 Blender 전용 세션이 열립니다.
-2. Blender 3D View에서 **N → RICOCHETANGLES R&D**를 선택합니다. 최초에는 seed가
-   자동 로드되고 이후에는 `Save Review .blend`로 저장한 scene이 복원됩니다.
+2. 전용 창의 **Actor Browser → Inspector → Validation**을 사용합니다. 창을 닫았으면
+   **N → RICOCHETANGLES R&D → Open RA Authoring Editor** 또는
+   **F3 → Open RicochetAngles Authoring Editor**로 재호출합니다. 이미 열려 있으면
+   중복 창을 만들지 않고 기존 창 안내를 표시합니다.
 3. **Reload Workspace**로 공유 JSON을 읽습니다. 이 action은 현재 DCC 편집을
    교체하므로 unsaved edits가 있다면 먼저 저장합니다. 다른 scene 객체는 보존합니다.
 4. **Class → LightTank → Create Actor**. 3D Cursor 위치에 실제 M41 preview가
@@ -93,7 +99,7 @@ proxy 및 semantic data 저장을 허용합니다. 새 scene을 seed로 조용�
 
 ## 검증 재현
 
-기존 설치된 Python 3 / Blender 4.5 / Node / Chrome 및 Playwright를 사용했습니다.
+현재 기준 검증은 설치된 Python 3 / Blender 5.2.1 LTS / Node / Chrome 및 Playwright를 사용했습니다.
 추가 package 설치는 없습니다. 명령은 repository root 기준입니다.
 
 ```powershell
@@ -121,3 +127,33 @@ E. Curve + start/duration/loop가 presentation authoring에 실용적인가?
 
 다섯 질문에 대한 사용자 판단 전에는 long-term spatial source of truth로 승격하지 않으며
 main에 merge하지 않습니다. H5E는 이 사용자 Gate 이후 별도 승인된 feasibility 과제입니다.
+
+
+## UX correction: native authoring window (2026-09-22)
+
+전용 창은 Blender의 `screen.area_dupli`와 native Properties editor를 사용합니다.
+Actor Browser에는 Tier A/B class, object name, semantic ID, 마지막 validation 결과가
+표시됩니다. 선택은 main 3D View와 공유되며, Inspector는 같은 Object PropertyGroups를
+직접 편집합니다. Validation은 선택 actor와 workspace 전체를 구분합니다.
+Blender native Scene 설정도 같은 Properties 영역에 남아 있으며 필요하면 접을 수 있습니다.
+창 크기는 native window border로 조절할 수 있습니다.
+
+N-panel은 quick access/status입니다. **Fallback Editing**을 펼치면 기존 Add Actor,
+class Inspector, validation, reload 및 review 저장 경로가 유지됩니다. 전용 창을 닫아도
+main session이나 scene은 닫히지 않습니다. Window 메뉴와 3D View의 View 메뉴에도
+같은 호출 항목이 있고 사용자 Preferences/permanent keymap은 바꾸지 않습니다.
+
+검증은 `dcc00/test-output/ux52/`에서 수행하여 기존 4.5 결과 및 실제 workspace를 보존했습니다.
+재현 시 모든 runner에 `DCC00_TEST_OUTPUT` 환경변수로 새 검증 폴더를 지정합니다.
+GUI lifecycle/F3 검증은 **별도 테스트 Blender**에서 다음처럼 실행합니다.
+
+```powershell
+$env:DCC00_TEST_OUTPUT = "$PWD/dcc00/test-output/ux52"
+# isolated integration server / round-trip tests 먼저 실행 (18766)
+blender --factory-startup --enable-event-simulate --python dcc00/tests/native_window.py
+```
+
+이 테스트는 실제 F3 키/문자/Enter 이벤트를 해당 테스트 창으로만 보내며 마지막에
+그 테스트 Blender만 종료합니다. 사용자 scene에 대한 테스트 실행 용도가 아닙니다.
+Schema/identity/delete/timing/HTML/Three.js semantics에는 migration이 없습니다.
+**USER UX GATE = PENDING**, long-term spatial authority로 승격하지 않습니다.

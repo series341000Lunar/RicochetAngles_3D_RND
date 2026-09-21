@@ -153,3 +153,87 @@ E. Is native curve + presentation timing practical?
 **User Gate = PENDING. Next action: USER DCC-00 HANDS-ON REVIEW.**
 Only after explicit user UX acceptance should a separate next feasibility gate be
 considered. Do not merge to main or infer H5E/Unity/product authority from these tests.
+
+
+## UX correction — native authoring window / Blender 5.2 (2026-09-22)
+
+This is a DCC-00 hands-on UX/runtime correction, not a new capability gate.
+The original 4.5.1 results above and DCC00_VALIDATION_20260922.json remain
+historical evidence. **PRIMARY DEVELOPMENT / TEST TARGET = Blender 5.2.x LTS.**
+The installed executable reports **Blender 5.2.1 LTS**, build 9e2066aef7ef,
+at `C:\Program Files\Blender Foundation\Blender 5.2\blender.exe`.
+5.2.2 was not found in the inspected installation locations; no installation or
+4.5 fallback was performed. The launcher compares installed 5.2.x versions and
+chooses the highest, so a later installed 5.2.2 is preferred automatically.
+Add-on metadata now targets 5.2; 4.5 compatibility does not constrain this UX.
+
+### Native primary editor
+
+`authoring_window.py` adds a native same-instance floating window using
+`bpy.ops.screen.area_dupli`, with a wide Properties editor and three columns:
+Actor Browser (Tier A/B class, name, semantic ID, last validation state),
+class-specific typed Inspector, and selected-actor/workspace Validation.
+The browser and main 3D View share the same scene/view-layer selection.
+Common controls provide Add Actor, Reload Workspace, Save Authoring JSON,
+Validate and Save Review .blend. Native Blender Scene panels remain accessible
+in that Properties editor and can be collapsed by the user.
+
+Closing the secondary window keeps the main session and scene intact. Reopen via
+N-panel **Open RA Authoring Editor** or F3 **Open RicochetAngles Authoring Editor**.
+The same operator is also exposed in native View and Window menus. Repeated open
+requests report that the existing window is available and never spawn duplicates.
+No external GUI toolkit, separate executable, permanent keymap or user-preference
+change was introduced. The standard launcher automatically opens the editor after
+source registration; it remains within that one Blender process.
+
+The existing N-panel is retained as Quick Access/status, selected actor, summary,
+Open, Validate and Save. Its collapsed **Fallback Editing** child retains creation,
+full typed Inspector, validation, reload and review-save if the window cannot open.
+
+### Runtime context correction without data migration
+
+Properties-editor `context.object` can be None even with a selected scene object.
+Preview creation now reads the active view-layer object, and actor operators resolve
+the selected semantic anchor through the current context/view layer. This fixes
+Reload/proxy creation and buttons in the new editor without altering data meanings.
+Window-manager selection index and screen window marker are UI state only.
+
+The schema, class/asset registries, seed, PropertyGroups, core validation/identity,
+JSON IO/reconcile, Curve timing, server and HTML/Three.js data semantics are unchanged.
+No ra-dcc00-authoring-v0 migration; A/B/C identity, explicit deletion/tombstones,
+anonymous deletion, unknown preservation and missing-asset fail-soft are retained.
+
+### Revalidation
+
+Machine-readable evidence: [DCC00_UX_BLENDER52_VALIDATION_20260922.json](DCC00_UX_BLENDER52_VALIDATION_20260922.json).
+New outputs are under ignored `dcc00/test-output/ux52/`; original 4.5 screenshots,
+blend/JSON results and the actual user workspace were hash-checked and preserved.
+
+| Acceptance | Result |
+|---|---|
+| 5.2.1 Add-on registration / PropertyGroups / actor create/edit | PASS |
+| Actual M41 and Kuebelwagen GLB; missing proxy + save | PASS |
+| .blend save, exit, fresh 5.2 process reopen | PASS |
+| Native Curve timing and Blender/Three trajectory parity | PASS |
+| JSON and Blender → HTML → Blender round-trip | PASS |
+| Existing DCC-00 contract tests | PASS, 13 |
+| Native graphical window open / close / main scene retained | PASS |
+| N-panel operator recall / duplicate-open handling | PASS |
+| Actual F3 key, typed search, Enter and window recreation | PASS |
+| Actor Browser selection → main view and reverse → Inspector | PASS |
+| Typed property editing / validation in dedicated window | PASS |
+| Save JSON / Reload / Save Review .blend from window context | PASS |
+| Native panel drawing | PASS, no final Python draw errors |
+| Existing G1 isolation / interactions | PASS / PASS |
+
+The GUI test ran in its own foreground Blender instance with native event simulation;
+only the test instance was closed. Test saves targeted the isolated integration
+workspace (18766) and ux52 review blend, never the user's authoring files.
+Initial GUI checks caught a panel registry-name collision, search events targeting
+the wrong editor, and the Properties context issue; these were corrected before
+final successful native lifecycle and round-trip runs. Native factory-startup brush
+path relativity warnings during .blend save do not affect the tested semantic data.
+
+**USER UX GATE = PENDING.** This correction does not promote Blender to long-term
+spatial authority and does not authorize H5E/Unity/mainline integration or merge.
+The next action remains user hands-on review of this revised editor.
