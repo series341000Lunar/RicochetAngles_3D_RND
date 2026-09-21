@@ -63,7 +63,7 @@ def validate(doc, scene_ids=None, check_assets=True):
                 if not asset or (asset.get('path') and check_assets and (p is None or not p.is_file())): add('WARNING','MISSING_ASSET',loc,'Preview proxy; semantic actor retained')
             if cls=='PresentationActor' and a.get('path') not in paths: add('BLOCK' if a.get('enabled') else 'WARNING','MISSING_PATH',loc,'Choose an existing path')
             unknown=set(a)-set(spec['fields'])-{'class','ra_id','transform'}
-            if unknown: add('WARNING','UNKNOWN_PRESERVED',loc,', '.join(sorted(unknown)))
+            if unknown: add('INFO','UNKNOWN_PRESERVED',loc,'Retained optional data: '+', '.join(sorted(unknown)))
     deleted=set()
     for t in doc['tombstones']:
         if not isinstance(t,dict) or not isinstance(t.get('ra_id'),str) or not t.get('ra_id') or t.get('deleted') is not True: add('BLOCK','TOMBSTONE','tombstones','ra_id and deleted=true required');continue
@@ -102,3 +102,11 @@ def sample_path(points, seconds, start, duration, loop):
         if distance<=length and length: return {k:a[k]+(b[k]-a[k])*distance/length for k in ('x','y','z')}
         distance-=length
     return {k:points[-1][k] for k in ('x','y','z')}
+
+
+def validation_summary(issues):
+    blocks=sum(i['level']=='BLOCK' for i in issues)
+    warnings=sum(i['level']=='WARNING' for i in issues)
+    if blocks: return f'BLOCK — {blocks} error(s); save blocked'
+    if warnings: return f'WARNING — {warnings} warning(s); save allowed'
+    return 'PASS — no blocking errors; save allowed'

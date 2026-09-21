@@ -8,6 +8,14 @@ class Contract(unittest.TestCase):
     def setUp(self):self.doc=json.loads((ROOT/'fixtures/seed.authoring.json').read_text())
     def codes(self,d):return {i['code'] for i in core.validate(d)}
     def test_seed(self):self.assertFalse(any(i['level']=='BLOCK' for i in core.validate(self.doc)))
+    def test_validation_summary(self):
+        issues=core.validate(self.doc)
+        self.assertTrue(core.validation_summary(issues).startswith('PASS'))
+        self.assertEqual(next(i['level'] for i in issues if i['code']=='UNKNOWN_PRESERVED'),'INFO')
+        self.doc['actors'][0]['asset']='missing'
+        self.assertTrue(core.validation_summary(core.validate(self.doc)).startswith('WARNING'))
+        self.doc['actors'][1]['ra_id']=self.doc['actors'][0]['ra_id']
+        self.assertTrue(core.validation_summary(core.validate(self.doc)).startswith('BLOCK'))
     def test_identity(self):
         self.doc['actors'][1]['ra_id']=self.doc['actors'][0]['ra_id'];self.assertIn('DUPLICATE_ID',self.codes(self.doc));del self.doc['actors'][1]['ra_id'];self.assertIn('MISSING_ID',self.codes(self.doc))
     def test_unknown_preservation(self):

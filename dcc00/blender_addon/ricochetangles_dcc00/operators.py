@@ -23,7 +23,7 @@ class DCC_OT_validate(bpy.types.Operator):
     bl_idname='dcc00.validate';bl_label='Validate'
     def execute(self,context):
         try:
-            _,issues=io_authoring.collect(context.scene);context.scene.dcc_settings.validation_json=json.dumps(issues);context.scene.dcc_settings.status='BLOCK' if any(i['level']=='BLOCK' for i in issues) else 'WARNING' if issues else 'PASS';return {'FINISHED'}
+            _,issues=io_authoring.collect(context.scene);context.scene.dcc_settings.validation_json=json.dumps(issues);context.scene.dcc_settings.status=core.validation_summary(issues);return {'FINISHED'}
         except Exception as exc:self.report({'ERROR'},str(exc));return {'CANCELLED'}
 class DCC_OT_delete(bpy.types.Operator):
     bl_idname='dcc00.delete';bl_label='Delete Semantic Actor';bl_options={'REGISTER','UNDO'}

@@ -65,6 +65,7 @@ A/B가 수동 삭제되어 없어졌다면 source record를 보존하고 MISSING
 차단합니다. Reload하여 복구한 다음 정식 삭제하십시오. 명시 삭제만 tombstone을 만듭니다.
 
 Unknown top-level/actor/path/transform 필드는 원본에 merge하여 보존합니다.
+`UNKNOWN_PRESERVED`는 오류가 아닌 INFO이며, 다른 문제가 없으면 Validate는 PASS / save allowed입니다.
 Unknown class/schema, invalid numeric value, 비양수 size/duration, duplicate/missing ID,
 유효하지 않은 path, 지원하지 않는 anchor 변환은 BLOCK입니다. Missing asset은 WARNING이고
 proxy 및 semantic data 저장을 허용합니다. 새 scene을 seed로 조용히 덮어쓰는 parse recovery는 없습니다.

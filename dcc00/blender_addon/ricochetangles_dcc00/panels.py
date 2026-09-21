@@ -1,5 +1,5 @@
 import bpy,json
-from .core import CLASSES
+from .core import CLASSES,validation_summary
 class DCC_PT_editor(bpy.types.Panel):
     bl_label='DCC-00 Semantic Authoring';bl_idname='DCC_PT_editor';bl_space_type='VIEW_3D';bl_region_type='UI';bl_category='RICOCHETANGLES R&D'
     def draw(self,context):
@@ -27,6 +27,6 @@ class DCC_PT_editor(bpy.types.Panel):
             l.operator('dcc00.delete',text='Delete Decoration' if p.class_id=='Decoration' else 'Delete Semantic Actor',icon='TRASH')
         l.separator();l.label(text='Validation (press Validate after edits)')
         issues=json.loads(s.validation_json)
-        if not issues:l.label(text='PASS')
+        l.label(text=validation_summary(issues))
         for issue in issues[:12]:
             l.label(text=issue['level']+' · '+issue['code'],icon='ERROR' if issue['level']=='BLOCK' else 'INFO');l.label(text=issue['where'][:70]);l.label(text=issue['message'][:85])
