@@ -85,3 +85,7 @@ Thumbs.db
 /Docs/solid_smoke_peak.png
 /Docs/V4C_PLAYING.png
 /Docs/V4C_READY.png
+
+# DCC-00 local authoring state and generated review artifacts
+/dcc00/workspace/
+/dcc00/test-output/

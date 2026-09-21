@@ -1,0 +1,18 @@
+{
+  "m41": {
+    "path": "M41/export/M41_RND_v02_muzzle.glb",
+    "role": "LightTank",
+    "previewScale": 1
+  },
+  "kubelwagen": {
+    "path": "LV_Kubelwagen/export/LV_Kubelwagen_RND_v01.glb",
+    "role": "PresentationActor",
+    "previewScale": 1
+  },
+  "proxy-crate": {
+    "path": null,
+    "role": "Decoration",
+    "previewScale": 1,
+    "proxy": "crate"
+  }
+}

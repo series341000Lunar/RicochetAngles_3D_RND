@@ -1,0 +1,168 @@
+{
+  "blender-create.json": {
+    "pass": true,
+    "actualGLB": true,
+    "duplicateBlock": true,
+    "missingSceneBlock": true,
+    "missingAssetProxy": true,
+    "missingAssetSave": true,
+    "unknownPathPointPreserved": true,
+    "unknownTopologyBlocked": true,
+    "decorationDelete": true,
+    "tombstone": true,
+    "timelineMovement": 50.357142461372845,
+    "stableID": "tank-scout",
+    "newActor": "6640b385-b69c-409b-a64e-8c92f61e10a8"
+  },
+  "blender-reopen.json": {
+    "pass": true,
+    "blendReopened": true,
+    "htmlEditReceived": true,
+    "unknownPreserved": true,
+    "idPreserved": "6640b385-b69c-409b-a64e-8c92f61e10a8"
+  },
+  "browser-roundtrip.json": {
+    "pass": true,
+    "htmlEditReload": true,
+    "unknownPreserved": true,
+    "gameplayUnchanged": true,
+    "presentationMoved": true,
+    "blenderPathParity": true,
+    "canvasVisible": true,
+    "missingAssetFallback": {
+      "missing": 3,
+      "ids": [
+        "tank-scout",
+        "tank-guard",
+        "trigger-entry",
+        "checkpoint-a",
+        "ambient-vehicle",
+        "6640b385-b69c-409b-a64e-8c92f61e10a8"
+      ],
+      "proxy": true
+    },
+    "actual": 4,
+    "missing": 0,
+    "actors": 9,
+    "world": {
+      "width": 1280,
+      "height": 3600
+    },
+    "startup": "READY",
+    "errors": []
+  },
+  "G1_isolation.json": {
+    "checks": {
+      "legacyExact": true,
+      "legacyRenderIsolation": true,
+      "remapRenderIsolation": true,
+      "functionsUnchanged": true
+    },
+    "frames": 600,
+    "functions": [
+      "getShellHitWithBoss",
+      "updateShells",
+      "resolveArmorHit",
+      "applyPenetration",
+      "detonateRndHE",
+      "updatePlayerArtillery",
+      "updateBoss",
+      "updateTimeModeTimers"
+    ],
+    "pass": true
+  },
+  "G1_interactions.json": {
+    "rows": [
+      {
+        "preset": "LEGACY",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "\uc67c\ucabd \uada4\ub3c4"
+      },
+      {
+        "preset": "LEGACY",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "\uc624\ub978\ucabd \uada4\ub3c4"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "\uc67c\ucabd \uada4\ub3c4"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "\uc624\ub978\ucabd \uada4\ub3c4"
+      }
+    ],
+    "checks": {
+      "Q_LEGACY": true,
+      "Q_TIGER_REMAP": true,
+      "tracks": true,
+      "UI": true,
+      "restart": true
+    },
+    "pass": true
+  },
+  "blender-path-samples.json": [
+    {
+      "seconds": 0,
+      "x": 239.99999237060547,
+      "y": 1599.999984741211,
+      "z": 0.0
+    },
+    {
+      "seconds": 3,
+      "x": 592.4999694824219,
+      "y": 1599.999984741211,
+      "z": 0.0
+    },
+    {
+      "seconds": 6,
+      "x": 945.0,
+      "y": 1599.999984741211,
+      "z": 0.0
+    },
+    {
+      "seconds": 12,
+      "x": 239.99999237060547,
+      "y": 1599.999984741211,
+      "z": 0.0
+    },
+    {
+      "seconds": 15,
+      "x": 592.4999694824219,
+      "y": 1599.999984741211,
+      "z": 0.0
+    }
+  ],
+  "preservation": {
+    "preGitFilesUnchanged": 764,
+    "baselineTrackedOnlyModified": [
+      ".gitignore"
+    ],
+    "productionModelsUnchanged": true,
+    "mainlineReadOrModified": false
+  },
+  "contractTests": {
+    "pass": true,
+    "count": 12
+  },
+  "launchers": {
+    "existing8765": "PASS",
+    "dcc008766": "PASS"
+  },
+  "userUXGate": "PENDING",
+  "date": "2026-09-22"
+}

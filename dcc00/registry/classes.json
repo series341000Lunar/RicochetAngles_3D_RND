@@ -1,0 +1,169 @@
+{
+  "LightTank": {
+    "tier": "A",
+    "fields": {
+      "asset": {
+        "type": "string",
+        "default": "m41"
+      },
+      "profile": {
+        "type": "enum",
+        "choices": [
+          "SCOUT",
+          "GUARD"
+        ],
+        "default": "SCOUT"
+      },
+      "facing": {
+        "type": "number",
+        "default": 0
+      },
+      "homeRadius": {
+        "type": "number",
+        "min": 0,
+        "default": 160
+      },
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      }
+    },
+    "preview": "asset",
+    "required": [
+      "asset",
+      "profile",
+      "facing",
+      "homeRadius",
+      "enabled"
+    ],
+    "defaults": {
+      "asset": "m41",
+      "profile": "SCOUT",
+      "facing": 0,
+      "homeRadius": 160,
+      "enabled": true
+    }
+  },
+  "Trigger": {
+    "tier": "A",
+    "fields": {
+      "sizeX": {
+        "type": "number",
+        "minExclusive": 0,
+        "default": 120
+      },
+      "sizeY": {
+        "type": "number",
+        "minExclusive": 0,
+        "default": 90
+      },
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      },
+      "eventRef": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "preview": "box",
+    "required": [
+      "sizeX",
+      "sizeY",
+      "enabled",
+      "eventRef"
+    ],
+    "defaults": {
+      "sizeX": 120,
+      "sizeY": 90,
+      "enabled": true,
+      "eventRef": ""
+    }
+  },
+  "Checkpoint": {
+    "tier": "A",
+    "fields": {
+      "checkpointId": {
+        "type": "string",
+        "default": "checkpoint"
+      },
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      }
+    },
+    "preview": "marker",
+    "required": [
+      "checkpointId",
+      "enabled"
+    ],
+    "defaults": {
+      "checkpointId": "checkpoint",
+      "enabled": true
+    }
+  },
+  "PresentationActor": {
+    "tier": "B",
+    "fields": {
+      "asset": {
+        "type": "string",
+        "default": "kubelwagen"
+      },
+      "path": {
+        "type": "string",
+        "default": "ambient-route"
+      },
+      "startSeconds": {
+        "type": "number",
+        "min": 0,
+        "default": 0
+      },
+      "durationSeconds": {
+        "type": "number",
+        "minExclusive": 0,
+        "default": 12
+      },
+      "loop": {
+        "type": "boolean",
+        "default": true
+      },
+      "enabled": {
+        "type": "boolean",
+        "default": true
+      }
+    },
+    "preview": "asset+path",
+    "required": [
+      "asset",
+      "path",
+      "startSeconds",
+      "durationSeconds",
+      "loop",
+      "enabled"
+    ],
+    "defaults": {
+      "asset": "kubelwagen",
+      "path": "ambient-route",
+      "startSeconds": 0,
+      "durationSeconds": 12,
+      "loop": true,
+      "enabled": true
+    }
+  },
+  "Decoration": {
+    "tier": "C",
+    "fields": {
+      "asset": {
+        "type": "string",
+        "default": "proxy-crate"
+      }
+    },
+    "preview": "asset-or-proxy",
+    "required": [
+      "asset"
+    ],
+    "defaults": {
+      "asset": "proxy-crate"
+    }
+  }
+}

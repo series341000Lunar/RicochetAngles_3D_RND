@@ -1,0 +1,168 @@
+{
+  "schema": "ra-dcc00-authoring-v0",
+  "world": {
+    "testbed": "existing-multi-asset-rnd",
+    "width": 1280,
+    "height": 3600,
+    "unitsPerMeter": 14
+  },
+  "actors": [
+    {
+      "class": "LightTank",
+      "transform": {
+        "x": 420,
+        "y": 1520,
+        "z": 0,
+        "yaw": 0
+      },
+      "asset": "m41",
+      "profile": "SCOUT",
+      "facing": 0,
+      "homeRadius": 160,
+      "enabled": true,
+      "ra_id": "tank-scout",
+      "futureActorProperty": {
+        "value": 73
+      }
+    },
+    {
+      "class": "LightTank",
+      "transform": {
+        "x": 850,
+        "y": 1850,
+        "z": 0,
+        "yaw": 0
+      },
+      "asset": "m41",
+      "profile": "GUARD",
+      "facing": 180,
+      "homeRadius": 160,
+      "enabled": true,
+      "ra_id": "tank-guard"
+    },
+    {
+      "class": "Trigger",
+      "transform": {
+        "x": 600,
+        "y": 1450,
+        "z": 0,
+        "yaw": 0
+      },
+      "sizeX": 120,
+      "sizeY": 90,
+      "enabled": true,
+      "eventRef": "preview.enter",
+      "ra_id": "trigger-entry"
+    },
+    {
+      "class": "Trigger",
+      "transform": {
+        "x": 750,
+        "y": 2100,
+        "z": 0,
+        "yaw": 0
+      },
+      "sizeX": 180,
+      "sizeY": 100,
+      "enabled": true,
+      "eventRef": "",
+      "ra_id": "trigger-exit"
+    },
+    {
+      "class": "Checkpoint",
+      "transform": {
+        "x": 300,
+        "y": 1780,
+        "z": 0,
+        "yaw": 0
+      },
+      "checkpointId": "checkpoint",
+      "enabled": true,
+      "ra_id": "checkpoint-a"
+    },
+    {
+      "class": "PresentationActor",
+      "transform": {
+        "x": 240,
+        "y": 1600,
+        "z": 0,
+        "yaw": 0
+      },
+      "asset": "kubelwagen",
+      "path": "ambient-route",
+      "startSeconds": 0,
+      "durationSeconds": 12,
+      "loop": true,
+      "enabled": true,
+      "ra_id": "ambient-vehicle"
+    }
+  ],
+  "decorations": [
+    {
+      "class": "Decoration",
+      "transform": {
+        "x": 230,
+        "y": 2020,
+        "z": 0,
+        "yaw": 0
+      },
+      "asset": "proxy-crate"
+    },
+    {
+      "class": "Decoration",
+      "transform": {
+        "x": 320,
+        "y": 2020,
+        "z": 0,
+        "yaw": 0
+      },
+      "asset": "proxy-crate"
+    },
+    {
+      "class": "Decoration",
+      "transform": {
+        "x": 410,
+        "y": 2020,
+        "z": 0,
+        "yaw": 0
+      },
+      "asset": "proxy-crate"
+    },
+    {
+      "class": "Decoration",
+      "transform": {
+        "x": 500,
+        "y": 2020,
+        "z": 0,
+        "yaw": 0
+      },
+      "asset": "proxy-crate"
+    }
+  ],
+  "paths": [
+    {
+      "id": "ambient-route",
+      "points": [
+        {
+          "x": 240,
+          "y": 1600,
+          "z": 0
+        },
+        {
+          "x": 1000,
+          "y": 1600,
+          "z": 0
+        },
+        {
+          "x": 1000,
+          "y": 2250,
+          "z": 0
+        }
+      ]
+    }
+  ],
+  "tombstones": [],
+  "futureExtension": {
+    "preserveMe": true
+  }
+}
