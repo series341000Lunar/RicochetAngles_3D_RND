@@ -1,0 +1,246 @@
+{
+  "environment": {
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "dpr": 1
+  },
+  "asset": {
+    "meshes": [
+      {
+        "name": "HULL",
+        "parent": "M41_ROOT",
+        "triangles": 7460
+      },
+      {
+        "name": "TRACK_L",
+        "parent": "HULL",
+        "triangles": 1688
+      },
+      {
+        "name": "TRACK_R",
+        "parent": "HULL",
+        "triangles": 1688
+      },
+      {
+        "name": "TURRET",
+        "parent": "TURRET_PIVOT",
+        "triangles": 5122
+      },
+      {
+        "name": "GUN",
+        "parent": "TURRET",
+        "triangles": 1120
+      }
+    ],
+    "footprint": {
+      "minX": -33.460002824664116,
+      "minZ": -19.950001001358032,
+      "sx": 118.3140043258667,
+      "sz": 57.85500290393829,
+      "size": [
+        87.6400032043457,
+        48.579996436834335,
+        39.900002002716064
+      ]
+    }
+  },
+  "pose": {
+    "renderReadOnly": true,
+    "hull": -0.7,
+    "turretLocal": 1.8,
+    "turretWorldDirection": [
+      0.4535961214255773,
+      -0.8912073600614354
+    ],
+    "expected": [
+      0.4535961214255773,
+      -0.8912073600614354
+    ]
+  },
+  "p": {
+    "count": 1,
+    "keyP": null
+  },
+  "readOnlyClone": {
+    "unchanged": true,
+    "randomCalls": 0,
+    "geometryShared": true,
+    "materialShared": true,
+    "objectsSeparate": true
+  },
+  "movement": {
+    "before": {
+      "x": 220,
+      "y": 1800,
+      "angle": 0
+    },
+    "after": {
+      "x": 240.67966177484226,
+      "y": 1812.8977236306835,
+      "angle": 0.8830478915761716,
+      "turretAngle": -0.08555263845526859
+    }
+  },
+  "fire": {
+    "shells": 1,
+    "reload": 0.5633999999999998
+  },
+  "grid": {
+    "a": [
+      53.460002824664116,
+      124.95000100135803
+    ],
+    "b": [
+      53.460002824664116,
+      124.95000100135803
+    ]
+  },
+  "restart": {
+    "hp": 5,
+    "bossHp": 10,
+    "stressRetained": 2
+  },
+  "performance": [
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 45,
+      "triangles": 34614,
+      "objects": 54,
+      "meshes": 32,
+      "pixelRatio": 1,
+      "shadows": true,
+      "count": 0
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 145,
+      "triangles": 376174,
+      "objects": 134,
+      "meshes": 82,
+      "pixelRatio": 1,
+      "shadows": true,
+      "count": 10
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 245,
+      "triangles": 717734,
+      "objects": 214,
+      "meshes": 132,
+      "pixelRatio": 1,
+      "shadows": true,
+      "count": 20
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 445,
+      "triangles": 1400854,
+      "objects": 374,
+      "meshes": 232,
+      "pixelRatio": 1,
+      "shadows": true,
+      "count": 40
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 845,
+      "triangles": 2767094,
+      "objects": 694,
+      "meshes": 432,
+      "pixelRatio": 1,
+      "shadows": true,
+      "count": 80
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 20,
+      "triangles": 17252,
+      "objects": 54,
+      "meshes": 32,
+      "pixelRatio": 1,
+      "shadows": false,
+      "count": 0
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 70,
+      "triangles": 188032,
+      "objects": 134,
+      "meshes": 82,
+      "pixelRatio": 1,
+      "shadows": false,
+      "count": 10
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 120,
+      "triangles": 358812,
+      "objects": 214,
+      "meshes": 132,
+      "pixelRatio": 1,
+      "shadows": false,
+      "count": 20
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 220,
+      "triangles": 700372,
+      "objects": 374,
+      "meshes": 232,
+      "pixelRatio": 1,
+      "shadows": false,
+      "count": 40
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 420,
+      "triangles": 1383492,
+      "objects": 694,
+      "meshes": 432,
+      "pixelRatio": 1,
+      "shadows": false,
+      "count": 80
+    }
+  ],
+  "shadowOff": true,
+  "shadowOn": true,
+  "resize": [
+    {
+      "id": "world3d",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 800,
+        "top": 0,
+        "right": 960,
+        "bottom": 800,
+        "left": 0
+      }
+    },
+    {
+      "id": "game",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 800,
+        "top": 0,
+        "right": 960,
+        "bottom": 800,
+        "left": 0
+      }
+    }
+  ],
+  "errors": []
+}

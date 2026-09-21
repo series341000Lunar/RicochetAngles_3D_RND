@@ -1,0 +1,5315 @@
+{
+  "checks": {
+    "projection90": true,
+    "shells": true,
+    "engine": true,
+    "shapesAndArmor": true,
+    "legacyRestored": true,
+    "visualScaleNotAuthority": true,
+    "noncanonicalNotice": true,
+    "renderReadOnly": true,
+    "offset75": true
+  },
+  "rotations": [
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "visionSlit",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "gunPort",
+      "delta": 5.115907697472721e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "visionSlit",
+      "delta": 3.979039320256561e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "gunPort",
+      "delta": 5.115907697472721e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "visionSlit",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "gunPort",
+      "delta": 5.115907697472721e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "visionSlit",
+      "delta": 4.687428401686771e-13,
+      "worldXZDelta": 1.1368683772161603e-13
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "cupola",
+      "delta": 2.5421149729252077e-13,
+      "worldXZDelta": 2.5421149729252077e-13
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "visionSlit",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "visionSlit",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "visionSlit",
+      "delta": 5.115907697472721e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "visionSlit",
+      "delta": 4.687428401686771e-13,
+      "worldXZDelta": 1.1368683772161603e-13
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "cupola",
+      "delta": 3.0611117876642906e-13,
+      "worldXZDelta": 2.5421149729252077e-13
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "visionSlit",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "visionSlit",
+      "delta": 5.115907697472721e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "visionSlit",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "visionSlit",
+      "delta": 4.687428401686771e-13,
+      "worldXZDelta": 1.1368683772161603e-13
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "cupola",
+      "delta": 2.5421149729252077e-13,
+      "worldXZDelta": 2.5421149729252077e-13
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "visionSlit",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "visionSlit",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "cupola",
+      "delta": 4.687428401686771e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "visionSlit",
+      "delta": 5.115907697472721e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "cupola",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "gunPort",
+      "delta": 4.547473508864641e-13,
+      "worldXZDelta": 0
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "visionSlit",
+      "delta": 5.084229945850415e-13,
+      "worldXZDelta": 1.1368683772161603e-13
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "cupola",
+      "delta": 3.0611117876642906e-13,
+      "worldXZDelta": 2.5421149729252077e-13
+    }
+  ],
+  "broad": [
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "gunPort",
+      "center": {
+        "x": 64.06779438257217,
+        "y": 0
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "visionSlit",
+      "center": {
+        "x": 14.604701340198517,
+        "y": -11.573535919189453
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "cupola",
+      "center": {
+        "x": -11.849097549915314,
+        "y": -14.60470175743103
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "gunPort",
+      "center": {
+        "x": 44.33425454468488,
+        "y": 47.64097951025724
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "visionSlit",
+      "center": {
+        "x": 17.542291766726294,
+        "y": 4.4815652707686695
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "cupola",
+      "center": {
+        "x": 0.9799891025032821,
+        "y": -16.367453231697482
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "gunPort",
+      "center": {
+        "x": -3.306724965572357,
+        "y": 67.37451934814453
+      },
+      "centerOutsideHull": true,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "visionSlit",
+      "center": {
+        "x": 8.266810953617096,
+        "y": 17.911426305770874
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "cupola",
+      "center": {
+        "x": 11.297976791858673,
+        "y": -8.542372584342957
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "gunPort",
+      "center": {
+        "x": -50.947704475829596,
+        "y": 47.64097951025724
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "visionSlit",
+      "center": {
+        "x": -7.788290236341027,
+        "y": 20.84901673229865
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "cupola",
+      "center": {
+        "x": 13.060728266125238,
+        "y": 4.286714068075753
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "gunPort",
+      "center": {
+        "x": 44.33425454468488,
+        "y": -47.640979510257246
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "visionSlit",
+      "center": {
+        "x": 1.174840305196387,
+        "y": -20.84901673229864
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "cupola",
+      "center": {
+        "x": -19.674178197269892,
+        "y": -4.2867140680756135
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "gunPort",
+      "center": {
+        "x": 64.06779438257215,
+        "y": 7.105427357601002e-15
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "visionSlit",
+      "center": {
+        "x": 14.604701340198456,
+        "y": -11.573535919189515
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "cupola",
+      "center": {
+        "x": -11.849097549915271,
+        "y": -14.604701757431018
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "gunPort",
+      "center": {
+        "x": 44.334254544684875,
+        "y": 47.64097951025725
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "visionSlit",
+      "center": {
+        "x": 17.542291766726272,
+        "y": 4.481565270768752
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "cupola",
+      "center": {
+        "x": 0.9799891025032474,
+        "y": -16.367453231697525
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "gunPort",
+      "center": {
+        "x": -3.3067249655723714,
+        "y": 67.37451934814452
+      },
+      "centerOutsideHull": true,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "visionSlit",
+      "center": {
+        "x": 8.26681095361715,
+        "y": 17.911426305770824
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "cupola",
+      "center": {
+        "x": 11.297976791858812,
+        "y": -8.542372584342903
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "gunPort",
+      "center": {
+        "x": -3.306724965572353,
+        "y": -67.37451934814453
+      },
+      "centerOutsideHull": true,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "visionSlit",
+      "center": {
+        "x": -14.880260884761809,
+        "y": -17.911426305770874
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "cupola",
+      "center": {
+        "x": -17.911426723003387,
+        "y": 8.542372584342955
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "gunPort",
+      "center": {
+        "x": 44.33425454468488,
+        "y": -47.64097951025724
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "visionSlit",
+      "center": {
+        "x": 1.1748403051963137,
+        "y": -20.84901673229865
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "cupola",
+      "center": {
+        "x": -19.67417819726984,
+        "y": -4.28671406807564
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "gunPort",
+      "center": {
+        "x": 64.06779438257217,
+        "y": 3.92302096595239e-15
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "visionSlit",
+      "center": {
+        "x": 14.604701340198517,
+        "y": -11.573535919189451
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "cupola",
+      "center": {
+        "x": -11.849097549915312,
+        "y": -14.60470175743103
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "gunPort",
+      "center": {
+        "x": 44.33425454468488,
+        "y": 47.64097951025724
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "visionSlit",
+      "center": {
+        "x": 17.542291766726294,
+        "y": 4.48156527076867
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "cupola",
+      "center": {
+        "x": 0.9799891025033968,
+        "y": -16.367453231697596
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "gunPort",
+      "center": {
+        "x": -50.94770447582961,
+        "y": -47.640979510257246
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "visionSlit",
+      "center": {
+        "x": -24.155741697871008,
+        "y": -4.481565270768755
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "cupola",
+      "center": {
+        "x": -7.59343903364798,
+        "y": 16.367453231697525
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "gunPort",
+      "center": {
+        "x": -3.306724965572357,
+        "y": -67.37451934814452
+      },
+      "centerOutsideHull": true,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "visionSlit",
+      "center": {
+        "x": -14.880260884761883,
+        "y": -17.91142630577082
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "cupola",
+      "center": {
+        "x": -17.911426723003384,
+        "y": 8.542372584342903
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "gunPort",
+      "center": {
+        "x": 44.33425454468488,
+        "y": -47.640979510257246
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "visionSlit",
+      "center": {
+        "x": 1.174840305196387,
+        "y": -20.84901673229864
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "cupola",
+      "center": {
+        "x": -19.674178197269892,
+        "y": -4.2867140680756135
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "gunPort",
+      "center": {
+        "x": 64.06779438257215,
+        "y": 7.105427357601002e-15
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "visionSlit",
+      "center": {
+        "x": 14.604701340198456,
+        "y": -11.573535919189515
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "cupola",
+      "center": {
+        "x": -11.849097549915271,
+        "y": -14.604701757431178
+      },
+      "centerOutsideHull": false,
+      "shapeOutsideHull": false
+    }
+  ],
+  "shots": [
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 0,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 58,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 45,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 58,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 90,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 0,
+      "turret": 135,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 0,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 45,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 58,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 90,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 58,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 45,
+      "turret": 135,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 0,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 45,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 90,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 58,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 90,
+      "turret": 135,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 58,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 58,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 0,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 58,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 45,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 90,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "module": true
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 0,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": -8.75,
+      "hit": {
+        "name": "gunPort",
+        "zone": "활성 약점 · GUN PORT",
+        "armor": 38,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": 9.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "gunPort",
+      "offset": -9.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 0,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": -11.75,
+      "hit": {
+        "name": "visionSlit",
+        "zone": "활성 약점 · VISION SLIT",
+        "armor": 42,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": 12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "visionSlit",
+      "offset": -12.25,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 0,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "center",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "cupola",
+      "offset": -8.25,
+      "hit": {
+        "name": "cupola",
+        "zone": "활성 약점 · CUPOLA",
+        "armor": 46,
+        "module": false
+      },
+      "state": "engineExposed",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "inside-",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "cupola",
+      "offset": 8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside+",
+      "pass": true
+    },
+    {
+      "hull": 135,
+      "turret": 135,
+      "name": "cupola",
+      "offset": -8.75,
+      "hit": {
+        "name": null,
+        "zone": "보스 차체",
+        "armor": 155,
+        "module": false
+      },
+      "state": "triggerWeakpoint",
+      "hpBefore": 10,
+      "hpAfter": 10,
+      "remaining": 0,
+      "edge": "outside-",
+      "pass": true
+    }
+  ],
+  "engine": {
+    "hull": 0,
+    "turret": 0,
+    "name": "engine",
+    "offset": 0,
+    "hit": {
+      "name": "engine",
+      "zone": "활성 약점 · ENGINE",
+      "armor": 34,
+      "module": false
+    },
+    "state": "triggerWeakpoint",
+    "hpBefore": 10,
+    "hpAfter": 9,
+    "remaining": 0
+  },
+  "max90Delta": 5.115907697472721e-13,
+  "failedShots": [],
+  "descriptor": {
+    "gunPort": {
+      "ownerNode": "TURRET",
+      "visualAnchorLocal3D": {
+        "x": 2.4062328338623047,
+        "y": 0.8915646331065865,
+        "z": 0
+      },
+      "rootNeutralLocal3D": {
+        "x": 2.288135513663292,
+        "y": 2.9375007407420846,
+        "z": 0
+      },
+      "gameplayAnchorLocal2D": {
+        "x": 67.37451934814453,
+        "y": 0
+      },
+      "neutralRootGameplay2D": {
+        "x": 64.06779438257217,
+        "y": 0
+      },
+      "hitMesh": "TURRET_Mesh",
+      "triangle": 3876,
+      "normal": [
+        -0.01426774223812457,
+        0.9986937181269651,
+        -0.04906413053509345
+      ],
+      "id": "GUN_PORT",
+      "anchor": "turret"
+    },
+    "visionSlit": {
+      "ownerNode": "TURRET",
+      "visualAnchorLocal3D": {
+        "x": 0.6396937966346741,
+        "y": 1.17033052444458,
+        "z": -0.41334056854248047
+      },
+      "rootNeutralLocal3D": {
+        "x": 0.5215964764356613,
+        "y": 3.216266632080078,
+        "z": -0.41334056854248047
+      },
+      "gameplayAnchorLocal2D": {
+        "x": 17.911426305770874,
+        "y": -11.573535919189453
+      },
+      "neutralRootGameplay2D": {
+        "x": 14.604701340198517,
+        "y": -11.573535919189453
+      },
+      "hitMesh": "TURRET_Mesh_1",
+      "triangle": 1583,
+      "normal": [
+        0,
+        1,
+        0
+      ],
+      "id": "VISION_SLIT",
+      "anchor": "turret"
+    },
+    "cupola": {
+      "ownerNode": "TURRET",
+      "visualAnchorLocal3D": {
+        "x": -0.3050847351551056,
+        "y": 1.5303442478179932,
+        "z": -0.5215964913368225
+      },
+      "rootNeutralLocal3D": {
+        "x": -0.42318205535411835,
+        "y": 3.576280355453491,
+        "z": -0.5215964913368225
+      },
+      "gameplayAnchorLocal2D": {
+        "x": -8.542372584342957,
+        "y": -14.60470175743103
+      },
+      "neutralRootGameplay2D": {
+        "x": -11.849097549915314,
+        "y": -14.60470175743103
+      },
+      "hitMesh": "TURRET_Mesh",
+      "triangle": 983,
+      "normal": [
+        0,
+        0.9999999999999999,
+        0
+      ],
+      "id": "CUPOLA",
+      "anchor": "turret"
+    }
+  },
+  "errors": [],
+  "pass": true
+}

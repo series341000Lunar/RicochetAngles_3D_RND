@@ -1,0 +1,90 @@
+{
+  "phase": "R2",
+  "checks": {
+    "five_GLBS": true,
+    "four_gameplay_visuals": true,
+    "panzer_ground": true,
+    "panzer_visible": true,
+    "panzer_heading": true,
+    "panzer_muzzle": true,
+    "truck_ground": true,
+    "truck_visible": true,
+    "truck_heading": true,
+    "pak_ground": true,
+    "pak_visible": true,
+    "pak_heading": true,
+    "pak_muzzle": true,
+    "boss_ground": true,
+    "boss_visible": true,
+    "boss_heading": true,
+    "boss_muzzle": true,
+    "panzer_moves": true,
+    "panzer_fires": true,
+    "truck_moves": true,
+    "truck_no_gun": true,
+    "pak_fires": true,
+    "pak_fixed": true,
+    "boss_scale_gameplay_unchanged": true,
+    "boss_scale_visual": true,
+    "tiger1_switch": true,
+    "panzer_existing_AP_hit": true,
+    "death_cleanup": true,
+    "remove_cleanup": true,
+    "restart_roles": true,
+    "stress_preserved": true,
+    "complete_render_isolation": true,
+    "180_frame_deterministic": true
+  },
+  "measurements": {
+    "panzer": {
+      "minY": 1.0013580320489268e-7,
+      "scale": [
+        14,
+        14,
+        14
+      ],
+      "muzzle": [
+        567.9330011457205,
+        29.539999465942383,
+        1635
+      ]
+    },
+    "truck": {
+      "minY": 3.91155481338501e-8,
+      "scale": [
+        14,
+        14,
+        14
+      ],
+      "muzzle": null
+    },
+    "pak": {
+      "minY": 0,
+      "scale": [
+        14,
+        14,
+        14
+      ],
+      "muzzle": [
+        787.7200002670288,
+        16.239999532699585,
+        1965
+      ]
+    },
+    "boss": {
+      "minY": 0,
+      "scale": [
+        28,
+        28,
+        28
+      ],
+      "muzzle": [
+        776.0235342383385,
+        73.95762062072754,
+        1800
+      ]
+    }
+  },
+  "errors": [],
+  "pass": true
+}

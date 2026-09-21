@@ -1,0 +1,215 @@
+{
+  "backup": "\\\\192.168.87.201\\Projects\\RicochetAngles\\99_temp\\Panzer6_Tiger1_name_correction_20260920_151523",
+  "folder_mapping": [
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Preview\\Tiger_preview.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Preview\\Panzer6_Tiger1_preview.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Tiger.blend",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Panzer6_Tiger1.blend"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Tiger.blend1",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Panzer6_Tiger1.blend1"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Tiger_v1.blend",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Panzer6_Tiger1_v1.blend"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Tiger_v2.blend",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Panzer6_Tiger1_v2.blend"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Tiger_v2.blend1",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Panzer6_Tiger1_v2.blend1"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Tiger_v3.blend",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger\\Panzer6_Tiger1_v3.blend"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Tiger",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\export\\Tiger_RND_v01.glb",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\export\\Panzer6_Tiger1_RND_v01.glb"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\export\\Tiger_RND_v02.glb",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\export\\Panzer6_Tiger1_RND_v02.glb"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_RND_v01_isometric.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_RND_v01_isometric.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_RND_v01_side.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_RND_v01_side.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_RND_v01_top.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_RND_v01_top.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_RND_v02_isometric.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_RND_v02_isometric.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_RND_v02_side.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_RND_v02_side.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_RND_v02_top.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_RND_v02_top.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_source_v02_isometric.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_source_v02_isometric.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_source_v02_side.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_source_v02_side.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Tiger_source_v02_top.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\preview\\Panzer6_Tiger1_source_v02_top.png"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\source\\Tiger_RND_v01.blend",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\source\\Panzer6_Tiger1_RND_v01.blend"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\source\\Tiger_RND_v02.blend",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\source\\Panzer6_Tiger1_RND_v02.blend"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\source\\Tiger_RND_v02.blend1",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger\\source\\Panzer6_Tiger1_RND_v02.blend1"
+    ],
+    [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Tiger",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1"
+    ]
+  ],
+  "text_references_updated": [
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1\\Preview\\verification.jsonl",
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1\\Preview_v2\\verification.jsonl",
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\notes\\asset_validation_v01.json",
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\notes\\asset_validation_v02.json",
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\notes\\BUILD_AND_VALIDATION_v01.md",
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\notes\\BUILD_AND_VALIDATION_v02.md",
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\notes\\build_v02.py"
+  ],
+  "blender": [
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1\\Panzer6_Tiger1.blend",
+      "geometry_transform_hierarchy_before": "2fcd97e56cbfa3de52451397cdc1d606b4433b9d57b78bb3469c67dd4dc1b3bf",
+      "after": "2fcd97e56cbfa3de52451397cdc1d606b4433b9d57b78bb3469c67dd4dc1b3bf",
+      "unchanged": true,
+      "names_changed": 396,
+      "sha256": "1687f9843caf2894964d357110fbd4a91cb14023330f9d8197ee218444f13d51"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1\\Panzer6_Tiger1.blend1",
+      "geometry_transform_hierarchy_before": "2fcd97e56cbfa3de52451397cdc1d606b4433b9d57b78bb3469c67dd4dc1b3bf",
+      "after": "2fcd97e56cbfa3de52451397cdc1d606b4433b9d57b78bb3469c67dd4dc1b3bf",
+      "unchanged": true,
+      "names_changed": 396,
+      "sha256": "6859fa36b964efca1ef98ec3c7e9fb4e7234442934c095ee3d72ef6dd043897f"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1\\Panzer6_Tiger1_v1.blend",
+      "geometry_transform_hierarchy_before": "2fcd97e56cbfa3de52451397cdc1d606b4433b9d57b78bb3469c67dd4dc1b3bf",
+      "after": "2fcd97e56cbfa3de52451397cdc1d606b4433b9d57b78bb3469c67dd4dc1b3bf",
+      "unchanged": true,
+      "names_changed": 396,
+      "sha256": "c9e0deed52052139c4a30b3f1120b9a279adc9f90829e7caa04536647ff8823c"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1\\Panzer6_Tiger1_v2.blend",
+      "geometry_transform_hierarchy_before": "7dad4d0de40cc06d841247bfb0efa5aebaf6d39c78db401eeb3bbb29f0c1de49",
+      "after": "7dad4d0de40cc06d841247bfb0efa5aebaf6d39c78db401eeb3bbb29f0c1de49",
+      "unchanged": true,
+      "names_changed": 396,
+      "sha256": "abd6588fcc1f2b3e63fe9bd33c33641bc4bdad1a67f27d3682c51b9ae6d18d08"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1\\Panzer6_Tiger1_v2.blend1",
+      "geometry_transform_hierarchy_before": "f07f3940087d79dfa74161b1269bd5830fec3c8a530e64c8f38edbecb0b2713d",
+      "after": "f07f3940087d79dfa74161b1269bd5830fec3c8a530e64c8f38edbecb0b2713d",
+      "unchanged": true,
+      "names_changed": 396,
+      "sha256": "cb39679fc60c57763080b2a971a8a19ca07b1eab8785d8062c3270b7591b795f"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Panzer6_Tiger1\\Panzer6_Tiger1_v3.blend",
+      "geometry_transform_hierarchy_before": "65f61c4a8d48d04f2c7453644b11ba2e8b3be78fe0366da5430958c9edd0a329",
+      "after": "65f61c4a8d48d04f2c7453644b11ba2e8b3be78fe0366da5430958c9edd0a329",
+      "unchanged": true,
+      "names_changed": 398,
+      "sha256": "937bac013af54ded43ca76347aab9be5dcbaa311dd3c884a834209a02c6575c2"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\source\\Panzer6_Tiger1_RND_v01.blend",
+      "geometry_transform_hierarchy_before": "64d566476ce1766ac8a935d470458c1f72f275ad3a54f978b8e8c389059bd6f2",
+      "after": "64d566476ce1766ac8a935d470458c1f72f275ad3a54f978b8e8c389059bd6f2",
+      "unchanged": true,
+      "names_changed": 1,
+      "sha256": "f6d1d4581fbb69340836bf5ace6b2df1d18120795e318d7d65c2f1f25e804d0b"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\source\\Panzer6_Tiger1_RND_v02.blend",
+      "geometry_transform_hierarchy_before": "08c09d5b8e3e2f32284a022a3560c9d9a0b8cf2386cd127f83e069d1ce358685",
+      "after": "08c09d5b8e3e2f32284a022a3560c9d9a0b8cf2386cd127f83e069d1ce358685",
+      "unchanged": true,
+      "names_changed": 1,
+      "sha256": "0af5b6eb4407c7fc7e2d6a1cdfe2d45be5879dbcd07621040c69ec7f9995805c"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\source\\Panzer6_Tiger1_RND_v02.blend1",
+      "geometry_transform_hierarchy_before": "de42a291f28cf612c3ecc719f97d61f9d6dc662f46d4158033d7446e7e8e9684",
+      "after": "de42a291f28cf612c3ecc719f97d61f9d6dc662f46d4158033d7446e7e8e9684",
+      "unchanged": true,
+      "names_changed": 1,
+      "sha256": "57949b334a703ae68e6e45c969afb27b5fdc59d629937de48ba66ac1a17781e0"
+    }
+  ],
+  "glb": [
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v01.glb",
+      "binary_geometry_unchanged": true,
+      "non_name_json_unchanged": true,
+      "root_names": [
+        "Panzer6_Tiger1_ROOT"
+      ],
+      "sha256": "6c9e616ff2a7db62141f79f36da3504c6ce51593a257b24f9c7a8af4ca749b4d",
+      "bytes": 365968
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v02.glb",
+      "binary_geometry_unchanged": true,
+      "non_name_json_unchanged": true,
+      "root_names": [
+        "Panzer6_Tiger1_ROOT"
+      ],
+      "sha256": "e0763a96cfe8f88a60d85a2738473e8edf102e7932827e1e1ca8af72218427e8",
+      "bytes": 358940
+    }
+  ],
+  "policy": "Naming only. Historical validation SHA256 values describe pre-rename binaries; this report supplies current hashes. Image pixels unchanged.",
+  "reimport": [
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v01.glb",
+      "reimport": "PASS",
+      "objects": 8
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v02.glb",
+      "reimport": "PASS",
+      "objects": 8
+    }
+  ]
+}

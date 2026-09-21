@@ -1,0 +1,72 @@
+{
+  "performance": [
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 48,
+      "triangles": 34854,
+      "objects": 59,
+      "meshes": 36,
+      "pixelRatio": 1,
+      "shadows": true,
+      "stress": 0
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 849,
+      "triangles": 2767414,
+      "objects": 779,
+      "meshes": 436,
+      "pixelRatio": 1,
+      "shadows": true,
+      "stress": 80
+    }
+  ],
+  "collision": {
+    "hpBefore": 4,
+    "hpAfter": 3,
+    "shellRemoved": true,
+    "mapRemoved": true,
+    "hit": {
+      "x": 221,
+      "y": 396.00000000000006
+    },
+    "visualTermination": {
+      "x": 221,
+      "y": 396.00000000000006,
+      "dead": true
+    },
+    "renderUnchanged": true
+  },
+  "ricochet": {
+    "result": "도탄",
+    "count": 1,
+    "visual": [
+      258.9999746616211,
+      8,
+      1799.9533191694143
+    ],
+    "target": [
+      258.9999746616211,
+      8,
+      1799.9533191694143
+    ],
+    "unchanged": true
+  },
+  "boss": {
+    "hp": 0,
+    "state": "won"
+  },
+  "restartP": {
+    "hp": 5,
+    "bossHp": 10,
+    "stress": 81
+  },
+  "errors": [],
+  "cost": {
+    "idle": 41,
+    "firing": 44,
+    "fxMeshes": 2
+  }
+}

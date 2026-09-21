@@ -1,0 +1,22 @@
+[
+  {
+    "path": "spike/RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html",
+    "bytes": 130950,
+    "sha256": "9bfa195882ea19c5b84e22a6fc548f003dbdda95dc163fce926ce87575248531"
+  },
+  {
+    "path": "spike/rnd_gameplay.js",
+    "bytes": 17140,
+    "sha256": "82b19ed16502d2eca3d04438c14360441dc1a00f597a2c09181b3b3ac55557d0"
+  },
+  {
+    "path": "spike/rnd_actors.js",
+    "bytes": 5926,
+    "sha256": "e053436853e1bd15eccbde3fc10497a362716053be62682d3f34cfa8849866fa"
+  },
+  {
+    "path": "Docs/THREEJS_MULTI_ASSET_GAME_LANGUAGE_RND_20260920.md",
+    "bytes": 17482,
+    "sha256": "eda01e9dc2a7d003884787a1893193e9d18757411d33b20a1dd3e3b83f8334f5"
+  }
+]

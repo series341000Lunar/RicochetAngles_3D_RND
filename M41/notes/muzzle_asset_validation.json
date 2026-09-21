@@ -1,0 +1,17 @@
+{
+  "method": "GUN local +X maximum front-face vertices; Y/Z bounding midpoint",
+  "front_vertex_count": 40,
+  "local": [
+    2.8550000190734863,
+    -1.1920928955078125e-07,
+    0.0
+  ],
+  "world_blender": [
+    3.869999885559082,
+    -1.6357634535779653e-07,
+    2.2680001258850098
+  ],
+  "parent": "GUN",
+  "roundtrip": "PASS",
+  "glb_bytes": 866420
+}

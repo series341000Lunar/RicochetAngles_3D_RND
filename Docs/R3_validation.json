@@ -1,0 +1,59 @@
+{
+  "phase": "R3",
+  "checks": {
+    "six_3d_shells": true,
+    "Q_XZ_gameplay_target": true,
+    "Q_starts_high": true,
+    "Q_BulletTime_marker_follow": true,
+    "Q_render_no_impact_or_state_write": true,
+    "Q_gameplay_removes_visual": true,
+    "Q_no_visual_damage_authority": true,
+    "bridge_actual_muzzle_start": true,
+    "bridge_75ms_sim_ease": true,
+    "flash_BulletTime_alive": true,
+    "bridge_exact_end": true,
+    "ricochet_ends_bridge": true,
+    "collision_removes_visual": true,
+    "camera_scale_no_gameplay_write": true,
+    "angles_45_to_90": true
+  },
+  "scales": [
+    {
+      "scale": 1,
+      "height": 53.13804864883423,
+      "muzzleHeight": 36.97881031036377,
+      "muzzleDeltaLogicalPx": 10.019584178178658,
+      "bossHP": 10,
+      "collisionRadius": 105
+    },
+    {
+      "scale": 1.5,
+      "height": 79.70707297325134,
+      "muzzleHeight": 55.468215465545654,
+      "muzzleDeltaLogicalPx": 48.56262854554683,
+      "bossHP": 10,
+      "collisionRadius": 105
+    },
+    {
+      "scale": 2,
+      "height": 106.27609729766846,
+      "muzzleHeight": 73.95762062072754,
+      "muzzleDeltaLogicalPx": 93.10975374506586,
+      "bossHP": 10,
+      "collisionRadius": 105
+    }
+  ],
+  "lowwide": {
+    "shape": "lowwide",
+    "scales": [
+      1.7,
+      1.2,
+      1.9
+    ],
+    "height": 63.765658378601074,
+    "muzzleHeight": 44.374572372436525,
+    "muzzleDeltaLogicalPx": 65.22293756797812
+  },
+  "errors": [],
+  "pass": true
+}

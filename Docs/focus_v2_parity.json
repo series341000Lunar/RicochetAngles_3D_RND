@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "normal_pixels_exact": true,
+    "gameplay_600_frames_exact": true,
+    "material_array_restore": true,
+    "repeated_cleanup": true
+  },
+  "pixels": {
+    "before": "bd43ca428cfd400da24aab8f048e92d48440d72a79f787ef70df4c5a36d3e1bb",
+    "after": "bd43ca428cfd400da24aab8f048e92d48440d72a79f787ef70df4c5a36d3e1bb"
+  },
+  "errors": [],
+  "pass": true
+}

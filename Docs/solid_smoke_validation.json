@@ -1,0 +1,45 @@
+{
+  "errors": [],
+  "samples": [
+    {
+      "age": 0,
+      "playerRadius": 12,
+      "playerAlpha": 1,
+      "bossRadius": 34.2,
+      "bossAlpha": 1,
+      "bossVisible": true
+    },
+    {
+      "age": 0.06,
+      "playerRadius": 34,
+      "playerAlpha": 1,
+      "bossRadius": 76,
+      "bossAlpha": 1,
+      "bossVisible": true
+    },
+    {
+      "age": 0.12,
+      "playerRadius": 34,
+      "playerAlpha": 0.8017492711370262,
+      "bossRadius": 76,
+      "bossAlpha": 0.8017492711370262,
+      "bossVisible": true
+    },
+    {
+      "age": 0.2,
+      "playerRadius": 34,
+      "playerAlpha": 0.1430731022567756,
+      "bossRadius": 76,
+      "bossAlpha": 0.1430731022567756,
+      "bossVisible": true
+    },
+    {
+      "age": 0.24,
+      "playerRadius": 34,
+      "playerAlpha": 0,
+      "bossRadius": 76,
+      "bossAlpha": 0.1430731022567756,
+      "bossVisible": false
+    }
+  ]
+}

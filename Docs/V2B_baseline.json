@@ -1,0 +1,22 @@
+{
+  "RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html": {
+    "sha256": "11ee0a5e3b33de0e243879f35a8d4eff32db1caf27b3977571b6c18825701e82",
+    "bytes": 136828
+  },
+  "rnd_focus_material.js": {
+    "sha256": "55ea99d9fb7342377e37b749574794e8d983b1895419a760d9f4c8d208fe235f",
+    "bytes": 3398
+  },
+  "rnd_gameplay.js": {
+    "sha256": "0423224572fdcf1b07596643abeca7898a517401f2a18a32c588a4de487a941d",
+    "bytes": 18511
+  },
+  "rnd_actors.js": {
+    "sha256": "e053436853e1bd15eccbde3fc10497a362716053be62682d3f34cfa8849866fa",
+    "bytes": 5926
+  },
+  "rnd_target_contour.js": {
+    "sha256": "0913d591ec74a1fd34b24cb40e0b567a69cda4082cc62a32d37eb199f66a64b5",
+    "bytes": 2757
+  }
+}

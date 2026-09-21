@@ -1,0 +1,215 @@
+{
+  "first": [
+    {
+      "scenario": "idle",
+      "ms": 1.7999999970197678,
+      "programsBefore": 36,
+      "programsAfter": 36,
+      "texturesBefore": 7,
+      "texturesAfter": 7
+    },
+    {
+      "scenario": "player",
+      "ms": 1.0999999940395355,
+      "programsBefore": 36,
+      "programsAfter": 36,
+      "texturesBefore": 7,
+      "texturesAfter": 7
+    },
+    {
+      "scenario": "boss",
+      "ms": 1.3000000044703484,
+      "programsBefore": 36,
+      "programsAfter": 36,
+      "texturesBefore": 7,
+      "texturesAfter": 7
+    },
+    {
+      "scenario": "Q",
+      "ms": 1.3000000044703484,
+      "programsBefore": 36,
+      "programsAfter": 36,
+      "texturesBefore": 7,
+      "texturesAfter": 7
+    }
+  ],
+  "rows": [
+    {
+      "name": "OFF",
+      "stress": 0,
+      "fps": 60.68176301657907,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.800000000000182,
+      "meanSubmitMs": 0.9433333334823449,
+      "drawCalls": 116,
+      "triangles": 190346,
+      "post": {
+        "passes": 0,
+        "bloom": {
+          "activeSources": 0,
+          "passes": 0,
+          "width": 640,
+          "height": 360,
+          "prewarming": false
+        },
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 36,
+      "textures": 7
+    },
+    {
+      "name": "ON idle",
+      "stress": 0,
+      "fps": 60.00134834490662,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.800000000000182,
+      "meanSubmitMs": 1.396666666534212,
+      "drawCalls": 118,
+      "triangles": 190348,
+      "post": {
+        "passes": 5,
+        "bloom": {
+          "activeSources": 0,
+          "passes": 2,
+          "width": 640,
+          "height": 360,
+          "prewarming": false
+        },
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 36,
+      "textures": 7
+    },
+    {
+      "name": "Player",
+      "stress": 0,
+      "fps": 60.00134834490662,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.800000000000182,
+      "meanSubmitMs": 1.3899999998509884,
+      "drawCalls": 124,
+      "triangles": 190670,
+      "post": {
+        "passes": 6,
+        "bloom": {
+          "activeSources": 1,
+          "passes": 3,
+          "width": 640,
+          "height": 360,
+          "prewarming": false
+        },
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 36,
+      "textures": 7
+    },
+    {
+      "name": "Boss",
+      "stress": 0,
+      "fps": 60.00134834490662,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.800000000000182,
+      "meanSubmitMs": 1.3633333330353101,
+      "drawCalls": 126,
+      "triangles": 190830,
+      "post": {
+        "passes": 6,
+        "bloom": {
+          "activeSources": 1,
+          "passes": 3,
+          "width": 640,
+          "height": 360,
+          "prewarming": false
+        },
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 36,
+      "textures": 7
+    },
+    {
+      "name": "Q",
+      "stress": 0,
+      "fps": 60.00134834490658,
+      "medianFrameMs": 16.699999999999818,
+      "p95FrameMs": 16.800000000000182,
+      "meanSubmitMs": 1.2300000004470348,
+      "drawCalls": 132,
+      "triangles": 190566,
+      "post": {
+        "passes": 6,
+        "bloom": {
+          "activeSources": 6,
+          "passes": 3,
+          "width": 640,
+          "height": 360,
+          "prewarming": false
+        },
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 36,
+      "textures": 7
+    },
+    {
+      "name": "Stress100 OFF",
+      "stress": 100,
+      "fps": 60.00134834490658,
+      "medianFrameMs": 16.69999999999891,
+      "p95FrameMs": 16.700000000000728,
+      "meanSubmitMs": 2.8877777775956526,
+      "drawCalls": 1116,
+      "triangles": 3605946,
+      "post": {
+        "passes": 0,
+        "bloom": {
+          "activeSources": 0,
+          "passes": 0,
+          "width": 640,
+          "height": 360,
+          "prewarming": false
+        },
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 36,
+      "textures": 7
+    },
+    {
+      "name": "Stress100 ON",
+      "stress": 100,
+      "fps": 60.00539374325779,
+      "medianFrameMs": 16.69999999999891,
+      "p95FrameMs": 16.799999999999272,
+      "meanSubmitMs": 3.0266666670640308,
+      "drawCalls": 1118,
+      "triangles": 3605948,
+      "post": {
+        "passes": 5,
+        "bloom": {
+          "activeSources": 0,
+          "passes": 2,
+          "width": 640,
+          "height": 360,
+          "prewarming": false
+        },
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 36,
+      "textures": 7
+    }
+  ],
+  "pass": true,
+  "errors": []
+}

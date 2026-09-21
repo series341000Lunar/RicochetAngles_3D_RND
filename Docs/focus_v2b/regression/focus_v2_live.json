@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "real_shift_focus": true,
+    "release": true,
+    "toggle_off": true
+  },
+  "perf": [
+    {
+      "name": "OFF_Panzer",
+      "fps": 60.002637478570485,
+      "calls": 127,
+      "triangles": 196968,
+      "programs": 10,
+      "noCompile": true,
+      "noAllocation": true,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "name": "ON_Panzer",
+      "fps": 60.00263747857047,
+      "calls": 127,
+      "triangles": 196968,
+      "programs": 10,
+      "noCompile": true,
+      "noAllocation": true,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "name": "OFF_Tiger2",
+      "fps": 60,
+      "calls": 127,
+      "triangles": 227912,
+      "programs": 10,
+      "noCompile": true,
+      "noAllocation": true,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "name": "ON_Tiger2",
+      "fps": 60.00659413122321,
+      "calls": 127,
+      "triangles": 227912,
+      "programs": 10,
+      "noCompile": true,
+      "noAllocation": true,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

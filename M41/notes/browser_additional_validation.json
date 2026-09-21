@@ -1,0 +1,32 @@
+{
+  "fire": {
+    "shells": 1,
+    "reload": 0.5632000000000004,
+    "traveled": [
+      91.97699999999999
+    ]
+  },
+  "scenarios": {
+    "collided": true,
+    "distance": 68.00999999999999,
+    "obstacleDamage": true,
+    "ricochet": "도탄",
+    "penetration": "관통",
+    "boss": {
+      "hp": 0,
+      "state": "won",
+      "alive": false
+    },
+    "playerHp": 4
+  },
+  "loaderRng": {
+    "calls": 0
+  },
+  "fallback": {
+    "text": "M41 load failed · Primitive fallback: Failed to fetch",
+    "primitive": true,
+    "state": "playing",
+    "enabled": true
+  },
+  "errors": []
+}

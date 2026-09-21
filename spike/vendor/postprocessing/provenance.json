@@ -1,0 +1,50 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/postprocessing/EffectComposer.js",
+    "sourceSHA256": "d234e578618fa816955ebdc059c049c577e203e650e33cf22bde3f232c29e669",
+    "local": "EffectComposer.js",
+    "sha256": "61cdbeb1aa89a61196ac3ca85246d499bf5712a22211fe100e664bb64561bbb4"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/postprocessing/Pass.js",
+    "sourceSHA256": "b3c6128340eaa37e40a6a2f1b738e894c855239417d50959759b34a2b5e89f92",
+    "local": "Pass.js",
+    "sha256": "63e6a84b9b097dafef0baf57875fbc5b0a6e8f7425f963f0f35bd0baf9dcdcbd"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/postprocessing/RenderPass.js",
+    "sourceSHA256": "1c90c085312871c4bcdccfcf519499c6276dd503363fcf7cb7f703add45cf4a2",
+    "local": "RenderPass.js",
+    "sha256": "4d4b52882a810b0abd30561d25c4ef8dd75d82805e5bacda16a7027d5a8fd5b0"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/postprocessing/ShaderPass.js",
+    "sourceSHA256": "3b28a1ee27e0eb96c0eab137a1f442ccf127a926904eced2d51e125ec44af781",
+    "local": "ShaderPass.js",
+    "sha256": "024163f3227e7851e3e3befb6c2a4148b619992350eaceb6bf595ab6d4ccd5e1"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/postprocessing/OutputPass.js",
+    "sourceSHA256": "13817fc7a87f662d29d2c5e00f44d3a4588c9afac4a372de0cacb0e44e368ffd",
+    "local": "OutputPass.js",
+    "sha256": "6d678577a40054bd93491a7ef7415e1c57566b536570a377d1463859c5d449dc"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/postprocessing/MaskPass.js",
+    "sourceSHA256": "328cf7db0da5d9be83ffe39d54b01d5ac1fddf108cc98182ddbb056f5c8b537f",
+    "local": "MaskPass.js",
+    "sha256": "b0360737a0fa5a3416f062915a16b0448a93f26e01d0e559d9c9cfac8b9cf46d"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/shaders/CopyShader.js",
+    "sourceSHA256": "4e3346db194db56a596cd074e9bdb39fb5eb52040c333e0d29dc4eb1324d3b1d",
+    "local": "CopyShader.js",
+    "sha256": "5827504ed05e7ae252e75f53b3fb10caa96ec21e70a78143e9ef90d430f1107e"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/shaders/OutputShader.js",
+    "sourceSHA256": "53a52e430c27bc36ceaab8ae90a2b4af7b02672d7ee4b29d6ba3c28e09c92c2a",
+    "local": "OutputShader.js",
+    "sha256": "bc1ee7a0c63ddbac9e3e7167f3f8385b86c6344c9ec807213977aa05abd05b14"
+  }
+]

@@ -1,0 +1,444 @@
+{
+  "asset": "LV_Kubelwagen",
+  "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\LV_Kubelwagen\\LV_Kubelwagen_v01.blend",
+  "source_sha256": "69dd9807a859ca1ffa5df7169beac84f8e9ce90f071df680e28267e15d194944",
+  "source_reason": "Only completed current original v01; preserves authored proportions and four wheel hub centers",
+  "outputs": {
+    "blend": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\LV_Kubelwagen\\source\\LV_Kubelwagen_RND_v01.blend",
+    "glb": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\LV_Kubelwagen\\export\\LV_Kubelwagen_RND_v01.glb",
+    "glb_bytes": 946436,
+    "neutral_previews": [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\LV_Kubelwagen\\preview\\LV_Kubelwagen_RND_v01_isometric.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\LV_Kubelwagen\\preview\\LV_Kubelwagen_RND_v01_top.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\LV_Kubelwagen\\preview\\LV_Kubelwagen_RND_v01_side.png"
+    ]
+  },
+  "changes": "Merged fixed parts including evaluated license text into HULL; wheel components into four wheel meshes; added two steer empties. No decimation or geometric redesign. Source materials and corner normals retained.",
+  "counts": {
+    "nodes": 8,
+    "meshes": 5,
+    "triangles": 23076,
+    "triangles_by_mesh": {
+      "HULL": 14884,
+      "WHEEL_FL": 2048,
+      "WHEEL_FR": 2048,
+      "WHEEL_RL": 2048,
+      "WHEEL_RR": 2048
+    },
+    "materials": 5,
+    "textures": 0,
+    "primitives": 13
+  },
+  "source_parts": {
+    "HULL": [
+      "Chassis",
+      "Cabin floor",
+      "Axle_0.96",
+      "Axle_-0.96",
+      "Side sill_-1",
+      "Cabin side_-1",
+      "Side top rail_-1",
+      "Front door rib_-1_0.77",
+      "Front door rib_-1_0.94",
+      "Front door rib_-1_1.1",
+      "Front door handle_-1",
+      "Rear door rib_-1_0.77",
+      "Rear door rib_-1_0.94",
+      "Rear door rib_-1_1.1",
+      "Rear door handle_-1",
+      "Door post_-1_0.48",
+      "Door post_-1_-0.405",
+      "Door post_-1_-1.4",
+      "Door hinge_-10.40.78",
+      "Door hinge_-10.41.1",
+      "Door hinge_-1-0.460.78",
+      "Door hinge_-1-0.461.1",
+      "Side utility rail_-1",
+      "Side tool paddle_-1",
+      "Side sill_1",
+      "Cabin side_1",
+      "Side top rail_1",
+      "Front door rib_1_0.77",
+      "Front door rib_1_0.94",
+      "Front door rib_1_1.1",
+      "Front door handle_1",
+      "Rear door rib_1_0.77",
+      "Rear door rib_1_0.94",
+      "Rear door rib_1_1.1",
+      "Rear door handle_1",
+      "Door post_1_0.48",
+      "Door post_1_-0.405",
+      "Door post_1_-1.4",
+      "Door hinge_10.40.78",
+      "Door hinge_10.41.1",
+      "Door hinge_1-0.460.78",
+      "Door hinge_1-0.461.1",
+      "Side utility rail_1",
+      "Side tool paddle_1",
+      "Sloping hood",
+      "Rear engine body",
+      "Dashboard",
+      "Hood longitudinal seam_-0.39",
+      "Hood longitudinal seam_0.39",
+      "Hood lower seam",
+      "Hood catch_0.62",
+      "Hood catch_1.32",
+      "Fender_FL",
+      "Fender lip_FL",
+      "Fender_FR",
+      "Fender lip_FR",
+      "Fender_RL",
+      "Fender lip_RL",
+      "Fender_RR",
+      "Fender lip_RR",
+      "Front bumper",
+      "Bumper bracket_-1",
+      "Bumper upright_-1",
+      "Headlight housing_-1",
+      "Headlight lens_-1",
+      "Headlight bezel_-1",
+      "Headlight support_-1",
+      "Small body lamp_-1",
+      "Bumper bracket_1",
+      "Bumper upright_1",
+      "Headlight housing_1",
+      "Headlight lens_1",
+      "Headlight bezel_1",
+      "Headlight support_1",
+      "Small body lamp_1",
+      "Windshield pillar_-1",
+      "Windshield hinge_-1",
+      "Windshield pillar_1",
+      "Windshield hinge_1",
+      "Windshield lower",
+      "Windshield upper",
+      "Windshield center",
+      "Windshield glass_-1",
+      "Wiper arm_-1",
+      "Wiper blade_-1",
+      "Mirror stalk_-1",
+      "Mirror housing_-1",
+      "Mirror face_-1",
+      "Windshield glass_1",
+      "Wiper arm_1",
+      "Wiper blade_1",
+      "Mirror stalk_1",
+      "Mirror housing_1",
+      "Mirror face_1",
+      "Seat cushion_FrontL",
+      "Seat back_FrontL",
+      "Seat seam_FrontL-0.135",
+      "Seat seam_FrontL0.135",
+      "Seat leg_FrontL",
+      "Seat cushion_FrontR",
+      "Seat back_FrontR",
+      "Seat seam_FrontR-0.135",
+      "Seat seam_FrontR0.135",
+      "Seat leg_FrontR",
+      "Seat cushion_RearL",
+      "Seat back_RearL",
+      "Seat seam_RearL-0.135",
+      "Seat seam_RearL0.135",
+      "Seat leg_RearL",
+      "Seat cushion_RearR",
+      "Seat back_RearR",
+      "Seat seam_RearR-0.135",
+      "Seat seam_RearR0.135",
+      "Seat leg_RearR",
+      "Steering column",
+      "Steering wheel",
+      "Steering spoke_0",
+      "Steering spoke_1",
+      "Steering spoke_2",
+      "Steering hub",
+      "Gauge rim_0.34",
+      "Gauge dial_0.34",
+      "Gauge needle_0.34",
+      "Gauge rim_0.12",
+      "Gauge dial_0.12",
+      "Gauge needle_0.12",
+      "Gauge rim_-0.1",
+      "Gauge dial_-0.1",
+      "Gauge needle_-0.1",
+      "Gear lever_-0.05",
+      "Gear knob_-0.05",
+      "Gear lever_0.09",
+      "Gear knob_0.09",
+      "Folded canvas rear",
+      "Folded roof bow_-11.27",
+      "Folded roof bow_-11.32",
+      "Canvas strap_-1",
+      "Folded roof bow_11.27",
+      "Folded roof bow_11.32",
+      "Canvas strap_1",
+      "Engine grille recess_L",
+      "Engine louver_L0",
+      "Engine louver_L1",
+      "Engine louver_L2",
+      "Engine louver_L3",
+      "Engine louver_L4",
+      "Tail lamp_L0.8",
+      "Tail lens_L0.8",
+      "Tail lamp_L0.7",
+      "Tail lens_L0.7",
+      "Engine grille recess_R",
+      "Engine louver_R0",
+      "Engine louver_R1",
+      "Engine louver_R2",
+      "Engine louver_R3",
+      "Engine louver_R4",
+      "Tail lamp_R0.8",
+      "Tail lens_R0.8",
+      "Tail lamp_R0.7",
+      "Tail lens_R0.7",
+      "Rear latch",
+      "Rear bumper",
+      "Exhaust outlet",
+      "Plate backing_Front",
+      "Plate face_Front",
+      "Plate text_Front",
+      "Plate backing_Rear",
+      "Plate face_Rear",
+      "Plate text_Rear",
+      "Door cross vertical_-14",
+      "Door cross horizontal_-14",
+      "Door cross vertical_-11",
+      "Door cross horizontal_-11",
+      "Door cross vertical_14",
+      "Door cross horizontal_14",
+      "Door cross vertical_11",
+      "Door cross horizontal_11",
+      "Rear bumper bracket_-1",
+      "Rear bumper bracket_1",
+      "Exhaust connecting pipe",
+      "Underbody muffler",
+      "Roof rear hinge_-1",
+      "Roof forward hinge_-1",
+      "Roof hinge cover_-1",
+      "Folded canvas side_-1",
+      "Roof rear hinge_1",
+      "Roof forward hinge_1",
+      "Roof hinge cover_1",
+      "Folded canvas side_1"
+    ],
+    "WHEEL_FL": [
+      "Tire_FL",
+      "Rim_FL",
+      "Rim bead_FL",
+      "Hub_FL",
+      "Tread_FL"
+    ],
+    "WHEEL_FR": [
+      "Tire_FR",
+      "Rim_FR",
+      "Rim bead_FR",
+      "Hub_FR",
+      "Tread_FR"
+    ],
+    "WHEEL_RL": [
+      "Tire_RL",
+      "Rim_RL",
+      "Rim bead_RL",
+      "Hub_RL",
+      "Tread_RL"
+    ],
+    "WHEEL_RR": [
+      "Tire_RR",
+      "Rim_RR",
+      "Rim bead_RR",
+      "Hub_RR",
+      "Tread_RR"
+    ]
+  },
+  "neutral_geometry_max_vertex_error_m": 1.4901161193847656e-08,
+  "hierarchy": {
+    "LV_Kubelwagen_ROOT": null,
+    "HULL": "LV_Kubelwagen_ROOT",
+    "STEER_FL": "HULL",
+    "WHEEL_FL": "STEER_FL",
+    "STEER_FR": "HULL",
+    "WHEEL_FR": "STEER_FR",
+    "WHEEL_RL": "HULL",
+    "WHEEL_RR": "HULL"
+  },
+  "glb_world_positions": {
+    "WHEEL_FL": [
+      0.9599999785423279,
+      0.43299999833106995,
+      -0.8299999833106995
+    ],
+    "STEER_FL": [
+      0.9599999785423279,
+      0.43299999833106995,
+      -0.8299999833106995
+    ],
+    "WHEEL_FR": [
+      0.9599999785423279,
+      0.43299999833106995,
+      0.8299999833106995
+    ],
+    "STEER_FR": [
+      0.9599999785423279,
+      0.43299999833106995,
+      0.8299999833106995
+    ],
+    "WHEEL_RL": [
+      -0.9599999785423279,
+      0.43299999833106995,
+      -0.8299999833106995
+    ],
+    "WHEEL_RR": [
+      -0.9599999785423279,
+      0.43299999833106995,
+      0.8299999833106995
+    ],
+    "HULL": [
+      0.0,
+      0.002999993972480297,
+      0.0
+    ],
+    "LV_Kubelwagen_ROOT": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "axis": "meters; GLB +X forward/+Y up; left -Z/right +Z; steer local Y; wheel roll local Z; positive unit scales and identity neutral rotations",
+  "dimensions_length_width_height_m": [
+    3.524999976158142,
+    2.0160000324249268,
+    1.8560000658035278
+  ],
+  "roundtrip": {
+    "empty_scene": true,
+    "location_error_m": 0.0,
+    "dimension_error_m": 0.0,
+    "names_and_parents_match": true
+  },
+  "glass": {
+    "alphaMode": "BLEND",
+    "doubleSided": true,
+    "name": "Glass",
+    "pbrMetallicRoughness": {
+      "baseColorFactor": [
+        0.2800000011920929,
+        0.3700000047683716,
+        0.38999998569488525,
+        0.23000000417232513
+      ],
+      "metallicFactor": 0,
+      "roughnessFactor": 0.20000000298023224
+    }
+  },
+  "motion_tests": [
+    {
+      "wheel": "WHEEL_FL",
+      "steer_degrees": -25,
+      "GLB_spin_local_Z_degrees": 60,
+      "steer_matrix_error": 8.940696716308594e-08,
+      "stationary_others_error": 0.0,
+      "spin_error": 8.940696716308594e-08,
+      "center_drift_m": 0.0
+    },
+    {
+      "wheel": "WHEEL_FL",
+      "steer_degrees": 25,
+      "GLB_spin_local_Z_degrees": 60,
+      "steer_matrix_error": 8.940696716308594e-08,
+      "stationary_others_error": 0.0,
+      "spin_error": 8.940696716308594e-08,
+      "center_drift_m": 0.0
+    },
+    {
+      "wheel": "WHEEL_FR",
+      "steer_degrees": -25,
+      "GLB_spin_local_Z_degrees": 60,
+      "steer_matrix_error": 8.940696716308594e-08,
+      "stationary_others_error": 0.0,
+      "spin_error": 8.940696716308594e-08,
+      "center_drift_m": 0.0
+    },
+    {
+      "wheel": "WHEEL_FR",
+      "steer_degrees": 25,
+      "GLB_spin_local_Z_degrees": 60,
+      "steer_matrix_error": 8.940696716308594e-08,
+      "stationary_others_error": 0.0,
+      "spin_error": 8.940696716308594e-08,
+      "center_drift_m": 0.0
+    },
+    {
+      "wheel": "WHEEL_RL",
+      "GLB_spin_local_Z_degrees": 60,
+      "spin_error": 0.0
+    },
+    {
+      "wheel": "WHEEL_RR",
+      "GLB_spin_local_Z_degrees": 60,
+      "spin_error": 0.0
+    }
+  ],
+  "neutral_restore_error": 0.0,
+  "intersection_diagnostics": [
+    {
+      "wheel": "FL",
+      "steering_deg": 0,
+      "wheel_fender_surface_triangle_pairs": 0
+    },
+    {
+      "wheel": "FR",
+      "steering_deg": 0,
+      "wheel_fender_surface_triangle_pairs": 0
+    },
+    {
+      "wheel": "FL",
+      "steering_deg": -25,
+      "wheel_fender_surface_triangle_pairs": 0
+    },
+    {
+      "wheel": "FR",
+      "steering_deg": -25,
+      "wheel_fender_surface_triangle_pairs": 0
+    },
+    {
+      "wheel": "FL",
+      "steering_deg": 25,
+      "wheel_fender_surface_triangle_pairs": 0
+    },
+    {
+      "wheel": "FR",
+      "steering_deg": 25,
+      "wheel_fender_surface_triangle_pairs": 0
+    }
+  ],
+  "intersection_method": "BVH surface triangle intersection against original fixed fender and lip surfaces; no full suspension or collision simulation",
+  "technical": "PASS",
+  "visual": "PASS within inspected Blender views; no runtime approval",
+  "protected_files": [
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\LV_Kubelwagen\\LV_Kubelwagen_v01.blend",
+      "unchanged": true,
+      "sha256": "69dd9807a859ca1ffa5df7169beac84f8e9ce90f071df680e28267e15d194944"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\M41\\source\\M41_RND_v02_muzzle.blend",
+      "unchanged": true,
+      "sha256": "f61f34ba5d30f9346a834fb1c06f45174d0bf20ed7f3ecf24ff067afa0854215"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\M41\\export\\M41_RND_v02_muzzle.glb",
+      "unchanged": true,
+      "sha256": "985dd03f5aaf8355ee4c186032dff2ff35faa783cb3ce39931ab86efc77f90ea"
+    }
+  ],
+  "limitations": [
+    "No implemented steering/driving logic or animation",
+    "Steer tests +/-25 degrees are not approved game steering limits",
+    "No full articulation/physics/runtime performance validation"
+  ],
+  "saved_blend_reopen_neutral": "PASS, repeated in background after preview recovery",
+  "visual_notes": "Neutral top/side/isometric and steered views inspected. Source silhouette, cabin, seats, folded canvas and transparent windshield retained. No visible tire/fender penetration in inspected views.",
+  "preview_method": "Fresh GLB import; Workbench multi-view renders with shadows disabled to avoid preview shadow artifacts.",
+  "recovery": "Interactive Blender terminated during optional preview refresh. Single background Blender regenerated all nine previews. Saved derivative reopened with 8 nodes, neutral rotations and unit scales. First recovery assertion used invalid Euler.length API; corrected component-wise check passed.",
+  "finished": "2026-09-20T16:28:51.857925+09:00"
+}

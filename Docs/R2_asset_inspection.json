@@ -1,0 +1,942 @@
+{
+  "panzer": {
+    "url": "Panzer3/export/Panzer3_RND_v02.glb",
+    "min": [
+      -2.320000171661377,
+      0.18000000715255737,
+      -1.6400001049041748
+    ],
+    "max": [
+      2.320000171661377,
+      3.1000001430511475,
+      1.6400001049041748
+    ],
+    "nodes": [
+      {
+        "name": "Scene",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "VEH_PANZER3_01",
+        "type": "Object3D",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_PIVOT",
+        "type": "Object3D",
+        "position": [
+          0.11999999731779099,
+          1.8700000047683716,
+          0
+        ]
+      },
+      {
+        "name": "TURRET",
+        "type": "Group",
+        "position": [
+          0.11999999731779099,
+          1.8700000047683716,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh",
+        "type": "Mesh",
+        "position": [
+          0.11999999731779099,
+          1.8700000047683716,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0.11999999731779099,
+          1.8700000047683716,
+          0
+        ]
+      },
+      {
+        "name": "GUN",
+        "type": "Group",
+        "position": [
+          1.0700000450015068,
+          2.2899999618530273,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh",
+        "type": "Mesh",
+        "position": [
+          1.0700000450015068,
+          2.2899999618530273,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          1.0700000450015068,
+          2.2899999618530273,
+          0
+        ]
+      },
+      {
+        "name": "MUZZLE",
+        "type": "Object3D",
+        "position": [
+          2.2904999181628227,
+          2.2899999618530273,
+          0
+        ]
+      }
+    ],
+    "sha256": "10bb3177606ab8836971fad0d67583f97c3bf8f84d2864e485ca38845257a453",
+    "bytes": 340192
+  },
+  "truck": {
+    "url": "LV_Kubelwagen/export/LV_Kubelwagen_RND_v01.glb",
+    "min": [
+      -1.7999999523162842,
+      2.7939677238464355e-09,
+      -1.0080000162124634
+    ],
+    "max": [
+      1.725000023841858,
+      1.8560000387951732,
+      1.0080000162124634
+    ],
+    "nodes": [
+      {
+        "name": "LV_Kubelwagen",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "LV_Kubelwagen_ROOT",
+        "type": "Object3D",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL",
+        "type": "Group",
+        "position": [
+          0,
+          0.002999993972480297,
+          0
+        ]
+      },
+      {
+        "name": "HULL_RND_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0.002999993972480297,
+          0
+        ]
+      },
+      {
+        "name": "HULL_RND_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0.002999993972480297,
+          0
+        ]
+      },
+      {
+        "name": "HULL_RND_Mesh_2",
+        "type": "Mesh",
+        "position": [
+          0,
+          0.002999993972480297,
+          0
+        ]
+      },
+      {
+        "name": "HULL_RND_Mesh_3",
+        "type": "Mesh",
+        "position": [
+          0,
+          0.002999993972480297,
+          0
+        ]
+      },
+      {
+        "name": "HULL_RND_Mesh_4",
+        "type": "Mesh",
+        "position": [
+          0,
+          0.002999993972480297,
+          0
+        ]
+      },
+      {
+        "name": "STEER_FL",
+        "type": "Object3D",
+        "position": [
+          0.9599999785423279,
+          0.43300000112503767,
+          -0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_FL",
+        "type": "Group",
+        "position": [
+          0.9599999785423279,
+          0.43300000112503767,
+          -0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_FL_RND_Mesh",
+        "type": "Mesh",
+        "position": [
+          0.9599999785423279,
+          0.43300000112503767,
+          -0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_FL_RND_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0.9599999785423279,
+          0.43300000112503767,
+          -0.8299999833106995
+        ]
+      },
+      {
+        "name": "STEER_FR",
+        "type": "Object3D",
+        "position": [
+          0.9599999785423279,
+          0.43300000112503767,
+          0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_FR",
+        "type": "Group",
+        "position": [
+          0.9599999785423279,
+          0.43300000112503767,
+          0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_FR_RND_Mesh",
+        "type": "Mesh",
+        "position": [
+          0.9599999785423279,
+          0.43300000112503767,
+          0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_FR_RND_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0.9599999785423279,
+          0.43300000112503767,
+          0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_RL",
+        "type": "Group",
+        "position": [
+          -0.9599999785423279,
+          0.43300000112503767,
+          -0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_RL_RND_Mesh",
+        "type": "Mesh",
+        "position": [
+          -0.9599999785423279,
+          0.43300000112503767,
+          -0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_RL_RND_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          -0.9599999785423279,
+          0.43300000112503767,
+          -0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_RR",
+        "type": "Group",
+        "position": [
+          -0.9599999785423279,
+          0.43300000112503767,
+          0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_RR_RND_Mesh",
+        "type": "Mesh",
+        "position": [
+          -0.9599999785423279,
+          0.43300000112503767,
+          0.8299999833106995
+        ]
+      },
+      {
+        "name": "WHEEL_RR_RND_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          -0.9599999785423279,
+          0.43300000112503767,
+          0.8299999833106995
+        ]
+      }
+    ],
+    "sha256": "fde5934872b554356d6fd1642fe099dcc0c3ec6a643cac3c5cd146e66d5c623b",
+    "bytes": 946436
+  },
+  "pak": {
+    "url": "75mm_PAK_40/export/75mm_PAK_40_RND_v01.glb",
+    "min": [
+      -2.319999933242798,
+      0,
+      -1.2699999809265137
+    ],
+    "max": [
+      3.0199999809265137,
+      1.600000023841858,
+      1.2699999809265137
+    ],
+    "nodes": [
+      {
+        "name": "75mm_PAK_40",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "75mm_PAK_40_ROOT",
+        "type": "Object3D",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh_2",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_PIVOT",
+        "type": "Object3D",
+        "position": [
+          -0.15000000596046448,
+          0.6800000071525574,
+          0
+        ]
+      },
+      {
+        "name": "TURRET",
+        "type": "Group",
+        "position": [
+          -0.15000000596046448,
+          0.6800000071525574,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh",
+        "type": "Mesh",
+        "position": [
+          -0.15000000596046448,
+          0.6800000071525574,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          -0.15000000596046448,
+          0.6800000071525574,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh_2",
+        "type": "Mesh",
+        "position": [
+          -0.15000000596046448,
+          0.6800000071525574,
+          0
+        ]
+      },
+      {
+        "name": "GUN",
+        "type": "Group",
+        "position": [
+          -0.25,
+          1.159999966621399,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh",
+        "type": "Mesh",
+        "position": [
+          -0.25,
+          1.159999966621399,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          -0.25,
+          1.159999966621399,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh_2",
+        "type": "Mesh",
+        "position": [
+          -0.25,
+          1.159999966621399,
+          0
+        ]
+      },
+      {
+        "name": "MUZZLE",
+        "type": "Object3D",
+        "position": [
+          3.0199999809265137,
+          1.159999966621399,
+          0
+        ]
+      }
+    ],
+    "sha256": "2e847e2d6a51e9589b1d782bd05331555890382e0e71b2dadc9b4aee8d18c46c",
+    "bytes": 329756
+  },
+  "tiger2": {
+    "url": "Panzer6B_Tiger2/export/Panzer6B_Tiger2_RND_v01.glb",
+    "min": [
+      -2.9721157550811768,
+      0,
+      -1.7862221002578735
+    ],
+    "max": [
+      6.392016634345055,
+      3.795574903488159,
+      1.7862221002578735
+    ],
+    "nodes": [
+      {
+        "name": "Scene",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "Panzer6B_Tiger2_ROOT",
+        "type": "Object3D",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_PIVOT",
+        "type": "Object3D",
+        "position": [
+          -0.11809732019901276,
+          2.045936107635498,
+          0
+        ]
+      },
+      {
+        "name": "TURRET",
+        "type": "Group",
+        "position": [
+          -0.11809732019901276,
+          2.045936107635498,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh",
+        "type": "Mesh",
+        "position": [
+          -0.11809732019901276,
+          2.045936107635498,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          -0.11809732019901276,
+          2.045936107635498,
+          0
+        ]
+      },
+      {
+        "name": "GUN",
+        "type": "Group",
+        "position": [
+          1.3187534660100937,
+          2.641343593597412,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh",
+        "type": "Mesh",
+        "position": [
+          1.3187534660100937,
+          2.641343593597412,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          1.3187534660100937,
+          2.641343593597412,
+          0
+        ]
+      },
+      {
+        "name": "MUZZLE",
+        "type": "Object3D",
+        "position": [
+          6.392016634345055,
+          2.641343593597412,
+          0
+        ]
+      }
+    ],
+    "sha256": "e0eeeb1988f66089ada78e221ba0e43296518f0ecfde5cabbbc901b048ad6c20",
+    "bytes": 1731556
+  },
+  "tiger1": {
+    "url": "Panzer6_Tiger1/export/Panzer6_Tiger1_RND_v02.glb",
+    "min": [
+      -3.220292568206787,
+      0,
+      -2.0493650436401367
+    ],
+    "max": [
+      5.351709797978401,
+      3.8827500343322754,
+      2.014000177383423
+    ],
+    "nodes": [
+      {
+        "name": "Scene",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "Panzer6_Tiger1_ROOT",
+        "type": "Object3D",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "HULL_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_L_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R",
+        "type": "Group",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R_Mesh",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TRACK_R_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_PIVOT",
+        "type": "Object3D",
+        "position": [
+          0.2306099683046341,
+          2.24150013923645,
+          0
+        ]
+      },
+      {
+        "name": "TURRET",
+        "type": "Group",
+        "position": [
+          0.2306099683046341,
+          2.24150013923645,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh",
+        "type": "Mesh",
+        "position": [
+          0.2306099683046341,
+          2.24150013923645,
+          0
+        ]
+      },
+      {
+        "name": "TURRET_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          0.2306099683046341,
+          2.24150013923645,
+          0
+        ]
+      },
+      {
+        "name": "GUN",
+        "type": "Group",
+        "position": [
+          1.3736099749803543,
+          2.884999990463257,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh",
+        "type": "Mesh",
+        "position": [
+          1.3736099749803543,
+          2.884999990463257,
+          0
+        ]
+      },
+      {
+        "name": "GUN_Mesh_1",
+        "type": "Mesh",
+        "position": [
+          1.3736099749803543,
+          2.884999990463257,
+          0
+        ]
+      },
+      {
+        "name": "MUZZLE",
+        "type": "Object3D",
+        "position": [
+          5.351709797978401,
+          2.8980002403259277,
+          0
+        ]
+      }
+    ],
+    "sha256": "e0763a96cfe8f88a60d85a2738473e8edf102e7932827e1e1ca8af72218427e8",
+    "bytes": 358940
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "checks": {
+    "green_box_default_OFF": true,
+    "green_box_debug_available": true,
+    "render_read_only": true,
+    "contour_and_focus_same_target": true,
+    "weakpoint_analysis_retained": true,
+    "gameplay600_exact": true,
+    "normal_pixels_exact": true
+  },
+  "errors": [],
+  "panels": [
+    {
+      "id": "spikePanel",
+      "class": ""
+    }
+  ],
+  "normal": {
+    "V2": "ea465a00cc08af99a88958b5b2413488f685f98ae58b243118535a9d8ea2ba06",
+    "B": "ea465a00cc08af99a88958b5b2413488f685f98ae58b243118535a9d8ea2ba06"
+  },
+  "pass": true
+}

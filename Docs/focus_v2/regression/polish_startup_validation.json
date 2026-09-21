@@ -1,0 +1,30 @@
+[
+  {
+    "delay": 0,
+    "checks": {
+      "time_advancing": true,
+      "default75": true,
+      "scale_selector": true,
+      "shape_selector": true,
+      "camera_selector": true,
+      "controls_no_gameplay_write": true,
+      "polish_compare": true
+    },
+    "errors": [],
+    "pass": true
+  },
+  {
+    "delay": 1000,
+    "checks": {
+      "time_advancing": true,
+      "default75": true,
+      "scale_selector": true,
+      "shape_selector": true,
+      "camera_selector": true,
+      "controls_no_gameplay_write": true,
+      "polish_compare": true
+    },
+    "errors": [],
+    "pass": true
+  }
+]

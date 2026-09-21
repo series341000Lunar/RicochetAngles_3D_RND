@@ -1,0 +1,145 @@
+{
+  "checks": {
+    "default_camera_75": true,
+    "default_TigerII_Uniform_2": true,
+    "three_puffs": true,
+    "authored_MUZZLE_smoke_origin": true,
+    "boss_alpha_at_birth": true,
+    "boss_gameplay_origin_unchanged": true,
+    "boss_alpha_30ms": true,
+    "smoke_expands_solid_then_drifts": true,
+    "flash_shorter_than_smoke": true,
+    "other_shell_materials_opaque": true,
+    "boss_fully_visible_75ms": true,
+    "bridge_preserved_75ms": true,
+    "render_state_isolation": true,
+    "smoke_expires": true,
+    "ricochet_cancels_fade": true,
+    "collision_removes_shell": true,
+    "restart_clears_smoke": true,
+    "pool_reuse_opacity_reset": true,
+    "BT_sim_clock_smoke": true,
+    "render_does_not_advance_FX_time": true,
+    "Q_six_visuals": true,
+    "Q_readability_size": true,
+    "Q_descends_marker_authority": true,
+    "Q_six_exact_impacts": true,
+    "before_after_gameplay_identical": true
+  },
+  "errors": [],
+  "timeline": [
+    {
+      "id": "before",
+      "time": 0,
+      "gameplayX": 867,
+      "visualX": 776.0235342383385,
+      "alpha": 1,
+      "smokeVisible": false
+    },
+    {
+      "id": "before",
+      "time": 0.015,
+      "gameplayX": 858,
+      "visualX": 816.0280495300293,
+      "alpha": 1,
+      "smokeVisible": false
+    },
+    {
+      "id": "before",
+      "time": 0.03,
+      "gameplayX": 849,
+      "visualX": 833.2370833954811,
+      "alpha": 1,
+      "smokeVisible": false
+    },
+    {
+      "id": "before",
+      "time": 0.06,
+      "gameplayX": 831,
+      "visualX": 830.5601882739068,
+      "alpha": 1,
+      "smokeVisible": false
+    },
+    {
+      "id": "before",
+      "time": 0.075,
+      "gameplayX": 822,
+      "visualX": 822,
+      "alpha": 1,
+      "smokeVisible": false
+    },
+    {
+      "id": "before",
+      "time": 0.16,
+      "gameplayX": 771,
+      "visualX": 771,
+      "alpha": 1,
+      "smokeVisible": false
+    },
+    {
+      "id": "before",
+      "time": 0.26,
+      "gameplayX": 711,
+      "visualX": 711,
+      "alpha": 1,
+      "smokeVisible": false
+    },
+    {
+      "id": "after",
+      "time": 0,
+      "gameplayX": 867,
+      "visualX": 776.0235342383385,
+      "alpha": 0.12,
+      "smokeVisible": true
+    },
+    {
+      "id": "after",
+      "time": 0.015,
+      "gameplayX": 858,
+      "visualX": 816.0280495300293,
+      "alpha": 0.3703232575360591,
+      "smokeVisible": true
+    },
+    {
+      "id": "after",
+      "time": 0.03,
+      "gameplayX": 849,
+      "visualX": 833.2370833954811,
+      "alpha": 0.5910129586404969,
+      "smokeVisible": true
+    },
+    {
+      "id": "after",
+      "time": 0.06,
+      "gameplayX": 831,
+      "visualX": 830.5601882739068,
+      "alpha": 0.9212904071920074,
+      "smokeVisible": true
+    },
+    {
+      "id": "after",
+      "time": 0.075,
+      "gameplayX": 822,
+      "visualX": 822,
+      "alpha": 1,
+      "smokeVisible": true
+    },
+    {
+      "id": "after",
+      "time": 0.16,
+      "gameplayX": 771,
+      "visualX": 771,
+      "alpha": 1,
+      "smokeVisible": true
+    },
+    {
+      "id": "after",
+      "time": 0.26,
+      "gameplayX": 711,
+      "visualX": 711,
+      "alpha": 1,
+      "smokeVisible": false
+    }
+  ],
+  "pass": true
+}

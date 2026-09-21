@@ -1,0 +1,95 @@
+{
+  "checks": {
+    "keyboardMovement": true,
+    "keyboardTurn": true,
+    "shiftFocus": true,
+    "shiftRelease": true,
+    "qTargetInput": true,
+    "qRightCancel": true,
+    "qEscCancel": true,
+    "qQCancel": true,
+    "qClickConfirm": true,
+    "qConfirmNotMainGun": true,
+    "qSixGameplay": true,
+    "spaceActivation": true,
+    "stressKey": true,
+    "canvasFallback": true,
+    "threeReturn": true,
+    "shadowOff": true,
+    "shadowOn": true,
+    "resize": true,
+    "restart": true
+  },
+  "errors": [],
+  "performanceSamples": [
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 99,
+      "triangles": 190110,
+      "objects": 115,
+      "meshes": 66,
+      "pixelRatio": 1,
+      "shadows": true,
+      "stress": 0,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1280,
+        720
+      ],
+      "devicePixelRatio": 1
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 349,
+      "triangles": 1044010,
+      "objects": 340,
+      "meshes": 191,
+      "pixelRatio": 1,
+      "shadows": true,
+      "stress": 25,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1280,
+        720
+      ],
+      "devicePixelRatio": 1
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 1099,
+      "triangles": 3605710,
+      "objects": 1015,
+      "meshes": 566,
+      "pixelRatio": 1,
+      "shadows": true,
+      "stress": 100,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1280,
+        720
+      ],
+      "devicePixelRatio": 1
+    },
+    {
+      "version": "160",
+      "fps": 60,
+      "drawCalls": 552,
+      "triangles": 1802864,
+      "objects": 1015,
+      "meshes": 566,
+      "pixelRatio": 1,
+      "shadows": false,
+      "stress": 100,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "viewport": [
+        1280,
+        720
+      ],
+      "devicePixelRatio": 1
+    }
+  ],
+  "pass": true
+}

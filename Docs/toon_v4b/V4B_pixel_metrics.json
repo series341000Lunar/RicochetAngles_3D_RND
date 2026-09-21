@@ -1,0 +1,12 @@
+{
+  "filterMeanAbsolute": 0.5191919849537037,
+  "filterMaxDifference": 3,
+  "yellowCounts": {
+    "V4B_A_Toon_OFF": 2034,
+    "V4B_B_T_Lut_03_100": 2034,
+    "V4B_C_T_Lut_03_60": 2034,
+    "V4B_D_Numeric3": 2034,
+    "V4B_E_Numeric4": 2034,
+    "V4B_F_Numeric5": 2034
+  }
+}

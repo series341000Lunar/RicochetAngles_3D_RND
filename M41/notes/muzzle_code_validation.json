@@ -1,0 +1,9 @@
+{
+  "simulation_source_identical": true,
+  "backup_sha256": "68c1c389edb4d147fa48024e982923e5aed79ac6c959d41047fd57d43c14a7d5",
+  "presentation_changes": [
+    "drawEffects skips observed player muzzle particles only in 3D",
+    "render draws optional anchor debug",
+    "post-call fireShell observer invokes original unchanged"
+  ]
+}

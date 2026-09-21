@@ -1,0 +1,72 @@
+{
+  "checks": {
+    "defaults": true,
+    "firstUsePrograms": true,
+    "firstUseTextures": true,
+    "glowTextureBound": true,
+    "explicitRegistry": true,
+    "idleEmpty": true,
+    "qSix": true,
+    "hudExact": true,
+    "playerDeath": true,
+    "bossDeath": true,
+    "lifetime": true,
+    "restart": true,
+    "cleared": true,
+    "targetSwitch": true,
+    "readonly": true,
+    "canvas": true,
+    "returnClean": true,
+    "resize": true,
+    "DPR": true,
+    "deterministic600": true,
+    "UI": true
+  },
+  "firstUse": {
+    "checks": {
+      "defaults": true,
+      "firstUsePrograms": true,
+      "firstUseTextures": true,
+      "glowTextureBound": true,
+      "explicitRegistry": true,
+      "idleEmpty": true,
+      "qSix": true
+    },
+    "rows": [
+      {
+        "scenario": "idle",
+        "programs": 36,
+        "textures": 7,
+        "active": 0
+      },
+      {
+        "scenario": "player",
+        "programs": 36,
+        "textures": 7,
+        "active": 1
+      },
+      {
+        "scenario": "boss",
+        "programs": 36,
+        "textures": 7,
+        "active": 1
+      },
+      {
+        "scenario": "q",
+        "programs": 36,
+        "textures": 7,
+        "active": 6
+      },
+      {
+        "scenario": "focus",
+        "programs": 36,
+        "textures": 7,
+        "active": 1
+      }
+    ],
+    "programs": 36,
+    "textures": 7
+  },
+  "errors": [],
+  "pass": true
+}

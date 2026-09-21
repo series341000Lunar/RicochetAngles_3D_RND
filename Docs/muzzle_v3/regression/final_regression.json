@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "boss_trigger_engine": true,
+    "boss_engine_hp": true,
+    "panzer_AP_damage": true,
+    "panzer_death_removed": true,
+    "truck_AP_damage": true,
+    "truck_death_removed": true,
+    "pak_AP_damage": true,
+    "pak_death_removed": true,
+    "threat_clear": true,
+    "obstacle_blocks_threat": true,
+    "first_enemy_bridge_after_restart": true,
+    "lowwide_isolated": true,
+    "lowwide_local_basis": true,
+    "restart_Q_cleanup": true,
+    "no_focus_ammo_economy": true
+  },
+  "errors": [],
+  "pass": true
+}

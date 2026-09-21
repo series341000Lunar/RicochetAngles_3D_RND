@@ -1,0 +1,40 @@
+{
+  "checks": {
+    "player_on": true,
+    "only_player": true,
+    "actual_muzzle": true,
+    "early_bright": true,
+    "nearly_off": true,
+    "off90": true,
+    "reuse_restart": true,
+    "death_off": true,
+    "reset_off": true,
+    "canvas_off": true,
+    "return_clean": true,
+    "BT_real90_off": true,
+    "player_death_off": true,
+    "no_general_enemy": true,
+    "readonly": true,
+    "focus_contour": true,
+    "no_light_shadows": true,
+    "two_pooled": true,
+    "gameplay600_on_off": true
+  },
+  "config": {
+    "enabled": true,
+    "durationMs": 90,
+    "holdMs": 20
+  },
+  "lights": {
+    "player": {
+      "range": 115,
+      "peak": 54000
+    },
+    "boss": {
+      "range": 270,
+      "peak": 480000
+    }
+  },
+  "errors": [],
+  "pass": true
+}

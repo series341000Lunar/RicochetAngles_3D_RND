@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "preset": "LEGACY",
+      "side": -1,
+      "left": 1,
+      "right": 2,
+      "hp": 10,
+      "zone": "왼쪽 궤도"
+    },
+    {
+      "preset": "LEGACY",
+      "side": 1,
+      "left": 2,
+      "right": 1,
+      "hp": 10,
+      "zone": "오른쪽 궤도"
+    },
+    {
+      "preset": "TIGER_REMAP",
+      "side": -1,
+      "left": 1,
+      "right": 2,
+      "hp": 10,
+      "zone": "왼쪽 궤도"
+    },
+    {
+      "preset": "TIGER_REMAP",
+      "side": 1,
+      "left": 2,
+      "right": 1,
+      "hp": 10,
+      "zone": "오른쪽 궤도"
+    }
+  ],
+  "checks": {
+    "Q_LEGACY": true,
+    "Q_TIGER_REMAP": true,
+    "tracks": true,
+    "UI": true,
+    "restart": true
+  },
+  "pass": true
+}

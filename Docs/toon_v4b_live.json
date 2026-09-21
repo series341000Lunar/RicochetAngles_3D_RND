@@ -1,0 +1,67 @@
+{
+  "checks": {
+    "live_controls": true,
+    "filter": true,
+    "numeric_fallback": true
+  },
+  "perf": [
+    {
+      "name": "Post OFF",
+      "fps": 60.00515100397382,
+      "calls": 116,
+      "triangles": 190346,
+      "post": {
+        "passes": 0,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 16,
+      "stablePrograms": true
+    },
+    {
+      "name": "Post ON / Toon OFF",
+      "fps": 60.00539374325781,
+      "calls": 118,
+      "triangles": 190348,
+      "post": {
+        "passes": 3,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 16,
+      "stablePrograms": true
+    },
+    {
+      "name": "Toon T_Lut_03",
+      "fps": 60.00134834490662,
+      "calls": 119,
+      "triangles": 190349,
+      "post": {
+        "passes": 4,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 16,
+      "stablePrograms": true
+    },
+    {
+      "name": "Toon Numeric 5",
+      "fps": 59.9973034919779,
+      "calls": 119,
+      "triangles": 190349,
+      "post": {
+        "passes": 4,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 16,
+      "stablePrograms": true
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

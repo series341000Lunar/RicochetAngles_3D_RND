@@ -1,0 +1,13 @@
+{
+  "random": {
+    "calls": 0,
+    "pass": true
+  },
+  "failedAsset": {
+    "state": "LOADING",
+    "disabled": true,
+    "time": 0,
+    "pass": true
+  },
+  "pass": true
+}

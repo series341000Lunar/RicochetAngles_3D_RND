@@ -1,0 +1,108 @@
+{
+  "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\SHIP_LCT\\SHIP_LCT_v04.blend",
+  "source_sha256_before": "51aaef6947488f79965de45339cd0c90cb96a9b585133c3087f2f653c8b477f2",
+  "source_sha256_after": "51aaef6947488f79965de45339cd0c90cb96a9b585133c3087f2f653c8b477f2",
+  "blend": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\SHIP_LCT\\source\\SHIP_LCT_RND_v01.blend",
+  "glb": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\SHIP_LCT\\export\\SHIP_LCT_RND_v01.glb",
+  "bytes": 4713436,
+  "nodes": 5,
+  "meshes": 4,
+  "primitives": 7,
+  "triangles": 83100,
+  "materials": 3,
+  "textures": 0,
+  "animations": 0,
+  "skins": 0,
+  "source_bounds_converted_blender": [
+    [
+      -18.700000762939453,
+      18.296661376953125
+    ],
+    [
+      -4.239837169647217,
+      4.214686393737793
+    ],
+    [
+      0.0,
+      11.63700008392334
+    ]
+  ],
+  "reimport_bounds_blender": [
+    [
+      -18.700000762939453,
+      18.296661376953125
+    ],
+    [
+      -4.239837169647217,
+      4.214686393737793
+    ],
+    [
+      0.0,
+      11.63700008392334
+    ]
+  ],
+  "root_follow_max_error": 2.9802322387695312e-08,
+  "ramp_pivot_error": 0.0,
+  "glb_nodes": [
+    {
+      "mesh": 0,
+      "name": "HULL"
+    },
+    {
+      "mesh": 1,
+      "name": "RAMP",
+      "translation": [
+        16.690000534057617,
+        0.6499999761581421,
+        0
+      ]
+    },
+    {
+      "mesh": 2,
+      "name": "RAMP_WIRE_L",
+      "translation": [
+        16.899999618530273,
+        4.630000114440918,
+        -3.029998540878296
+      ]
+    },
+    {
+      "mesh": 3,
+      "name": "RAMP_WIRE_R",
+      "translation": [
+        16.899999618530273,
+        4.630000114440918,
+        3.030001401901245
+      ]
+    },
+    {
+      "children": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "extras": {
+        "source": "SHIP_LCT_v04.blend",
+        "pose": "Closed ramp",
+        "wire_note": "Independent wire meshes at upper anchors. No automatic follow in GLB. Runtime must update their endpoint/orientation/length if articulating ramp."
+      },
+      "name": "SHIP_LCT_ROOT"
+    }
+  ],
+  "negative_scale": [],
+  "reopened": true,
+  "ramp_test": {
+    "pivot_error": 0.0,
+    "hull_unchanged": true,
+    "rotated_radians": 0.6000000238418579
+  },
+  "visual_review": "PASS: inspected reimported top, side, isometric images; deck details, ramp and superstructure present.",
+  "validation_correction": "Initial test addressed an original-scene object with the same name. Repeated on clean import and actual scene root.",
+  "glb_axis": "+X bow; +Y up. Ramp hinge GLB [16.69,0.65,0]; mast extends upward +Y. Geometry rotated Z pi before single exporter Y-up conversion.",
+  "limitations": [
+    "Wire meshes do not automatically follow ramp; no runtime logic or animation included.",
+    "No HTML or gameplay verification.",
+    "Source dimensions are stylized estimates preserved without rescaling."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "phase": "R1",
+  "checks": {
+    "main_gun": true,
+    "projectile_motion": true,
+    "valid_threat": true,
+    "activate": true,
+    "dt_channels": true,
+    "slowed_shell": true,
+    "responsive_turn": true,
+    "tracked_outcome": true,
+    "focus_ready": true,
+    "focus_dispersion": true,
+    "xray_analysis": true,
+    "q_six_preview": true,
+    "q_six_real_markers": true,
+    "q_no_early_impact": true,
+    "q_six_impacts": true,
+    "q_boss_no_hp_damage": true,
+    "q_no_3d_R1": true,
+    "render_isolation": true,
+    "stress": true,
+    "restart": true,
+    "ricochet_math": true,
+    "obstacle_collision": true,
+    "movement": true
+  },
+  "errors": [],
+  "pass": true
+}

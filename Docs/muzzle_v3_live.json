@@ -1,0 +1,58 @@
+{
+  "checks": {
+    "real_BT_on": true,
+    "real_BT_off": true
+  },
+  "perf": [
+    {
+      "name": "OFF_idle",
+      "fps": 60.00539374325783,
+      "calls": 116,
+      "triangles": 190346,
+      "programs": 12,
+      "stablePrograms": true,
+      "activeMuzzleLights": 0,
+      "pooledLights": 2,
+      "lightShadows": false,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "name": "ON_idle",
+      "fps": 60.00134834490664,
+      "calls": 116,
+      "triangles": 190346,
+      "programs": 12,
+      "stablePrograms": true,
+      "activeMuzzleLights": 0,
+      "pooledLights": 2,
+      "lightShadows": false,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "name": "Player_peak",
+      "fps": 60.00134834490664,
+      "calls": 119,
+      "triangles": 190586,
+      "programs": 13,
+      "stablePrograms": true,
+      "activeMuzzleLights": 1,
+      "pooledLights": 2,
+      "lightShadows": false,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    {
+      "name": "Boss_peak",
+      "fps": 60.00134834490662,
+      "calls": 121,
+      "triangles": 190746,
+      "programs": 13,
+      "stablePrograms": true,
+      "activeMuzzleLights": 1,
+      "pooledLights": 2,
+      "lightShadows": false,
+      "gpu": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5090 (0x00002B85) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

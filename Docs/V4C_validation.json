@@ -1,0 +1,154 @@
+{
+  "checks": {
+    "loading": true,
+    "ready": true,
+    "unchanged": true,
+    "hidden": true,
+    "menuKeyboardIsolation": true,
+    "playing": true,
+    "defaults": true,
+    "camera": true,
+    "renderRandomUntouched": true,
+    "qShells": true,
+    "noNewPrograms": true,
+    "restart": true,
+    "deterministic600": true
+  },
+  "uses": [
+    {
+      "label": "player",
+      "ms": 1.3000000044703484,
+      "programs": 36
+    },
+    {
+      "label": "boss",
+      "ms": 1.1999999955296516,
+      "programs": 36
+    },
+    {
+      "label": "contour",
+      "ms": 0.8000000044703484,
+      "programs": 36
+    },
+    {
+      "label": "focus",
+      "ms": 0.7999999970197678,
+      "programs": 36
+    },
+    {
+      "label": "Q",
+      "ms": 1,
+      "programs": 36
+    },
+    {
+      "label": "numeric4",
+      "ms": 1,
+      "programs": 36
+    },
+    {
+      "label": "grade",
+      "ms": 0.7000000029802322,
+      "programs": 36
+    }
+  ],
+  "startup": {
+    "state": "PLAYING",
+    "prewarmRuns": 1,
+    "metrics": [
+      {
+        "label": "world / uploads / shadows / pooled FX",
+        "ms": 30.200000002980232,
+        "programs": 9
+      },
+      {
+        "label": "boss fade",
+        "ms": 2.1999999955296516,
+        "programs": 9
+      },
+      {
+        "label": "focus panzer post false",
+        "ms": 59.20000000298023,
+        "programs": 10
+      },
+      {
+        "label": "focus panzer post true",
+        "ms": 271.29999999701977,
+        "programs": 22
+      },
+      {
+        "label": "focus truck post false",
+        "ms": 116.39999999850988,
+        "programs": 24
+      },
+      {
+        "label": "focus truck post true",
+        "ms": 111,
+        "programs": 26
+      },
+      {
+        "label": "focus pak post false",
+        "ms": 2.2000000029802322,
+        "programs": 26
+      },
+      {
+        "label": "focus pak post true",
+        "ms": 1.7999999970197678,
+        "programs": 26
+      },
+      {
+        "label": "focus boss post false",
+        "ms": 2.100000001490116,
+        "programs": 26
+      },
+      {
+        "label": "focus boss post true",
+        "ms": 1.7000000029802322,
+        "programs": 26
+      },
+      {
+        "label": "post None",
+        "ms": 1.2000000029802322,
+        "programs": 26
+      },
+      {
+        "label": "post ACES",
+        "ms": 7.299999997019768,
+        "programs": 27
+      },
+      {
+        "label": "post Cineon",
+        "ms": 7.4000000059604645,
+        "programs": 28
+      },
+      {
+        "label": "post Reinhard",
+        "ms": 7.399999998509884,
+        "programs": 29
+      },
+      {
+        "label": "Toon only / screen output",
+        "ms": 11.5,
+        "programs": 30
+      },
+      {
+        "label": "Grade only",
+        "ms": 0.8999999985098839,
+        "programs": 30
+      },
+      {
+        "label": "Selective bloom post false",
+        "ms": 30.5,
+        "programs": 33
+      },
+      {
+        "label": "Selective bloom post true",
+        "ms": 7.299999997019768,
+        "programs": 34
+      }
+    ],
+    "error": null,
+    "isolation": true
+  },
+  "errors": [],
+  "pass": true
+}

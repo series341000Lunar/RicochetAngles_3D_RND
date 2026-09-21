@@ -1,0 +1,32 @@
+{
+  "RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html": {
+    "sha256": "aa35d16564325ddd95bd67d38fb6d7e3967bb1a311a792773648f95c51f9b728",
+    "bytes": 137775
+  },
+  "rnd_gameplay.js": {
+    "sha256": "0be37b1423aecb3d749700fd9cfbbfe9f1beee453dc5a7a2136a5e4a83d820d0",
+    "bytes": 18659
+  },
+  "rnd_actors.js": {
+    "sha256": "e053436853e1bd15eccbde3fc10497a362716053be62682d3f34cfa8849866fa",
+    "bytes": 5926
+  },
+  "rnd_focus_material.js": {
+    "sha256": "aa5af793ce6c834a35c04ce4791865d968c75dca1017c12cc013e4a0181cc7a6",
+    "bytes": 3433
+  },
+  "rnd_target_contour.js": {
+    "sha256": "0913d591ec74a1fd34b24cb40e0b567a69cda4082cc62a32d37eb199f66a64b5",
+    "bytes": 2757
+  },
+  "rnd_muzzle_light.js": {
+    "sha256": "ccca5f562707b317c3bfccc157d454b98bba2aad4961cdee13660bb73c14018c",
+    "bytes": 1770
+  },
+  "colorPipeline": {
+    "composer": false,
+    "output": "SRGBColorSpace",
+    "toneMapping": "NoToneMapping",
+    "exposure": 1
+  }
+}

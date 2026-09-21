@@ -1,0 +1,42 @@
+{
+  "RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html": {
+    "sha256": "8bac6ffe832819dd8a36179bf1dc8220df6d2b808a9d181d7d645a800cac3a9f",
+    "size": 136185
+  },
+  "rnd_gameplay.js": {
+    "sha256": "0423224572fdcf1b07596643abeca7898a517401f2a18a32c588a4de487a941d",
+    "size": 18511
+  },
+  "rnd_actors.js": {
+    "sha256": "e053436853e1bd15eccbde3fc10497a362716053be62682d3f34cfa8849866fa",
+    "size": 5926
+  },
+  "rnd_target_contour.js": {
+    "sha256": "0913d591ec74a1fd34b24cb40e0b567a69cda4082cc62a32d37eb199f66a64b5",
+    "size": 2757
+  },
+  "validation": {
+    "checks": {
+      "boss_selected": true,
+      "panzer_selected": true,
+      "truck_selected": true,
+      "pak_selected": true,
+      "player_excluded": true,
+      "empty_clears": true,
+      "renderer_read_only": true,
+      "visual_scale_angle_do_not_pick": true,
+      "death_clears": true,
+      "removal_clears": true,
+      "pointer_exit_clears": true,
+      "Q_targeting_excluded": true,
+      "BT_allowed": true,
+      "focus_preserved": true,
+      "restart_clears": true,
+      "real_mouse_input": true,
+      "panel_hover_clears": true
+    },
+    "errors": [],
+    "pass": true
+  },
+  "executable": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\spike\\RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html"
+}

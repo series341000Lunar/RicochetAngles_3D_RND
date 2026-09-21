@@ -1,0 +1,132 @@
+{
+  "checks": {
+    "HUD_identical": true,
+    "UI_exposure": true,
+    "UI_contrast": true,
+    "UI_saturation": true,
+    "UI_shadow": true,
+    "UI_mid": true,
+    "UI_highlight": true,
+    "UI_tint": true,
+    "None_exposure_works": true,
+    "actor_cleanup": true,
+    "viewport": true,
+    "initial_DPR2": true
+  },
+  "perf": [
+    {
+      "stress": 0,
+      "preset": "V3 bypass",
+      "fps": 53.64124011273752,
+      "calls": 116,
+      "triangles": 190346,
+      "post": {
+        "passes": 0,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 21
+    },
+    {
+      "stress": 0,
+      "preset": "Neutral",
+      "fps": 59.99593247915395,
+      "calls": 118,
+      "triangles": 190348,
+      "post": {
+        "passes": 3,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 21
+    },
+    {
+      "stress": 0,
+      "preset": "Cinematic A",
+      "fps": 59.99593247915395,
+      "calls": 118,
+      "triangles": 190348,
+      "post": {
+        "passes": 3,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 21
+    },
+    {
+      "stress": 0,
+      "preset": "Cinematic B",
+      "fps": 60.00813669650123,
+      "calls": 118,
+      "triangles": 190348,
+      "post": {
+        "passes": 3,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 21
+    },
+    {
+      "stress": 100,
+      "preset": "V3 bypass",
+      "fps": 59.99593247915398,
+      "calls": 1116,
+      "triangles": 3605946,
+      "post": {
+        "passes": 0,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 21
+    },
+    {
+      "stress": 100,
+      "preset": "Neutral",
+      "fps": 59.99593247915398,
+      "calls": 1118,
+      "triangles": 3605948,
+      "post": {
+        "passes": 3,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 21
+    },
+    {
+      "stress": 100,
+      "preset": "Cinematic A",
+      "fps": 60.00203396725317,
+      "calls": 1118,
+      "triangles": 3605948,
+      "post": {
+        "passes": 3,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 21
+    },
+    {
+      "stress": 100,
+      "preset": "Cinematic B",
+      "fps": 60.00203396725317,
+      "calls": 1118,
+      "triangles": 3605948,
+      "post": {
+        "passes": 3,
+        "width": 1280,
+        "height": 720,
+        "samples": 4
+      },
+      "programs": 21
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "role": "player",
+    "allocationMs": 0.29999999701976776,
+    "rows": [
+      {
+        "label": "previous",
+        "ms": 193.5,
+        "programs": 7,
+        "calls": 116,
+        "triangles": 190346
+      },
+      {
+        "label": "first shot",
+        "ms": 179.89999999850988,
+        "programs": 13,
+        "calls": 119,
+        "triangles": 190586
+      },
+      {
+        "label": "next",
+        "ms": 3,
+        "programs": 13,
+        "calls": 119,
+        "triangles": 190586
+      },
+      {
+        "label": "second shot",
+        "ms": 1.5,
+        "programs": 13,
+        "calls": 120,
+        "triangles": 190666
+      }
+    ]
+  },
+  {
+    "role": "boss",
+    "allocationMs": 0.6000000014901161,
+    "rows": [
+      {
+        "label": "previous",
+        "ms": 55.5,
+        "programs": 7,
+        "calls": 116,
+        "triangles": 190346
+      },
+      {
+        "label": "first shot",
+        "ms": 25.600000001490116,
+        "programs": 12,
+        "calls": 121,
+        "triangles": 190746
+      },
+      {
+        "label": "next",
+        "ms": 1.6999999955296516,
+        "programs": 12,
+        "calls": 121,
+        "triangles": 190746
+      },
+      {
+        "label": "second shot",
+        "ms": 1.2999999970197678,
+        "programs": 13,
+        "calls": 122,
+        "triangles": 190826
+      }
+    ]
+  }
+]

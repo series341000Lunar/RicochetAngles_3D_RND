@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "grade": false,
+      "toon": false,
+      "active": false,
+      "passes": 0,
+      "pass": true
+    },
+    {
+      "grade": false,
+      "toon": true,
+      "active": true,
+      "passes": 3,
+      "pass": true
+    },
+    {
+      "grade": true,
+      "toon": false,
+      "active": true,
+      "passes": 3,
+      "pass": true
+    },
+    {
+      "grade": true,
+      "toon": true,
+      "active": true,
+      "passes": 4,
+      "pass": true
+    },
+    {
+      "grade": false,
+      "toon": true,
+      "active": true,
+      "passes": 3,
+      "pass": true
+    },
+    {
+      "grade": false,
+      "toon": false,
+      "active": false,
+      "passes": 0,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

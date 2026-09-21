@@ -1,0 +1,117 @@
+{
+  "html": "249d448e225d00a9929a5e975c6d6ff5aad945e9cf988d10f20ee608acc57754",
+  "protected": [
+    {
+      "path": "spike\\rnd_gameplay.js",
+      "sha256": "82b19ed16502d2eca3d04438c14360441dc1a00f597a2c09181b3b3ac55557d0"
+    },
+    {
+      "path": "spike\\rnd_actors.js",
+      "sha256": "e053436853e1bd15eccbde3fc10497a362716053be62682d3f34cfa8849866fa"
+    },
+    {
+      "path": "spike\\RicochetAngles_Legacy_ThreeJS_GLBSPIKE.html",
+      "sha256": "fd656f1c07de02092ccfc09533538b814b4044aa0ac607106707afb00a95de71"
+    },
+    {
+      "path": "75mm_PAK_40\\export\\75mm_PAK_40_RND_v01.glb",
+      "sha256": "2e847e2d6a51e9589b1d782bd05331555890382e0e71b2dadc9b4aee8d18c46c"
+    },
+    {
+      "path": "LV_Kubelwagen\\export\\LV_Kubelwagen_RND_v01.glb",
+      "sha256": "fde5934872b554356d6fd1642fe099dcc0c3ec6a643cac3c5cd146e66d5c623b"
+    },
+    {
+      "path": "M41\\export\\M41_RND_v01.glb",
+      "sha256": "3f54488e2e46fe7e7f99552e7cc4fc472e6c0d6ef2a938119d9fad422fbca666"
+    },
+    {
+      "path": "M41\\export\\M41_RND_v02_muzzle.glb",
+      "sha256": "985dd03f5aaf8355ee4c186032dff2ff35faa783cb3ce39931ab86efc77f90ea"
+    },
+    {
+      "path": "Panzer3\\export\\Panzer3_RND_v01.glb",
+      "sha256": "5a2a4a8198439c5ad6e8ebee074165dcd1b6bfa5aa583ba38bb5feaf61bda07f"
+    },
+    {
+      "path": "Panzer3\\export\\Panzer3_RND_v02.glb",
+      "sha256": "10bb3177606ab8836971fad0d67583f97c3bf8f84d2864e485ca38845257a453"
+    },
+    {
+      "path": "Panzer6B_Tiger2\\export\\Panzer6B_Tiger2_RND_v01.glb",
+      "sha256": "e0eeeb1988f66089ada78e221ba0e43296518f0ecfde5cabbbc901b048ad6c20"
+    },
+    {
+      "path": "Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v01.glb",
+      "sha256": "6c9e616ff2a7db62141f79f36da3504c6ce51593a257b24f9c7a8af4ca749b4d"
+    },
+    {
+      "path": "Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v02.glb",
+      "sha256": "e0763a96cfe8f88a60d85a2738473e8edf102e7932827e1e1ca8af72218427e8"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\SOURCE_MANIFEST.md",
+      "sha256": "6d06067f46a4da59e7af88c90701416b515d6ed4da54943405329f5a647b8ac0"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\docs\\Q_ARTILLERY_SIX_SHELL_VALIDATION.md",
+      "sha256": "b2bc1a13655508f82a9090f409daeb419e63369eacaa586fe175411123b4a8c3"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\boss.js",
+      "sha256": "22a8abfea4996215f1824edbf168902e366bac41f732b0dde8566573b87cac9a"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\combat.js",
+      "sha256": "05b89506949cdf843f393652f65920a8ba519af5ffdeffc57c6d237baf6809d3"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\config.js",
+      "sha256": "ddb041fa7ae2ccf077e6d6ec9360e4d857705b6d922304e184da76cb87a2a074"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\core.js",
+      "sha256": "9f0f3e2339d18f8d759a38c287dab46f849a5dc93bc5786e8f251c66135d6de8"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\enemies.js",
+      "sha256": "d7b33cac0a0cca92860c93307fbb218acc0846c616ebbb8d59b6fcb8cc2abe0a"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\geometry.js",
+      "sha256": "cd66d316ee31996e8fd8a679759dd9a2fc0bacb795c78a32f3776917a8589d9d"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\input.js",
+      "sha256": "973c068f98b096cbcf88bfe00c753e35f958f9176706293e88eb149c4de67087"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\main.js",
+      "sha256": "8af8486566415747dc43d4684ade0f86827e156a00baead6fb3b4f2559beae55"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\player.js",
+      "sha256": "1104822b6cedb9878a296d6c48f3ca7b2438793a054c51448da75cf0478a5c71"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\render.js",
+      "sha256": "4eab38f8d73ea74b5a8347447c1b881bb64d360b72b00e0cce55cc4e0e6bbade"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\stages.js",
+      "sha256": "7d2c1e5d77bf5f8f8da2ef5e024efd95cbc9b8a00bbfd447a40fc5564a2e1bac"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\state.js",
+      "sha256": "71578533bf5d1c52fe2706434b2b45d15cbb28ab025e2af8a0290f0bd500c4aa"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\ui.js",
+      "sha256": "3b0c8350c89e886c4d6e910615aaaa39715e3e9e0705b46bae68e1b390387b6b"
+    },
+    {
+      "path": "MainlineReference\\20260920_675a959\\src\\world.js",
+      "sha256": "a205a63727b4a337291a3fd996b19f5fa8c30c8b078dc84865a70c768f2e25ba"
+    }
+  ]
+}

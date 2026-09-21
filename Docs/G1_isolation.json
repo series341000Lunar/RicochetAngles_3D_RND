@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "legacyExact": true,
+    "legacyRenderIsolation": true,
+    "remapRenderIsolation": true,
+    "functionsUnchanged": true
+  },
+  "frames": 600,
+  "functions": [
+    "getShellHitWithBoss",
+    "updateShells",
+    "resolveArmorHit",
+    "applyPenetration",
+    "detonateRndHE",
+    "updatePlayerArtillery",
+    "updateBoss",
+    "updateTimeModeTimers"
+  ],
+  "pass": true
+}

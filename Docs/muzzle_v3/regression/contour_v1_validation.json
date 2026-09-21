@@ -1,0 +1,23 @@
+{
+  "checks": {
+    "boss_selected": true,
+    "panzer_selected": true,
+    "truck_selected": true,
+    "pak_selected": true,
+    "player_excluded": true,
+    "empty_clears": true,
+    "renderer_read_only": true,
+    "visual_scale_angle_do_not_pick": true,
+    "death_clears": true,
+    "removal_clears": true,
+    "pointer_exit_clears": true,
+    "Q_targeting_excluded": true,
+    "BT_allowed": true,
+    "focus_preserved": true,
+    "restart_clears": true,
+    "real_mouse_input": true,
+    "panel_hover_clears": true
+  },
+  "errors": [],
+  "pass": true
+}

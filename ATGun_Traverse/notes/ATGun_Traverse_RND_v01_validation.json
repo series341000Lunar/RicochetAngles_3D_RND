@@ -1,0 +1,1403 @@
+{
+  "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\ATGun_Traverse\\ATGun_Traverse_v01.blend",
+  "source_sha256_before": "56a8db36f934b10508b30e8c93e73899d9daa80b3906f27c571d9dee2d965cc2",
+  "source_reason": "Current completed ATGun_Traverse exterior model; only existing source .blend in designated MODEL folder.",
+  "blend": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\ATGun_Traverse\\source\\ATGun_Traverse_RND_v01.blend",
+  "glb": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\ATGun_Traverse\\export\\ATGun_Traverse_RND_v01.glb",
+  "stem": "ATGun_Traverse_RND_v01",
+  "origin_candidate_source_coordinates": [
+    -0.1599999964237213,
+    0.0,
+    0.0
+  ],
+  "origin_status": "candidate, not explicitly adopted by user",
+  "geometry_translation_blender": [
+    0.16,
+    0,
+    0
+  ],
+  "unit_scale_m": 1,
+  "source_dimensions_m": [
+    3.4532333612442017,
+    1.8799999952316284,
+    1.8370710640630015
+  ],
+  "included_parts": [
+    {
+      "name": "Generator_closed_enclosure",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_external_box",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_toolbox",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Chamfered_roof_cap",
+      "vertices": 136,
+      "triangles": 268
+    },
+    {
+      "name": "Roof_handle_-0.38",
+      "vertices": 40,
+      "triangles": 60
+    },
+    {
+      "name": "Roof_handle_0.38",
+      "vertices": 40,
+      "triangles": 60
+    },
+    {
+      "name": "Roof_lid_seam",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_frame_R",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_inset_R",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_R_0",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_R_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_R_2",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_R_3",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_R_4",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_R_5",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_R_6",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Service_door_R",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Vent_hinge_R0.011.13",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Vent_hinge_R0.011.57",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Vent_hinge_R0.591.13",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Vent_hinge_R0.591.57",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Door_hinge_R1.02",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Door_hinge_R1.48",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Door_handle_R",
+      "vertices": 370,
+      "triangles": 720
+    },
+    {
+      "name": "Lower_access_panel_R",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Side_panel_fastener_R-0.580.61",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_R-0.581.62",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_R-0.160.61",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_R-0.161.62",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_R0.280.61",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_R0.281.62",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_R0.60.61",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_R0.61.62",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Louver_frame_L",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_inset_L",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_L_0",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_L_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_L_2",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_L_3",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_L_4",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_L_5",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Louver_slat_L_6",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Service_door_L",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Vent_hinge_L0.011.13",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Vent_hinge_L0.011.57",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Vent_hinge_L0.591.13",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Vent_hinge_L0.591.57",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Door_hinge_L1.02",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Door_hinge_L1.48",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Door_handle_L",
+      "vertices": 370,
+      "triangles": 720
+    },
+    {
+      "name": "Lower_access_panel_L",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Side_panel_fastener_L-0.580.61",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_L-0.581.62",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_L-0.160.61",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_L-0.161.62",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_L0.280.61",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_L0.281.62",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_L0.60.61",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Side_panel_fastener_L0.61.62",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Front_vent_recess",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_vent_slat_0",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_vent_slat_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_vent_slat_2",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_vent_slat_3",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_fastener_-0.510.76",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Front_fastener_-0.511.59",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Front_fastener_-0.060.76",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Front_fastener_-0.061.59",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Front_fastener_0.080.76",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Front_fastener_0.081.59",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Front_fastener_0.510.76",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Front_fastener_0.511.59",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Toolbox_lid",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Toolbox_clasp_0.15",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Toolbox_clasp_0.45",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_upright",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Upright_collar_1.1",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "Upright_collar_1.33",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "Upright_collar_1.57",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "Upright_collar_1.73",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "Rear_box_lid",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_box_hinge_-0.320.81",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_box_hinge_-0.321.36",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_box_hinge_0.320.81",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_box_hinge_0.321.36",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_box_handle",
+      "vertices": 370,
+      "triangles": 720
+    },
+    {
+      "name": "Rear_pipe_guard",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_external_pipe_-0.5",
+      "vertices": 370,
+      "triangles": 720
+    },
+    {
+      "name": "Rear_pipe_clamp_-0.50.82",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_pipe_clamp_-0.51.22",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_external_pipe_-0.39",
+      "vertices": 370,
+      "triangles": 720
+    },
+    {
+      "name": "Rear_pipe_clamp_-0.390.82",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Rear_pipe_clamp_-0.391.22",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Chassis_floor",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Chassis_rail_-1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Chassis_rail_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tow_A_rail_-1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tow_A_rail_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tow_crossmember",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tow_shank",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Tow_eye",
+      "vertices": 480,
+      "triangles": 960
+    },
+    {
+      "name": "Jack_outer",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Jack_foot",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Leaf_spring_R0",
+      "vertices": 250,
+      "triangles": 480
+    },
+    {
+      "name": "Leaf_spring_R1",
+      "vertices": 250,
+      "triangles": 480
+    },
+    {
+      "name": "Leaf_spring_R2",
+      "vertices": 250,
+      "triangles": 480
+    },
+    {
+      "name": "Leaf_spring_R3",
+      "vertices": 250,
+      "triangles": 480
+    },
+    {
+      "name": "Spring_hanger_R-0.55",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Spring_hanger_R0.25",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Leaf_spring_L0",
+      "vertices": 250,
+      "triangles": 480
+    },
+    {
+      "name": "Leaf_spring_L1",
+      "vertices": 250,
+      "triangles": 480
+    },
+    {
+      "name": "Leaf_spring_L2",
+      "vertices": 250,
+      "triangles": 480
+    },
+    {
+      "name": "Leaf_spring_L3",
+      "vertices": 250,
+      "triangles": 480
+    },
+    {
+      "name": "Spring_hanger_L-0.55",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Spring_hanger_L0.25",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Drawbar_mount_-1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Drawbar_mount_bolt_-10.8",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Drawbar_mount_bolt_-10.93",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Tow_gusset_-1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tow_gusset_bolt_-1",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Drawbar_mount_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Drawbar_mount_bolt_10.8",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Drawbar_mount_bolt_10.93",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Tow_gusset_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tow_gusset_bolt_1",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Jack_clamp",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Jack_crank",
+      "vertices": 370,
+      "triangles": 720
+    },
+    {
+      "name": "Jack_handle_grip",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "Axle",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Tire_R",
+      "vertices": 576,
+      "triangles": 1152
+    },
+    {
+      "name": "Wheel_rim_R",
+      "vertices": 288,
+      "triangles": 572
+    },
+    {
+      "name": "Rim_outer_lip_R",
+      "vertices": 576,
+      "triangles": 1152
+    },
+    {
+      "name": "Wheel_recess_R",
+      "vertices": 288,
+      "triangles": 572
+    },
+    {
+      "name": "Hub_plate_R",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Axle_hub_R",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Tread_R_0",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_2",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_3",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_4",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_5",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_6",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_7",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_8",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_9",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_10",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_11",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_12",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_13",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_14",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_15",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_16",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_17",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_18",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_19",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_20",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_21",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_22",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_23",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_24",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_25",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_26",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_27",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_28",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_29",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_30",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_R_31",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Arch_fender_R",
+      "vertices": 332,
+      "triangles": 660
+    },
+    {
+      "name": "Tire_L",
+      "vertices": 576,
+      "triangles": 1152
+    },
+    {
+      "name": "Wheel_rim_L",
+      "vertices": 288,
+      "triangles": 572
+    },
+    {
+      "name": "Rim_outer_lip_L",
+      "vertices": 576,
+      "triangles": 1152
+    },
+    {
+      "name": "Wheel_recess_L",
+      "vertices": 288,
+      "triangles": 572
+    },
+    {
+      "name": "Hub_plate_L",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Axle_hub_L",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Tread_L_0",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_1",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_2",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_3",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_4",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_5",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_6",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_7",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_8",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_9",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_10",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_11",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_12",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_13",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_14",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_15",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_16",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_17",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_18",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_19",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_20",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_21",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_22",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_23",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_24",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_25",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_26",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_27",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_28",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_29",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_30",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Tread_L_31",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Arch_fender_L",
+      "vertices": 332,
+      "triangles": 660
+    },
+    {
+      "name": "Fender_mount_front_R",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Fender_mount_rear_R",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Wheel_bolt_R0",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_R1",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_R2",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_R3",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_R4",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_R5",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_R6",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_R7",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Fender_marker_R",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Fender_mount_front_L",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Fender_mount_rear_L",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Wheel_bolt_L0",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_L1",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_L2",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_L3",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_L4",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_L5",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_L6",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Wheel_bolt_L7",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Fender_marker_L",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Power_socket_rim",
+      "vertices": 384,
+      "triangles": 768
+    },
+    {
+      "name": "Tongue_socket",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_controls",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Front_connector_panel",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Connector_flange",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Power_socket_body",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Socket_dark_face",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Socket_pin_0",
+      "vertices": 104,
+      "triangles": 204
+    },
+    {
+      "name": "Socket_pin_1",
+      "vertices": 104,
+      "triangles": 204
+    },
+    {
+      "name": "Socket_pin_2",
+      "vertices": 104,
+      "triangles": 204
+    },
+    {
+      "name": "Socket_pin_3",
+      "vertices": 104,
+      "triangles": 204
+    },
+    {
+      "name": "Flange_bolt_-0.421.01",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Flange_bolt_-0.421.27",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Flange_bolt_-0.161.01",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Flange_bolt_-0.161.27",
+      "vertices": 84,
+      "triangles": 164
+    },
+    {
+      "name": "Cable_gland_0",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Power_cable_0",
+      "vertices": 610,
+      "triangles": 1200
+    },
+    {
+      "name": "Cable_side_socket_0",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Cable_gland_1",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Power_cable_1",
+      "vertices": 610,
+      "triangles": 1200
+    },
+    {
+      "name": "Cable_side_socket_1",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Nameplate",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Toggle_guard",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Control_dial",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "Control_panel_handle",
+      "vertices": 370,
+      "triangles": 720
+    },
+    {
+      "name": "Rear_pipe_terminal_mount",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Lamp_stem",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Lamp_housing",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Lamp_glass",
+      "vertices": 192,
+      "triangles": 380
+    },
+    {
+      "name": "Lamp_support",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Lamp_bezel",
+      "vertices": 480,
+      "triangles": 960
+    },
+    {
+      "name": "Lamp_guard",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Lamp_guard.001",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Lamp_guard.002",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Lamp_guard.003",
+      "vertices": 56,
+      "triangles": 108
+    },
+    {
+      "name": "Lamp_visor",
+      "vertices": 56,
+      "triangles": 108
+    }
+  ],
+  "mesh_count": 1,
+  "materials": 3,
+  "textures": 0,
+  "omitted_geometry": [],
+  "changes": "All 265 exterior mesh/curve objects evaluated and merged; no geometry deleted or simplified; mechanical gray merged with main gray. Candidate origin shifted to axle ground projection, preserving relative geometry. No emission or light.",
+  "started": "2026-09-21T00:13:00.633401+09:00",
+  "glb_bytes": 2189108,
+  "node_count": 2,
+  "primitive_count": 3,
+  "triangles": 55740,
+  "material_count": 3,
+  "texture_count": 0,
+  "glb_bounds_xyz": [
+    [
+      -0.9132331609725952,
+      2.5400002002716064
+    ],
+    [
+      -2.9286630898184285e-09,
+      1.8370710611343384
+    ],
+    [
+      -0.9399999976158142,
+      0.9399999976158142
+    ]
+  ],
+  "geometry_roundtrip_max_error_m": 0.0,
+  "root_transform_test_error_m": 0.0,
+  "neutral_restore_error_m": 0.0,
+  "source_sha256_after": "56a8db36f934b10508b30e8c93e73899d9daa80b3906f27c571d9dee2d965cc2",
+  "technical": "PASS",
+  "visual": "PASS - actual reimport top/side/isometric previews inspected; original silhouette and included components retained.",
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "PROP"
+    },
+    {
+      "children": [
+        0
+      ],
+      "name": "ATGun_Traverse_ROOT"
+    }
+  ],
+  "blend_reopen": "PASS - 2 objects, ROOT Empty and PROP mesh; identity local transforms",
+  "completed": "2026-09-21T00:15:48.588232+09:00",
+  "limitations": [
+    "Origin is a candidate, not explicitly user-approved.",
+    "Runtime integration and runtime performance are not tested; outside requested scope.",
+    "Materials are temporary base colors, not finalized art direction."
+  ]
+}

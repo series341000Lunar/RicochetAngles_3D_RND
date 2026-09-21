@@ -1,0 +1,18 @@
+{
+  "None": {
+    "frontPatchNearWhiteFraction": 0.2487218045112782,
+    "yellowContourPixels": 2034
+  },
+  "ACES": {
+    "frontPatchNearWhiteFraction": 0.0,
+    "yellowContourPixels": 2034
+  },
+  "Cineon": {
+    "frontPatchNearWhiteFraction": 0.0,
+    "yellowContourPixels": 2034
+  },
+  "Reinhard": {
+    "frontPatchNearWhiteFraction": 0.0,
+    "yellowContourPixels": 2034
+  }
+}

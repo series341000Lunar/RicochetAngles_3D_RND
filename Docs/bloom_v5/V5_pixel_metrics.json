@@ -1,0 +1,29 @@
+{
+  "A_Player_Bloom_OFF": {
+    "max": 68,
+    "pixelsOver2": 62498,
+    "mean": 0.30654586226851854,
+    "yellowOff": 2025,
+    "yellowOn": 2025
+  },
+  "C_Boss_Bloom_OFF": {
+    "max": 68,
+    "pixelsOver2": 64167,
+    "mean": 0.29998227719907405,
+    "yellowOff": 2011,
+    "yellowOn": 2011
+  },
+  "E_Q_Bloom_OFF": {
+    "max": 60,
+    "pixelsOver2": 87347,
+    "mean": 0.38335431134259257,
+    "yellowOff": 1493,
+    "yellowOn": 1493
+  },
+  "noEligibleSource_exact": true,
+  "samePipelineGlow": {
+    "pixelsOver1": 1222,
+    "outside32pxOver1": 0,
+    "max": 68
+  }
+}

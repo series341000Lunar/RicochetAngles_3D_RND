@@ -1,0 +1,66 @@
+{
+  "glb2": "PASS",
+  "mesh_count": 5,
+  "materials": 3,
+  "images": 0,
+  "skins": 0,
+  "animations": 0,
+  "morph_targets": 0,
+  "positive_scales": "PASS",
+  "source_blend_unchanged": "PASS",
+  "original_spike_unchanged": "PASS",
+  "gameplay_script_identical": "PASS",
+  "glb_sha256": "3f54488e2e46fe7e7f99552e7cc4fc472e6c0d6ef2a938119d9fad422fbca666",
+  "gltf_nodes": [
+    {
+      "mesh": 0,
+      "name": "TRACK_L"
+    },
+    {
+      "mesh": 1,
+      "name": "TRACK_R"
+    },
+    {
+      "mesh": 2,
+      "name": "GUN",
+      "translation": [
+        1.1150000095367432,
+        0.3850001096725464,
+        0
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "mesh": 3,
+      "name": "TURRET"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "TURRET_PIVOT",
+      "translation": [
+        -0.10000000149011612,
+        1.8830000162124634,
+        0
+      ]
+    },
+    {
+      "children": [
+        0,
+        1,
+        4
+      ],
+      "mesh": 4,
+      "name": "HULL"
+    },
+    {
+      "children": [
+        5
+      ],
+      "name": "M41_ROOT"
+    }
+  ]
+}

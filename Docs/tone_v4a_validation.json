@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "switch_game_readonly": true,
+    "no_material_recreation": true,
+    "focus_contour": true,
+    "dpr": true,
+    "target_resize": true,
+    "canvas": true,
+    "return3d": true,
+    "death": true,
+    "restart": true,
+    "deterministic600": true
+  },
+  "errors": [],
+  "pass": true
+}

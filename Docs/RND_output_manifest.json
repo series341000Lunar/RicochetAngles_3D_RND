@@ -1,0 +1,1392 @@
+[
+  {
+    "path": "Docs/G1_asset_top.jpg",
+    "bytes": 40227,
+    "sha256": "0f22d6d3709a328eed75f2064e603c3952a4f5016e30257519ab1e5dc85fc530"
+  },
+  {
+    "path": "Docs/G1_baseline.json",
+    "bytes": 1052,
+    "sha256": "903f89a241f9dca80b840799722e2d8069b6818712bd2eab2cddf8a5c00aba25"
+  },
+  {
+    "path": "Docs/G1_geometry_inspection.json",
+    "bytes": 5143,
+    "sha256": "eb2cec7665248d76e55af092c99d563f887fcdb28b840db494289b7fb7cf5911"
+  },
+  {
+    "path": "Docs/G1_interactions.json",
+    "bytes": 724,
+    "sha256": "2e4ae485a574229dede284200858647105f4defbe899cfb6af1094a35c849c1e"
+  },
+  {
+    "path": "Docs/G1_isolation.json",
+    "bytes": 390,
+    "sha256": "5c1980c3f88820f6b8832dd640b934f45fddf7bc1e4bd0e2bd9d232f7a02f8b9"
+  },
+  {
+    "path": "Docs/G1_preservation.json",
+    "bytes": 363,
+    "sha256": "28254437fca42032faddb4fa7e63a77f052427d8ee93955075f3be5dcd46fd47"
+  },
+  {
+    "path": "Docs/G1_surface_probes.json",
+    "bytes": 2217,
+    "sha256": "631048aae29af441964b1e3dd3f9213a111bdaa844ea5564bf247d3f2a37ef83"
+  },
+  {
+    "path": "Docs/G1_turret_components.json",
+    "bytes": 16851,
+    "sha256": "b9c2974e7abe66d31142d0f04e7470a3e60a3a509425bec29bc66e6b61ef975b"
+  },
+  {
+    "path": "Docs/G1_validation.json",
+    "bytes": 111207,
+    "sha256": "5f394fc834a15bfeeb224e55b67b0666e703d0404e2dd61ac826440d9047db56"
+  },
+  {
+    "path": "Docs/THREEJS_GAMEPLAY_PHASE_G1_TIGER2_WEAKPOINT_REMAP_20260921.md",
+    "bytes": 10738,
+    "sha256": "4180c4a094d3d0e6812e6720c8b91eb480af6e3bde5ef62ce2ed8281ec0202d9"
+  },
+  {
+    "path": "Docs/THREEJS_MULTI_ASSET_GAME_LANGUAGE_RND_20260920.md",
+    "bytes": 13188,
+    "sha256": "396bd0f7be38a832a8ffdd48c4e52ac35611e27ab9a83368d58ce42ed14003e3"
+  },
+  {
+    "path": "Docs/THREEJS_VISUAL_PHASE_V2B_FOCUS_RETUNE_20260920.md",
+    "bytes": 6947,
+    "sha256": "7f64698909d42cb8ee52c027dcef375472f01f75cc7a9b310873fbabf5a05bfe"
+  },
+  {
+    "path": "Docs/THREEJS_VISUAL_PHASE_V2_FOCUS_FRESNEL_20260920.md",
+    "bytes": 10222,
+    "sha256": "6dbb6687b948bd04ab8061b6367ec8f72be1ca19c106cfec2ed9921ad6918998"
+  },
+  {
+    "path": "Docs/THREEJS_VISUAL_PHASE_V3_MUZZLE_LIGHT_20260920.md",
+    "bytes": 9578,
+    "sha256": "6f68fc58435873e80bb48bd375e385e850d79d48b744080339a4bdc7f3a1233f"
+  },
+  {
+    "path": "Docs/THREEJS_VISUAL_PHASE_V4A_TONEMAP_COLORGRADE_20260920.md",
+    "bytes": 11195,
+    "sha256": "864e6cff54a2110c8ade80a519f47de48631a6aba163c05e9f83b1e4e2cea364"
+  },
+  {
+    "path": "Docs/THREEJS_VISUAL_PHASE_V4B_TOON_RAMP_20260921.md",
+    "bytes": 8640,
+    "sha256": "f8e133d94a166c98b917c35a3e2eb4ccdebb0be3597c61cf27fcc1f986c994ac"
+  },
+  {
+    "path": "Docs/THREEJS_VISUAL_PHASE_V4C_PREWARM_20260921.md",
+    "bytes": 8279,
+    "sha256": "d20b0b44f6d13adeb1967e54271d829bf2603f469a70079276b73d4a30f7e52a"
+  },
+  {
+    "path": "Docs/THREEJS_VISUAL_PHASE_V5_SELECTIVE_BLOOM_20260921.md",
+    "bytes": 10582,
+    "sha256": "802d4ac7713df2f5649888a8cffc1375895efc170b810e3096809cec16c52add"
+  },
+  {
+    "path": "Docs/V2B_baseline.json",
+    "bytes": 711,
+    "sha256": "1b12dcc08df56733641e2c4150cae239027524b2167a88439edcf233d99bfd9f"
+  },
+  {
+    "path": "Docs/V2_V1_baseline.json",
+    "bytes": 1355,
+    "sha256": "51c2a998f94f6c76f0ed90967c723b3df8c1e30516425752f6e9e8e588554b37"
+  },
+  {
+    "path": "Docs/V3_baseline.json",
+    "bytes": 711,
+    "sha256": "fadc54a127151cba0e024e61c76e7fc6c0f359dd97488b7d3a9ee1c6a80fef4a"
+  },
+  {
+    "path": "Docs/V4A_baseline.json",
+    "bytes": 988,
+    "sha256": "72e6ad88f99497e96244c59511af9806802aec957b4d818429115fc53e5cf105"
+  },
+  {
+    "path": "Docs/V4B_baseline.json",
+    "bytes": 982,
+    "sha256": "01521d4ac668c986524ccc6121f6aa634616f2005aaaa8a84b70c3cbac8df4af"
+  },
+  {
+    "path": "Docs/V4B_independent_toggles.json",
+    "bytes": 746,
+    "sha256": "16ff26376c9edfac98a2b5931269e39dc59305a64119d04e22fa87a60f412940"
+  },
+  {
+    "path": "Docs/V4B_ramp_inspection.json",
+    "bytes": 16079,
+    "sha256": "8e42ee2bd2bde1c86f67775011cbc43c39740bddd7eaa54a2ffd7a482248872e"
+  },
+  {
+    "path": "Docs/V4B_source_preservation.json",
+    "bytes": 220,
+    "sha256": "f1b1dad696b5738de94f60290a6a9e27c25c8c77753c77cd99c8d20c7b183642"
+  },
+  {
+    "path": "Docs/V4C_PLAYING.png",
+    "bytes": 124881,
+    "sha256": "210aa41aba817db959f7e3d8cc9e36dc428f32fd23eb9379355f05bde26ce21e"
+  },
+  {
+    "path": "Docs/V4C_READY.png",
+    "bytes": 13843,
+    "sha256": "2b8ef20782f701be1c2c865752aa257d74af7eb221f0f89dfaf9beb46dff3e85"
+  },
+  {
+    "path": "Docs/V4C_after_timings.json",
+    "bytes": 1337,
+    "sha256": "dfba1c296b9617edc97f3ff6af4013967a0a654f8cb3debe17186e6b0288124e"
+  },
+  {
+    "path": "Docs/V4C_before_timings.json",
+    "bytes": 1354,
+    "sha256": "bf24e16d029c42c7cef62a8e5d990467f9187772ef1948490194181db45566a9"
+  },
+  {
+    "path": "Docs/V4C_disabled_timings.json",
+    "bytes": 1392,
+    "sha256": "bd58b8da4bd84d4ce45ec7e8c237c75b98ff85647446d1e61ec7157d58fa8ed6"
+  },
+  {
+    "path": "Docs/V4C_isolation_failure.json",
+    "bytes": 172,
+    "sha256": "a56bf02059a6881577ee80fbde445554303c1af4bdff3c0ff7c6196179cc02c0"
+  },
+  {
+    "path": "Docs/V4C_validation.json",
+    "bytes": 3112,
+    "sha256": "a8243a57c8c8f14ecf2194d27809acdee83c14ae48d466d760c467e5724e8190"
+  },
+  {
+    "path": "Docs/V5_performance.json",
+    "bytes": 4854,
+    "sha256": "2a04c794ac7c84c63801114279a5e3bdbbcbfcaa980c01444fbb9b7d2f8e483a"
+  },
+  {
+    "path": "Docs/V5_validation.json",
+    "bytes": 1403,
+    "sha256": "9bf03335eda0f7c5c46573c332e292424a10b048a24b4c1b1568e54c52205cc4"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_A_Player_Bloom_OFF.png",
+    "bytes": 100673,
+    "sha256": "62b34401e9464525fe6019f470a0281e6458d33e66e767262e7187dd9c2ed6c8"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_B_Player_Bloom_ON.png",
+    "bytes": 102092,
+    "sha256": "c9e0f167a617ba890a66bcfc0a8570ceded5a25aba6bc1178954d91e185da35f"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_C_Boss_Bloom_OFF.png",
+    "bytes": 116272,
+    "sha256": "1bfdaf439dad76c67b80ba0a4dfb091967bc426353ab0120a8c661e90fdc3946"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_D_Boss_Bloom_ON.png",
+    "bytes": 119374,
+    "sha256": "7afd9f5402875023d19132fdc3cf750a5746742c0aedc7c7bd99831cdbf71c7e"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_E_Q_Bloom_OFF.png",
+    "bytes": 107816,
+    "sha256": "a83ab0fe3d5b39b3aee413400d48a5db23df26574b08c6b7a89a1c60e930b188"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_F_Q_Bloom_ON.png",
+    "bytes": 113538,
+    "sha256": "99a224a08d57102c3f4d0cc2095178b53ff9f9920b8210786dcbf0e9c966e794"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_G_Focus_Boss_Bloom.png",
+    "bytes": 96696,
+    "sha256": "ae4ffff785b3784d5ae8bb1a5031986030f7e5017f40f67d3a33f2f23ea41631"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_H_45_Bloom_diagnostic.png",
+    "bytes": 105328,
+    "sha256": "f4e3ca9c4426143e9710bebdb61703a0a2d7d3cf1e9cd03cc6c17d61f834f7af"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_I_90_Bloom.png",
+    "bytes": 95200,
+    "sha256": "a5b7ff377beb93fee3f680cedde9ea36556bf2e22cb917b9d34a372792eef079"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_J_Toon_Player.png",
+    "bytes": 91129,
+    "sha256": "051ab4d79066adc0ec71bee001c5dc099f3cd6936cab19186686d27d18c394d2"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_K_Focus_noFX.png",
+    "bytes": 79863,
+    "sha256": "9897def56e1963bc4bdd655ddcec51d3e2dfade6faa0514c6f3f424fcab14c9f"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_L_Focus_noFX_OFF.png",
+    "bytes": 79834,
+    "sha256": "bb62372ec92370f76c4679e4512ab73eda7d7e986f784cfdbf1b4eb6f48caa0f"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_M_Zero_Strength.png",
+    "bytes": 79863,
+    "sha256": "9897def56e1963bc4bdd655ddcec51d3e2dfade6faa0514c6f3f424fcab14c9f"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_N_No_Eligible_Source.png",
+    "bytes": 79863,
+    "sha256": "9897def56e1963bc4bdd655ddcec51d3e2dfade6faa0514c6f3f424fcab14c9f"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_O_Player_Zero_Strength.png",
+    "bytes": 100905,
+    "sha256": "6fa5e03dec51b9a0f348372276370f2a3bfe84a3aa08cbe351f65751f382250b"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_P_Player_Active_Strength.png",
+    "bytes": 102092,
+    "sha256": "c9e0f167a617ba890a66bcfc0a8570ceded5a25aba6bc1178954d91e185da35f"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_cameras.jpg",
+    "bytes": 218176,
+    "sha256": "83c17e5ee8ba13b1eaf4cd71ece8c48087daa706df789ecf90229b3b5df1f58f"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_comparison.jpg",
+    "bytes": 353105,
+    "sha256": "1c82ffbd434a1bc2e2798ff63917d22fe03f559673e2c01afb106b7aa43dc5b6"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_crops.jpg",
+    "bytes": 93358,
+    "sha256": "f1ed6c4b88befb20da81e104feaae4d39fe825e2e3142057305cef015d6b93da"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_glow_center.json",
+    "bytes": 46,
+    "sha256": "a3e69bcdbb8851d50c85d208ad426531e4c899393d7eecdfb370d4082f87ec39"
+  },
+  {
+    "path": "Docs/bloom_v5/V5_pixel_metrics.json",
+    "bytes": 599,
+    "sha256": "e521cac114978e98c368633a58fb4ed55bcc89c487c51632121602a003b5bb55"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/V4B_independent_toggles.json",
+    "bytes": 746,
+    "sha256": "16ff26376c9edfac98a2b5931269e39dc59305a64119d04e22fa87a60f412940"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/contour_v1/Boss_75.png",
+    "bytes": 125804,
+    "sha256": "954e4f84589cb7b86607c5d476ef0aa9de56e1a35a05f0c960a65a6e984af7ef"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/contour_v1/Boss_90.png",
+    "bytes": 123543,
+    "sha256": "6ab8b76bd5766925d4ce9e80baa7d74dae368f3d31bbc40f09bbc8e2a23b4065"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/contour_v1/pak_75.png",
+    "bytes": 125501,
+    "sha256": "e04d993df235044379ac499b5de6c77b83e3b0cc424c4298188d8b388b2d42ea"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/contour_v1/panzer_75.png",
+    "bytes": 125738,
+    "sha256": "d06fe124d93c649d81f436aeac85f1ed3907582ac43364ae80759d0ea3494e7c"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/contour_v1/truck_75.png",
+    "bytes": 125739,
+    "sha256": "dc25397fad4d309fe3850dd2515f043bc0c82d5037e881fc5b33cc1895c4c97d"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/contour_v1_validation.json",
+    "bytes": 557,
+    "sha256": "0af3fdd713787f8f313dab17d61ec7ebfd6e7f080fcbedaa7fa9d496c7f3e4c4"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_A_75_Panzer_normal.png",
+    "bytes": 123797,
+    "sha256": "9927fcebcf5e84e048de5d9d414e448646b201d9e7e88b124213f129048f049e"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_B_75_Panzer_focus.png",
+    "bytes": 127455,
+    "sha256": "cec876305af1358de7968c6e13a1e0b254c3241ee332c66500583ae5136e6842"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_C_75_Pak_normal.png",
+    "bytes": 123558,
+    "sha256": "e4462d9847287a0239d3480dc76aae3d88992524b4be46a1c0743ccd40aa2f6b"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_D_75_Pak_focus.png",
+    "bytes": 128721,
+    "sha256": "f518e016b25f4af6a79b39e9546580b67c2078a5403fc4c3bfb173b06b502f14"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_E_75_Boss_normal.png",
+    "bytes": 123863,
+    "sha256": "9bc643333a6863fa08f131578fcd05e11907de48600d34843b8324d63851bb81"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_F_75_Boss_focus.png",
+    "bytes": 120664,
+    "sha256": "e348e4a5b961116ff502a59824c951c89eb3ad368fefaa9e12500bd944ff83c8"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_G_90_Boss_focus.png",
+    "bytes": 117242,
+    "sha256": "0578f4b994c68835ac6c9843b0e1967545950a66d2de38cca4c227ef286ac7a7"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_H_45_Boss_focus_diagnostic.png",
+    "bytes": 127944,
+    "sha256": "a48860cf667d5afd0fc22edadcbfc93dbbce3c0aa668c5d6144bd74c54b09d82"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_I_60_Boss_focus.png",
+    "bytes": 122673,
+    "sha256": "96ec2dc1d92b40f5a1547814a75defa86a530512c8bb26ce74e62a859d9a0e91"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2/V2_J_75_Kubelwagen_focus.png",
+    "bytes": 128791,
+    "sha256": "fb7f51bde69c3d1a4e5098b2b71967dac1b9cda30e0db86d26a39e62867c2942"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/focus_v2_validation.json",
+    "bytes": 1245,
+    "sha256": "2729990ae40daeda57bffb9923a0ad94987785b56df3af886b3c8e74ebb180d4"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_A_Player_before_fire.png",
+    "bytes": 122984,
+    "sha256": "b7d1598d2f233d9ab22ba093827098d6f814de1bf622a3634a900617a84c17d7"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_B_Player_muzzle_light.png",
+    "bytes": 141059,
+    "sha256": "74f7f03d1f6f6850406e633cdc16dea39555241a89e9243e3073c900b1b3e820"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_C_Player_smoke_after.png",
+    "bytes": 123035,
+    "sha256": "20f5f557d74080041f7b73ef3c5a388b520be428b59bd8ff73180b8a8f59b64f"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_D_Boss_before_fire.png",
+    "bytes": 122984,
+    "sha256": "b7d1598d2f233d9ab22ba093827098d6f814de1bf622a3634a900617a84c17d7"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_E_Boss_muzzle_light.png",
+    "bytes": 183910,
+    "sha256": "c1cd1bcd3fe4d364db0a87b42b72531f3b1765fe4a732ebcf1cfe460fe6e3fda"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_F_Boss_smoke_after.png",
+    "bytes": 124543,
+    "sha256": "ad3812c335c14b450c232eb000fb731fcb0b07b475fa88a241d98d94945aac20"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_G_Boss_90_light.png",
+    "bytes": 182170,
+    "sha256": "2a0f625acecd3b4f1fa85880e2ce539a77dd60be66c1eee9fe045dd3c3a68b3f"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_H_Boss_45_light.png",
+    "bytes": 191499,
+    "sha256": "1bad5e31fe6536f8934d030d9c0241382c71c2b4bdae2e29ad333cef47dbcb0a"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3/V3_I_Boss_focus_light.png",
+    "bytes": 181789,
+    "sha256": "e1b0417e7fbcb1a65318b6bf86f221c6fdd2219ef2a0195f7abbfed61e3db732"
+  },
+  {
+    "path": "Docs/bloom_v5/regression/muzzle_v3_validation.json",
+    "bytes": 763,
+    "sha256": "f6876dcde7f34eb7d38689a4a9eb7c56ba91eafdd5ce4a5e5f8dcea70978a738"
+  },
+  {
+    "path": "Docs/focus_v2_live.json",
+    "bytes": 1277,
+    "sha256": "f9d923a55ae1ffc027bc792ac4b76d3d78ac869be15757d3073c9c0f065e1775"
+  },
+  {
+    "path": "Docs/focus_v2_parity.json",
+    "bytes": 371,
+    "sha256": "2433733e3fa66782f14709169d8d27c5c98f9d980a4a96c3bc500fb95c59a360"
+  },
+  {
+    "path": "Docs/focus_v2_validation.json",
+    "bytes": 1245,
+    "sha256": "c81a10f5947e8649084ed60fad2bf368f2a3b9302622bc747f56f1e624df58a1"
+  },
+  {
+    "path": "Docs/focus_v2b_validation.json",
+    "bytes": 552,
+    "sha256": "6f0e74561fbe8baa20160ff68fa1c132a1af67f5db165679c068568506cdcf15"
+  },
+  {
+    "path": "Docs/g1/G1_A_90_old_weakpoints.png",
+    "bytes": 101443,
+    "sha256": "e4b16549ab114ef00070ea111483d224935fa7ef35b9c135c74e312a1788638b"
+  },
+  {
+    "path": "Docs/g1/G1_B_90_3D_anchors.png",
+    "bytes": 101019,
+    "sha256": "5e9d458a4cc82418861a145f4ca84631083cffd571b50d8c5bd7924c249a89bd"
+  },
+  {
+    "path": "Docs/g1/G1_C_90_new_2D_anchors.png",
+    "bytes": 100481,
+    "sha256": "aaa620eac58c60551734c1e7570cb6b2faf33817798fedf2c6f70f2274e0ef7f"
+  },
+  {
+    "path": "Docs/g1/G1_D_90_overlay_compare.png",
+    "bytes": 101423,
+    "sha256": "ec1d0b4c0b5590e74766650714dbb22a9589aacd7d18c28faf8143900c2a9cdb"
+  },
+  {
+    "path": "Docs/g1/G1_E_75_old_labels.png",
+    "bytes": 104572,
+    "sha256": "9fccdf33c221cd41e55bc4f2e935cea1597acf27ffce9faef2846fffb65e3cfc"
+  },
+  {
+    "path": "Docs/g1/G1_F_75_new_3D_anchor_labels.png",
+    "bytes": 103749,
+    "sha256": "eee725d5a1b3de0b3f42527928c93b6e627b6955bd6c6200e48e508d3dc4593c"
+  },
+  {
+    "path": "Docs/g1/G1_G_75_focus_target.png",
+    "bytes": 86189,
+    "sha256": "571de3dbf746f9b14dea6a37eb7f369fb686066f5a3520d63cb684d99e025db5"
+  },
+  {
+    "path": "Docs/g1/G1_H_broadphase_mismatch.png",
+    "bytes": 114314,
+    "sha256": "51f3c15ba15d3735ed7cd630be34d23f942515b27ad58cecdb5e1bef7a6e0322"
+  },
+  {
+    "path": "Docs/g1/G1_comparison.jpg",
+    "bytes": 242447,
+    "sha256": "61cf187783d05577057bec34e79e7ea91044eff2656736f38ecabb9a5dd3502a"
+  },
+  {
+    "path": "Docs/g1/regression/R2_initial.png",
+    "bytes": 113952,
+    "sha256": "f15f6e59ba76c5e18c776c57e018637eb5b39d82c908c29a6f57b0ff33530638"
+  },
+  {
+    "path": "Docs/g1/regression/R2_validation.json",
+    "bytes": 1753,
+    "sha256": "70d00d3cb5dc6a7dd01a53c73c94f52a2dcb8b96e34ba69f77167c5032c6bc62"
+  },
+  {
+    "path": "Docs/g1/regression/contour_v1/Boss_75.png",
+    "bytes": 124258,
+    "sha256": "27831a10d5cc93da6c926b59582120367d9a9096f0c96bc35ce2997930c84acc"
+  },
+  {
+    "path": "Docs/g1/regression/contour_v1/Boss_90.png",
+    "bytes": 122064,
+    "sha256": "619ffee14d9fb81c4d48a3767c1d005364a93034dc70a48eef5d1284910dbe45"
+  },
+  {
+    "path": "Docs/g1/regression/contour_v1/pak_75.png",
+    "bytes": 123968,
+    "sha256": "b7e3ae417ef292637713afd29bb86c1ef2e7b4d857dbbe584486ea9e721ace72"
+  },
+  {
+    "path": "Docs/g1/regression/contour_v1/panzer_75.png",
+    "bytes": 124215,
+    "sha256": "5cee107cc28adc0ac74cc7ffdf614ed6cfce704b4ccfd9929dfeb890c6aac742"
+  },
+  {
+    "path": "Docs/g1/regression/contour_v1/truck_75.png",
+    "bytes": 124210,
+    "sha256": "8cd3f23a9d16e4b350d65eed1c792bc33fa60d9703d8a6bc29387c7fd8c20e97"
+  },
+  {
+    "path": "Docs/g1/regression/contour_v1_validation.json",
+    "bytes": 557,
+    "sha256": "0af3fdd713787f8f313dab17d61ec7ebfd6e7f080fcbedaa7fa9d496c7f3e4c4"
+  },
+  {
+    "path": "Docs/g1/regression/final_regression.json",
+    "bytes": 534,
+    "sha256": "7d77465f3b7191f1a6f6e9b8c3d406deb23f3dccbd1c21221ec15b9efb5d28a1"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_A_75_Panzer_normal.png",
+    "bytes": 122932,
+    "sha256": "4d2203a1f084cd2454459ff4bfe3508b94339a1f222aac59dff030d30f8b51f0"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_B_75_Panzer_focus.png",
+    "bytes": 126555,
+    "sha256": "d965db4b73453a274c88b03c9ae5c905a5452721cdf8a30c1b1dfb500c3c0c2a"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_C_75_Pak_normal.png",
+    "bytes": 122686,
+    "sha256": "9315dccfd13eae7141f2055c3fdb5bf6dc65da09661fcfdfaaad65769055c672"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_D_75_Pak_focus.png",
+    "bytes": 127841,
+    "sha256": "7a24b9148ca2dc508c4718279708741641a62bc4746a9943f6df92358dbccad2"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_E_75_Boss_normal.png",
+    "bytes": 122965,
+    "sha256": "1ebb949e47715359e7b1b6a0520eb801473820fb321e074802b5ae687814d71e"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_F_75_Boss_focus.png",
+    "bytes": 120354,
+    "sha256": "004e190c570c1a02b1f9eb78ba4388b24cfbafb6812d5445ba47999296268479"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_G_90_Boss_focus.png",
+    "bytes": 116850,
+    "sha256": "4bcbd15182067c124f696751082b94c7bc67813c85eed5b56deaa507718d67d3"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_H_45_Boss_focus_diagnostic.png",
+    "bytes": 127755,
+    "sha256": "6fc02e35e7e478150a4aa07bbbc1ef2507d217a5c00c614541471b8c4df57f11"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_I_60_Boss_focus.png",
+    "bytes": 122705,
+    "sha256": "ffd185e34f37b62c94bb9fd9950ab42c633704da8459f93a4743a9d05785948f"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2/V2_J_75_Kubelwagen_focus.png",
+    "bytes": 127915,
+    "sha256": "d45760ef651da3a3b170910c607eb0cf7451b8355c3e1ea941444d7a6c9f3c0f"
+  },
+  {
+    "path": "Docs/g1/regression/focus_v2_validation.json",
+    "bytes": 1245,
+    "sha256": "c676b2a768b5e7d709c29c321629a5cf0b9dec265a6e3f50579d6d2cf52cb721"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_A_Player_before_fire.png",
+    "bytes": 122104,
+    "sha256": "d92b86db37e62083b0eb99e8457339c86024db8f6b34723bd43babcfd052c04f"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_B_Player_muzzle_light.png",
+    "bytes": 140228,
+    "sha256": "7b160eff84a41437cd5ee8ceb35d112b4f66cef87c598b6344a778c3a3aae054"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_C_Player_smoke_after.png",
+    "bytes": 122001,
+    "sha256": "951afe75c7bbbd25de2242096baeaac6153fb286bb744774875cff87777247eb"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_D_Boss_before_fire.png",
+    "bytes": 122104,
+    "sha256": "d92b86db37e62083b0eb99e8457339c86024db8f6b34723bd43babcfd052c04f"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_E_Boss_muzzle_light.png",
+    "bytes": 183066,
+    "sha256": "e0b97c9cdd4b70a0b73229c969fa11c9d5f56ed5c8b271c5406a9c640a7f9b7d"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_F_Boss_smoke_after.png",
+    "bytes": 123631,
+    "sha256": "6e64792f8e5e0016d9cee3fbbf4be72ee300287b7be04a3002b65cdc9f63cdd1"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_G_Boss_90_light.png",
+    "bytes": 181047,
+    "sha256": "2a37224fa7ba603bda6f5d338d03318d61bd9ed634219cbe9a1c4340017addb3"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_H_Boss_45_light.png",
+    "bytes": 190566,
+    "sha256": "a4a9551abb2396f29330ab392fbe8f8e0c884577bf91c4a0f80ee4cb9338c44d"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3/V3_I_Boss_focus_light.png",
+    "bytes": 182051,
+    "sha256": "50c8f6abbe0c597f2aabd74dd54fb800e20d6da9e2278b7e3229beac49ff7ea2"
+  },
+  {
+    "path": "Docs/g1/regression/muzzle_v3_validation.json",
+    "bytes": 763,
+    "sha256": "f6876dcde7f34eb7d38689a4a9eb7c56ba91eafdd5ce4a5e5f8dcea70978a738"
+  },
+  {
+    "path": "Docs/muzzle_v3_live.json",
+    "bytes": 1540,
+    "sha256": "3822c9ec9cb04561b8a589ddb0fe9bfe27d472328ff6e751921581c6a9993e3d"
+  },
+  {
+    "path": "Docs/muzzle_v3_validation.json",
+    "bytes": 763,
+    "sha256": "aa7b158faa801b2807cc9d24978b4078dad190a5107ade17b95811a27fc7717a"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/R2_initial.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/R2_validation.json",
+    "bytes": 1753,
+    "sha256": "70d00d3cb5dc6a7dd01a53c73c94f52a2dcb8b96e34ba69f77167c5032c6bc62"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/V4B_independent_toggles.json",
+    "bytes": 746,
+    "sha256": "16ff26376c9edfac98a2b5931269e39dc59305a64119d04e22fa87a60f412940"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/contour_v1/Boss_75.png",
+    "bytes": 124786,
+    "sha256": "2e41bc2c446bb1470c1ecdd268f48347cbeb5974f109533c670cb35bd19cf060"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/contour_v1/Boss_90.png",
+    "bytes": 122548,
+    "sha256": "87eec6982e8cac9119bea5a37813df7873aecca5bed313c13cf030b42edd2fdc"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/contour_v1/pak_75.png",
+    "bytes": 124487,
+    "sha256": "a32ba5b1fd66300cd27f5f53b1faca38ebdd35b292222609577820f08cacc665"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/contour_v1/panzer_75.png",
+    "bytes": 124730,
+    "sha256": "3cd2b83e167a161f7e72a76ab398381ba7033a957aa6de24cc4959f94c953744"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/contour_v1/truck_75.png",
+    "bytes": 124727,
+    "sha256": "866fc8acdaa0455dd8a78a69710f2045d90beb714af842d7f0301aab56d90505"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/contour_v1_validation.json",
+    "bytes": 557,
+    "sha256": "0af3fdd713787f8f313dab17d61ec7ebfd6e7f080fcbedaa7fa9d496c7f3e4c4"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/final_regression.json",
+    "bytes": 534,
+    "sha256": "7d77465f3b7191f1a6f6e9b8c3d406deb23f3dccbd1c21221ec15b9efb5d28a1"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_A_75_Panzer_normal.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_B_75_Panzer_focus.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_C_75_Pak_normal.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_D_75_Pak_focus.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_E_75_Boss_normal.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_F_75_Boss_focus.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_G_90_Boss_focus.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_H_45_Boss_focus_diagnostic.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_I_60_Boss_focus.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2/V2_J_75_Kubelwagen_focus.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/focus_v2_validation.json",
+    "bytes": 1245,
+    "sha256": "bca9af5f7496b11c0e0d8a21c65c09f769df74783142147db59eac41fe0e8273"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_A_Player_before_fire.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_B_Player_muzzle_light.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_C_Player_smoke_after.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_D_Boss_before_fire.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_E_Boss_muzzle_light.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_F_Boss_smoke_after.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_G_Boss_90_light.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_H_Boss_45_light.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3/V3_I_Boss_focus_light.png",
+    "bytes": 13885,
+    "sha256": "aad20107b0b8915e6c657e16871a8d53e0eb3b43bdea833fd6594b5d425fa22f"
+  },
+  {
+    "path": "Docs/prewarm_v4c/regression/muzzle_v3_validation.json",
+    "bytes": 763,
+    "sha256": "f6876dcde7f34eb7d38689a4a9eb7c56ba91eafdd5ce4a5e5f8dcea70978a738"
+  },
+  {
+    "path": "Docs/tone_v4a_live.json",
+    "bytes": 2582,
+    "sha256": "ffd2542396cfa797a1acd0292f21d086fa56a62017eed44d494a77991e6f8308"
+  },
+  {
+    "path": "Docs/tone_v4a_validation.json",
+    "bytes": 305,
+    "sha256": "04c92abb9f88361b7d49e6daee96e0ff2a22dc3aa82e9e79b3aaa2f24f534337"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_A_Toon_OFF.png",
+    "bytes": 97867,
+    "sha256": "7033787a7c37c718a7fbb221c341e79d5e83b0c6026e6d75c60327a50539cc8f"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_B_T_Lut_03_100.png",
+    "bytes": 93672,
+    "sha256": "29be2fb4456807df9d1dd7265d65d3083391da1bec90c72bbcb2f618244f9c41"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_C_T_Lut_03_60.png",
+    "bytes": 98143,
+    "sha256": "c79797ed18a5fcc01d34031b1f07a660b8cb568453bd8f5a5e7cb52578b26623"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_D_Numeric3.png",
+    "bytes": 69371,
+    "sha256": "57e6c84f4b4cfad0318a3453530ff6a89969d4fd6463db4be0b9e64c395b0efe"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_E_Numeric4.png",
+    "bytes": 70247,
+    "sha256": "9d37798d3ea64cfc40c26b27596ea36810ebd5b8f62e6576a5b64a1bb8b446e5"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_F_Numeric5.png",
+    "bytes": 73787,
+    "sha256": "e0deccf17c5ad3c4acb175f52a6a93228bffebcb344c67f0d0472c439ffa47eb"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_G_Focus.png",
+    "bytes": 99902,
+    "sha256": "4e5c2af4d6c514831396241f086c4db94464f0e398ef477b078314f7f67c58cc"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_H_PlayerMuzzle.png",
+    "bytes": 117884,
+    "sha256": "fa84685da27af216ac63b3cda50b2dc1a83460fb6e86f050851355b3a9029c21"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_I_BossMuzzle.png",
+    "bytes": 174109,
+    "sha256": "4d1ca34d4a9acba1e1d231831635128ec7fa99a89a92ca7af8bb9d800a25cdda"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_J_QShell.png",
+    "bytes": 115708,
+    "sha256": "4272b30b013322804fddcae3126c60ad62f6f847ee747429df43a7f4419e769e"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_comparison.png",
+    "bytes": 251090,
+    "sha256": "995ce659535b6fd1e6bd22a733425fa91ea6b0e812f9179ae13ae3959be2d532"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_controls.png",
+    "bytes": 125085,
+    "sha256": "aa1b058cc924a3a624718cad076ab9c14471be24ed4091e8570e497e04c2e9c3"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_pixel_metrics.json",
+    "bytes": 284,
+    "sha256": "b91d12138be6b473c6b03d3b34b51ecba66f431950347ab2cb00f3ddfa57080a"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_small_vehicle_candidates.png",
+    "bytes": 329312,
+    "sha256": "576699111115e2cc434a185106a726f8688e17683be37ad151d885fcc556833a"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_tone_camera.png",
+    "bytes": 178808,
+    "sha256": "b69817792b040b76c68c2e029d718d6fac6d21f767370353951263bd9bed3da1"
+  },
+  {
+    "path": "Docs/toon_v4b/V4B_vehicle_comparison.png",
+    "bytes": 263708,
+    "sha256": "1e4b2481a96f8536c846de02ba89c7144a8cebaa77e7709a4793b582ab57a01c"
+  },
+  {
+    "path": "Docs/toon_v4b/after_false.png",
+    "bytes": 94099,
+    "sha256": "e8b810d14bd31bf96119113bbfff93aeadd6c50e9d13440bd20f0d3cab04ce45"
+  },
+  {
+    "path": "Docs/toon_v4b/after_true.png",
+    "bytes": 97867,
+    "sha256": "7033787a7c37c718a7fbb221c341e79d5e83b0c6026e6d75c60327a50539cc8f"
+  },
+  {
+    "path": "Docs/toon_v4b/before_false.png",
+    "bytes": 94099,
+    "sha256": "e8b810d14bd31bf96119113bbfff93aeadd6c50e9d13440bd20f0d3cab04ce45"
+  },
+  {
+    "path": "Docs/toon_v4b/before_true.png",
+    "bytes": 97867,
+    "sha256": "7033787a7c37c718a7fbb221c341e79d5e83b0c6026e6d75c60327a50539cc8f"
+  },
+  {
+    "path": "Docs/toon_v4b/camera_45.png",
+    "bytes": 107278,
+    "sha256": "319b2ccde11b98f02b06961680ba0a2b463af0e0440408a161f7c1e04b3941b2"
+  },
+  {
+    "path": "Docs/toon_v4b/camera_90.png",
+    "bytes": 96587,
+    "sha256": "6193683f9184271515058712ee36c820cf94882c2df9ee3d2f602847c11e77af"
+  },
+  {
+    "path": "Docs/toon_v4b/numeric5_60.png",
+    "bytes": 88982,
+    "sha256": "9b8520b7146ecbd43558adfeb9ca24a1e329a97503359a97fe5a4599a424039c"
+  },
+  {
+    "path": "Docs/toon_v4b/ramp_0.4.png",
+    "bytes": 98882,
+    "sha256": "58bfe1643de11842d72fa39abacbdd016f8b642ae83e4dff169325b49b0e2fe2"
+  },
+  {
+    "path": "Docs/toon_v4b/ramp_0.8.png",
+    "bytes": 94861,
+    "sha256": "a00f785fb388198d6eb9e66f7312db7e85c4557f0b8814c759528e5455a02326"
+  },
+  {
+    "path": "Docs/toon_v4b/ramp_linear_60.png",
+    "bytes": 99653,
+    "sha256": "b7bff9c0a2dc5ff67c89e92e0cc4b1e0223a6f5eb4ee98178e5a265f7d8c3869"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/R1_final_regression.json",
+    "bytes": 690,
+    "sha256": "25cbad602ad80f8ab7ed0b1d5288f2b7e2262ecff12b2f1225ec795b16b04fd7"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/R2_initial.png",
+    "bytes": 120109,
+    "sha256": "660de74483cc6ba63b2d8ecbcf9b7708d7f7b58c258452a13aa13dd1a8fbb3be"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/R2_validation.json",
+    "bytes": 1753,
+    "sha256": "70d00d3cb5dc6a7dd01a53c73c94f52a2dcb8b96e34ba69f77167c5032c6bc62"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/contour_v1/Boss_75.png",
+    "bytes": 123439,
+    "sha256": "9ea76a058cb582c66dae5c55708799e1f63467f9afd7ae211ea1320c478e9479"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/contour_v1/Boss_90.png",
+    "bytes": 121196,
+    "sha256": "a45b5a51af8ec49d5a1fc32ea1e60f1e968acd8c3342a1606ade285eca047b56"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/contour_v1/pak_75.png",
+    "bytes": 123122,
+    "sha256": "988916ef3f43cffda1c2e21893261a9d4e8e8d810e6a30400d1a1c32b946b2cf"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/contour_v1/panzer_75.png",
+    "bytes": 123373,
+    "sha256": "261e6d9f5f1456c133882654cd1d21593e5eee26c04ad13231f3f8be3c2841f2"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/contour_v1/truck_75.png",
+    "bytes": 123372,
+    "sha256": "fc19a877d0447ddb5b67cace2e13842805bb893323f915b90f2c4f3a64633444"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/contour_v1_validation.json",
+    "bytes": 557,
+    "sha256": "0af3fdd713787f8f313dab17d61ec7ebfd6e7f080fcbedaa7fa9d496c7f3e4c4"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/final_regression.json",
+    "bytes": 534,
+    "sha256": "7d77465f3b7191f1a6f6e9b8c3d406deb23f3dccbd1c21221ec15b9efb5d28a1"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_A_75_Panzer_normal.png",
+    "bytes": 119338,
+    "sha256": "f76891804b4591c213bafe917158f11b367a3e1cefb4b49abc550406f0e735e7"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_B_75_Panzer_focus.png",
+    "bytes": 122544,
+    "sha256": "2d0f17c6f84c888699e6b060e9b8c6216522797a78d7bd27d387cdb3a689a646"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_C_75_Pak_normal.png",
+    "bytes": 119331,
+    "sha256": "5cba880da8f961c2101c094d7526bd2566c635609acb13425d7ec826182acfca"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_D_75_Pak_focus.png",
+    "bytes": 126303,
+    "sha256": "488b0984b6d2fe3ac075c98efef06b4ced937b5141598e982330fb43bd3fa499"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_E_75_Boss_normal.png",
+    "bytes": 121693,
+    "sha256": "8a2647c30700146c9da6f1c0d900e45896feb2c10bea9675b0187015717353a3"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_F_75_Boss_focus.png",
+    "bytes": 121521,
+    "sha256": "3be4d443bd84e1726783dae83acdfccf19042eb01a73f7a40d14b7dba8c73e1e"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_G_90_Boss_focus.png",
+    "bytes": 119382,
+    "sha256": "819f73363a738bbfdf4da7595545c69822685964bf218d9d0379313bccee3bc8"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_H_45_Boss_focus_diagnostic.png",
+    "bytes": 131627,
+    "sha256": "9858a3e1e54eabdd4a495ceadd855e7aaf0bf7c310d24e153da3a24c91519f3c"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_I_60_Boss_focus.png",
+    "bytes": 125036,
+    "sha256": "e07a266c4df582604d6c7c6bd1f84582603c2819dab7e1a66c45805ec360cffc"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2/V2_J_75_Kubelwagen_focus.png",
+    "bytes": 125953,
+    "sha256": "58b262e9d77f7bf6791288aced555c7194b42d1381ca163060581d35d2986748"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/focus_v2_validation.json",
+    "bytes": 1245,
+    "sha256": "99a5b03e65f290188d2267cc10b53b20b75ee9219b607aaf7eb13bae51df65b7"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_A_Player_before_fire.png",
+    "bytes": 117620,
+    "sha256": "d6d1a32f28945e9e920f9568b10fb4d7b68ef97bb8a15b9087e9df4b8ed3669d"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_B_Player_muzzle_light.png",
+    "bytes": 130321,
+    "sha256": "dd41e7b28f9b9cb6b125235af9defe50814a64e85188ac21009f0ad24a8045fa"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_C_Player_smoke_after.png",
+    "bytes": 118075,
+    "sha256": "0ba6791b742864e51d1f5ffa0a30e76747f7ade3e4666c26dd71b599f6fb6249"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_D_Boss_before_fire.png",
+    "bytes": 117620,
+    "sha256": "d6d1a32f28945e9e920f9568b10fb4d7b68ef97bb8a15b9087e9df4b8ed3669d"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_E_Boss_muzzle_light.png",
+    "bytes": 165041,
+    "sha256": "b97e379071700647db3ce080df8a05a107a69c6826efc8eeb714141f7c264ad9"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_F_Boss_smoke_after.png",
+    "bytes": 119962,
+    "sha256": "b0c87b6968628e66f49834f98cc73a8ab44c99b12c1c875ed0f26d461c0752a8"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_G_Boss_90_light.png",
+    "bytes": 162821,
+    "sha256": "6eef2c3f053e7895f2e30ae804c8659b2bc2e503978cc20e3ad6d6d04960d830"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_H_Boss_45_light.png",
+    "bytes": 175830,
+    "sha256": "3c4909294d2b2b0c31735b5b1fac3c28715f787e6ef78a63455817439937ea22"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3/V3_I_Boss_focus_light.png",
+    "bytes": 167227,
+    "sha256": "ca1f63c5d7079342c88f1593e77b12be95bfb52a05c4cdc5328c1a0c985b22f8"
+  },
+  {
+    "path": "Docs/toon_v4b/regression/muzzle_v3_validation.json",
+    "bytes": 763,
+    "sha256": "f6876dcde7f34eb7d38689a4a9eb7c56ba91eafdd5ce4a5e5f8dcea70978a738"
+  },
+  {
+    "path": "Docs/toon_v4b/tone_ACES.png",
+    "bytes": 98143,
+    "sha256": "c79797ed18a5fcc01d34031b1f07a660b8cb568453bd8f5a5e7cb52578b26623"
+  },
+  {
+    "path": "Docs/toon_v4b/tone_Cineon.png",
+    "bytes": 97453,
+    "sha256": "842cb37bb194994a0cf26280217781a35c4e4c0f88a998dd5370d905d5cf1580"
+  },
+  {
+    "path": "Docs/toon_v4b/tone_None.png",
+    "bytes": 96572,
+    "sha256": "e4a7331f6cd5e137a990d26e52be6706d4fe38fae0874fb554cf97d3f9735fbe"
+  },
+  {
+    "path": "Docs/toon_v4b/tone_Reinhard.png",
+    "bytes": 90421,
+    "sha256": "9bdb5ccdbce7abc90c3631da6b1a8bb9adb898786d7648ee34a42da97830a5d6"
+  },
+  {
+    "path": "Docs/toon_v4b_live.json",
+    "bytes": 1293,
+    "sha256": "bbf578770b5d70cfe4edfe06da53dec4a38bb9422103c0a1162c3cf12bd89a28"
+  },
+  {
+    "path": "Docs/toon_v4b_validation.json",
+    "bytes": 831,
+    "sha256": "e6fd9656f2ce1658ff0378209bad8ec0f91ded742b11b6b6019629e5b752e236"
+  },
+  {
+    "path": "README.md",
+    "bytes": 7009,
+    "sha256": "ad317c4d377c612cfc063b798971a20cce26c9390fddac9ad505a4d2bd59c439"
+  },
+  {
+    "path": "spike/RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.before_g1.html",
+    "bytes": 143733,
+    "sha256": "ecad63f9d8f3d93d84fa2ddd9ad5c718101e7813e4336113d5e03acef61dff6f"
+  },
+  {
+    "path": "spike/RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html",
+    "bytes": 144317,
+    "sha256": "c937f1336a1bcf4611b57a6933bf368ff34e8ee4da60fbb3baf4564720d76ca5"
+  },
+  {
+    "path": "spike/rnd_actors.js",
+    "bytes": 5926,
+    "sha256": "e053436853e1bd15eccbde3fc10497a362716053be62682d3f34cfa8849866fa"
+  },
+  {
+    "path": "spike/rnd_focus_material.js",
+    "bytes": 3879,
+    "sha256": "132138907ce0108012c156545fd17c1a5366a5a397a67c39c5ff79437fcc1c36"
+  },
+  {
+    "path": "spike/rnd_gameplay.js",
+    "bytes": 18659,
+    "sha256": "0be37b1423aecb3d749700fd9cfbbfe9f1beee453dc5a7a2136a5e4a83d820d0"
+  },
+  {
+    "path": "spike/rnd_muzzle_light.js",
+    "bytes": 1768,
+    "sha256": "546848b9d3fb61a9998a8aa9e0a7d01b6518d6a7b36cb27bb1c51a3fe15a15df"
+  },
+  {
+    "path": "spike/rnd_selective_bloom.js",
+    "bytes": 6635,
+    "sha256": "5a730ee99cd23f66834eb492663b7d484f73b9c86262719fbd97d0eddc21a00d"
+  },
+  {
+    "path": "spike/rnd_startup.js",
+    "bytes": 1609,
+    "sha256": "1d0fdd8d88e82e75dfe1eae1e62210864cfe7bd32ae450568570d2ea40fd812d"
+  },
+  {
+    "path": "spike/rnd_target_contour.js",
+    "bytes": 2757,
+    "sha256": "0913d591ec74a1fd34b24cb40e0b567a69cda4082cc62a32d37eb199f66a64b5"
+  },
+  {
+    "path": "spike/rnd_tiger_anchors.js",
+    "bytes": 5016,
+    "sha256": "9b932d8b661e5ee9fc97c978c7c2b106e56890c04cb47063fa7978263bced1c8"
+  },
+  {
+    "path": "spike/rnd_tiger_weakpoints.js",
+    "bytes": 3418,
+    "sha256": "4642f6df7f563bb202f9df0cdb0d83ab5bce91656e38c260dd14954e73556590"
+  },
+  {
+    "path": "spike/rnd_toon_ramp.js",
+    "bytes": 5976,
+    "sha256": "1f458bee2184bb48139e88e151156aec39cce6a4c44f623ba9a27dd6883735f7"
+  },
+  {
+    "path": "spike/rnd_world_grade.js",
+    "bytes": 7338,
+    "sha256": "f8a63f389b06c8a960924609cc2e90a878876ce1eb20012792066d445e26b4ff"
+  },
+  {
+    "path": "spike/textures/T_Lut_03.png",
+    "bytes": 2027,
+    "sha256": "2aa19079fbb47a0854cc38d7411210b20a1949bec52b082aa01e50d1b19f4cb7"
+  },
+  {
+    "path": "spike/vendor/postprocessing/CopyShader.js",
+    "bytes": 616,
+    "sha256": "5827504ed05e7ae252e75f53b3fb10caa96ec21e70a78143e9ef90d430f1107e"
+  },
+  {
+    "path": "spike/vendor/postprocessing/EffectComposer.js",
+    "bytes": 4886,
+    "sha256": "61cdbeb1aa89a61196ac3ca85246d499bf5712a22211fe100e664bb64561bbb4"
+  },
+  {
+    "path": "spike/vendor/postprocessing/MaskPass.js",
+    "bytes": 2335,
+    "sha256": "b0360737a0fa5a3416f062915a16b0448a93f26e01d0e559d9c9cfac8b9cf46d"
+  },
+  {
+    "path": "spike/vendor/postprocessing/OutputPass.js",
+    "bytes": 2497,
+    "sha256": "6d678577a40054bd93491a7ef7415e1c57566b536570a377d1463859c5d449dc"
+  },
+  {
+    "path": "spike/vendor/postprocessing/OutputShader.js",
+    "bytes": 1474,
+    "sha256": "bc1ee7a0c63ddbac9e3e7167f3f8385b86c6344c9ec807213977aa05abd05b14"
+  },
+  {
+    "path": "spike/vendor/postprocessing/Pass.js",
+    "bytes": 1814,
+    "sha256": "63e6a84b9b097dafef0baf57875fbc5b0a6e8f7425f963f0f35bd0baf9dcdcbd"
+  },
+  {
+    "path": "spike/vendor/postprocessing/RenderPass.js",
+    "bytes": 2027,
+    "sha256": "4d4b52882a810b0abd30561d25c4ef8dd75d82805e5bacda16a7027d5a8fd5b0"
+  },
+  {
+    "path": "spike/vendor/postprocessing/ShaderPass.js",
+    "bytes": 1666,
+    "sha256": "024163f3227e7851e3e3befb6c2a4148b619992350eaceb6bf595ab6d4ccd5e1"
+  },
+  {
+    "path": "spike/vendor/postprocessing/provenance.json",
+    "bytes": 2609,
+    "sha256": "5231a48187447b1f37e2bffabad17712bd3f174d69a4e283bf54de7c46951d7f"
+  },
+  {
+    "path": "tests/build_v5_comparison.py",
+    "bytes": 2349,
+    "sha256": "9cdc0864f4d2c1ce43873cd3a749caf34f0cb890d30ae55760ecab1b7e417d39"
+  },
+  {
+    "path": "tests/probe_g1_geometry.cjs",
+    "bytes": 2045,
+    "sha256": "7808eee09d4990ea14698b5102aec9844a899448c739c25915af21f8879fe877"
+  },
+  {
+    "path": "tests/run_g1_regression.cjs",
+    "bytes": 817,
+    "sha256": "e420e28b374c5ce20bf89d2c61792c178889288427495c9a6a9ace51aeacc955"
+  },
+  {
+    "path": "tests/run_v2_regression.cjs",
+    "bytes": 412,
+    "sha256": "8b434f4d6bf7a6e79e958ae9ecb75f50748042c6808a8e5b2998aba6a87aeb49"
+  },
+  {
+    "path": "tests/run_v2b_regression.cjs",
+    "bytes": 414,
+    "sha256": "59e3af4ac4d22dc22bf60ff4f6b89c9a1eafd71e02b8d797573f7efe10760713"
+  },
+  {
+    "path": "tests/run_v3_regression.cjs",
+    "bytes": 414,
+    "sha256": "07f987c33531c360b4989cedb9c0b81ba69668e7c507e333954b4585aa06165f"
+  },
+  {
+    "path": "tests/run_v4a_regression.cjs",
+    "bytes": 412,
+    "sha256": "895a6d50de90725d37e289441bd59a269c687b4bf43aebdfd3b19c11818e73a3"
+  },
+  {
+    "path": "tests/run_v4b_regression.cjs",
+    "bytes": 412,
+    "sha256": "4d68b9b59095bdaf6bffc014672cb933c5aed6bcb4d0354424d3d027189b112b"
+  },
+  {
+    "path": "tests/run_v4c_regression.cjs",
+    "bytes": 835,
+    "sha256": "91a4c9fb9fffe8f845266d64cce45330287d86ce4e4c25b2dd86cbd58e7b8911"
+  },
+  {
+    "path": "tests/run_v5_regression.cjs",
+    "bytes": 829,
+    "sha256": "b48bb45186098a52aa8e1bd0cb403968621aaff061a1eae29c174127a5f61947"
+  },
+  {
+    "path": "tests/test_bloom_perf.cjs",
+    "bytes": 3076,
+    "sha256": "bda8309384bf7883d3ed99e22fb30c7d6ec42ca790d129db1c608613a5d5b859"
+  },
+  {
+    "path": "tests/test_bloom_v5.cjs",
+    "bytes": 7585,
+    "sha256": "6cf13b772e26626144833d884edd6d5b750e1da08900148aad254d04198801a9"
+  },
+  {
+    "path": "tests/test_focus_v2.cjs",
+    "bytes": 6145,
+    "sha256": "479d3353ff7d78a66b3c5031c1f45f7093383f02c58b1311682d48181f8e6a5f"
+  },
+  {
+    "path": "tests/test_focus_v2_live.cjs",
+    "bytes": 2944,
+    "sha256": "ec83154eea9aa8e3f52a6c68e23964b8c09a9ab6c617bccd9c575e91d4a1058d"
+  },
+  {
+    "path": "tests/test_focus_v2_parity.cjs",
+    "bytes": 3475,
+    "sha256": "6779711d482216edcf9ce619b14f25f66fb1be25c6956ab807b6253f4d3c0010"
+  },
+  {
+    "path": "tests/test_focus_v2b.cjs",
+    "bytes": 5557,
+    "sha256": "8fa69bd3109807b15cdd470bfa379aa9e55b544951e70302e892acc640d97f95"
+  },
+  {
+    "path": "tests/test_g1_interactions.cjs",
+    "bytes": 2580,
+    "sha256": "2c848225b83653fed08ca6536e08a07995c540f2cd2c688c05dc7fdb46b0b6be"
+  },
+  {
+    "path": "tests/test_g1_isolation.cjs",
+    "bytes": 2671,
+    "sha256": "df774a6714fcc1886b582f8fe199c9d22cff1a8aa870f98444a6aa9e15cb1272"
+  },
+  {
+    "path": "tests/test_g1_remap.cjs",
+    "bytes": 7285,
+    "sha256": "6042a81689e75b34c13fc9e1bbed2507192e15f5e87e10c9fd832220965dd6a6"
+  },
+  {
+    "path": "tests/test_independent_toggles.cjs",
+    "bytes": 1544,
+    "sha256": "809801a52920e6e68230cb5cf6c04cdd155ca1dbbd9a7da4ceff0135d0cc598c"
+  },
+  {
+    "path": "tests/test_muzzle_v3.cjs",
+    "bytes": 6023,
+    "sha256": "c12337bde065430615582169069699b5497316cacfa6ad12e24957f678f50e8f"
+  },
+  {
+    "path": "tests/test_muzzle_v3_live.cjs",
+    "bytes": 3097,
+    "sha256": "b02c6f18cc0a1878c3713eb120ae60a84a6667a85b44c0cacf6f9e751759e8a1"
+  },
+  {
+    "path": "tests/test_prewarm_isolation.cjs",
+    "bytes": 2073,
+    "sha256": "a1f21ca1b7a766f3abc1035eb35bc4d81ebedcab9feb58861de1bfd914c208d2"
+  },
+  {
+    "path": "tests/test_prewarm_timing.cjs",
+    "bytes": 1762,
+    "sha256": "406d6e23d95115dfd9af4190fac3dbcb4c7828a1461954c3376de88aa4a9016e"
+  },
+  {
+    "path": "tests/test_prewarm_v4c.cjs",
+    "bytes": 4651,
+    "sha256": "98e107d446f4fe41e7572bb15fdde9e8c7aa43bee46991d2903e252b1f68a994"
+  },
+  {
+    "path": "tests/test_tone_v4a.cjs",
+    "bytes": 5682,
+    "sha256": "85e1f94eee38f9e89eb14b01ad713673cb6f240ea9c13571ef8f114a7485584e"
+  },
+  {
+    "path": "tests/test_tone_v4a_live.cjs",
+    "bytes": 4586,
+    "sha256": "4b8e669986924b11217946424035932072695bc625091a9eab6b234145ee26a2"
+  },
+  {
+    "path": "tests/test_toon_v4b.cjs",
+    "bytes": 7246,
+    "sha256": "7d0e2450d58a799d838bfc2a3138949903fe0c32600371a2a14ca5804041554e"
+  },
+  {
+    "path": "tests/test_toon_v4b_live.cjs",
+    "bytes": 3826,
+    "sha256": "514b05427f58abaff26ed6ed5416db4e46dce7c4246fe4794d32dfdfea3c8ee0"
+  }
+]

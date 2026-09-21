@@ -1,0 +1,55 @@
+{
+  "checks": {
+    "half_charge": true,
+    "ready_full": true,
+    "all_panzer_meshes": true,
+    "V1_contour": true,
+    "A_restored_B_focused": true,
+    "shift_release_exact": true,
+    "target_lost_restore": true,
+    "renderer_game_state_unchanged": true,
+    "no_frame_allocation_or_compile": true,
+    "canvas_restores": true,
+    "return_3D": true,
+    "disabled_restores": true,
+    "BT_existing_focus_rule": true,
+    "Q_clears": true,
+    "glass_preserved": true,
+    "glass_restore": true,
+    "death_restore_cleanup": true,
+    "despawn_restore_cleanup": true,
+    "restart_clears": true,
+    "scale_change": true
+  },
+  "perf": [
+    {
+      "label": "OFF",
+      "fps": 195.2489424010886,
+      "calls": 127,
+      "triangles": 227912,
+      "programs": 36,
+      "noAlloc": true,
+      "noCompile": true
+    },
+    {
+      "label": "ON_Panzer",
+      "fps": 191.29603060827372,
+      "calls": 127,
+      "triangles": 196968,
+      "programs": 36,
+      "noAlloc": true,
+      "noCompile": true
+    },
+    {
+      "label": "ON_Tiger2",
+      "fps": 187.44142455395405,
+      "calls": 127,
+      "triangles": 227912,
+      "programs": 36,
+      "noAlloc": true,
+      "noCompile": true
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

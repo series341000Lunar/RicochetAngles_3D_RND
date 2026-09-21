@@ -1,0 +1,11 @@
+{
+  "spike/rnd_gameplay.js": true,
+  "spike/rnd_actors.js": true,
+  "spike/rnd_selective_bloom.js": true,
+  "spike/rnd_world_grade.js": true,
+  "spike/rnd_muzzle_light.js": true,
+  "spike/rnd_toon_ramp.js": true,
+  "spike/rnd_focus_material.js": true,
+  "spike/rnd_target_contour.js": true,
+  "Panzer6B_Tiger2/export/Panzer6B_Tiger2_RND_v01.glb": true
+}

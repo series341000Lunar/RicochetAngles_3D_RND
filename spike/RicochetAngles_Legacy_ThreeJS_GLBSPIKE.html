@@ -1,0 +1,2386 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RicochetAngles — Legacy Three.js Renderer Spike</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #111713; }
+    body { display: grid; place-items: center; font-family: Arial, sans-serif; color: #e9f0df; }
+    canvas { width: 100vw; height: 100vh; display: block; background: #253126; cursor: crosshair; }
+  
+    #world3d { position:fixed; inset:0; z-index:0; pointer-events:none; }
+    #game { position:fixed; inset:0; z-index:1; background:transparent; }
+    #spikePanel { position:fixed; right:12px; bottom:12px; z-index:2; padding:9px 12px;
+      background:rgba(10,16,13,.9); border:1px solid #64735b; border-radius:6px; font:12px/1.5 Arial; }
+    #spikePanel select, #spikePanel button { color:#eef0dd; background:#26382c; border:1px solid #78856c; padding:3px; }
+    #spikeStatus { max-width:480px; color:#c4d1b3; }
+  </style>
+</head>
+<body>
+<canvas id="world3d" aria-hidden="true"></canvas>
+<div id="spikePanel">
+  <strong>LEGACY · M41 GLB STRESS SPIKE</strong>
+  <label>시점 <select id="spikeAngle"><option value="45">45° 실험</option><option value="50">50° 실험</option><option value="55">55° 실험</option><option value="60">60° 실험</option><option value="65">65° 실험</option><option value="70">70° 실험</option><option value="75">75° 실험</option><option value="80">80° 실험</option><option value="85">85° 실험</option><option value="90" selected>90°</option></select></label>
+  <label><input id="spikeShadow" type="checkbox" checked>그림자</label>
+  <button id="spikeMode" type="button">2D 비교</button>
+  <label><input id="bridgeEnabled" type="checkbox" checked>Bridge 75ms</label> <label><input id="easeBridge" type="checkbox" checked>Ease Bridge</label> <label><input id="muzzleDebug" type="checkbox">Muzzle debug</label><div id="muzzleDelta" hidden></div>
+  <div id="glbStatus">M41 loading · Primitive fallback</div><div id="stressStatus">Stress Tanks: 0 · P: add one</div><button id="clearStress" type="button">Clear stress</button>
+  <div id="spikeStatus">Three.js 로딩 중 · 현재 Legacy Canvas</div>
+</div>
+<canvas id="game" width="1280" height="720" aria-label="전차 보스전 게임"></canvas>
+<script>
+"use strict";
+
+// ============================================================
+// 기본 도구와 상수
+// ============================================================
+var canvas = document.getElementById("game");
+var ctx = canvas.getContext("2d");
+var W = canvas.width, H = canvas.height;
+var TAU = Math.PI * 2;
+var rendererSpike = null; // Presentation only; never owns gameplay state.
+
+// Gameplay values live here so balance changes do not require hunting through the code.
+var TUNING = {
+  bossMaxHp: 10,
+  rageHpThreshold: 5,
+  rageMoveSpeedMultiplier: 1.35,
+  rageTurnSpeedMultiplier: 1.25,
+  rageReloadMultiplier: 0.70,
+  normalTrackRepairSeconds: 10.0,
+  rageTrackRepairSeconds: 5.0,
+  rageWeakpointChangeSeconds: 3.0,
+  weakpointChangeWarningSeconds: 0.5,
+  artilleryCooldownNormalSeconds: 15.0,
+  artilleryCooldownRageSeconds: 7.5,
+  artilleryShellCount: 5,
+  artilleryPredictionSeconds: 1.5,
+  artilleryImpactSeconds: 3.0,
+  artilleryPredictionSpreadRadius: 150,
+  artilleryPredictionCenterShotRadius: 25,
+  artilleryMinimumPointSpacing: 32,
+  artilleryLongRangeEnterDistance: 700,
+  artilleryLongRangeExitDistance: 650,
+  artilleryCooldownLongRangeSeconds: 5.0,
+  artilleryBlastRadius: 58,
+  playerHeadingArrowDistance: 50,
+  playerHeadingArrowSize: 20,
+  playerHeadingArrowLineWidth: 3,
+
+  playerReloadSeconds: 0.68,
+  bossAimSeconds: 0.8,
+  bossWarningSeconds: 1.2,
+  bossCooldownSeconds: 2.0,
+  bossMoveSpeed: 25,
+  bossDamagedTrackMoveSpeed: 12,
+  bossTurnSpeed: 0.34,
+  bossDamagedTrackTurnSpeed: 0.16,
+  trackMaxHp: 2,
+  artilleryMaxDamage: 2.0,
+  playerVelocitySmoothingSeconds: 0.5,
+
+  playerMaxHp: 5,
+  playerForwardSpeed: 155,
+  playerReverseSpeed: 95,
+  playerTurnSpeed: 2.15,
+  playerAccelerationSeconds: 0.8,
+  playerCoastStopSeconds: 1.2,
+  playerOppositeBrakeSeconds: 0.45,
+  playerShellMuzzleDistance: 43,
+  playerShellSpeed: 690,
+  playerShellPenetration: 122,
+  playerShellPenetrationLoss: 0.035,
+  bossShellMuzzleDistance: 88,
+  bossShellSpeed: 300,
+  bossShellPenetration: 108,
+  bossShellPenetrationLoss: 0.018,
+  shellLifetimeSeconds: 3.2,
+  ricochetAngleDegrees: 70,
+  maxShellRicochets: 2,
+  trackArmor: 42,
+  destroyedTrackArmor: 18,
+  bossFrontArmor: 155,
+  bossSideArmor: 58,
+  bossRearArmor: 70,
+  bossTurretFrontArmor: 135,
+  bossTurretSideArmor: 65,
+  bossTurretRearArmor: 70,
+  playerFrontArmor: 72,
+  playerSideArmor: 43,
+  playerRearArmor: 32,
+  bossTurretAimSpeed: 0.72,
+  bossTurretWarningSpeed: 0.38,
+  bossAimTolerance: 0.07,
+  bossApproachDistance: 440,
+  maxDeltaSeconds: 0.033,
+
+  engineExposureSeconds: 10.0,
+  engineExposedMoveMultiplier: 0.20,
+  engineExposedTurnMultiplier: 0.20,
+  stationaryDispersionDegrees: 0.35,
+  movementAdditionalDispersionDegrees: 4.65,
+  suppressionDispersionDegrees: 4.0,
+  stationarySpeedRatioThreshold: 0.05,
+  suppressionRequiredHits: 3,
+  suppressionDurationSeconds: 3.0,
+
+  mgDamagePerShot: 0,
+  mgWarningSeconds: 0.25,
+  mgBurstSeconds: 0.8,
+  mgShotsPerBurst: 10,
+  mgCooldownNormalMin: 10.0,
+  mgCooldownNormalMax: 14.0,
+  mgCooldownRageMin: 3.5,
+  mgCooldownRageMax: 5.5,
+  mgEngineExposedCooldownMultiplier: 0.35,
+  mgMinimumCooldownSeconds: 2.5,
+  mgDispersionAtRestDegrees: 1.5,
+  mgDispersionAtMaxSpeedDegrees: 9.0,
+  mgMainGunSeparationSeconds: 0.2,
+  mgTracerSeconds: 0.16,
+  mgRayLength: 1500,
+
+  antiSnipeStartDistance: 500,
+  antiSnipeFullDistance: 700,
+  antiSnipeMaxCooldownDrainMultiplier: 4.0,
+  antiSnipeStationaryDistance: 650,
+  antiSnipeStationarySpeedRatio: 0.15,
+  antiSnipeExitDistance: 600,
+  antiSnipeExitSpeedRatio: 0.25,
+  antiSnipeDwellSeconds: 0.5,
+  antiSnipeCooldownClampSeconds: 4.0,
+  longRangeHighSpeedMaxDispersionMultiplier: 1.5,
+
+  smokeTriggerDistance: 200,
+  smokeCooldownSeconds: 10.0,
+  smokeInitialCooldownSeconds: 2.0,
+  smokeTelegraphSeconds: 0.35,
+  smokeEffectRadius: 240,
+  smokeCloudVisualSeconds: 5.0,
+  smokeAimDebuffSeconds: 5.0,
+  smokeDispersionAddDegrees: 12.0,
+  defensiveRicochetScore: 1,
+  weakpointBankShotScore: 2,
+
+  worldHeightViewportMultiplier: 5.0,
+  worldInitialOffsetViewportMultiplier: 2.0,
+  cameraFollowSharpness: 8.0,
+  rockMaxHp: 4,
+  rockRadius: 35,
+  tankWreckMaxHp: 2,
+  tankWreckRadius: 40,
+  obstaclePlayerSpawnClearance: 160,
+  obstacleBossSpawnClearance: 220,
+  obstacleMinimumGap: 50,
+  obstacleWorldEdgePadding: 30,
+  bossOffscreenConfirmSeconds: 0.25
+};
+
+var WORLD = {
+  width: W,
+  height: H * TUNING.worldHeightViewportMultiplier,
+  initialOffsetY: H * TUNING.worldInitialOffsetViewportMultiplier
+};
+var camera = { x: 0, y: 0, targetX: 0, targetY: 0 };
+
+var DIFFICULTY_PRESETS = {
+  easy:   { engineStaggerSeconds: 2.0, bossShellSpeedScaleFromOriginal: 1.6 },
+  normal: { engineStaggerSeconds: 1.5, bossShellSpeedScaleFromOriginal: 2.0 },
+  hard:   { engineStaggerSeconds: 1.0, bossShellSpeedScaleFromOriginal: 2.4 }
+};
+var CURRENT_DIFFICULTY = "normal";
+
+var WEAKPOINT_DEFS = {
+  engine:     { name: "engine",     label: "ENGINE",      anchor: "hull",   x: -103, y: 0,   w: 20, h: 44, activeArmor: 34, inactiveArmor: 70 },
+  gunPort:    { name: "gunPort",    label: "GUN PORT",    anchor: "turret", x: 49,   y: 0,   w: 18, h: 18, activeArmor: 38, inactiveArmor: 135 },
+  visionSlit: { name: "visionSlit", label: "VISION SLIT", anchor: "hull",   x: 99,   y: -18, w: 14, h: 24, activeArmor: 42, inactiveArmor: 155 },
+  cupola:     { name: "cupola",     label: "CUPOLA",      anchor: "turret", x: -7,   y: -36, w: 20, h: 17, activeArmor: 46, inactiveArmor: 120 }
+};
+var WEAKPOINT_NAMES = ["engine", "gunPort", "visionSlit", "cupola"];
+var TRIGGER_WEAKPOINT_NAMES = ["cupola", "gunPort", "visionSlit"];
+
+function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+function lerp(a, b, t) { return a + (b - a) * t; }
+function len(x, y) { return Math.hypot(x, y); }
+function norm(x, y) { var l = Math.hypot(x, y) || 1; return { x: x / l, y: y / l }; }
+function dot(ax, ay, bx, by) { return ax * bx + ay * by; }
+function angleDelta(a, b) {
+  var d = (b - a + Math.PI) % TAU;
+  if (d < 0) d += TAU;
+  return d - Math.PI;
+}
+function rotateToward(a, b, maxStep) { return a + clamp(angleDelta(a, b), -maxStep, maxStep); }
+function approach(value, target, amount) {
+  if (value < target) return Math.min(target, value + amount);
+  if (value > target) return Math.max(target, value - amount);
+  return target;
+}
+function randomRange(min, max) { return min + Math.random() * (max - min); }
+function centralRandom() { return (Math.random() + Math.random() + Math.random() - 1.5) / 1.5; }
+function smoothstep(edge0, edge1, value) {
+  var t = clamp((value - edge0) / Math.max(0.000001, edge1 - edge0), 0, 1);
+  return t * t * (3 - 2 * t);
+}
+function worldToScreen(x, y) { return { x: x - camera.x, y: y - camera.y }; }
+function screenToWorld(x, y) { return { x: x + camera.x, y: y + camera.y }; }
+function getCameraView() {
+  return { left: camera.x, top: camera.y, right: camera.x + W, bottom: camera.y + H };
+}
+function isWorldCircleVisible(x, y, radius) {
+  var view = getCameraView();
+  return x + radius >= view.left && x - radius <= view.right && y + radius >= view.top && y - radius <= view.bottom;
+}
+function getDifficultyPreset() { return DIFFICULTY_PRESETS[CURRENT_DIFFICULTY]; }
+function localToWorld(tank, x, y) {
+  var c = Math.cos(tank.angle), s = Math.sin(tank.angle);
+  return { x: tank.x + x * c - y * s, y: tank.y + x * s + y * c };
+}
+function worldToLocal(tank, x, y) {
+  var dx = x - tank.x, dy = y - tank.y, c = Math.cos(tank.angle), s = Math.sin(tank.angle);
+  return { x: dx * c + dy * s, y: -dx * s + dy * c };
+}
+function localVectorToWorld(tank, x, y) {
+  var c = Math.cos(tank.angle), s = Math.sin(tank.angle);
+  return { x: x * c - y * s, y: x * s + y * c };
+}
+function seededNoise(i) { return ((i * 9301 + 49297) % 233280) / 233280; }
+function shuffleArray(values) {
+  for (var i = values.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = values[i]; values[i] = values[j]; values[j] = temp;
+  }
+  return values;
+}
+function getWeakpointTransform(boss, def) {
+  var angle = def.anchor === "turret" ? boss.turretAngle : boss.angle;
+  var c = Math.cos(angle), s = Math.sin(angle);
+  return {
+    x: boss.x + def.x * c - def.y * s,
+    y: boss.y + def.x * s + def.y * c,
+    angle: angle
+  };
+}
+
+// 선분과 회전된 직사각형의 최초 진입 충돌. normal은 바깥 방향이다.
+function segmentVsTankRect(x1, y1, x2, y2, tank, rect) {
+  var a = worldToLocal(tank, x1, y1), b = worldToLocal(tank, x2, y2);
+  var dx = b.x - a.x, dy = b.y - a.y;
+  var minX = rect.x - rect.w / 2, maxX = rect.x + rect.w / 2;
+  var minY = rect.y - rect.h / 2, maxY = rect.y + rect.h / 2;
+  var tMin = 0, tMax = 1, nx = 0, ny = 0;
+
+  function slab(start, delta, min, max, axis) {
+    if (Math.abs(delta) < 0.000001) return start >= min && start <= max;
+    var t1 = (min - start) / delta, t2 = (max - start) / delta;
+    var enterNormal = -1;
+    if (t1 > t2) { var temp = t1; t1 = t2; t2 = temp; enterNormal = 1; }
+    if (t1 > tMin) {
+      tMin = t1;
+      if (axis === 0) { nx = enterNormal; ny = 0; }
+      else { nx = 0; ny = enterNormal; }
+    }
+    tMax = Math.min(tMax, t2);
+    return tMin <= tMax;
+  }
+
+  if (!slab(a.x, dx, minX, maxX, 0) || !slab(a.y, dy, minY, maxY, 1)) return null;
+  if (tMin < 0 || tMin > 1) return null;
+  var hit = { x: lerp(x1, x2, tMin), y: lerp(y1, y2, tMin), t: tMin };
+  var wn = localVectorToWorld(tank, nx, ny);
+  hit.nx = wn.x; hit.ny = wn.y; hit.localNormalX = nx; hit.localNormalY = ny;
+  return hit;
+}
+
+function segmentCircleIntersection(x1, y1, x2, y2, cx, cy, radius) {
+  var dx = x2 - x1, dy = y2 - y1;
+  var fx = x1 - cx, fy = y1 - cy;
+  var a = dx * dx + dy * dy;
+  if (a < 0.000001) return null;
+  var c = fx * fx + fy * fy - radius * radius;
+  var t;
+  if (c <= 0) {
+    t = 0;
+  } else {
+    var b = 2 * (fx * dx + fy * dy);
+    var discriminant = b * b - 4 * a * c;
+    if (discriminant < 0) return null;
+    var root = Math.sqrt(discriminant);
+    var t1 = (-b - root) / (2 * a), t2 = (-b + root) / (2 * a);
+    t = t1 >= 0 && t1 <= 1 ? t1 : (t2 >= 0 && t2 <= 1 ? t2 : null);
+    if (t === null) return null;
+  }
+  var hitX = lerp(x1, x2, t), hitY = lerp(y1, y2, t);
+  var normal = norm(hitX - cx, hitY - cy);
+  if (t === 0 && Math.abs(hitX - cx) + Math.abs(hitY - cy) < 0.0001) normal = norm(-dx, -dy);
+  return { x: hitX, y: hitY, t: t, nx: normal.x, ny: normal.y };
+}
+
+function getEarliestObstacleHit(x1, y1, x2, y2) {
+  var best = null;
+  for (var i = 0; i < game.obstacles.length; i++) {
+    var obstacle = game.obstacles[i];
+    if (obstacle.destroyed) continue;
+    var hit = segmentCircleIntersection(x1, y1, x2, y2, obstacle.x, obstacle.y, obstacle.radius);
+    if (hit && (!best || hit.t < best.t)) {
+      hit.obstacle = obstacle;
+      best = hit;
+    }
+  }
+  return best;
+}
+
+function resolveTankObstacleCollisions(tank) {
+  var collided = false;
+  for (var pass = 0; pass < 3; pass++) {
+    var movedThisPass = false;
+    for (var i = 0; i < game.obstacles.length; i++) {
+      var obstacle = game.obstacles[i];
+      if (obstacle.destroyed) continue;
+      var dx = tank.x - obstacle.x, dy = tank.y - obstacle.y;
+      var distance = Math.hypot(dx, dy);
+      var minimumDistance = tank.collisionRadius + obstacle.radius;
+      if (distance >= minimumDistance) continue;
+      var normal = distance > 0.0001 ? { x: dx / distance, y: dy / distance } : { x: 1, y: 0 };
+      var overlap = minimumDistance - distance + 0.01;
+      tank.x += normal.x * overlap; tank.y += normal.y * overlap;
+      tank.x = clamp(tank.x, tank.collisionRadius, WORLD.width - tank.collisionRadius);
+      tank.y = clamp(tank.y, tank.collisionRadius, WORLD.height - tank.collisionRadius);
+      collided = true; movedThisPass = true;
+    }
+    if (!movedThisPass) break;
+  }
+  return collided;
+}
+
+// ============================================================
+// 결정론적 관통 계산 (독립 순수 함수)
+// 각도는 장갑 노멀 기준 0도=직각, 90도=스침이다.
+// ============================================================
+function calculatePenetration(input) {
+  var travel = norm(input.velocityX, input.velocityY);
+  var cosine = clamp(Math.abs(dot(-travel.x, -travel.y, input.normalX, input.normalY)), 0, 1);
+  var impactAngle = Math.acos(cosine) * 180 / Math.PI;
+  var effectiveArmor = input.armor / Math.max(cosine, 0.15);
+  var currentPen = Math.max(1, input.basePenetration - input.distance * input.penetrationLoss);
+  var result = impactAngle >= input.ricochetAngle ? "도탄" : (currentPen >= effectiveArmor ? "관통" : "비관통");
+  return {
+    angle: impactAngle,
+    armor: input.armor,
+    effectiveArmor: effectiveArmor,
+    penetration: currentPen,
+    result: result
+  };
+}
+
+// ============================================================
+// 입력 처리
+// ============================================================
+var input = {
+  keys: {}, fire: false,
+  mouseScreenX: W / 2, mouseScreenY: H / 2,
+  mouseWorldX: W / 2, mouseWorldY: H / 2
+};
+window.addEventListener("keydown", function (e) {
+  var key = e.key.toLowerCase();
+  input.keys[key] = true;
+  if (key === "tab") { e.preventDefault(); game.debug = !game.debug; }
+  if (key === "r") resetGame();
+});
+window.addEventListener("keyup", function (e) { input.keys[e.key.toLowerCase()] = false; });
+canvas.addEventListener("mousemove", function (e) {
+  var r = canvas.getBoundingClientRect();
+  input.mouseScreenX = (e.clientX - r.left) * W / r.width;
+  input.mouseScreenY = (e.clientY - r.top) * H / r.height;
+  var mouseWorld = screenToWorld(input.mouseScreenX, input.mouseScreenY);
+  input.mouseWorldX = mouseWorld.x;
+  input.mouseWorldY = mouseWorld.y;
+});
+canvas.addEventListener("mousedown", function (e) { if (e.button === 0) input.fire = true; });
+canvas.addEventListener("mouseup", function (e) { if (e.button === 0) input.fire = false; });
+canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+window.addEventListener("blur", function () { input.keys = {}; input.fire = false; });
+
+// ============================================================
+// 게임 상태와 개체 생성
+// ============================================================
+var game;
+var OBSTACLE_CANDIDATES = [
+  { type: "rock",      xRatio: 0.20, yViewport: 0.55, rotation: 0.22 },
+  { type: "tankWreck", xRatio: 0.68, yViewport: 0.85, rotation: -0.58 },
+  { type: "rock",      xRatio: 0.82, yViewport: 1.35, rotation: 0.74 },
+  { type: "tankWreck", xRatio: 0.32, yViewport: 1.65, rotation: 0.38 },
+  { type: "rock",      xRatio: 0.56, yViewport: 2.05, rotation: -0.31 },
+  { type: "tankWreck", xRatio: 0.26, yViewport: 2.90, rotation: 0.82 },
+  { type: "rock",      xRatio: 0.78, yViewport: 3.15, rotation: 0.12 },
+  { type: "tankWreck", xRatio: 0.50, yViewport: 3.90, rotation: -0.76 },
+  { type: "rock",      xRatio: 0.84, yViewport: 4.45, rotation: 0.49 },
+  { type: "rock",      xRatio: 0.15, yViewport: 1.18, rotation: 0.15 },
+  { type: "tankWreck", xRatio: 0.72, yViewport: 2.55, rotation: 0.44 },
+  { type: "rock",      xRatio: 0.37, yViewport: 3.48, rotation: -0.21 },
+  { type: "tankWreck", xRatio: 0.18, yViewport: 4.30, rotation: 0.67 },
+  { type: "rock",      xRatio: 0.62, yViewport: 0.32, rotation: -0.42 }
+];
+
+function makePlayer() {
+  return {
+    type: "player", x: 220, y: 360 + WORLD.initialOffsetY, angle: 0, turretAngle: 0,
+    currentForwardSpeed: 0, radius: 33, collisionRadius: 33,
+    hp: TUNING.playerMaxHp, maxHp: TUNING.playerMaxHp, reload: 0,
+    suppressedRemaining: 0, smokeDebuffRemaining: 0,
+    hitFlash: 0, alive: true,
+    actualVx: 0, actualVy: 0, smoothedVx: 0, smoothedVy: 0
+  };
+}
+function makeBoss() {
+  return {
+    type: "boss", x: 955, y: 360 + WORLD.initialOffsetY, angle: Math.PI, turretAngle: Math.PI,
+    radius: 105, collisionRadius: 105, boundingRadius: 122, state: "aim", timer: 0,
+    hp: TUNING.bossMaxHp, maxHp: TUNING.bossMaxHp, alive: true,
+    leftTrack: { hp: TUNING.trackMaxHp, maxHp: TUNING.trackMaxHp, destroyed: false, repairRemaining: 0 },
+    rightTrack: { hp: TUNING.trackMaxHp, maxHp: TUNING.trackMaxHp, destroyed: false, repairRemaining: 0 },
+    rage: false, ragePulse: 0,
+    weakpointState: "triggerWeakpoint",
+    activeTriggerWeakpoint: null, lastTriggerWeakpoint: null,
+    weakpointBag: [], weakpointTimer: 0,
+    engineExposureTimer: 0, engineStaggerTimer: 0,
+    artilleryCooldown: TUNING.artilleryCooldownNormalSeconds,
+    artilleryPredictedCenter: null, artilleryPredictionLine: null,
+    isLongRangeArtilleryMode: false,
+    offscreenCandidateTime: 0, completelyOffscreen: false, wasCompletelyOffscreen: false,
+    mg: {
+      phase: "cooldown",
+      timer: randomRange(TUNING.mgCooldownNormalMin, TUNING.mgCooldownNormalMax),
+      shotIndex: 0, baseAngle: 0, hits: 0,
+      playerSpeedRatio: 0, dispersionDegrees: TUNING.mgDispersionAtRestDegrees,
+      timeSinceLastBurst: 0, shotDebug: [],
+      stationarySnipingCandidateTime: 0, wasStationarySniping: false,
+      stationarySnipingClampApplied: false
+    },
+    smoke: {
+      phase: "cooldown", cooldownRemaining: TUNING.smokeInitialCooldownSeconds,
+      telegraphRemaining: 0, cloudRemaining: 0, x: 0, y: 0
+    },
+    lastMainGunFireTime: -999,
+    hitFlash: 0, movePhase: 0
+  };
+}
+
+function makeObstacles(player, boss) {
+  var obstacles = [];
+  for (var i = 0; i < OBSTACLE_CANDIDATES.length && obstacles.length < 9; i++) {
+    var candidate = OBSTACLE_CANDIDATES[i];
+    var radius = candidate.type === "rock" ? TUNING.rockRadius : TUNING.tankWreckRadius;
+    var maxHp = candidate.type === "rock" ? TUNING.rockMaxHp : TUNING.tankWreckMaxHp;
+    var obstacle = {
+      id: "obstacle-" + (obstacles.length + 1), type: candidate.type,
+      x: candidate.xRatio * WORLD.width, y: candidate.yViewport * H,
+      radius: radius, hp: maxHp, maxHp: maxHp, destroyed: false, rotation: candidate.rotation
+    };
+    var edgePadding = radius + TUNING.obstacleWorldEdgePadding;
+    if (obstacle.x < edgePadding || obstacle.x > WORLD.width - edgePadding ||
+        obstacle.y < edgePadding || obstacle.y > WORLD.height - edgePadding) continue;
+    if (len(obstacle.x - player.x, obstacle.y - player.y) < TUNING.obstaclePlayerSpawnClearance + radius) continue;
+    if (len(obstacle.x - boss.x, obstacle.y - boss.y) < TUNING.obstacleBossSpawnClearance + radius) continue;
+    var valid = true;
+    for (var j = 0; j < obstacles.length; j++) {
+      if (len(obstacle.x - obstacles[j].x, obstacle.y - obstacles[j].y) <
+          radius + obstacles[j].radius + TUNING.obstacleMinimumGap) { valid = false; break; }
+    }
+    if (valid) obstacles.push(obstacle);
+  }
+  return obstacles;
+}
+
+function updateCameraTarget() {
+  camera.targetX = clamp(game.player.x - W * 0.5, 0, Math.max(0, WORLD.width - W));
+  camera.targetY = clamp(game.player.y - H * 0.5, 0, Math.max(0, WORLD.height - H));
+}
+function resetCameraToPlayer() {
+  updateCameraTarget();
+  camera.x = camera.targetX; camera.y = camera.targetY;
+  var mouseWorld = screenToWorld(input.mouseScreenX, input.mouseScreenY);
+  input.mouseWorldX = mouseWorld.x; input.mouseWorldY = mouseWorld.y;
+}
+function updateCamera(dt) {
+  updateCameraTarget();
+  var follow = 1 - Math.exp(-TUNING.cameraFollowSharpness * dt);
+  camera.x += (camera.targetX - camera.x) * follow;
+  camera.y += (camera.targetY - camera.y) * follow;
+}
+
+function resetGame() {
+  var keepDebug = game ? game.debug : false;
+  WORLD.width = W;
+  WORLD.height = H * TUNING.worldHeightViewportMultiplier;
+  WORLD.initialOffsetY = H * TUNING.worldInitialOffsetViewportMultiplier;
+  var player = makePlayer(), boss = makeBoss();
+  game = {
+    player: player, boss: boss, shells: [], particles: [], texts: [],
+    state: "playing", debug: keepDebug, lastHit: null, time: 0,
+    shake: 0, explosions: [], nextExplosion: 0,
+    artillery: [], mgTracers: [], obstacles: makeObstacles(player, boss),
+    weakpointEventThisFrame: null, artilleryFiredThisFrame: false,
+    smokeStartedThisFrame: false, score: 0, scorePopups: [], lastScoreEvent: null,
+    lastDebugShell: null
+  };
+  changeActiveWeakpoint("initial");
+  resetCameraToPlayer();
+}
+resetGame();
+
+// ============================================================
+// 약점 관리자, 폭주, 궤도 복구, 곡사포
+// ============================================================
+function changeActiveWeakpoint(reason) {
+  var b = game.boss;
+  if (b.weakpointBag.length === 0) {
+    b.weakpointBag = shuffleArray(TRIGGER_WEAKPOINT_NAMES.slice());
+    if (b.lastTriggerWeakpoint && b.weakpointBag[b.weakpointBag.length - 1] === b.lastTriggerWeakpoint) {
+      var swapIndex = 0;
+      var temp = b.weakpointBag[swapIndex];
+      b.weakpointBag[swapIndex] = b.weakpointBag[b.weakpointBag.length - 1];
+      b.weakpointBag[b.weakpointBag.length - 1] = temp;
+    }
+  }
+  b.activeTriggerWeakpoint = b.weakpointBag.pop();
+  b.lastTriggerWeakpoint = b.activeTriggerWeakpoint;
+  b.weakpointState = "triggerWeakpoint";
+  b.engineExposureTimer = 0;
+  b.engineStaggerTimer = 0;
+  b.weakpointTimer = 0;
+  if (reason !== "initial") {
+    var label = WEAKPOINT_DEFS[b.activeTriggerWeakpoint].label;
+    addText(b.x, b.y - 112, "약점 변경 · " + label, reason === "rage_timer" ? "#ffdc78" : "#fff4a8", 1.0, 20);
+  }
+}
+
+function getActiveWeakpointName(b) {
+  return b.weakpointState === "engineExposed" ? "engine" : b.activeTriggerWeakpoint;
+}
+
+function getBossMoveMultiplier(b) {
+  return b.weakpointState === "engineExposed" && b.engineStaggerTimer > 0 ? TUNING.engineExposedMoveMultiplier : 1;
+}
+
+function getBossTurnMultiplier(b) {
+  return b.weakpointState === "engineExposed" && b.engineStaggerTimer > 0 ? TUNING.engineExposedTurnMultiplier : 1;
+}
+
+function exposeEngineWeakpoint() {
+  var b = game.boss;
+  if (b.weakpointState !== "triggerWeakpoint") return;
+  b.weakpointState = "engineExposed";
+  b.activeTriggerWeakpoint = null;
+  b.engineExposureTimer = TUNING.engineExposureSeconds;
+  b.engineStaggerTimer = getDifficultyPreset().engineStaggerSeconds;
+  if (b.mg.phase === "cooldown") {
+    b.mg.timer = Math.max(TUNING.mgMinimumCooldownSeconds, b.mg.timer * TUNING.mgEngineExposedCooldownMultiplier);
+  }
+  game.weakpointEventThisFrame = "trigger_penetrated";
+  addText(b.x, b.y - 118, "ENGINE 노출!", "#fff09a", 1.1, 27);
+}
+
+function resolveEngineExposure(outcome) {
+  var b = game.boss;
+  if (b.weakpointState !== "engineExposed") return;
+  var penetrated = outcome === "penetrated";
+  if (penetrated) {
+    b.hp = Math.max(0, b.hp - 1);
+    b.hitFlash = 0.22;
+    game.weakpointEventThisFrame = "engine_penetrated";
+    addText(b.x, b.y - 118, "엔진 관통!  BOSS " + b.hp + "/" + b.maxHp, "#fff09a", 1.25, 25);
+  } else {
+    game.weakpointEventThisFrame = "engine_timeout";
+    addText(b.x, b.y - 118, "엔진 노출 종료", "#d8c39a", 0.9, 19);
+  }
+
+  // Select the next trigger before checking rage so 6 -> 5 never causes an extra change.
+  changeActiveWeakpoint(penetrated ? "engine_penetrated" : "engine_timeout");
+  if (!penetrated) return;
+  if (b.hp <= 0) destroyBoss();
+  else if (!b.rage && b.hp <= TUNING.rageHpThreshold) enterRageMode();
+}
+
+function getCurrentArtilleryCooldownMode() {
+  if (game.boss.isLongRangeArtilleryMode) return "longRange";
+  return game.boss.rage ? "rage" : "normal";
+}
+function getCurrentArtilleryCooldownSeconds() {
+  var mode = getCurrentArtilleryCooldownMode();
+  if (mode === "longRange") return TUNING.artilleryCooldownLongRangeSeconds;
+  return mode === "rage" ? TUNING.artilleryCooldownRageSeconds : TUNING.artilleryCooldownNormalSeconds;
+}
+function getDistanceToBoss() {
+  return len(game.player.x - game.boss.x, game.player.y - game.boss.y);
+}
+function updateLongRangeArtilleryMode() {
+  var b = game.boss;
+  var distance = getDistanceToBoss();
+  if (!b.isLongRangeArtilleryMode && distance >= TUNING.artilleryLongRangeEnterDistance) {
+    b.isLongRangeArtilleryMode = true;
+    b.artilleryCooldown = Math.min(b.artilleryCooldown, TUNING.artilleryCooldownLongRangeSeconds);
+  } else if (b.isLongRangeArtilleryMode && distance < TUNING.artilleryLongRangeExitDistance) {
+    b.isLongRangeArtilleryMode = false;
+  }
+}
+function updateBossOffscreen(dt) {
+  var b = game.boss;
+  var view = getCameraView();
+  var outside = b.x + b.boundingRadius < view.left || b.x - b.boundingRadius > view.right ||
+    b.y + b.boundingRadius < view.top || b.y - b.boundingRadius > view.bottom;
+  b.wasCompletelyOffscreen = b.completelyOffscreen;
+  if (outside) {
+    b.offscreenCandidateTime += dt;
+    if (b.offscreenCandidateTime >= TUNING.bossOffscreenConfirmSeconds) b.completelyOffscreen = true;
+  } else {
+    b.offscreenCandidateTime = 0;
+    b.completelyOffscreen = false;
+  }
+}
+
+function enterRageMode() {
+  var b = game.boss;
+  if (b.rage) return;
+  b.rage = true;
+  b.ragePulse = 1.25;
+  if (b.leftTrack.destroyed) b.leftTrack.repairRemaining *= 0.5;
+  if (b.rightTrack.destroyed) b.rightTrack.repairRemaining *= 0.5;
+  if (game.artillery.length === 0) fireArtilleryBarrage();
+  b.artilleryCooldown = getCurrentArtilleryCooldownSeconds();
+  game.shake = Math.max(game.shake, 11);
+  addText(b.x, b.y - 135, "폭주 모드!", "#ff5b45", 2.0, 38);
+}
+
+function updateTrackRepairs(dt) {
+  var b = game.boss;
+  function updateTrack(track, label) {
+    if (!track.destroyed) return;
+    track.repairRemaining = Math.max(0, track.repairRemaining - dt);
+    if (track.repairRemaining <= 0) {
+      track.destroyed = false;
+      track.hp = track.maxHp;
+      addText(b.x, b.y - 92, label + " 궤도 복구", "#a9e68a", 1.2, 23);
+    }
+  }
+  updateTrack(b.leftTrack, "왼쪽");
+  updateTrack(b.rightTrack, "오른쪽");
+}
+
+function makeArtilleryPoint(center, existing, index) {
+  var margin = TUNING.artilleryBlastRadius + 18;
+  function hasSpacing(x, y) {
+    for (var k = 0; k < existing.length; k++) {
+      if (len(x - existing[k].x, y - existing[k].y) < TUNING.artilleryMinimumPointSpacing) return false;
+    }
+    return true;
+  }
+  for (var attempt = 0; attempt < 240; attempt++) {
+    var angle = Math.random() * TAU;
+    var radius = Math.pow(Math.random(), 1.6) * TUNING.artilleryPredictionSpreadRadius;
+    var x = clamp(center.x + Math.cos(angle) * radius, margin, WORLD.width - margin);
+    var y = clamp(center.y + Math.sin(angle) * radius, margin, WORLD.height - margin);
+    if (hasSpacing(x, y)) return { x: x, y: y };
+  }
+  for (var ring = 1; ring <= 4; ring++) {
+    for (var sample = 0; sample < 72; sample++) {
+      var fallbackAngle = (sample / 72) * TAU + index * 0.37;
+      var fallbackRadius = TUNING.artilleryPredictionSpreadRadius * ring / 4;
+      var fallbackX = clamp(center.x + Math.cos(fallbackAngle) * fallbackRadius, margin, WORLD.width - margin);
+      var fallbackY = clamp(center.y + Math.sin(fallbackAngle) * fallbackRadius, margin, WORLD.height - margin);
+      if (hasSpacing(fallbackX, fallbackY)) return { x: fallbackX, y: fallbackY };
+    }
+  }
+  return {
+    x: clamp(center.x, margin, WORLD.width - margin),
+    y: clamp(center.y, margin, WORLD.height - margin)
+  };
+}
+
+function generateArtilleryPoints(player, predictedCenter) {
+  var points = [];
+  var margin = TUNING.artilleryBlastRadius + 18;
+
+  function clampPoint(x, y) {
+    return { x: clamp(x, margin, WORLD.width - margin), y: clamp(y, margin, WORLD.height - margin) };
+  }
+  function hasSpacing(point) {
+    for (var j = 0; j < points.length; j++) {
+      if (len(point.x - points[j].x, point.y - points[j].y) < TUNING.artilleryMinimumPointSpacing) return false;
+    }
+    return true;
+  }
+
+  for (var i = 0; i < TUNING.artilleryShellCount; i++) {
+    var radiusLimit = i === 0 ? TUNING.artilleryPredictionCenterShotRadius : TUNING.artilleryPredictionSpreadRadius;
+    var accepted = null, lastCandidate = clampPoint(predictedCenter.x, predictedCenter.y);
+    for (var attempt = 0; attempt < 160 && !accepted; attempt++) {
+      var angle = Math.random() * TAU;
+      var radius = radiusLimit * Math.pow(Math.random(), 1.6);
+      lastCandidate = clampPoint(predictedCenter.x + Math.cos(angle) * radius, predictedCenter.y + Math.sin(angle) * radius);
+      if (hasSpacing(lastCandidate)) accepted = lastCandidate;
+    }
+    points.push(accepted || lastCandidate);
+  }
+  return points;
+}
+
+function fireArtilleryBarrage() {
+  var b = game.boss, p = game.player;
+  if (!b.alive || game.state !== "playing" || game.artilleryFiredThisFrame) return false;
+  game.artilleryFiredThisFrame = true;
+  var artilleryMargin = TUNING.artilleryBlastRadius + 18;
+  var smoothedSpeedRatio = clamp(Math.hypot(p.smoothedVx, p.smoothedVy) / TUNING.playerForwardSpeed, 0, 1);
+  var predictionVx = smoothedSpeedRatio < TUNING.stationarySpeedRatioThreshold ? 0 : p.smoothedVx;
+  var predictionVy = smoothedSpeedRatio < TUNING.stationarySpeedRatioThreshold ? 0 : p.smoothedVy;
+  var center = {
+    x: clamp(p.x + predictionVx * TUNING.artilleryPredictionSeconds, artilleryMargin, WORLD.width - artilleryMargin),
+    y: clamp(p.y + predictionVy * TUNING.artilleryPredictionSeconds, artilleryMargin, WORLD.height - artilleryMargin)
+  };
+  b.artilleryPredictedCenter = center;
+  b.artilleryPredictionLine = { x1: p.x, y1: p.y, x2: center.x, y2: center.y };
+  var created = generateArtilleryPoints(p, center);
+  for (var i = 0; i < TUNING.artilleryShellCount; i++) {
+    var point = created[i];
+    var marker = { x: point.x, y: point.y, remaining: TUNING.artilleryImpactSeconds, total: TUNING.artilleryImpactSeconds };
+    game.artillery.push(marker);
+  }
+  var origin = localToWorld(b, -98, 0);
+  var launchAngle = Math.atan2(center.y - origin.y, center.x - origin.x);
+  spawnMuzzle(origin.x, origin.y, launchAngle, "#ff7253");
+  addText(origin.x, origin.y - 22, "곡사포 5발", "#ff947c", 1.0, 19);
+  return true;
+}
+
+function updateArtillery(dt) {
+  var b = game.boss;
+  if (game.state !== "playing" || !b.alive) {
+    game.artillery = [];
+    b.artilleryPredictedCenter = null;
+    b.artilleryPredictionLine = null;
+    return;
+  }
+  for (var i = game.artillery.length - 1; i >= 0; i--) {
+    var a = game.artillery[i];
+    a.remaining -= dt;
+    if (a.remaining > 0) continue;
+    spawnExplosion(a.x, a.y, 32);
+    game.shake = Math.max(game.shake, 8);
+    var distance = len(game.player.x - a.x, game.player.y - a.y);
+    if (distance < TUNING.artilleryBlastRadius && game.player.alive) {
+      var damage = TUNING.artilleryMaxDamage * (1 - distance / TUNING.artilleryBlastRadius);
+      game.player.hp = Math.max(0, game.player.hp - damage);
+      game.player.hitFlash = 0.3;
+      addText(game.player.x, game.player.y - 28, "곡사포 피해 " + damage.toFixed(1), "#ff7864", 1.0, 22);
+      if (game.player.hp <= 0) {
+        game.player.alive = false;
+        game.state = "lost";
+        game.artillery = [];
+        spawnExplosion(game.player.x, game.player.y, 34);
+        return;
+      }
+    }
+    game.artillery.splice(i, 1);
+  }
+  // Update pre-existing markers before spawning a barrage so a newly created
+  // marker receives its full artilleryImpactSeconds lifetime.
+  b.artilleryCooldown = Math.max(0, b.artilleryCooldown - dt);
+  if (b.artilleryCooldown <= 0 && !game.artilleryFiredThisFrame) {
+    if (fireArtilleryBarrage()) b.artilleryCooldown = getCurrentArtilleryCooldownSeconds();
+  }
+}
+
+function finalizeWeakpointRotation() {
+  var b = game.boss;
+  if (!b.alive || game.state !== "playing") return;
+  if (b.weakpointState === "engineExposed") {
+    if (b.engineExposureTimer <= 0 && game.weakpointEventThisFrame !== "engine_penetrated") {
+      resolveEngineExposure("timeout");
+    }
+    return;
+  }
+  if (b.rage && !game.weakpointEventThisFrame && b.weakpointTimer >= TUNING.rageWeakpointChangeSeconds) {
+    changeActiveWeakpoint("rage_timer");
+  }
+}
+
+function getPlayerDispersion(player) {
+  var speedRatio = getPlayerActualSpeedRatio(player);
+  if (speedRatio <= TUNING.stationarySpeedRatioThreshold) speedRatio = 0;
+  var movement = TUNING.stationaryDispersionDegrees + TUNING.movementAdditionalDispersionDegrees * speedRatio * speedRatio;
+  var rangeMetrics = getAntiSnipeMetrics(player, game.boss);
+  var longRangeMultiplier = 1 + (TUNING.longRangeHighSpeedMaxDispersionMultiplier - 1) * rangeMetrics.distanceRatio * speedRatio * speedRatio;
+  var adjustedMovement = movement * longRangeMultiplier;
+  var suppression = player.suppressedRemaining > 0 ? TUNING.suppressionDispersionDegrees : 0;
+  var smoke = player.smokeDebuffRemaining > 0 ? TUNING.smokeDispersionAddDegrees : 0;
+  return {
+    speedRatio: speedRatio,
+    movement: movement,
+    adjustedMovement: adjustedMovement,
+    longRangeMultiplier: longRangeMultiplier,
+    suppression: suppression,
+    smoke: smoke,
+    total: adjustedMovement + suppression + smoke
+  };
+}
+
+function getPlayerActualSpeedRatio(player) {
+  return clamp(Math.hypot(player.actualVx, player.actualVy) / TUNING.playerForwardSpeed, 0, 1);
+}
+
+function getAntiSnipeMetrics(player, boss) {
+  var distance = len(player.x - boss.x, player.y - boss.y);
+  var startDistance = TUNING.antiSnipeStartDistance;
+  var fullDistance = TUNING.antiSnipeFullDistance;
+  var distanceRatio = smoothstep(startDistance, fullDistance, distance);
+  var playerSpeedRatio = getPlayerActualSpeedRatio(player);
+  var slowRatio = 1 - smoothstep(0.10, 0.65, playerSpeedRatio);
+  var pressure = distanceRatio * slowRatio;
+  var cooldownDrainRate = lerp(1.0, TUNING.antiSnipeMaxCooldownDrainMultiplier, pressure);
+  return {
+    distance: distance,
+    startDistance: startDistance,
+    fullDistance: fullDistance,
+    distanceRatio: distanceRatio,
+    playerSpeedRatio: playerSpeedRatio,
+    slowRatio: slowRatio,
+    pressure: pressure,
+    cooldownDrainRate: cooldownDrainRate
+  };
+}
+
+function updateStationarySniping(dt, metrics) {
+  var mg = game.boss.mg;
+  var shouldExit = metrics.distance < TUNING.antiSnipeExitDistance ||
+    metrics.playerSpeedRatio > TUNING.antiSnipeExitSpeedRatio;
+  if (shouldExit) {
+    mg.stationarySnipingCandidateTime = 0;
+    mg.wasStationarySniping = false;
+    mg.stationarySnipingClampApplied = false;
+    return;
+  }
+  if (mg.wasStationarySniping) return;
+  var qualifies = metrics.distance >= TUNING.antiSnipeStationaryDistance &&
+    metrics.playerSpeedRatio <= TUNING.antiSnipeStationarySpeedRatio;
+  mg.stationarySnipingCandidateTime = qualifies ? mg.stationarySnipingCandidateTime + dt : 0;
+  if (mg.stationarySnipingCandidateTime >= TUNING.antiSnipeDwellSeconds) {
+    mg.wasStationarySniping = true;
+    if (!mg.stationarySnipingClampApplied && mg.phase === "cooldown") {
+      mg.timer = Math.min(mg.timer, TUNING.antiSnipeCooldownClampSeconds);
+    }
+    mg.stationarySnipingClampApplied = true;
+  }
+}
+
+function sampleMachineGunCooldown(boss) {
+  var min = boss.rage ? TUNING.mgCooldownRageMin : TUNING.mgCooldownNormalMin;
+  var max = boss.rage ? TUNING.mgCooldownRageMax : TUNING.mgCooldownNormalMax;
+  var selectedBaseCooldown = randomRange(min, max);
+  var multiplier = boss.weakpointState === "engineExposed" ? TUNING.mgEngineExposedCooldownMultiplier : 1;
+  return Math.max(TUNING.mgMinimumCooldownSeconds, selectedBaseCooldown * multiplier);
+}
+
+function setMachineGunCooldown() {
+  var mg = game.boss.mg;
+  mg.phase = "cooldown";
+  mg.timer = sampleMachineGunCooldown(game.boss);
+  mg.shotIndex = 0;
+  mg.hits = 0;
+  mg.playerSpeedRatio = 0;
+  mg.dispersionDegrees = TUNING.mgDispersionAtRestDegrees;
+}
+
+function getMachineGunOrigin(boss) {
+  return {
+    x: boss.x + Math.cos(boss.turretAngle) * 48 + Math.cos(boss.turretAngle + Math.PI / 2) * 13,
+    y: boss.y + Math.sin(boss.turretAngle) * 48 + Math.sin(boss.turretAngle + Math.PI / 2) * 13
+  };
+}
+
+function fireMachineGunShot() {
+  var b = game.boss, p = game.player, mg = b.mg;
+  var angle = mg.baseAngle + centralRandom() * mg.dispersionDegrees * Math.PI / 180;
+  var origin = getMachineGunOrigin(b);
+  var endX = origin.x + Math.cos(angle) * TUNING.mgRayLength;
+  var endY = origin.y + Math.sin(angle) * TUNING.mgRayLength;
+  var shotStart = { x: origin.x, y: origin.y };
+  var shotEnd = { x: endX, y: endY };
+  var playerHit = segmentVsTankRect(shotStart.x, shotStart.y, shotEnd.x, shotEnd.y, p, { x: 0, y: 0, w: 66, h: 46 });
+  var obstacleHit = getEarliestObstacleHit(shotStart.x, shotStart.y, shotEnd.x, shotEnd.y);
+  var firstHit = chooseEarliest([playerHit, obstacleHit]);
+  var firstHitType = !firstHit ? "miss" : (firstHit === obstacleHit ? "obstacle" : "player");
+  if (firstHit) { endX = firstHit.x; endY = firstHit.y; }
+  if (firstHitType === "obstacle") {
+    for (var blockSpark = 0; blockSpark < 4; blockSpark++) {
+      var blockAngle = angle + Math.PI + centralRandom() * 1.2;
+      var blockSpeed = randomRange(25, 90);
+      particle(endX, endY, Math.cos(blockAngle) * blockSpeed, Math.sin(blockAngle) * blockSpeed, 0.13, "#e8cb8a", 1.8, 5);
+    }
+  } else if (firstHitType === "player" && p.alive && game.state === "playing") {
+    mg.hits++;
+    for (var spark = 0; spark < 5; spark++) {
+      var sparkAngle = angle + Math.PI + centralRandom() * 1.4;
+      var sparkSpeed = randomRange(35, 120);
+      particle(playerHit.x, playerHit.y, Math.cos(sparkAngle) * sparkSpeed, Math.sin(sparkAngle) * sparkSpeed, 0.16, "#ffe3a0", 2.2, 5);
+    }
+  }
+  game.mgTracers.push({
+    x1: shotStart.x, y1: shotStart.y, x2: endX, y2: endY,
+    life: TUNING.mgTracerSeconds, maxLife: TUNING.mgTracerSeconds, hit: firstHitType === "player"
+  });
+  mg.shotDebug.push({
+    index: mg.shotIndex, angle: angle, firstHitType: firstHitType,
+    t: firstHit ? firstHit.t : null, x: firstHit ? firstHit.x : shotEnd.x,
+    y: firstHit ? firstHit.y : shotEnd.y, playerHit: firstHitType === "player"
+  });
+  if (mg.shotDebug.length > TUNING.mgShotsPerBurst) mg.shotDebug.shift();
+  for (var i = 0; i < 3; i++) {
+    particle(origin.x, origin.y, Math.cos(angle) * randomRange(50, 120), Math.sin(angle) * randomRange(50, 120), 0.10, "#fff1a6", 2.5, 5);
+  }
+}
+
+function updateMachineGun(dt) {
+  var b = game.boss, mg = b.mg;
+  if (!b.alive || game.state !== "playing") return;
+  mg.timeSinceLastBurst += dt;
+  var antiSnipe = getAntiSnipeMetrics(game.player, b);
+  updateStationarySniping(dt, antiSnipe);
+
+  if (mg.phase === "cooldown") {
+    mg.timer = Math.max(0, mg.timer - dt * antiSnipe.cooldownDrainRate);
+    var warningCanStart = mg.timeSinceLastBurst >= Math.max(0, TUNING.mgMinimumCooldownSeconds - TUNING.mgWarningSeconds);
+    if (mg.timer <= 0 && warningCanStart) {
+      mg.phase = "warning"; mg.timer = 0; mg.hits = 0;
+    }
+    return;
+  }
+
+  if (mg.phase === "warning") {
+    mg.timer += dt;
+    var separatedFromMainGun = game.time - b.lastMainGunFireTime >= TUNING.mgMainGunSeparationSeconds;
+    var minimumBurstIntervalMet = mg.timeSinceLastBurst >= TUNING.mgMinimumCooldownSeconds;
+    if (mg.timer >= TUNING.mgWarningSeconds && separatedFromMainGun && minimumBurstIntervalMet && !game.smokeStartedThisFrame) {
+      mg.phase = "firing"; mg.timer = 0; mg.shotIndex = 0; mg.hits = 0;
+      mg.shotDebug = [];
+      mg.timeSinceLastBurst = 0;
+      var origin = getMachineGunOrigin(b);
+      mg.baseAngle = Math.atan2(game.player.y - origin.y, game.player.x - origin.x);
+      mg.playerSpeedRatio = getPlayerActualSpeedRatio(game.player);
+      mg.dispersionDegrees = lerp(TUNING.mgDispersionAtRestDegrees, TUNING.mgDispersionAtMaxSpeedDegrees, mg.playerSpeedRatio);
+    }
+    return;
+  }
+
+  mg.timer += dt;
+  var shotInterval = TUNING.mgBurstSeconds / Math.max(1, TUNING.mgShotsPerBurst - 1);
+  while (mg.shotIndex < TUNING.mgShotsPerBurst && mg.timer >= mg.shotIndex * shotInterval) {
+    fireMachineGunShot();
+    mg.shotIndex++;
+    if (game.state !== "playing") break;
+  }
+  if (mg.shotIndex >= TUNING.mgShotsPerBurst && mg.timer >= TUNING.mgBurstSeconds) {
+    if (mg.hits >= TUNING.suppressionRequiredHits && game.player.alive) {
+      game.player.suppressedRemaining = TUNING.suppressionDurationSeconds;
+      addText(game.player.x, game.player.y - 32, "제압됨!", "#ffb15e", 1.0, 24);
+    }
+    setMachineGunCooldown();
+  }
+}
+
+// ============================================================
+// 포탄
+// ============================================================
+function fireShell(tank, owner) {
+  var isPlayer = owner === "player";
+  var muzzle = isPlayer ? TUNING.playerShellMuzzleDistance : TUNING.bossShellMuzzleDistance;
+  var speed = isPlayer ? TUNING.playerShellSpeed : TUNING.bossShellSpeed * getDifficultyPreset().bossShellSpeedScaleFromOriginal;
+  var ang = tank.turretAngle;
+  if (isPlayer) {
+    var dispersion = getPlayerDispersion(tank);
+    ang += centralRandom() * dispersion.total * Math.PI / 180;
+  }
+  var startX = tank.x + Math.cos(ang) * muzzle;
+  var startY = tank.y + Math.sin(ang) * muzzle;
+  game.shells.push({
+    x: startX, y: startY, prevX: startX, prevY: startY,
+    vx: Math.cos(ang) * speed, vy: Math.sin(ang) * speed,
+    owner: owner, ownerFaction: owner, weaponType: "mainCannon",
+    basePen: isPlayer ? TUNING.playerShellPenetration : TUNING.bossShellPenetration,
+    penLoss: isPlayer ? TUNING.playerShellPenetrationLoss : TUNING.bossShellPenetrationLoss,
+    traveled: 0, life: TUNING.shellLifetimeSeconds, ricochetCount: 0,
+    defensiveRicochetScoreAwarded: false, weakpointBankShotScoreAwarded: false,
+    trail: [{ x: startX, y: startY }], dead: false
+  });
+  spawnMuzzle(startX, startY, ang, isPlayer ? "#ffe8a3" : "#ff9b66");
+  game.shake = Math.max(game.shake, isPlayer ? 2 : 4);
+  if (!isPlayer) tank.lastMainGunFireTime = game.time;
+}
+
+function updateShells(dt) {
+  for (var i = 0; i < game.shells.length; i++) {
+    var s = game.shells[i];
+    s.prevX = s.x; s.prevY = s.y;
+    var stepX = s.vx * dt, stepY = s.vy * dt;
+    s.x += stepX; s.y += stepY; s.traveled += Math.hypot(stepX, stepY); s.life -= dt;
+    s.trail.push({ x: s.x, y: s.y });
+    if (s.trail.length > 8) s.trail.shift();
+
+    var tankHit = null;
+    if (s.owner !== "boss" && game.boss.alive) tankHit = getShellHitWithBoss(s);
+    if (s.owner !== "player" && game.player.alive) tankHit = getShellHitWithPlayer(s);
+    var obstacleHit = getEarliestObstacleHit(s.prevX, s.prevY, s.x, s.y);
+    var firstHit = chooseEarliest([tankHit, obstacleHit]);
+    if (firstHit) {
+      if (firstHit.obstacle) resolveObstacleShellHit(s, firstHit);
+      else resolveArmorHit(s, firstHit, firstHit.target);
+    }
+    if (s.x < -40 || s.x > WORLD.width + 40 || s.y < -40 || s.y > WORLD.height + 40 || s.life <= 0) s.dead = true;
+  }
+  game.shells = game.shells.filter(function (s) { return !s.dead; });
+}
+
+function chooseEarliest(candidates) {
+  var best = null;
+  for (var i = 0; i < candidates.length; i++) {
+    if (candidates[i] && (!best || candidates[i].t < best.t)) best = candidates[i];
+  }
+  return best;
+}
+
+function getShellHitWithBoss(s) {
+  var b = game.boss;
+  var candidates = [];
+  var leftRect = { x: 0, y: -70, w: 174, h: 25 };
+  var rightRect = { x: 0, y: 70, w: 174, h: 25 };
+  var hullRect = { x: 0, y: 0, w: 190, h: 112 };
+  var h;
+
+  // Turret-top weakpoints are a separate visual layer in this 2D prototype.
+  // If the shell's forward path is precisely aimed at the active marker, let it
+  // travel across the lower hull silhouette until it reaches that marker.
+  var travelDirection = norm(s.vx, s.vy);
+  var activeWeakpointName = getActiveWeakpointName(b);
+  var activeDef = WEAKPOINT_DEFS[activeWeakpointName];
+  var activeTransform = getWeakpointTransform(b, activeDef);
+  var activeAhead = segmentVsTankRect(
+    s.prevX, s.prevY,
+    s.prevX + travelDirection.x * 320, s.prevY + travelDirection.y * 320,
+    activeTransform, { x: 0, y: 0, w: activeDef.w, h: activeDef.h }
+  );
+  var aimingAtActiveWeakpoint = !!activeAhead;
+
+  if (!aimingAtActiveWeakpoint) {
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, b, leftRect);
+    if (h) { h.zone = "왼쪽 궤도"; h.armor = b.leftTrack.destroyed ? TUNING.destroyedTrackArmor : TUNING.trackArmor; h.module = b.leftTrack; }
+    candidates.push(h);
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, b, rightRect);
+    if (h) { h.zone = "오른쪽 궤도"; h.armor = b.rightTrack.destroyed ? TUNING.destroyedTrackArmor : TUNING.trackArmor; h.module = b.rightTrack; }
+    candidates.push(h);
+  }
+
+  for (var i = 0; i < WEAKPOINT_NAMES.length; i++) {
+    var weakpointName = WEAKPOINT_NAMES[i];
+    var def = WEAKPOINT_DEFS[weakpointName];
+    var transform = getWeakpointTransform(b, def);
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, transform, { x: 0, y: 0, w: def.w, h: def.h });
+    if (h) {
+      h.weakpointName = weakpointName;
+      h.isActiveWeakpoint = weakpointName === activeWeakpointName;
+      h.zone = (h.isActiveWeakpoint ? "활성 약점 · " : "비활성 약점 · ") + def.label;
+      h.armor = h.isActiveWeakpoint ? def.activeArmor : def.inactiveArmor;
+    }
+    if (!aimingAtActiveWeakpoint || (h && h.isActiveWeakpoint)) candidates.push(h);
+  }
+
+  if (!aimingAtActiveWeakpoint) {
+    var turretTransform = { x: b.x, y: b.y, angle: b.turretAngle };
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, turretTransform, { x: 0, y: 0, w: 76, h: 64 });
+    if (h) {
+      h.zone = "보스 포탑";
+      if (h.localNormalX > 0.5) h.armor = TUNING.bossTurretFrontArmor;
+      else if (h.localNormalX < -0.5) h.armor = TUNING.bossTurretRearArmor;
+      else h.armor = TUNING.bossTurretSideArmor;
+    }
+    candidates.push(h);
+
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, b, hullRect);
+    if (h) {
+      h.zone = "보스 차체";
+      if (h.localNormalX > 0.5) h.armor = TUNING.bossFrontArmor;
+      else if (h.localNormalX < -0.5) h.armor = TUNING.bossRearArmor;
+      else h.armor = TUNING.bossSideArmor;
+    }
+    candidates.push(h);
+  }
+
+  var hit = chooseEarliest(candidates);
+  if (hit) hit.target = b;
+  return hit;
+}
+
+function getShellHitWithPlayer(s) {
+  var p = game.player;
+  var hit = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, p, { x: 0, y: 0, w: 66, h: 46 });
+  if (!hit) return null;
+  hit.zone = "플레이어 차체";
+  if (hit.localNormalX > 0.5) hit.armor = TUNING.playerFrontArmor;
+  else if (hit.localNormalX < -0.5) hit.armor = TUNING.playerRearArmor;
+  else hit.armor = TUNING.playerSideArmor;
+  hit.target = p;
+  return hit;
+}
+
+function resolveObstacleShellHit(shell, hit) {
+  var obstacle = hit.obstacle;
+  shell.x = hit.x; shell.y = hit.y; shell.dead = true;
+  game.lastDebugShell = shell;
+  obstacle.hp = Math.max(0, obstacle.hp - 1);
+  spawnImpact(hit.x, hit.y, "blocked", hit.nx, hit.ny);
+  addText(hit.x, hit.y - obstacle.radius - 8,
+    (obstacle.type === "rock" ? "바위" : "전차 잔해") + " " + obstacle.hp + "/" + obstacle.maxHp,
+    "#d8c7a2", 0.75, 16);
+  if (obstacle.hp <= 0) {
+    obstacle.destroyed = true;
+    spawnObstacleDestruction(obstacle);
+    addText(obstacle.x, obstacle.y - obstacle.radius - 14, "장애물 파괴!", "#f2c47d", 1.2, 23);
+  }
+}
+
+function resolveArmorHit(shell, hit, target) {
+  var info = calculatePenetration({
+    velocityX: shell.vx, velocityY: shell.vy, normalX: hit.nx, normalY: hit.ny,
+    armor: hit.armor, basePenetration: shell.basePen,
+    distance: shell.traveled, penetrationLoss: shell.penLoss, ricochetAngle: TUNING.ricochetAngleDegrees
+  });
+  info.zone = hit.zone; info.x = hit.x; info.y = hit.y; info.time = game.time;
+  game.lastHit = info;
+  game.lastDebugShell = shell;
+
+  if (info.result === "도탄" && target.type === "player" &&
+      shell.ownerFaction !== "player" && shell.weaponType === "mainCannon" &&
+      !shell.defensiveRicochetScoreAwarded) {
+    addScore(TUNING.defensiveRicochetScore, "RICOCHET", { x: hit.x, y: hit.y });
+    shell.defensiveRicochetScoreAwarded = true;
+  }
+
+  if (info.result === "도탄" && shell.ricochetCount < TUNING.maxShellRicochets) {
+    var d = dot(shell.vx, shell.vy, hit.nx, hit.ny);
+    shell.vx -= 2 * d * hit.nx; shell.vy -= 2 * d * hit.ny;
+    shell.vx *= 0.72; shell.vy *= 0.72; shell.basePen *= 0.7;
+    shell.x = hit.x + hit.nx * 4; shell.y = hit.y + hit.ny * 4;
+    shell.ricochetCount++; shell.trail = [{ x: hit.x, y: hit.y }];
+    spawnImpact(hit.x, hit.y, "ricochet", hit.nx, hit.ny);
+    addText(hit.x, hit.y - 18, "도탄!", "#fff098", 0.9, 24);
+  } else {
+    shell.dead = true;
+    if (info.result === "비관통" || info.result === "도탄") {
+      spawnImpact(hit.x, hit.y, info.result === "도탄" ? "ricochet" : "blocked", hit.nx, hit.ny);
+      addText(hit.x, hit.y - 16, info.result + " · " + hit.zone, info.result === "도탄" ? "#fff098" : "#c9bba0", 0.85, 18);
+    } else {
+      spawnImpact(hit.x, hit.y, "penetration", -hit.nx, -hit.ny);
+      var activeWeakpointHit = target.type === "boss" && hit.weakpointName && hit.isActiveWeakpoint &&
+        hit.weakpointName === getActiveWeakpointName(game.boss);
+      if (activeWeakpointHit && shell.ownerFaction === "player" && shell.weaponType === "mainCannon" &&
+          shell.ricochetCount > 0 && !shell.weakpointBankShotScoreAwarded) {
+        addScore(TUNING.weakpointBankShotScore, "BANK SHOT", { x: hit.x, y: hit.y });
+        shell.weakpointBankShotScoreAwarded = true;
+      }
+      applyPenetration(target, hit);
+    }
+  }
+}
+
+function applyPenetration(target, hit) {
+  if (target.type === "player") {
+    target.hp--;
+    target.hitFlash = 0.25;
+    addText(hit.x, hit.y - 20, "관통!  체력 -1", "#ff765f", 1.0, 22);
+    game.shake = 7;
+    if (target.hp <= 0) {
+      target.alive = false; game.state = "lost";
+      game.artillery = [];
+      spawnExplosion(target.x, target.y, 34);
+    }
+    return;
+  }
+
+  if (hit.module) {
+    if (hit.module.destroyed) {
+      addText(hit.x, hit.y - 18, "관통 · 파괴된 궤도", "#ffcf63", 0.8, 17);
+      return;
+    }
+    hit.module.hp--;
+    if (hit.module.hp <= 0) {
+      hit.module.destroyed = true;
+      hit.module.repairRemaining = game.boss.rage ? TUNING.rageTrackRepairSeconds : TUNING.normalTrackRepairSeconds;
+      addText(hit.x, hit.y - 24, hit.zone + " 파괴!", "#ffd34f", 1.5, 30);
+      spawnExplosion(hit.x, hit.y, 20);
+    } else {
+      addText(hit.x, hit.y - 18, hit.zone + " 관통  " + hit.module.hp + "/2", "#ffe06b", 1.0, 20);
+    }
+  } else if (hit.weakpointName) {
+    var boss = game.boss;
+    if (!hit.isActiveWeakpoint || hit.weakpointName !== getActiveWeakpointName(boss)) {
+      addText(hit.x, hit.y - 18, "비활성 약점 · 본체 피해 없음", "#d4b98c", 1.0, 18);
+      return;
+    }
+    if (boss.weakpointState === "triggerWeakpoint" && hit.weakpointName !== "engine") exposeEngineWeakpoint();
+    else if (boss.weakpointState === "engineExposed" && hit.weakpointName === "engine") resolveEngineExposure("penetrated");
+  } else {
+    addText(hit.x, hit.y - 18, "일반 장갑 관통 · 본체 피해 없음", "#ffb45d", 0.9, 18);
+  }
+}
+
+function destroyBoss() {
+  var b = game.boss;
+  b.alive = false; game.state = "won";
+  game.artillery = [];
+  game.mgTracers = [];
+  game.nextExplosion = 0; game.explosions = [];
+  addText(b.x, b.y - 120, "보스 격파!", "#fff2a8", 2.5, 42);
+  game.shake = 12;
+}
+
+// ============================================================
+// 플레이어 전차
+// ============================================================
+function updatePlayer(dt) {
+  var p = game.player;
+  if (!p.alive || game.state !== "playing") return;
+  var mouseWorld = screenToWorld(input.mouseScreenX, input.mouseScreenY);
+  input.mouseWorldX = mouseWorld.x; input.mouseWorldY = mouseWorld.y;
+  p.turretAngle = Math.atan2(input.mouseWorldY - p.y, input.mouseWorldX - p.x);
+  var forwardInput = !!input.keys["w"], reverseInput = !!input.keys["s"];
+  var steer = (input.keys["d"] ? 1 : 0) - (input.keys["a"] ? 1 : 0);
+  var forwardAcceleration = TUNING.playerForwardSpeed / TUNING.playerAccelerationSeconds;
+  var reverseAcceleration = TUNING.playerReverseSpeed / TUNING.playerAccelerationSeconds;
+  var braking = (p.currentForwardSpeed >= 0 ? TUNING.playerForwardSpeed : TUNING.playerReverseSpeed) / TUNING.playerOppositeBrakeSeconds;
+  var coasting = (p.currentForwardSpeed >= 0 ? TUNING.playerForwardSpeed : TUNING.playerReverseSpeed) / TUNING.playerCoastStopSeconds;
+
+  if (forwardInput && reverseInput) {
+    p.currentForwardSpeed = approach(p.currentForwardSpeed, 0, braking * dt);
+  } else if (forwardInput) {
+    p.currentForwardSpeed = p.currentForwardSpeed < 0
+      ? approach(p.currentForwardSpeed, 0, braking * dt)
+      : approach(p.currentForwardSpeed, TUNING.playerForwardSpeed, forwardAcceleration * dt);
+  } else if (reverseInput) {
+    p.currentForwardSpeed = p.currentForwardSpeed > 0
+      ? approach(p.currentForwardSpeed, 0, braking * dt)
+      : approach(p.currentForwardSpeed, -TUNING.playerReverseSpeed, reverseAcceleration * dt);
+  } else {
+    p.currentForwardSpeed = approach(p.currentForwardSpeed, 0, coasting * dt);
+  }
+
+  var steerScale = 0.55 + Math.min(1, Math.abs(p.currentForwardSpeed) / 80) * 0.45;
+  p.angle += steer * TUNING.playerTurnSpeed * steerScale * dt * (p.currentForwardSpeed < -4 ? -1 : 1);
+  var oldX = p.x, oldY = p.y;
+  var proposedX = p.x + Math.cos(p.angle) * p.currentForwardSpeed * dt;
+  var proposedY = p.y + Math.sin(p.angle) * p.currentForwardSpeed * dt;
+  p.x = clamp(proposedX, p.collisionRadius, WORLD.width - p.collisionRadius);
+  p.y = clamp(proposedY, p.collisionRadius, WORLD.height - p.collisionRadius);
+  if (p.x !== proposedX || p.y !== proposedY) p.currentForwardSpeed = 0;
+  var dx = p.x - game.boss.x, dy = p.y - game.boss.y;
+  var dist = Math.hypot(dx, dy), minDist = 128;
+  if (dist < minDist) { var n = norm(dx, dy); p.x = game.boss.x + n.x * minDist; p.y = game.boss.y + n.y * minDist; p.currentForwardSpeed = 0; }
+  if (resolveTankObstacleCollisions(p)) p.currentForwardSpeed *= 0.15;
+  p.x = clamp(p.x, p.collisionRadius, WORLD.width - p.collisionRadius);
+  p.y = clamp(p.y, p.collisionRadius, WORLD.height - p.collisionRadius);
+  if (!Number.isFinite(p.x)) { p.x = oldX; p.y = oldY; p.currentForwardSpeed = 0; }
+  var velocityAlpha = 1 - Math.exp(-dt / TUNING.playerVelocitySmoothingSeconds);
+  p.actualVx = dt > 0 ? (p.x - oldX) / dt : 0;
+  p.actualVy = dt > 0 ? (p.y - oldY) / dt : 0;
+  p.smoothedVx += (p.actualVx - p.smoothedVx) * velocityAlpha;
+  p.smoothedVy += (p.actualVy - p.smoothedVy) * velocityAlpha;
+  p.suppressedRemaining = Math.max(0, p.suppressedRemaining - dt);
+  p.smokeDebuffRemaining = Math.max(0, p.smokeDebuffRemaining - dt);
+  p.reload = Math.max(0, p.reload - dt);
+  if (input.fire && p.reload <= 0) { fireShell(p, "player"); p.reload = TUNING.playerReloadSeconds; }
+  p.hitFlash = Math.max(0, p.hitFlash - dt);
+}
+
+function detonateSmokeDefense() {
+  var b = game.boss, p = game.player, smoke = b.smoke;
+  smoke.phase = "cooldown";
+  smoke.cooldownRemaining = TUNING.smokeCooldownSeconds;
+  smoke.telegraphRemaining = 0;
+  smoke.cloudRemaining = TUNING.smokeCloudVisualSeconds;
+  smoke.x = b.x; smoke.y = b.y;
+  for (var i = 0; i < 52; i++) {
+    var angle = seededNoise(i * 19 + Math.floor(game.time * 10)) * TAU;
+    var speed = 28 + seededNoise(i * 23 + 5) * 150;
+    particle(smoke.x, smoke.y, Math.cos(angle) * speed, Math.sin(angle) * speed,
+      1.0 + seededNoise(i + 4) * 1.5, i % 3 ? "#858982" : "#b6bab2", 8 + seededNoise(i * 3) * 15, 1.4);
+  }
+  addText(smoke.x, smoke.y - 105, "연막 방어!", "#d8ddd7", 1.1, 25);
+  if (len(p.x - smoke.x, p.y - smoke.y) <= TUNING.smokeEffectRadius && p.alive) {
+    p.smokeDebuffRemaining = TUNING.smokeAimDebuffSeconds;
+    addText(p.x, p.y - 34, "SMOKED", "#d0d4cf", 1.0, 24);
+  }
+}
+
+function updateSmokeDefense(dt) {
+  var b = game.boss, smoke = b.smoke;
+  smoke.cloudRemaining = Math.max(0, smoke.cloudRemaining - dt);
+  if (!b.alive || game.state !== "playing") return;
+  if (smoke.phase === "telegraph") {
+    smoke.telegraphRemaining = Math.max(0, smoke.telegraphRemaining - dt);
+    if (smoke.telegraphRemaining <= 0) detonateSmokeDefense();
+    return;
+  }
+  smoke.cooldownRemaining = Math.max(0, smoke.cooldownRemaining - dt);
+  if (smoke.cooldownRemaining <= 0 && getDistanceToBoss() < TUNING.smokeTriggerDistance) {
+    smoke.phase = "telegraph";
+    smoke.telegraphRemaining = TUNING.smokeTelegraphSeconds;
+    game.smokeStartedThisFrame = true;
+    addText(b.x, b.y - 108, "연막 예고", "#c4c9c3", TUNING.smokeTelegraphSeconds, 19);
+  }
+}
+
+// ============================================================
+// 보스 전차와 간단한 상태 머신
+// ============================================================
+function updateBoss(dt) {
+  var b = game.boss, p = game.player;
+  if (!b.alive) { updateBossDeath(dt); return; }
+  if (game.state !== "playing") return;
+  updateTrackRepairs(dt);
+  b.ragePulse = Math.max(0, b.ragePulse - dt);
+  if (b.weakpointState === "engineExposed") {
+    b.engineExposureTimer = Math.max(0, b.engineExposureTimer - dt);
+    b.engineStaggerTimer = Math.max(0, b.engineStaggerTimer - dt);
+  } else if (b.rage) {
+    b.weakpointTimer += dt;
+  }
+  var targetAngle = Math.atan2(p.y - b.y, p.x - b.x);
+  var turretSpeed = b.state === "warn" ? TUNING.bossTurretWarningSpeed : TUNING.bossTurretAimSpeed;
+  b.turretAngle = rotateToward(b.turretAngle, targetAngle, turretSpeed * dt);
+  var bothGone = b.leftTrack.destroyed && b.rightTrack.destroyed;
+  var oneGone = b.leftTrack.destroyed || b.rightTrack.destroyed;
+  var turnSpeed = bothGone ? 0 : (oneGone ? TUNING.bossDamagedTrackTurnSpeed : TUNING.bossTurnSpeed);
+  var moveSpeed = bothGone ? 0 : (oneGone ? TUNING.bossDamagedTrackMoveSpeed : TUNING.bossMoveSpeed);
+  if (b.rage) {
+    turnSpeed *= TUNING.rageTurnSpeedMultiplier;
+    moveSpeed *= TUNING.rageMoveSpeedMultiplier;
+  }
+  turnSpeed *= getBossTurnMultiplier(b);
+  moveSpeed *= getBossMoveMultiplier(b);
+  b.angle = rotateToward(b.angle, targetAngle, turnSpeed * dt);
+  var d = len(p.x - b.x, p.y - b.y);
+  if (d > TUNING.bossApproachDistance && moveSpeed > 0) {
+    b.x += Math.cos(b.angle) * moveSpeed * dt;
+    b.y += Math.sin(b.angle) * moveSpeed * dt;
+  }
+  b.x = clamp(b.x, b.collisionRadius, WORLD.width - b.collisionRadius);
+  b.y = clamp(b.y, b.collisionRadius, WORLD.height - b.collisionRadius);
+  resolveTankObstacleCollisions(b);
+  b.timer += dt;
+
+  if (b.state === "aim") {
+    if (Math.abs(angleDelta(b.turretAngle, targetAngle)) < TUNING.bossAimTolerance && b.timer > TUNING.bossAimSeconds) {
+      b.state = "warn"; b.timer = 0;
+    }
+  } else if (b.state === "warn") {
+    if (b.timer >= TUNING.bossWarningSeconds && !game.smokeStartedThisFrame) {
+      fireShell(b, "boss"); b.state = "cooldown"; b.timer = 0;
+    }
+  } else if (b.state === "cooldown" && b.timer >= TUNING.bossCooldownSeconds * (b.rage ? TUNING.rageReloadMultiplier : 1)) {
+    b.state = "aim"; b.timer = 0;
+  }
+  b.hitFlash = Math.max(0, b.hitFlash - dt);
+}
+
+function updateBossDeath(dt) {
+  game.nextExplosion -= dt;
+  if (game.nextExplosion <= 0 && game.explosions.length < 7) {
+    var i = game.explosions.length;
+    var ox = (seededNoise(i * 2 + 4) - 0.5) * 150;
+    var oy = (seededNoise(i * 2 + 9) - 0.5) * 100;
+    spawnExplosion(game.boss.x + ox, game.boss.y + oy, 22 + seededNoise(i + 2) * 20);
+    game.explosions.push(i); game.nextExplosion = 0.13 + seededNoise(i + 7) * 0.15;
+    game.shake = Math.max(game.shake, 8);
+  }
+}
+
+// ============================================================
+// 파티클과 결과 문구
+// ============================================================
+function particle(x, y, vx, vy, life, color, size, drag) {
+  game.particles.push({ x: x, y: y, vx: vx, vy: vy, life: life, maxLife: life, color: color, size: size, drag: drag || 0 });
+}
+function spawnMuzzle(x, y, a, color) {
+  for (var i = 0; i < 10; i++) {
+    var aa = a + (seededNoise(i + game.shells.length * 7) - 0.5) * 0.65;
+    var sp = 80 + seededNoise(i * 3 + 1) * 170;
+    particle(x, y, Math.cos(aa) * sp, Math.sin(aa) * sp, 0.18 + seededNoise(i) * 0.18, color, 3 + seededNoise(i + 2) * 5, 5);
+  }
+}
+function spawnImpact(x, y, kind, nx, ny) {
+  var count = kind === "penetration" ? 18 : (kind === "ricochet" ? 22 : 10);
+  for (var i = 0; i < count; i++) {
+    var base = Math.atan2(ny, nx), spread = kind === "ricochet" ? 2.0 : 2.8;
+    var a = base + (seededNoise(i * 5 + Math.floor(game.time * 10)) - 0.5) * spread;
+    var sp = 35 + seededNoise(i * 9 + 3) * (kind === "ricochet" ? 300 : 180);
+    var color = kind === "blocked" ? (i % 2 ? "#756f65" : "#aaa18e") : (i % 3 ? "#ffd95a" : "#ffffff");
+    particle(x, y, Math.cos(a) * sp, Math.sin(a) * sp, 0.22 + seededNoise(i + 7) * 0.42, color, 2 + seededNoise(i) * 4, 3);
+  }
+  if (kind === "blocked") {
+    for (var j = 0; j < 5; j++) particle(x, y, (seededNoise(j) - .5) * 30, (seededNoise(j + 3) - .5) * 30 - 15, .5, "#77776f", 7 + j, 1.5);
+  }
+}
+function spawnExplosion(x, y, size) {
+  for (var i = 0; i < 30; i++) {
+    var a = seededNoise(i * 11 + game.explosions.length) * TAU;
+    var sp = 30 + seededNoise(i * 13 + 2) * 210;
+    particle(x, y, Math.cos(a) * sp, Math.sin(a) * sp, .45 + seededNoise(i) * .65,
+      i % 4 === 0 ? "#3b3932" : (i % 2 ? "#ff7a32" : "#ffd55d"), 5 + seededNoise(i + 4) * size * .35, 2.5);
+  }
+}
+function spawnObstacleDestruction(obstacle) {
+  for (var i = 0; i < 24; i++) {
+    var angle = seededNoise(i * 17 + obstacle.id.length) * TAU;
+    var speed = 25 + seededNoise(i * 19 + 4) * 135;
+    particle(obstacle.x, obstacle.y, Math.cos(angle) * speed, Math.sin(angle) * speed,
+      0.35 + seededNoise(i + 6) * 0.55,
+      i % 3 === 0 ? "#6a6254" : "#b49a72", 3 + seededNoise(i + 2) * 7, 3.5);
+  }
+}
+function addText(x, y, text, color, life, size) {
+  game.texts.push({ x: x, y: y, text: text, color: color, life: life, maxLife: life, size: size });
+}
+function createScorePopup(amount, reason, worldPosition) {
+  game.scorePopups.push({
+    x: worldPosition.x, y: worldPosition.y - 24,
+    text: reason + " +" + amount, life: 1.35, maxLife: 1.35
+  });
+}
+function addScore(amount, reason, worldPosition) {
+  game.score += amount;
+  game.lastScoreEvent = { amount: amount, reason: reason, x: worldPosition.x, y: worldPosition.y, time: game.time };
+  createScorePopup(amount, reason, worldPosition);
+}
+function updateEffects(dt) {
+  for (var i = 0; i < game.particles.length; i++) {
+    var p = game.particles[i];
+    p.x += p.vx * dt; p.y += p.vy * dt;
+    var drag = Math.max(0, 1 - p.drag * dt); p.vx *= drag; p.vy *= drag; p.life -= dt;
+  }
+  game.particles = game.particles.filter(function (p) { return p.life > 0; });
+  for (var j = 0; j < game.texts.length; j++) { game.texts[j].life -= dt; game.texts[j].y -= 17 * dt; }
+  game.texts = game.texts.filter(function (t) { return t.life > 0; });
+  for (var scoreIndex = 0; scoreIndex < game.scorePopups.length; scoreIndex++) {
+    game.scorePopups[scoreIndex].life -= dt;
+    game.scorePopups[scoreIndex].y -= 22 * dt;
+  }
+  game.scorePopups = game.scorePopups.filter(function (popup) { return popup.life > 0; });
+  for (var m = 0; m < game.mgTracers.length; m++) game.mgTracers[m].life -= dt;
+  game.mgTracers = game.mgTracers.filter(function (tracer) { return tracer.life > 0; });
+  game.shake = Math.max(0, game.shake - dt * 18);
+}
+
+// ============================================================
+// 렌더링
+// ============================================================
+function roundedRect(x, y, w, h, r) {
+  ctx.beginPath(); ctx.roundRect(x, y, w, h, r); ctx.fill();
+}
+function drawGround() {
+  ctx.fillStyle = "#273429"; ctx.fillRect(0, 0, WORLD.width, WORLD.height);
+  ctx.fillStyle = "rgba(111,94,62,.16)"; ctx.fillRect(WORLD.width * 0.5 - 115, 0, 230, WORLD.height);
+  ctx.strokeStyle = "rgba(180,210,170,.055)"; ctx.lineWidth = 1;
+  var gridTop = Math.max(0, Math.floor(camera.y / 40) * 40);
+  var gridBottom = Math.min(WORLD.height, camera.y + H + 40);
+  for (var x = 0; x <= WORLD.width; x += 40) { ctx.beginPath(); ctx.moveTo(x, gridTop); ctx.lineTo(x, gridBottom); ctx.stroke(); }
+  for (var y = gridTop; y <= gridBottom; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(WORLD.width, y); ctx.stroke(); }
+  ctx.fillStyle = "rgba(10,14,11,.45)";
+  ctx.fillRect(0, 0, WORLD.width, 24); ctx.fillRect(0, WORLD.height - 24, WORLD.width, 24);
+  ctx.strokeStyle = "#61735c"; ctx.lineWidth = 5; ctx.strokeRect(10, 10, WORLD.width - 20, WORLD.height - 20);
+  ctx.fillStyle = "rgba(12,18,13,.18)";
+  for (var i = 0; i < 120; i++) {
+    var px = 30 + seededNoise(i * 7) * (WORLD.width - 60);
+    var py = 30 + seededNoise(i * 13 + 2) * (WORLD.height - 60);
+    if (!isWorldCircleVisible(px, py, 12)) continue;
+    ctx.beginPath(); ctx.arc(px, py, 2 + seededNoise(i) * 8, 0, TAU); ctx.fill();
+  }
+}
+function drawObstacles() {
+  for (var i = 0; i < game.obstacles.length; i++) {
+    var obstacle = game.obstacles[i];
+    if (!isWorldCircleVisible(obstacle.x, obstacle.y, obstacle.radius + 12)) continue;
+    ctx.save(); ctx.translate(obstacle.x, obstacle.y); ctx.rotate(obstacle.rotation);
+    ctx.globalAlpha = obstacle.destroyed ? 0.28 : 1;
+    if (obstacle.type === "rock") {
+      ctx.fillStyle = obstacle.destroyed ? "#4a4740" : "#68665c";
+      ctx.strokeStyle = "#343831"; ctx.lineWidth = 4;
+      ctx.beginPath();
+      for (var point = 0; point < 9; point++) {
+        var angle = point / 9 * TAU;
+        var radius = obstacle.radius * (0.78 + seededNoise(i * 23 + point) * 0.24);
+        var px = Math.cos(angle) * radius, py = Math.sin(angle) * radius;
+        if (point === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+      }
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.strokeStyle = "rgba(210,201,172,.24)"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(-obstacle.radius * .35, -obstacle.radius * .2); ctx.lineTo(obstacle.radius * .25, -obstacle.radius * .42); ctx.stroke();
+    } else {
+      ctx.fillStyle = obstacle.destroyed ? "#403f39" : "#595b50";
+      ctx.strokeStyle = "#2c302c"; ctx.lineWidth = 4;
+      ctx.fillRect(-44, -23, 88, 46); ctx.strokeRect(-44, -23, 88, 46);
+      ctx.fillStyle = obstacle.destroyed ? "#35342f" : "#717263";
+      ctx.beginPath(); ctx.arc(-5, 0, 17, 0, TAU); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = "#343732"; ctx.fillRect(8, -5, 45, 10);
+      ctx.strokeStyle = "#8b694e"; ctx.beginPath(); ctx.moveTo(-34,-20); ctx.lineTo(27,19); ctx.stroke();
+    }
+    ctx.globalAlpha = 1; ctx.restore();
+    if (!obstacle.destroyed) {
+      var barW = obstacle.radius * 1.5;
+      ctx.fillStyle = "rgba(8,10,8,.7)"; ctx.fillRect(obstacle.x - barW / 2, obstacle.y - obstacle.radius - 13, barW, 6);
+      ctx.fillStyle = obstacle.type === "rock" ? "#b7aa86" : "#a88162";
+      ctx.fillRect(obstacle.x - barW / 2 + 1, obstacle.y - obstacle.radius - 12, (barW - 2) * obstacle.hp / obstacle.maxHp, 4);
+    }
+  }
+}
+function drawTankBase(t, player) {
+  ctx.save(); ctx.translate(t.x, t.y); ctx.rotate(t.angle);
+  if (player) {
+    ctx.fillStyle = "#202720"; roundedRect(-32, -27, 64, 12, 4); roundedRect(-32, 15, 64, 12, 4);
+    ctx.fillStyle = t.hitFlash > 0 ? "#e8e3c6" : "#71855c"; roundedRect(-31, -21, 62, 42, 7);
+    ctx.fillStyle = "#93a96f"; ctx.beginPath(); ctx.moveTo(33, -17); ctx.lineTo(33, 17); ctx.lineTo(21, 21); ctx.lineTo(21, -21); ctx.fill();
+    ctx.strokeStyle = "#303c2c"; ctx.lineWidth = 3; ctx.strokeRect(-24, -17, 43, 34);
+    var arrowSize = TUNING.playerHeadingArrowSize;
+    ctx.globalAlpha = 0.46;
+    ctx.fillStyle = "#ffffff"; ctx.strokeStyle = "rgba(20,24,20,.72)";
+    ctx.lineWidth = TUNING.playerHeadingArrowLineWidth;
+    ctx.beginPath();
+    ctx.moveTo(TUNING.playerHeadingArrowDistance + arrowSize / 2, 0);
+    ctx.lineTo(TUNING.playerHeadingArrowDistance - arrowSize / 2, -arrowSize / 2);
+    ctx.lineTo(TUNING.playerHeadingArrowDistance - arrowSize / 4, 0);
+    ctx.lineTo(TUNING.playerHeadingArrowDistance - arrowSize / 2, arrowSize / 2);
+    ctx.closePath(); ctx.stroke(); ctx.fill();
+    ctx.globalAlpha = 1;
+  } else {
+    var b = t;
+    drawBossTrack(-70, b.leftTrack, "왼쪽");
+    drawBossTrack(70, b.rightTrack, "오른쪽");
+    ctx.fillStyle = b.alive ? "#786d52" : "#3b3933"; roundedRect(-95, -56, 190, 112, 12);
+    ctx.fillStyle = "#948566"; ctx.beginPath(); ctx.moveTo(96, -48); ctx.lineTo(96, 48); ctx.lineTo(72, 56); ctx.lineTo(72, -56); ctx.fill();
+    ctx.strokeStyle = "#4a4436"; ctx.lineWidth = 4; ctx.strokeRect(-68, -47, 135, 94);
+    if (b.rage) {
+      ctx.fillStyle = "rgba(220,35,24,.28)";
+      roundedRect(-95, -56, 190, 112, 12);
+    }
+  }
+  ctx.restore();
+}
+function drawBossTrack(y, module) {
+  ctx.fillStyle = module.destroyed ? "#332d28" : "#343a31"; roundedRect(-87, y - 13, 174, 26, 7);
+  ctx.strokeStyle = module.destroyed ? "#8b4b36" : "#7b745f"; ctx.lineWidth = 3; ctx.strokeRect(-78, y - 9, 156, 18);
+  if (module.destroyed) {
+    ctx.strokeStyle = "#e16443"; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(-70, y - 13); ctx.lineTo(-30, y + 10); ctx.lineTo(8, y - 10); ctx.lineTo(55, y + 13); ctx.stroke();
+    ctx.fillStyle = "#ffd0a3"; ctx.font = "bold 13px Arial"; ctx.textAlign = "center";
+    ctx.fillText(module.repairRemaining.toFixed(1) + "s", 0, y + 5);
+  }
+}
+function drawTurret(t, player) {
+  ctx.save(); ctx.translate(t.x, t.y); ctx.rotate(t.turretAngle);
+  if (player) {
+    ctx.fillStyle = "#3e4d38"; roundedRect(2, -5, 43, 10, 3);
+    ctx.fillStyle = "#83976a"; ctx.beginPath(); ctx.arc(0, 0, 17, 0, TAU); ctx.fill();
+    ctx.fillStyle = "#b1bf84"; roundedRect(10, -3, 36, 6, 2);
+  } else {
+    ctx.fillStyle = t.alive ? "#514b3b" : "#292823"; roundedRect(5, -9, 86, 18, 4);
+    ctx.fillStyle = t.alive ? "#887a5d" : "#34322b"; ctx.beginPath(); ctx.arc(0, 0, 38, 0, TAU); ctx.fill();
+    ctx.strokeStyle = "#4d4638"; ctx.lineWidth = 4; ctx.stroke();
+    ctx.fillStyle = "#a0906b"; roundedRect(18, -6, 75, 12, 3);
+    if (t.rage) {
+      ctx.fillStyle = "rgba(235,35,25,.30)";
+      ctx.beginPath(); ctx.arc(0, 0, 39, 0, TAU); ctx.fill();
+      roundedRect(5, -9, 86, 18, 4);
+    }
+  }
+  ctx.restore();
+}
+function drawWeakpoints() {
+  var b = game.boss;
+  if (!b.alive) return;
+  var activeWeakpointName = getActiveWeakpointName(b);
+  for (var i = 0; i < WEAKPOINT_NAMES.length; i++) {
+    var name = WEAKPOINT_NAMES[i], def = WEAKPOINT_DEFS[name];
+    var transform = getWeakpointTransform(b, def);
+    var active = name === activeWeakpointName;
+    var warning = b.rage && b.weakpointState === "triggerWeakpoint" && b.weakpointTimer >= TUNING.rageWeakpointChangeSeconds - TUNING.weakpointChangeWarningSeconds;
+    var flash = warning ? (Math.sin(game.time * 38) > -0.05 ? 1 : 0.15) : (0.72 + Math.sin(game.time * 8) * 0.22);
+    ctx.save(); ctx.translate(transform.x, transform.y); ctx.rotate(transform.angle);
+    ctx.fillStyle = active ? "rgba(255,238,120," + (0.24 * flash) + ")" : "rgba(48,43,34,.65)";
+    ctx.fillRect(-def.w / 2, -def.h / 2, def.w, def.h);
+    ctx.strokeStyle = active ? "rgba(255,255,210," + flash + ")" : "rgba(115,103,78,.55)";
+    ctx.lineWidth = active ? 3 : 1;
+    if (active) { ctx.shadowColor = "#fff2a1"; ctx.shadowBlur = 10; }
+    ctx.strokeRect(-def.w / 2, -def.h / 2, def.w, def.h);
+    ctx.restore();
+    if (active) {
+      ctx.fillStyle = "rgba(255,248,197," + flash + ")"; ctx.font = "bold 12px Arial"; ctx.textAlign = "center";
+      ctx.fillText(def.label, transform.x, transform.y - def.h / 2 - 7);
+    }
+  }
+}
+function drawRageEffect() {
+  var b = game.boss;
+  if (b.ragePulse <= 0) return;
+  var progress = 1 - b.ragePulse / 1.25;
+  ctx.strokeStyle = "rgba(255,62,42," + (1 - progress) + ")";
+  ctx.lineWidth = 8 * (1 - progress) + 2;
+  ctx.beginPath(); ctx.arc(b.x, b.y, 90 + progress * 170, 0, TAU); ctx.stroke();
+}
+function drawSmokeEffects() {
+  var b = game.boss, smoke = b.smoke;
+  if (smoke.cloudRemaining > 0) {
+    var cloudAlpha = 0.08 + 0.10 * clamp(smoke.cloudRemaining / TUNING.smokeCloudVisualSeconds, 0, 1);
+    for (var i = 0; i < 18; i++) {
+      var angle = seededNoise(i * 31 + 7) * TAU;
+      var radius = seededNoise(i * 17 + 3) * TUNING.smokeEffectRadius * 0.72;
+      var size = 38 + seededNoise(i * 11 + 2) * 72;
+      ctx.fillStyle = "rgba(150,155,149," + cloudAlpha + ")";
+      ctx.beginPath(); ctx.arc(smoke.x + Math.cos(angle) * radius, smoke.y + Math.sin(angle) * radius, size, 0, TAU); ctx.fill();
+    }
+    ctx.strokeStyle = "rgba(190,195,188,.24)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(smoke.x, smoke.y, TUNING.smokeEffectRadius, 0, TAU); ctx.stroke();
+  }
+  if (smoke.phase === "telegraph") {
+    var pulse = 0.45 + Math.sin(game.time * 38) * 0.25;
+    ctx.fillStyle = "rgba(170,176,169," + (pulse * 0.18) + ")";
+    ctx.beginPath(); ctx.arc(b.x, b.y, 72, 0, TAU); ctx.fill();
+    ctx.strokeStyle = "rgba(210,216,209," + pulse + ")"; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.arc(b.x, b.y, TUNING.smokeEffectRadius, 0, TAU); ctx.stroke();
+  }
+}
+function drawArtilleryMarkers() {
+  for (var i = 0; i < game.artillery.length; i++) {
+    var a = game.artillery[i];
+    var ratio = clamp(a.remaining / a.total, 0, 1);
+    var urgent = a.remaining < 0.5;
+    var visible = !urgent || Math.sin(game.time * 42) > -0.2;
+    if (!visible) continue;
+    ctx.save(); ctx.translate(a.x, a.y);
+    ctx.fillStyle = "rgba(210,32,26," + (0.08 + (1 - ratio) * 0.18) + ")";
+    ctx.beginPath(); ctx.arc(0, 0, TUNING.artilleryBlastRadius, 0, TAU); ctx.fill();
+    ctx.strokeStyle = urgent ? "#ffdac9" : "rgba(255,67,54,.9)"; ctx.lineWidth = urgent ? 4 : 2;
+    ctx.beginPath(); ctx.arc(0, 0, TUNING.artilleryBlastRadius, -Math.PI / 2, -Math.PI / 2 + TAU * (1 - ratio)); ctx.stroke();
+    ctx.strokeStyle = "rgba(255,80,60,.45)"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(-10, 0); ctx.lineTo(10, 0); ctx.moveTo(0, -10); ctx.lineTo(0, 10); ctx.stroke();
+    ctx.fillStyle = "#ffd8c9"; ctx.font = "bold 13px Arial"; ctx.textAlign = "center"; ctx.fillText(a.remaining.toFixed(1), 0, 5);
+    ctx.restore();
+  }
+}
+function drawMachineGunEffects() {
+  var b = game.boss, mg = b.mg;
+  for (var i = 0; i < game.mgTracers.length; i++) {
+    var tracer = game.mgTracers[i];
+    ctx.globalAlpha = clamp(tracer.life / tracer.maxLife, 0, 1);
+    ctx.strokeStyle = tracer.hit ? "#fff2b0" : "#e9bd63";
+    ctx.lineWidth = tracer.hit ? 2.4 : 1.4;
+    ctx.beginPath(); ctx.moveTo(tracer.x1, tracer.y1); ctx.lineTo(tracer.x2, tracer.y2); ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+  if (!b.alive || mg.phase === "cooldown") return;
+  var origin = getMachineGunOrigin(b);
+  var pulse = 0.45 + Math.sin(game.time * 45) * 0.35;
+  ctx.fillStyle = mg.phase === "warning" ? "rgba(255,202,76," + pulse + ")" : "rgba(255,242,170,.9)";
+  ctx.beginPath(); ctx.arc(origin.x, origin.y, mg.phase === "warning" ? 8 : 5, 0, TAU); ctx.fill();
+  if (mg.phase === "warning") {
+    ctx.strokeStyle = "rgba(255,190,55," + pulse + ")"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(origin.x, origin.y, 13, 0, TAU); ctx.stroke();
+  }
+}
+function drawBossWarning() {
+  var b = game.boss;
+  if (b.state !== "warn" || !b.alive) return;
+  var pulse = .55 + Math.sin(game.time * 18) * .25;
+  ctx.save(); ctx.strokeStyle = "rgba(255,55,43," + pulse + ")"; ctx.lineWidth = 3;
+  ctx.setLineDash([14, 9]); ctx.beginPath(); ctx.moveTo(b.x, b.y);
+  ctx.lineTo(b.x + Math.cos(b.turretAngle) * 1200, b.y + Math.sin(b.turretAngle) * 1200); ctx.stroke();
+  ctx.setLineDash([]); ctx.fillStyle = "#ff5547"; ctx.font = "bold 17px Arial"; ctx.textAlign = "center";
+  ctx.fillText("발사 예고 " + Math.max(0, TUNING.bossWarningSeconds - b.timer).toFixed(1), b.x, b.y - 105); ctx.restore();
+}
+function drawShells() {
+  for (var i = 0; i < game.shells.length; i++) {
+    var s = game.shells[i];
+    if (s.trail.length > 1) {
+      var first = s.trail[0];
+      var grad = ctx.createLinearGradient(first.x, first.y, s.x, s.y);
+      grad.addColorStop(0, "rgba(255,210,100,0)"); grad.addColorStop(1, s.owner === "player" ? "#fff0a3" : "#ff7959");
+      ctx.strokeStyle = grad; ctx.lineWidth = s.ricochetCount ? 4 : 3; ctx.beginPath(); ctx.moveTo(first.x, first.y);
+      for (var j = 1; j < s.trail.length; j++) ctx.lineTo(s.trail[j].x, s.trail[j].y);
+      ctx.stroke();
+    }
+    ctx.fillStyle = s.owner === "player" ? "#fff6c7" : "#ffb09b";
+    ctx.beginPath(); ctx.arc(s.x, s.y, 4, 0, TAU); ctx.fill();
+  }
+}
+function drawEffects() {
+  for (var i = 0; i < game.particles.length; i++) {
+    var p = game.particles[i], a = clamp(p.life / p.maxLife, 0, 1);
+    if(rendererSpike && rendererSpike.enabled && rendererSpike.hiddenMuzzleParticles && rendererSpike.hiddenMuzzleParticles.has(p)) continue;
+    ctx.globalAlpha = a; ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(p.x, p.y, Math.max(.5, p.size * a), 0, TAU); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  for (var j = 0; j < game.texts.length; j++) {
+    var t = game.texts[j]; ctx.globalAlpha = clamp(t.life / Math.min(.3, t.maxLife), 0, 1);
+    ctx.font = "bold " + t.size + "px Arial"; ctx.textAlign = "center"; ctx.lineWidth = 4; ctx.strokeStyle = "rgba(20,22,18,.85)";
+    ctx.strokeText(t.text, t.x, t.y); ctx.fillStyle = t.color; ctx.fillText(t.text, t.x, t.y);
+  }
+  for (var scoreIndex = 0; scoreIndex < game.scorePopups.length; scoreIndex++) {
+    var popup = game.scorePopups[scoreIndex];
+    ctx.globalAlpha = clamp(popup.life / Math.min(0.3, popup.maxLife), 0, 1);
+    ctx.font = "bold 22px Arial"; ctx.textAlign = "center"; ctx.lineWidth = 5;
+    ctx.strokeStyle = "rgba(20,22,18,.9)"; ctx.strokeText(popup.text, popup.x, popup.y);
+    ctx.fillStyle = "#fff1a6"; ctx.fillText(popup.text, popup.x, popup.y);
+  }
+  ctx.globalAlpha = 1;
+}
+function drawBar(x, y, w, h, value, max, color, label) {
+  ctx.fillStyle = "rgba(8,12,9,.72)"; roundedRect(x, y, w, h, 4);
+  ctx.fillStyle = color; ctx.fillRect(x + 3, y + 3, (w - 6) * clamp(value / max, 0, 1), h - 6);
+  ctx.fillStyle = "#f3f0dd"; ctx.font = "bold 14px Arial"; ctx.textAlign = "left"; ctx.fillText(label, x + 7, y - 5);
+}
+function drawBossHpSegments(x, y) {
+  var b = game.boss, segmentW = 22, gap = 4, segmentH = 18;
+  ctx.fillStyle = "#f3f0dd"; ctx.font = "bold 14px Arial"; ctx.textAlign = "left";
+  ctx.fillText("BOSS HP  " + b.hp + " / " + b.maxHp, x, y - 7);
+  for (var i = 0; i < b.maxHp; i++) {
+    ctx.fillStyle = "rgba(7,10,8,.78)"; ctx.fillRect(x + i * (segmentW + gap), y, segmentW, segmentH);
+    if (i < b.hp) {
+      ctx.fillStyle = b.rage ? "#f24e3d" : "#d7a84a";
+      ctx.fillRect(x + i * (segmentW + gap) + 3, y + 3, segmentW - 6, segmentH - 6);
+    }
+  }
+}
+function drawUI() {
+  var p = game.player, b = game.boss;
+  var dispersion = getPlayerDispersion(p);
+  var playerHpLabel = Number.isInteger(p.hp) ? p.hp : p.hp.toFixed(1);
+  drawBar(28, 40, 230, 18, p.hp, p.maxHp, "#75c46b", "PLAYER  " + playerHpLabel + " / " + p.maxHp);
+  drawBossHpSegments(W - 288, 40);
+  ctx.fillStyle = "#fff0a4"; ctx.font = "bold 20px monospace"; ctx.textAlign = "center";
+  ctx.fillText("SCORE " + String(game.score).padStart(4, "0"), W / 2, 38);
+  ctx.font = "15px Arial"; ctx.textAlign = "right";
+  ctx.fillStyle = b.leftTrack.destroyed ? "#e36b45" : "#e6d79b"; ctx.fillText("왼쪽 궤도 " + (b.leftTrack.destroyed ? "복구 " + b.leftTrack.repairRemaining.toFixed(1) + "s" : b.leftTrack.hp + "/" + b.leftTrack.maxHp), W - 28, 82);
+  ctx.fillStyle = b.rightTrack.destroyed ? "#e36b45" : "#e6d79b"; ctx.fillText("오른쪽 궤도 " + (b.rightTrack.destroyed ? "복구 " + b.rightTrack.repairRemaining.toFixed(1) + "s" : b.rightTrack.hp + "/" + b.rightTrack.maxHp), W - 28, 104);
+  ctx.fillStyle = "#fff0a4"; ctx.fillText("활성 약점  " + WEAKPOINT_DEFS[getActiveWeakpointName(b)].label, W - 28, 126);
+  if (b.rage) { ctx.fillStyle = "#ff6652"; ctx.fillText("폭주", W - 28, 148); }
+  ctx.textAlign = "left"; ctx.font = "14px Arial";
+  if (p.suppressedRemaining > 0) {
+    ctx.fillStyle = "#ffad62"; ctx.fillText("SUPPRESSED  " + p.suppressedRemaining.toFixed(1) + "s", 28, 84);
+  }
+  ctx.fillStyle = "#d9dcc9"; ctx.fillText("주포 산포  " + dispersion.total.toFixed(2) + "°", 28, 106);
+  if (p.smokeDebuffRemaining > 0) {
+    ctx.fillStyle = "#c7ccc7"; ctx.fillText("SMOKED  " + p.smokeDebuffRemaining.toFixed(1) + "s", 28, 128);
+  }
+  ctx.textAlign = "left"; ctx.fillStyle = "rgba(238,241,221,.82)"; ctx.font = "14px Arial";
+  ctx.fillText("W/S 이동   A/D 차체 선회   마우스 조준   클릭 발사   R 재시작   Tab 디버그", 28, H - 26);
+  var reloadRatio = 1 - p.reload / TUNING.playerReloadSeconds;
+  ctx.fillStyle = "rgba(0,0,0,.55)"; ctx.fillRect(28, H - 57, 150, 8);
+  ctx.fillStyle = p.reload <= 0 ? "#f0d56b" : "#9b8f62"; ctx.fillRect(28, H - 57, 150 * clamp(reloadRatio, 0, 1), 8);
+  ctx.fillStyle = "#dcd8bc"; ctx.fillText(p.reload <= 0 ? "주포 준비" : "재장전", 185, H - 49);
+
+  if (game.state !== "playing") {
+    ctx.fillStyle = "rgba(8,10,8,.68)"; ctx.fillRect(0, 0, W, H);
+    ctx.textAlign = "center"; ctx.fillStyle = game.state === "won" ? "#ffe782" : "#ff7668";
+    ctx.font = "bold 60px Arial"; ctx.fillText(game.state === "won" ? "보스 격파" : "전차 파괴", W / 2, H / 2 - 15);
+    ctx.fillStyle = "#f0f0df"; ctx.font = "22px Arial"; ctx.fillText("R 키로 즉시 재시작", W / 2, H / 2 + 38);
+    ctx.fillStyle = "#fff0a4"; ctx.font = "bold 26px monospace"; ctx.fillText("FINAL SCORE " + String(game.score).padStart(4, "0"), W / 2, H / 2 + 78);
+  }
+}
+function drawDebug() {
+  if (!game.debug) return;
+  var b = game.boss;
+  ctx.save();
+  ctx.save(); ctx.translate(-camera.x, -camera.y);
+  function outlineRect(t, r, color, label) {
+    ctx.save(); ctx.translate(t.x, t.y); ctx.rotate(t.angle); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.strokeRect(r.x-r.w/2,r.y-r.h/2,r.w,r.h); ctx.restore();
+    var pos = localToWorld(t, r.x, r.y); ctx.fillStyle = color; ctx.font = "12px monospace"; ctx.textAlign = "center"; ctx.fillText(label, pos.x, pos.y);
+  }
+  outlineRect(b, {x:0,y:0,w:190,h:112}, "#62d7ff", "차체 전" + TUNING.bossFrontArmor + " / 측" + TUNING.bossSideArmor + " / 후" + TUNING.bossRearArmor);
+  outlineRect(b, {x:0,y:-70,w:174,h:25}, "#ffe66b", "L TRACK " + TUNING.trackArmor);
+  outlineRect(b, {x:0,y:70,w:174,h:25}, "#ffe66b", "R TRACK " + TUNING.trackArmor);
+  var activeWeakpointName = getActiveWeakpointName(b);
+  for (var w = 0; w < WEAKPOINT_NAMES.length; w++) {
+    var def = WEAKPOINT_DEFS[WEAKPOINT_NAMES[w]];
+    var transform = getWeakpointTransform(b, def);
+    outlineRect(transform, {x:0,y:0,w:def.w,h:def.h}, WEAKPOINT_NAMES[w] === activeWeakpointName ? "#ffffff" : "#a89164", def.label);
+  }
+  outlineRect(game.player, {x:0,y:0,w:66,h:46}, "#72e394", "P 전" + TUNING.playerFrontArmor + " / 측" + TUNING.playerSideArmor + " / 후" + TUNING.playerRearArmor);
+  if (b.artilleryPredictedCenter) {
+    ctx.strokeStyle = "#ff6e5b"; ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
+    ctx.beginPath(); ctx.arc(b.artilleryPredictedCenter.x, b.artilleryPredictedCenter.y, 12, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
+  }
+  if (b.artilleryPredictionLine) {
+    ctx.strokeStyle = "#ff9a76"; ctx.lineWidth = 2; ctx.setLineDash([8, 6]);
+    ctx.beginPath(); ctx.moveTo(b.artilleryPredictionLine.x1, b.artilleryPredictionLine.y1);
+    ctx.lineTo(b.artilleryPredictionLine.x2, b.artilleryPredictionLine.y2); ctx.stroke(); ctx.setLineDash([]);
+  }
+  for (var markerIndex = 0; markerIndex < game.artillery.length; markerIndex++) {
+    var debugMarker = game.artillery[markerIndex];
+    ctx.strokeStyle = "#ffcf8a"; ctx.lineWidth = 1.5;
+    ctx.strokeRect(debugMarker.x - 5, debugMarker.y - 5, 10, 10);
+    ctx.fillStyle = "#ffcf8a"; ctx.font = "11px monospace"; ctx.textAlign = "left";
+    var markerDistance = b.artilleryPredictedCenter ? len(debugMarker.x - b.artilleryPredictedCenter.x, debugMarker.y - b.artilleryPredictedCenter.y) : 0;
+    ctx.fillText(String(markerIndex + 1) + " · " + markerDistance.toFixed(0), debugMarker.x + 8, debugMarker.y - 7);
+  }
+  var cameraView = getCameraView();
+  ctx.strokeStyle = "rgba(130,225,255,.65)"; ctx.lineWidth = 2; ctx.setLineDash([10, 7]);
+  ctx.strokeRect(cameraView.left, cameraView.top, W, H); ctx.setLineDash([]);
+  ctx.strokeStyle = "#ff8a72"; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.arc(b.x, b.y, b.boundingRadius, 0, TAU); ctx.stroke();
+  for (var obstacleIndex = 0; obstacleIndex < game.obstacles.length; obstacleIndex++) {
+    var obstacle = game.obstacles[obstacleIndex];
+    ctx.strokeStyle = obstacle.destroyed ? "rgba(160,150,130,.35)" : "#d9b981";
+    ctx.beginPath(); ctx.arc(obstacle.x, obstacle.y, obstacle.radius, 0, TAU); ctx.stroke();
+  }
+  ctx.restore();
+  var p = game.player, dispersion = getPlayerDispersion(p);
+  var mg = b.mg;
+  var mgDisplay = mg.phase === "cooldown"
+    ? mg.timer.toFixed(2) + "s"
+    : (mg.phase === "warning" ? Math.max(0, TUNING.mgWarningSeconds - mg.timer).toFixed(2) + "s (warning)" : "firing");
+  var actualPlayerSpeed = Math.hypot(p.actualVx, p.actualVy);
+  var actualPlayerSpeedRatio = getPlayerActualSpeedRatio(p);
+  var antiSnipe = getAntiSnipeMetrics(p, b);
+  var autoChangePaused = b.weakpointState === "engineExposed";
+  ctx.fillStyle = "rgba(5,8,6,.92)"; ctx.fillRect(12, 82, 1256, 570);
+  ctx.fillStyle = "#8fe9ff"; ctx.textAlign = "left"; ctx.font = "bold 15px monospace"; ctx.fillText("DEBUG STATE", 26, 105);
+  var bossLines = [
+    "난이도: " + CURRENT_DIFFICULTY,
+    "보스 HP: " + b.hp + " / " + b.maxHp,
+    "폭주: " + (b.rage ? "YES" : "NO"),
+    "약점 상태: " + b.weakpointState,
+    "활성 비치명 약점: " + (b.activeTriggerWeakpoint || "-"),
+    "엔진 활성: " + (b.weakpointState === "engineExposed" ? "YES" : "NO"),
+    "엔진 노출: " + b.engineExposureTimer.toFixed(2) + "s",
+    "stagger: " + b.engineStaggerTimer.toFixed(2) + "s",
+    "보스 이동 배율: x" + getBossMoveMultiplier(b).toFixed(2),
+    "보스 선회 배율: x" + getBossTurnMultiplier(b).toFixed(2),
+    "자동 변경 정지: " + (autoChangePaused ? "YES" : "NO"),
+    "약점 자동 변경: " + (b.rage && b.weakpointState === "triggerWeakpoint" ? Math.max(0, TUNING.rageWeakpointChangeSeconds - b.weakpointTimer).toFixed(2) + "s" : "-") ,
+    "왼쪽 궤도 복구: " + (b.leftTrack.destroyed ? b.leftTrack.repairRemaining.toFixed(2) + "s" : "-") ,
+    "오른쪽 궤도 복구: " + (b.rightTrack.destroyed ? b.rightTrack.repairRemaining.toFixed(2) + "s" : "-") ,
+    "distanceToBoss: " + antiSnipe.distance.toFixed(1),
+    "long-range artillery: " + (b.isLongRangeArtilleryMode ? "YES" : "NO"),
+    "boss offscreen: " + (b.completelyOffscreen ? "YES" : "NO"),
+    "offscreen 후보: " + b.offscreenCandidateTime.toFixed(2) + "s",
+    "곡사포 모드: " + getCurrentArtilleryCooldownMode(),
+    "다음 곡사포: " + b.artilleryCooldown.toFixed(2) + "s",
+    "smoke cooldown: " + b.smoke.cooldownRemaining.toFixed(2) + "s",
+    "smoke telegraph: " + b.smoke.telegraphRemaining.toFixed(2) + "s",
+    "smoke cloud: " + (b.smoke.cloudRemaining > 0 ? "YES " + b.smoke.cloudRemaining.toFixed(2) : "NO"),
+    "smoke debuff: " + p.smokeDebuffRemaining.toFixed(2) + "s",
+    "score: " + game.score
+  ];
+  var combatLines = [
+    "다음 기관총: " + mgDisplay,
+    "기관총 명중: " + mg.hits + " / " + TUNING.mgShotsPerBurst,
+    "burst 경과: " + mg.timeSinceLastBurst.toFixed(2) + "s",
+    "보스 거리: " + antiSnipe.distance.toFixed(1),
+    "distanceRatio: " + antiSnipe.distanceRatio.toFixed(3),
+    "실제 속도: " + actualPlayerSpeed.toFixed(1),
+    "playerSpeedRatio: " + actualPlayerSpeedRatio.toFixed(3),
+    "slowRatio: " + antiSnipe.slowRatio.toFixed(3),
+    "antiSnipePressure: " + antiSnipe.pressure.toFixed(3),
+    "MG drain rate: x" + antiSnipe.cooldownDrainRate.toFixed(3),
+    "stationary sniper: " + (mg.wasStationarySniping ? "YES" : "NO"),
+    "stationary dwell: " + mg.stationarySnipingCandidateTime.toFixed(2) + "s",
+    "기관총 산포: " + mg.dispersionDegrees.toFixed(2) + "°",
+    "제압 남은 시간: " + p.suppressedRemaining.toFixed(2) + "s",
+    "전진 속도: " + p.currentForwardSpeed.toFixed(1),
+    "주포 speedRatio: " + dispersion.speedRatio.toFixed(3),
+    "보정 전 이동 산포: " + dispersion.movement.toFixed(2) + "°",
+    "장거리 배율: x" + dispersion.longRangeMultiplier.toFixed(3),
+    "보정 후 이동 산포: " + dispersion.adjustedMovement.toFixed(2) + "°",
+    "제압 산포: " + dispersion.suppression.toFixed(2) + "°",
+    "연막 산포: " + dispersion.smoke.toFixed(2) + "°",
+    "최종 산포: " + dispersion.total.toFixed(2) + "°",
+    "평활 속도: (" + p.smoothedVx.toFixed(1) + ", " + p.smoothedVy.toFixed(1) + ")",
+    "예상 중심: " + (b.artilleryPredictedCenter ? "(" + b.artilleryPredictedCenter.x.toFixed(0) + ", " + b.artilleryPredictedCenter.y.toFixed(0) + ")" : "-")
+  ];
+  var worldLines = [
+    "WORLD / CAMERA",
+    "player world: " + p.x.toFixed(1) + ", " + p.y.toFixed(1),
+    "boss world: " + b.x.toFixed(1) + ", " + b.y.toFixed(1),
+    "camera: " + camera.x.toFixed(1) + ", " + camera.y.toFixed(1),
+    "camera target: " + camera.targetX.toFixed(1) + ", " + camera.targetY.toFixed(1),
+    "world: " + WORLD.width.toFixed(0) + " x " + WORLD.height.toFixed(0),
+    "view L/T: " + cameraView.left.toFixed(0) + ", " + cameraView.top.toFixed(0),
+    "view R/B: " + cameraView.right.toFixed(0) + ", " + cameraView.bottom.toFixed(0),
+    "mouse screen: " + input.mouseScreenX.toFixed(1) + ", " + input.mouseScreenY.toFixed(1),
+    "mouse world: " + input.mouseWorldX.toFixed(1) + ", " + input.mouseWorldY.toFixed(1),
+    "살아 있는 장애물: " + game.obstacles.filter(function (o) { return !o.destroyed; }).length
+  ];
+  for (var obstacleLine = 0; obstacleLine < game.obstacles.length; obstacleLine++) {
+    var debugObstacle = game.obstacles[obstacleLine];
+    worldLines.push(debugObstacle.id + " " + debugObstacle.type + " " +
+      (debugObstacle.destroyed ? "DESTROYED" : debugObstacle.hp + "/" + debugObstacle.maxHp));
+  }
+  if (game.lastHit) {
+    var last = game.lastHit;
+    worldLines.push("LAST: " + last.zone + " / " + last.result);
+    worldLines.push("angle " + last.angle.toFixed(1) + "° armor " + last.armor.toFixed(1));
+    worldLines.push("effective " + last.effectiveArmor.toFixed(1) + " pen " + last.penetration.toFixed(1));
+  }
+  if (game.lastScoreEvent) {
+    worldLines.push("SCORE EVENT: " + game.lastScoreEvent.reason + " +" + game.lastScoreEvent.amount);
+  }
+  if (game.lastDebugShell) {
+    var debugShell = game.lastDebugShell;
+    worldLines.push("SHELL: " + debugShell.ownerFaction + " / " + debugShell.weaponType);
+    worldLines.push("ricochets: " + debugShell.ricochetCount);
+    worldLines.push("def score: " + (debugShell.defensiveRicochetScoreAwarded ? "YES" : "NO"));
+    worldLines.push("bank score: " + (debugShell.weakpointBankShotScoreAwarded ? "YES" : "NO"));
+  }
+  if (mg.shotDebug.length) {
+    var lastMgShot = mg.shotDebug[mg.shotDebug.length - 1];
+    worldLines.push("MG #" + lastMgShot.index + " " + lastMgShot.firstHitType +
+      " t=" + (lastMgShot.t === null ? "-" : lastMgShot.t.toFixed(3)));
+    worldLines.push("MG hit world: " + lastMgShot.x.toFixed(0) + ", " + lastMgShot.y.toFixed(0));
+  }
+  ctx.font = "12px monospace"; ctx.fillStyle = "#e6eee3";
+  for (var s = 0; s < bossLines.length; s++) ctx.fillText(bossLines[s], 26, 128 + s * 18);
+  for (var c = 0; c < combatLines.length; c++) ctx.fillText(combatLines[c], 420, 128 + c * 18);
+  for (var wl = 0; wl < worldLines.length; wl++) ctx.fillText(worldLines[wl], 830, 128 + wl * 18);
+  ctx.restore();
+}
+function drawCrosshair() {
+  var p = game.player, dispersion = getPlayerDispersion(p);
+  var aimDistance = len(input.mouseWorldX - p.x, input.mouseWorldY - p.y);
+  var dispersionRadius = Math.max(3, Math.tan(dispersion.total * Math.PI / 180) * aimDistance);
+  var suppressed = p.suppressedRemaining > 0;
+  var smoked = p.smokeDebuffRemaining > 0;
+  var pulse = suppressed ? 0.65 + Math.sin(game.time * 22) * 0.25 : 0.78;
+  ctx.save(); ctx.translate(input.mouseScreenX, input.mouseScreenY);
+  ctx.strokeStyle = smoked ? "rgba(184,190,184,.78)" : (suppressed ? "rgba(255,146,70," + pulse + ")" : "rgba(245,242,205,.62)");
+  ctx.lineWidth = suppressed || smoked ? 2 : 1.2; ctx.setLineDash([6, 5]);
+  ctx.beginPath(); ctx.arc(0, 0, dispersionRadius, 0, TAU); ctx.stroke(); ctx.setLineDash([]);
+  ctx.strokeStyle = smoked ? "rgba(210,216,210,.9)" : (suppressed ? "rgba(255,180,92,.95)" : "rgba(245,242,205,.85)"); ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.arc(0,0,10,0,TAU); ctx.moveTo(-17,0);ctx.lineTo(-6,0);ctx.moveTo(17,0);ctx.lineTo(6,0);ctx.moveTo(0,-17);ctx.lineTo(0,-6);ctx.moveTo(0,17);ctx.lineTo(0,6);ctx.stroke(); ctx.restore();
+}
+function render() {
+  ctx.clearRect(0, 0, W, H);
+  var sx = game.shake ? (seededNoise(Math.floor(game.time * 80)) - .5) * game.shake : 0;
+  var sy = game.shake ? (seededNoise(Math.floor(game.time * 93) + 5) - .5) * game.shake : 0;
+  var use3d = rendererSpike && rendererSpike.enabled;
+  if (use3d) {
+    try { rendererSpike.render(sx, sy); }
+    catch (error) { rendererSpike.fail(error); use3d = false; }
+  }
+  if (!use3d) { ctx.fillStyle = "#101511"; ctx.fillRect(0, 0, W, H); }
+  ctx.save();
+  ctx.translate(sx - camera.x, sy - camera.y);
+  if (!use3d) { drawGround(); drawObstacles(); }
+  drawSmokeEffects(); drawArtilleryMarkers(); drawBossWarning(); drawRageEffect();
+  if (!use3d) {
+    drawTankBase(game.boss, false); drawTankBase(game.player, true);
+    drawTurret(game.boss, false); drawTurret(game.player, true);
+  } else { drawSpikeAnnotations(); }
+  drawWeakpoints();
+  if (!use3d) drawShells();
+  drawMachineGunEffects(); drawEffects();
+  ctx.restore();
+  drawUI(); drawDebug(); drawCrosshair();
+  if(rendererSpike && rendererSpike.enabled && rendererSpike.drawMuzzleDebug) rendererSpike.drawMuzzleDebug(sx,sy);
+}
+
+// Existing Canvas annotations retained independently of the solid-object drawings.
+function drawSpikeAnnotations() {
+  var p = game.player, size = TUNING.playerHeadingArrowSize;
+  ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.angle);
+  ctx.globalAlpha = .46; ctx.fillStyle = "#fff"; ctx.strokeStyle = "rgba(20,24,20,.72)";
+  ctx.lineWidth = TUNING.playerHeadingArrowLineWidth;
+  ctx.beginPath(); ctx.moveTo(TUNING.playerHeadingArrowDistance + size/2, 0);
+  ctx.lineTo(TUNING.playerHeadingArrowDistance-size/2, -size/2);
+  ctx.lineTo(TUNING.playerHeadingArrowDistance-size/4, 0);
+  ctx.lineTo(TUNING.playerHeadingArrowDistance-size/2, size/2);
+  ctx.closePath(); ctx.stroke(); ctx.fill(); ctx.restore();
+  game.obstacles.forEach(function(o) {
+    if (o.destroyed || !isWorldCircleVisible(o.x,o.y,o.radius+15)) return;
+    var w=o.radius*1.5;
+    ctx.fillStyle="rgba(8,10,8,.7)"; ctx.fillRect(o.x-w/2,o.y-o.radius-13,w,6);
+    ctx.fillStyle=o.type==="rock"?"#b7aa86":"#a88162";
+    ctx.fillRect(o.x-w/2+1,o.y-o.radius-12,(w-2)*o.hp/o.maxHp,4);
+  });
+  var b=game.boss;
+  [b.leftTrack,b.rightTrack].forEach(function(t,i) {
+    if (!t.destroyed) return;
+    var pos=localToWorld(b,0,i===0?-70:70);
+    ctx.save(); ctx.fillStyle="#ffd0a3"; ctx.font="bold 13px Arial"; ctx.textAlign="center";
+    ctx.fillText(t.repairRemaining.toFixed(1)+"s",pos.x,pos.y+5); ctx.restore();
+  });
+}
+
+// ============================================================
+// 메인 루프 (delta time 기반)
+// ============================================================
+var lastTime = performance.now();
+function frame(now) {
+  var dt = Math.min(TUNING.maxDeltaSeconds, (now - lastTime) / 1000); lastTime = now;
+  game.time += dt;
+  game.weakpointEventThisFrame = null;
+  game.artilleryFiredThisFrame = false;
+  game.smokeStartedThisFrame = false;
+  updateCamera(dt); updatePlayer(dt); updateSmokeDefense(dt); updateBoss(dt); updateShells(dt); finalizeWeakpointRotation();
+  updateMachineGun(dt); updateLongRangeArtilleryMode(); updateBossOffscreen(dt); updateArtillery(dt); updateEffects(dt); render();
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+
+<script type="module">
+// ============================================================
+// THREE.JS RENDERER SPIKE — read-only adapter, no gameplay writes
+// Version deliberately pinned. Network access required for initial import.
+// ============================================================
+const SPIKE_CONFIG = { cameraElevation: 90, shadows: true, maxPixelRatio: 1.5, shadowMapSize: 1024 };
+const status = document.getElementById('spikeStatus');
+// Three.js UUID allocation uses Math.random. Keep its synchronous allocation/render work
+// on a separate visual stream so the original spread / AI random stream is never consumed.
+let visualSeed=0x51ce;
+function withVisualRandom(work) {
+  const gameplayRandom=Math.random;
+  Math.random=()=>((visualSeed=(Math.imul(visualSeed,1664525)+1013904223)>>>0)/4294967296);
+  try { return work(); } finally { Math.random=gameplayRandom; }
+}
+try {
+  const THREE = await import('./vendor/three.module.js');
+  withVisualRandom(() => {
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color('#101511');
+  const view = new THREE.OrthographicCamera(-W/2,W/2,H/2,-H/2,1,6000);
+  view.up.set(0,0,-1);
+  const renderer = new THREE.WebGLRenderer({ canvas:document.getElementById('world3d'), antialias:true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, SPIKE_CONFIG.maxPixelRatio));
+  renderer.setSize(W,H,false); // same logical rectangle and CSS stretch as the original canvas
+  renderer.shadowMap.enabled = SPIKE_CONFIG.shadows;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.info.autoReset = false;
+  scene.add(new THREE.HemisphereLight(0xe0edff,0x414331,1.65));
+  const sun = new THREE.DirectionalLight(0xffefcf,2.3);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(SPIKE_CONFIG.shadowMapSize,SPIKE_CONFIG.shadowMapSize);
+  Object.assign(sun.shadow.camera,{left:-1050,right:1050,top:850,bottom:-850,near:1,far:4000});
+  sun.shadow.bias=-0.00015; sun.shadow.normalBias=.8;
+  scene.add(sun,sun.target);
+  const unitBox = new THREE.BoxGeometry(1,1,1);
+  const sphere = new THREE.SphereGeometry(1,8,6);
+  const rockGeometry = new THREE.IcosahedronGeometry(1,0);
+  const mats = {};
+  function mat(color) { return mats[color] ||= new THREE.MeshLambertMaterial({color,flatShading:true}); }
+  function mesh(parent,geometry,material,x,y,z,sx,sy,sz) {
+    const m = new THREE.Mesh(geometry,material); m.position.set(x,y,z); m.scale.set(sx,sy,sz);
+    m.castShadow=true; m.receiveShadow=true; parent.add(m); return m;
+  }
+  function box(parent,color,x,y,z,w,h,d) { return mesh(parent,unitBox,mat(color),x,y,z,w,h,d); }
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(WORLD.width,WORLD.height),mat('#394b36'));
+  ground.rotation.x=-Math.PI/2; ground.position.set(WORLD.width/2,0,WORLD.height/2);
+  ground.receiveShadow=true; scene.add(ground);
+  const road=box(scene,'#444b36',WORLD.width/2,.1,WORLD.height/2,230,.1,WORLD.height);
+  road.castShadow=false;
+  const gridPoints=[];
+  for(let x=0;x<=WORLD.width;x+=40) gridPoints.push(x,.22,0,x,.22,WORLD.height);
+  for(let z=0;z<=WORLD.height;z+=40) gridPoints.push(0,.22,z,WORLD.width,.22,z);
+  const gridGeometry=new THREE.BufferGeometry(); gridGeometry.setAttribute('position',new THREE.Float32BufferAttribute(gridPoints,3));
+  scene.add(new THREE.LineSegments(gridGeometry,new THREE.LineBasicMaterial({color:'#78896a',transparent:true,opacity:.13})));
+  const boundary = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(10,.3,10),new THREE.Vector3(WORLD.width-10,.3,10),
+    new THREE.Vector3(WORLD.width-10,.3,WORLD.height-10),new THREE.Vector3(10,.3,WORLD.height-10)
+  ]),new THREE.LineBasicMaterial({color:'#829571'})); scene.add(boundary);
+  function makeTank(isPlayer) {
+    const root=new THREE.Group(), hull=new THREE.Group(), turret=new THREE.Group();
+    root.name=isPlayer?'PlayerTankRoot':'BossTankRoot'; hull.name='Hull'; turret.name='TurretPivot';
+    root.add(hull,turret); scene.add(root);
+    const length=isPlayer?62:190, width=isPlayer?42:112, height=isPlayer?15:25;
+    const body=box(hull,isPlayer?'#789b57':'#9b8961',0,height/2+5,0,length,height,width);
+    const nose=box(hull,isPlayer?'#a2b77b':'#b6a178',length*.38,height+3,0,length*.2,5,width*.9);
+    const tracks=[-1,1].map(sign=>box(hull,'#30362b',0,isPlayer?7:10,sign*(isPlayer?21:70),isPlayer?64:174,isPlayer?14:20,isPlayer?12:26));
+    const turretHeight=isPlayer?13:22, radius=isPlayer?17:38;
+    const turretBody=mesh(turret,new THREE.CylinderGeometry(radius*.85,radius,turretHeight,8),mat(isPlayer?'#a1b778':'#b5a071'),0,height+5+turretHeight/2,0,1,1,1);
+    const barrel=box(turret,isPlayer?'#c0ce99':'#c3af80',isPlayer?27:55,height+5+turretHeight*.5,0,isPlayer?36:76,isPlayer?6:12,isPlayer?6:12);
+    const hatch=box(turret,isPlayer?'#647c47':'#857348',-radius*.3,height+5+turretHeight+2,0,radius*.7,4,radius*.7);
+    return {root,hull,turret,body,nose,tracks,turretBody,barrel,hatch,isPlayer};
+  }
+  const playerVisual=makeTank(true),bossVisual=makeTank(false);
+  function syncTank(v,t) {
+    v.root.position.set(t.x,0,t.y);
+    // +X is the original forward axis. Three +Y rotation needs opposite sign for game +Y -> +Z.
+    v.hull.rotation.y=-t.angle; v.turret.rotation.y=-t.turretAngle;
+    v.body.material=mat(!t.alive?'#39382f':t.hitFlash>0?'#fff0bd':v.isPlayer?'#789b57':t.rage?'#ad6850':'#9b8961');
+    v.turretBody.material=mat(!t.alive?'#494337':v.isPlayer?'#a1b778':t.rage?'#bd7955':'#b5a071');
+    if(!v.isPlayer) [t.leftTrack,t.rightTrack].forEach((tr,i)=>v.tracks[i].material=mat(tr.destroyed?'#9d4e33':'#30362b'));
+  }
+
+  const GLB_CONFIG={url:'../M41/export/M41_RND_v02_muzzle.glb',unitsPerMeter:14};
+  const glbStatus=document.getElementById('glbStatus'),stressStatus=document.getElementById('stressStatus');
+  const stressGroup=new THREE.Group(); stressGroup.name='RENDERER_ONLY_STRESS'; scene.add(stressGroup);
+  const stressTanks=[];
+  let glbTemplate=null,glbPlayer=null,glbHull=null,glbTurret=null,footprint=null;
+  const playerMaterials=new Map();
+  function syncPlayerVisual() {
+    if(!glbPlayer){syncTank(playerVisual,game.player);return;}
+    const p=game.player;
+    glbPlayer.position.set(p.x,0,p.y);
+    glbHull.rotation.y=-p.angle;
+    glbTurret.rotation.y=-(p.turretAngle-p.angle);
+    for(const [m,base] of playerMaterials){
+      m.color.copy(base);
+      if(!p.alive)m.color.multiplyScalar(.35);
+      else if(p.hitFlash>0)m.color.lerp(new THREE.Color('#fff0bd'),.8);
+    }
+  }
+  function applyGLBShadow(root,on){root.traverse(o=>{if(o.isMesh){o.castShadow=on;o.receiveShadow=on;}});}
+  function updateStressLabel(){
+    const cols=footprint?Math.max(1,Math.floor((W-40)/footprint.sx)):0;
+    const rows=footprint?Math.max(1,Math.floor((H-130)/footprint.sz)):0;
+    stressStatus.textContent='Stress Tanks: '+stressTanks.length+' · P: add one'+
+      (stressTanks.length>cols*rows?' · grid exceeds viewport capacity ('+cols*rows+')':'');
+  }
+  function addStressTank(){
+    if(!glbTemplate){glbStatus.textContent='M41 not ready · Primitive player continues';return false;}
+    return withVisualRandom(()=>{
+      const tank=glbTemplate.clone(true); tank.name='StressM41_'+(stressTanks.length+1);
+      applyGLBShadow(tank,SPIKE_CONFIG.shadows);
+      stressGroup.add(tank);stressTanks.push(tank);updateStressLabel();return true;
+    });
+  }
+  function syncStressGrid(sx,sy){
+    if(!footprint)return;
+    const cols=Math.max(1,Math.floor((W-40)/footprint.sx));
+    stressTanks.forEach((t,i)=>t.position.set(
+      camera.x-sx+20-footprint.minX+(i%cols)*footprint.sx,
+      0,camera.y-sy+105-footprint.minZ+Math.floor(i/cols)*footprint.sz));
+  }
+  window.addEventListener('keydown',e=>{
+    if(e.code!=='KeyP'||e.ctrlKey||e.metaKey||e.altKey)return;
+    if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;
+    e.preventDefault();e.stopImmediatePropagation();addStressTank();
+  },true);
+  window.addEventListener('keyup',e=>{if(e.code==='KeyP'){e.preventDefault();e.stopImmediatePropagation();}},true);
+  document.getElementById('clearStress').onclick=()=>{
+    stressTanks.forEach(t=>stressGroup.remove(t));stressTanks.length=0;updateStressLabel();
+  };
+  async function loadM41(){
+    try{
+      const {GLTFLoader}=await import('./vendor/GLTFLoader.js');
+      const loader=withVisualRandom(()=>new GLTFLoader());
+      const gltf=await loader.loadAsync(GLB_CONFIG.url);
+      withVisualRandom(()=>{
+        const model=gltf.scene;
+        for(const name of ['M41_ROOT','HULL','TRACK_L','TRACK_R','TURRET_PIVOT','TURRET','GUN','MUZZLE'])
+          if(!model.getObjectByName(name))throw Error('Missing node '+name);
+        if(gltf.animations.length)throw Error('Unexpected animation');
+        model.traverse(o=>{if(o.isSkinnedMesh)throw Error('Unexpected skin');});
+        model.scale.setScalar(GLB_CONFIG.unitsPerMeter);
+        applyGLBShadow(model,SPIKE_CONFIG.shadows);
+        model.updateMatrixWorld(true);
+        const bounds=new THREE.Box3().setFromObject(model),size=bounds.getSize(new THREE.Vector3());
+        footprint={minX:bounds.min.x,minZ:bounds.min.z,sx:size.x*1.35,sz:size.z*1.45,size:size.toArray()};
+        glbTemplate=model;
+        glbPlayer=model.clone(true);glbPlayer.name='M41_PLAYER_VISUAL';
+        const copies=new Map();
+        glbPlayer.traverse(o=>{if(o.isMesh){
+          if(!copies.has(o.material)){const m=o.material.clone();copies.set(o.material,m);playerMaterials.set(m,m.color.clone());}
+          o.material=copies.get(o.material);
+        }});
+        glbHull=glbPlayer.getObjectByName('HULL');glbTurret=glbPlayer.getObjectByName('TURRET_PIVOT');
+        scene.remove(playerVisual.root);scene.add(glbPlayer);
+        glbStatus.textContent='M41 GLB ready · 14 legacy units/m · +X forward';
+        rendererSpike.glb={player:glbPlayer,template:glbTemplate,hull:glbHull,turret:glbTurret,footprint,config:GLB_CONFIG};
+        updateStressLabel();
+      });
+    }catch(error){glbStatus.textContent='M41 load failed · Primitive fallback: '+error.message;console.warn('M41 fallback',error);}
+  }
+
+  function syncEnemyVisuals() { syncTank(bossVisual,game.boss); }
+  const obstacles=new Map(), shells=new Map(), shellPool=[];
+  const shellMaterials={player:new THREE.MeshBasicMaterial({color:'#fff6c7',depthTest:false,depthWrite:false}),boss:new THREE.MeshBasicMaterial({color:'#ff8d64',depthTest:false,depthWrite:false})};
+  function syncObstacleVisuals() {
+    const current=new Set(game.obstacles);
+    for(const [state,root] of obstacles) if(!current.has(state)) { scene.remove(root); obstacles.delete(state); }
+    for(const o of game.obstacles) {
+      let root=obstacles.get(o);
+      if(!root) {
+        root=new THREE.Group(); scene.add(root); obstacles.set(o,root);
+        if(o.type==='rock') mesh(root,rockGeometry,mat('#87816e'),0,15,0,o.radius,25,o.radius);
+        else { box(root,'#62634e',0,9,0,88,18,46); box(root,'#82806a',-5,24,0,32,16,32); box(root,'#484b3b',27,25,0,45,8,10); }
+      }
+      root.position.set(o.x,o.destroyed?-.5:0,o.y); root.rotation.y=-o.rotation;
+      root.scale.y=o.destroyed?.12:1;
+      root.traverse(m=>{if(m.isMesh)m.castShadow=!o.destroyed;});
+    }
+  }
+
+  // Presentation-only state: no properties are added to gameplay shells or particles.
+  const bridgeConfig={enabled:true,duration:.075,debug:false,easeOut:true};
+  const bridgeStates=new Map();
+  let hiddenMuzzleParticles=new WeakSet(),bridgeGame=game;
+  const bridgeMetrics={deltaLogicalPx:0,deltaCssPx:0,lastRemoval:null};
+  const flash=new THREE.Mesh(sphere,new THREE.MeshBasicMaterial({color:0xffedac,transparent:true,depthWrite:false,depthTest:false}));
+  const smoke=new THREE.Mesh(sphere,new THREE.MeshBasicMaterial({color:0xa6a8a3,transparent:true,opacity:0,depthWrite:false}));
+  flash.name='PLAYER_MUZZLE_FLASH';smoke.name='PLAYER_MUZZLE_SMOKE';
+  flash.visible=smoke.visible=false;flash.renderOrder=11;scene.add(flash,smoke);
+  let shotFX=null;
+  function resetBridgeIfNeeded(){
+    if(bridgeGame===game)return;
+    bridgeGame=game;bridgeStates.clear();hiddenMuzzleParticles=new WeakSet();
+    rendererSpike.hiddenMuzzleParticles=hiddenMuzzleParticles;shotFX=null;
+    flash.visible=smoke.visible=false;
+  }
+  function muzzlePosition(){
+    if(!glbPlayer)return null;
+    syncPlayerVisual();glbPlayer.updateMatrixWorld(true);
+    return glbPlayer.getObjectByName('MUZZLE').getWorldPosition(new THREE.Vector3());
+  }
+  function capturePlayerFire(shell,particles){
+    resetBridgeIfNeeded();
+    const origin=muzzlePosition();if(!origin)return;
+    const direction=new THREE.Vector3(1,0,0).transformDirection(glbPlayer.getObjectByName('MUZZLE').matrixWorld);
+    bridgeStates.set(shell,{start:origin.clone(),born:game.time,ricochetCount:shell.ricochetCount,bridge:bridgeConfig.enabled});
+    particles.forEach(p=>hiddenMuzzleParticles.add(p));
+    shotFX={origin,direction,born:game.time};
+  }
+  function syncMuzzleFX(){
+    resetBridgeIfNeeded();
+    if(!shotFX){flash.visible=smoke.visible=false;return;}
+    const age=Math.max(0,game.time-shotFX.born);
+    flash.visible=age<.055;flash.position.copy(shotFX.origin);
+    flash.scale.setScalar(3.5+age*20);flash.material.opacity=Math.max(0,1-age/.055);
+    smoke.visible=age<.24;
+    smoke.position.copy(shotFX.origin).addScaledVector(shotFX.direction,age*14);
+    smoke.position.y+=age*7;smoke.scale.setScalar(2.5+age*25);
+    smoke.material.opacity=.28*Math.max(0,1-age/.24);
+    if(age>=.24)shotFX=null;
+  }
+  function projectMuzzle(){
+    const origin=muzzlePosition();if(!origin)return null;
+    const p=origin.project(view);
+    return {x:(p.x+1)*W/2,y:(1-p.y)*H/2};
+  }
+  function drawMuzzleDebug(sx,sy){
+    const label=document.getElementById('muzzleDelta');
+    if(!bridgeConfig.debug||!rendererSpike.enabled||!glbPlayer){label.hidden=true;return;}
+    const green=projectMuzzle();if(!green)return;
+    const p=game.player,d=TUNING.playerShellMuzzleDistance;
+    const red={x:p.x+Math.cos(p.turretAngle)*d-camera.x+sx,y:p.y+Math.sin(p.turretAngle)*d-camera.y+sy};
+    const dx=green.x-red.x,dy=green.y-red.y,rect=canvas.getBoundingClientRect();
+    bridgeMetrics.deltaLogicalPx=Math.hypot(dx,dy);
+    bridgeMetrics.deltaCssPx=Math.hypot(dx*rect.width/W,dy*rect.height/H);
+    bridgeMetrics.green=green;bridgeMetrics.red=red;
+    label.hidden=false;label.textContent='Muzzle Screen Delta: '+bridgeMetrics.deltaCssPx.toFixed(2)+' px (CSS)';
+    ctx.save();ctx.strokeStyle='#ccdda9';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(red.x,red.y);ctx.lineTo(green.x,green.y);ctx.stroke();
+    [[red,'#ff5555'],[green,'#4dff80']].forEach(([p,c])=>{ctx.fillStyle=c;ctx.beginPath();ctx.arc(p.x,p.y,3,0,TAU);ctx.fill();});
+    ctx.restore();
+  }
+  document.getElementById('bridgeEnabled').onchange=e=>{bridgeConfig.enabled=e.target.checked;};
+  document.getElementById('easeBridge').onchange=e=>{bridgeConfig.easeOut=e.target.checked;};
+  document.getElementById('muzzleDebug').onchange=e=>{bridgeConfig.debug=e.target.checked;};
+
+
+  function syncProjectileVisuals() {
+    resetBridgeIfNeeded();
+    const current=new Set(game.shells.filter(s=>!s.dead));
+    for(const [state,m] of shells) if(!current.has(state)) {
+      // A collision can occur before 75 ms. End the bridge at the authoritative hit,
+      // then hide/recycle the shell; original Canvas impact is left untouched.
+      m.position.set(state.x,0,state.y);
+      if(bridgeStates.has(state))bridgeMetrics.lastRemoval={x:state.x,y:state.y,dead:state.dead};
+      m.visible=false;shells.delete(state);shellPool.push(m);bridgeStates.delete(state);
+    }
+    for(const state of bridgeStates.keys())if(!current.has(state))bridgeStates.delete(state);
+    for(const s of current) {
+      let m=shells.get(s);
+      if(!m) {m=shellPool.pop()||new THREE.Mesh(sphere,shellMaterials[s.owner]);scene.add(m);shells.set(s,m);}
+      m.visible=true;m.renderOrder=10;m.material=shellMaterials[s.owner];m.position.set(s.x,8,s.y);m.scale.set(6,3,3);
+      const bridge=bridgeStates.get(s);
+      if(bridge){
+        const age=Math.max(0,game.time-bridge.born);
+        if(s.ricochetCount!==bridge.ricochetCount)bridge.bridge=false;
+        if(bridge.bridge&&bridgeConfig.enabled&&age<bridgeConfig.duration){
+          const t=Math.max(0,Math.min(1,age/bridgeConfig.duration));
+          const eased=bridgeConfig.easeOut?1-Math.pow(1-t,3):t;
+          m.position.lerpVectors(bridge.start,m.position.clone(),eased);
+        }
+      }
+      m.rotation.y=-Math.atan2(s.vy,s.vx);
+    }
+  }
+
+  function syncCamera(sx,sy) {
+    const a=SPIKE_CONFIG.cameraElevation*Math.PI/180, sn=Math.sin(a),cs=Math.cos(a);
+    const cx=camera.x+W/2-sx,cz=camera.y+H/2-sy;
+    // Ground-plane scale compensation preserves legacy screenToWorld even in the tilt comparison.
+    // Height parallax is deliberately NOT compensated: 85/80 are visual experiments, 90 is acceptance baseline.
+    view.top=H/2*sn; view.bottom=-H/2*sn; view.updateProjectionMatrix();
+    view.position.set(cx,1800*sn,cz+1800*cs); view.lookAt(cx,0,cz); view.updateMatrixWorld();
+    // Shadow coverage follows the viewport, but the WORLD light direction never rotates with tanks/camera.
+    sun.position.set(cx-550,950,cz-420); sun.target.position.set(cx,0,cz);
+  }
+  let frames=0,start=performance.now(),lastSample=performance.now();
+  const stats={version:THREE.REVISION,fps:0,drawCalls:0,triangles:0,objects:0,meshes:0,pixelRatio:renderer.getPixelRatio(),shadows:true};
+  rendererSpike={enabled:true,config:SPIKE_CONFIG,stats,scene,view,renderer,playerVisual,bossVisual,stressTanks,stressGroup,addStressTank,
+    capturePlayerFire,hiddenMuzzleParticles,drawMuzzleDebug,
+    muzzleBridge:{config:bridgeConfig,states:bridgeStates,metrics:bridgeMetrics,flash,smoke,muzzlePosition,shells},
+    render(sx,sy) {
+      withVisualRandom(() => {
+        syncPlayerVisual(); syncEnemyVisuals(); syncObstacleVisuals(); syncProjectileVisuals(); syncMuzzleFX(); syncCamera(sx,sy); syncStressGrid(sx,sy);
+        renderer.info.reset(); renderer.render(scene,view);
+      });
+      const now=performance.now(); frames++;
+      if(now-lastSample>600) {
+        Object.assign(stats,{fps:Math.round(frames*1000/(now-start)),drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,
+          objects:0,meshes:0,shadows:renderer.shadowMap.enabled});
+        scene.traverse(o=>{stats.objects++;if(o.isMesh)stats.meshes++;});
+        status.textContent=`Three r${stats.version} · ${SPIKE_CONFIG.cameraElevation}° · ${stats.fps} FPS · ${stats.drawCalls} calls · ${stats.meshes} meshes · DPR ${stats.pixelRatio}`+
+          (SPIKE_CONFIG.cameraElevation===90?'':' · 높이 시차 있음 / 판정은 원본 2D')+' · '+stats.triangles+' triangles · Shadow '+(stats.shadows?'ON':'OFF');
+        frames=0; start=now; lastSample=now;
+      }
+    },
+    fail(error) {
+      this.enabled=false; renderer.domElement.style.visibility='hidden';
+      status.textContent='3D 사용 불가 · Legacy Canvas 유지: '+error.message;
+      console.error('Renderer spike:',error);
+    }
+  };
+
+  const legacyFireShell=window.fireShell;
+  window.fireShell=function(tank,owner){
+    const particleStart=game.particles.length;
+    const result=legacyFireShell.apply(this,arguments);
+    if(owner==='player'&&rendererSpike.enabled&&glbPlayer){
+      try{withVisualRandom(()=>capturePlayerFire(game.shells[game.shells.length-1],game.particles.slice(particleStart)));}
+      catch(error){console.warn('Muzzle presentation capture failed',error);}
+    }
+    return result;
+  };
+  loadM41();
+  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();rendererSpike.fail(new Error('WebGL context lost. 새로고침하십시오.'));});
+  document.getElementById('spikeAngle').onchange=e=>{SPIKE_CONFIG.cameraElevation=Number(e.target.value);};
+  document.getElementById('spikeShadow').onchange=e=>{
+    SPIKE_CONFIG.shadows=e.target.checked; renderer.shadowMap.enabled=e.target.checked;
+    if(glbTemplate)applyGLBShadow(glbTemplate,e.target.checked);
+    if(glbPlayer)applyGLBShadow(glbPlayer,e.target.checked);
+    applyGLBShadow(stressGroup,e.target.checked);
+    scene.traverse(o=>{if(o.material)o.material.needsUpdate=true;});
+  };
+  document.getElementById('spikeMode').onclick=e=>{
+    rendererSpike.enabled=!rendererSpike.enabled; renderer.domElement.style.visibility=rendererSpike.enabled?'visible':'hidden';
+    e.target.textContent=rendererSpike.enabled?'2D 비교':'3D 복귀';
+    if(!rendererSpike.enabled)status.textContent='Legacy Canvas 비교 · 동일 gameplay state / R 재시작 / Tab 디버그';
+  };
+  });
+} catch(error) {
+  document.getElementById('world3d').style.visibility='hidden';
+  status.textContent='Three.js 로딩 실패 · Legacy Canvas로 실행 중. 인터넷/CDN 접근을 확인하십시오.';
+  console.error('Renderer spike load:',error);
+}
+</script>
+
+</body>
+</html>

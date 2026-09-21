@@ -1,0 +1,125 @@
+{
+  "asset": "75mm_PAK_40",
+  "revision": "RND_v01",
+  "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\75mm_PAK_40\\75mm_PAK_40_v02.blend",
+  "source_reason": "v02 is latest source containing explicitly user-authorized tank-like three-mesh hierarchy",
+  "source_sha256": "d5301c3347735574818deba3f6498177cf07d71ad065e53f78574de6c3afdf77",
+  "interpretation": "User confirmed omit TRACK_L/R; wheels and trails remain HULL; preserve existing ROOT and TURRET_PIVOT",
+  "simplification": "None required. Three existing source meshes and 3 base-color materials retained; no shape or scale changes. No textures added.",
+  "outputs": {
+    "blend": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\75mm_PAK_40\\source\\75mm_PAK_40_RND_v01.blend",
+    "glb": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\75mm_PAK_40\\export\\75mm_PAK_40_RND_v01.glb",
+    "glb_bytes": 329756,
+    "previews": [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\75mm_PAK_40\\preview\\75mm_PAK_40_RND_v01_isometric.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\75mm_PAK_40\\preview\\75mm_PAK_40_RND_v01_top.png",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\75mm_PAK_40\\preview\\75mm_PAK_40_RND_v01_side.png"
+    ]
+  },
+  "counts": {
+    "nodes": 6,
+    "meshes": 3,
+    "triangles": 10708,
+    "triangles_by_mesh": {
+      "HULL": 6876,
+      "TURRET": 3224,
+      "GUN": 608
+    },
+    "materials": 3,
+    "textures": 0,
+    "primitives": 9
+  },
+  "dimensions_length_width_height_m": [
+    5.3399999141693115,
+    2.5399999618530273,
+    1.600000023841858
+  ],
+  "hierarchy": {
+    "75mm_PAK_40_ROOT": null,
+    "HULL": "75mm_PAK_40_ROOT",
+    "TURRET_PIVOT": "HULL",
+    "TURRET": "TURRET_PIVOT",
+    "GUN": "TURRET",
+    "MUZZLE": "GUN"
+  },
+  "glb_positions": {
+    "MUZZLE": [
+      3.0199999809265137,
+      1.159999966621399,
+      0.0
+    ],
+    "GUN": [
+      -0.25,
+      1.159999966621399,
+      0.0
+    ],
+    "TURRET": [
+      -0.15000000596046448,
+      0.6800000071525574,
+      0.0
+    ],
+    "TURRET_PIVOT": [
+      -0.15000000596046448,
+      0.6800000071525574,
+      0.0
+    ],
+    "HULL": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "75mm_PAK_40_ROOT": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "axis": "GLB +X forward, +Y up; source Blender +X forward/+Z up; standard export_yup conversion; meters; no normalization",
+  "roundtrip": {
+    "fresh_empty_scene": true,
+    "hierarchy_match": true,
+    "location_error_m": 0.0,
+    "dimension_error_m": 0.0,
+    "muzzle_tip_error_m": 1.4901161193847656e-08,
+    "motion": {
+      "yaw_30_error_m": 4.2981520598697533e-07,
+      "pitch_minus10_error_m": 3.5762786865234375e-07,
+      "mantlet_turret_fixed_during_pitch_error": 0.0,
+      "neutral_restore_matrix_error": 0.0,
+      "stationary_hull_error": 0.0
+    },
+    "neutral_restored": true,
+    "negative_scale": false,
+    "skins": 0,
+    "animations": 0,
+    "armatures": 0
+  },
+  "technical": "PASS",
+  "visual": "PASS: reimported isometric viewport, top and side inspected against source geometry previews; no user approval claim",
+  "limitations": [
+    "Physical intersections during aiming accepted by user; no mechanical motion-range clearance claim",
+    "Root and pivot preserved from v02 per user confirmation, not historical turret-ring geometry",
+    "No HTML/Three.js gameplay integration, performance stress test or final art-direction approval"
+  ],
+  "protected_files": [
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\75mm_PAK_40\\75mm_PAK_40_v02.blend",
+      "before": "d5301c3347735574818deba3f6498177cf07d71ad065e53f78574de6c3afdf77",
+      "after": "d5301c3347735574818deba3f6498177cf07d71ad065e53f78574de6c3afdf77",
+      "unchanged": true
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\M41\\source\\M41_RND_v02_muzzle.blend",
+      "before": "f61f34ba5d30f9346a834fb1c06f45174d0bf20ed7f3ecf24ff067afa0854215",
+      "after": "f61f34ba5d30f9346a834fb1c06f45174d0bf20ed7f3ecf24ff067afa0854215",
+      "unchanged": true
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\M41\\export\\M41_RND_v02_muzzle.glb",
+      "before": "985dd03f5aaf8355ee4c186032dff2ff35faa783cb3ce39931ab86efc77f90ea",
+      "after": "985dd03f5aaf8355ee4c186032dff2ff35faa783cb3ce39931ab86efc77f90ea",
+      "unchanged": true
+    }
+  ],
+  "saved_blend_reopen": "PASS"
+}

@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "default_off": true,
+    "V4A_off_exact": true,
+    "V4A_on_toon_zero_exact": true,
+    "ramp_loaded": true,
+    "pass_order": true,
+    "render_readonly": true,
+    "HUD_identical": true,
+    "numeric_edit": true,
+    "invalid_edit_rejected": true,
+    "strength_UI": true,
+    "DPR": true,
+    "resize": true,
+    "canvas": true,
+    "three_return": true,
+    "restart": true,
+    "deterministic600": true
+  },
+  "hashes": {
+    "after_false": "e8b810d14bd31bf96119113bbfff93aeadd6c50e9d13440bd20f0d3cab04ce45",
+    "after_true": "7033787a7c37c718a7fbb221c341e79d5e83b0c6026e6d75c60327a50539cc8f",
+    "before_false": "e8b810d14bd31bf96119113bbfff93aeadd6c50e9d13440bd20f0d3cab04ce45",
+    "before_true": "7033787a7c37c718a7fbb221c341e79d5e83b0c6026e6d75c60327a50539cc8f"
+  },
+  "errors": [],
+  "pass": true
+}

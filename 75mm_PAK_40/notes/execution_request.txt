@@ -1,0 +1,165 @@
+일단 GLB자산화는 전차용 프롬프트를 넣겠습니다
+지시를 읽으면서 지시가 타당하면 계속 작업해주면 되고, 모순되는점이 있으면 판단을 요청해주세요
+또한 작업이 완수되면 대전차포 -LIKE 오브젝트전용 제작 프롬프트를 반환해주세요&#x20;
+
+
+\# RicochetAngles — 기존 전차의 GLB 파생 자산 제작
+
+대상 차량:
+75mm\_PAK\_40&#x20;
+
+기존 MODEL 영역에서 두 차량의 실제 폴더와 적절한 원본을 확인하십시오.
+
+작업 루트:
+Z:\RicochetAngles\01\_RND\ThreeJSDEV
+
+\## 목적
+
+기존 전차 모델을 기반으로, 향후 Three.js에서 사용할 수 있는
+단순한 GLB 파생 자산을 차량별로 제작하십시오.
+
+이번 범위는 GLB 제작과 자산 검증까지입니다.
+HTML 탑재 방법과 게임 적용은 게임 설계 단계에서 별도로 결정합니다.
+
+\## 기준
+
+현재 M41 GLB 파생본을 구조·단위·축·export 기준으로 참고하십시오.
+
+\- M41/source/M41\_RND\_v02\_muzzle.blend
+\- M41/export/M41\_RND\_v02\_muzzle.glb
+
+M41의 외형이나 비율을 다른 차량에 적용하지 마십시오.
+적용되는 AGENTS.md와 실제 파일을 먼저 확인하십시오.
+
+\## 원본 보호 및 저장
+
+원본은 수정하거나 덮어쓰지 마십시오.
+선택한 원본 파일과 선택 이유를 기록하십시오.
+
+차량별 산출물:
+
+ThreeJSDEV/\<Vehicle>/
+├─ source/    파생 Blender 파일
+├─ export/    GLB
+├─ preview/   검증 이미지
+└─ notes/     제작·검증 기록
+
+기존 결과가 있으면 새 revision으로 저장하십시오.
+
+\## 형상과 단순화
+
+차량 고유의 silhouette와 주요 형상을 유지하십시오.
+
+\- 차체 / 포탑 / 포방패 / 포신의 특징 유지
+\- 탑다운과 기울어진 시점에서의 가독성 우선
+\- 작은 볼트·손잡이·하부 디테일은 필요에 따라 생략
+\- 특징적인 형상을 단순 박스로 대체하지 않음
+\- 불필요한 object와 material 분할 최소화
+
+TRACK\_L / TRACK\_R은 각각 하나의 static mesh로 정리하십시오.
+단순화한 보기륜을 해당 mesh에 포함해도 됩니다.
+
+개별 track link, wheel animation, suspension animation은 필요 없습니다.
+
+\## Hierarchy
+
+\<Vehicle>\_ROOT
+└─ HULL
+&#x20;  ├─ TRACK\_L
+&#x20;  ├─ TRACK\_R
+&#x20;  └─ TURRET\_PIVOT
+&#x20;     └─ TURRET
+&#x20;        └─ GUN
+&#x20;           └─ MUZZLE
+
+\- ROOT: 기존 승인된 Vehicle Root 사용.
+&#x20; 없으면 궤도 ground-contact footprint 중심을 후보로 사용하고 근거 기록.
+\- TURRET\_PIVOT: 실제 turret-ring 회전 중심.
+\- TURRET: 포탑 및 고정 부착물.
+\- GUN: 포신과 함께 움직일 부품, origin은 gun trunnion 기준.
+\- 포방패: 이번 정적 파생본에서는 TURRET에 포함.
+\- MUZZLE: 실제 포구 끝의 중심선에 위치한 Empty/Node.
+\- TRACK\_L / TRACK\_R: 차량 전방 기준 좌우 구분.
+
+MUZZLE은 GUN child이며 전방 방향과 일치시킵니다.
+움직임 구현 없이 object transform으로 활용 가능한 구조만 준비하십시오.
+
+\## 단위와 축
+
+최종 GLB:
+
+\- meter 단위
+\- +X forward
+\- +Y up
+
+원본의 단위와 크기를 먼저 확인하십시오.
+원본의 의도된 비율과 차량 간 크기 차이를 보존하십시오.
+M41과 동일한 크기로 강제 정규화하지 마십시오.
+
+축 변환은 파생본의 geometry와 pivot에 일관되게 적용하십시오.
+negative scale과 불필요한 transform을 정리하십시오.
+
+게임 화면 배율이나 legacy units/m를 GLB에 bake하지 마십시오.
+
+\## Material
+
+가능하면 텍스처 없이 1\~3개의 단순 base-color material로 구성하십시오.
+
+예:
+\- main armor
+\- dark track/mechanical
+\- small accent
+
+Normal map, displacement, 복잡한 PBR texture set,
+baked lighting, AO texture는 추가하지 마십시오.
+정식 Art Direction을 확정하지 마십시오.
+
+\## Export 및 검증
+
+차량별 하나의 .glb로 export하십시오.
+새 scene에 다시 import하여 다음을 확인하십시오.
+
+\- hierarchy 및 part 이름
+\- root / turret / gun / muzzle pivot
+\- meter scale 및 전방 축
+\- 좌우 track 구분
+\- 정상적인 material
+\- missing texture 없음
+\- negative scale 없음
+\- 불필요한 animation / skin / skeleton 없음
+\- MUZZLE이 실제 포구 끝에 위치
+\- 시험 회전 시 turret / gun / muzzle 관계 정상
+
+시험 회전 후 저장 자산은 neutral pose로 유지하십시오.
+
+탑다운·측면·사선에서 실제 형상을 확인하고 검증 이미지를 남기십시오.
+기술 검증과 시각 검증을 별도로 보고하십시오.
+
+\## 이번 작업에서 하지 않을 것
+
+\- HTML 파일 생성 또는 수정
+\- 기존 Spike에 차량 탑재
+\- Three.js loader / renderer adapter 작성
+\- Visual Bridge / muzzle FX / recoil 구현
+\- stress test 구현
+\- gameplay collider / physics / damage 설정
+\- 게임용 표시 배율 결정
+\- Unity 또는 정식 HTML repository 수정
+\- skeleton / armature / skinning / animation 제작
+\- asset manager 또는 범용 framework 설계
+
+\## 완료 보고
+
+차량별로 다음을 보고하십시오.
+
+1\. 사용한 원본 파일
+2\. 단순화 및 변경 범위
+3\. Blender / GLB / 검증 이미지 경로
+4\. GLB file size
+5\. mesh / triangle / material / texture 수
+6\. hierarchy, scale, axis, pivot, MUZZLE 검증
+7\. 재임포트 및 시각 검증 결과
+8\. 남은 문제와 미검증 항목
+
+GLB 제작 완료를 HTML 탑재 완료나 게임 적용 승인으로 표현하지 마십시오.
+

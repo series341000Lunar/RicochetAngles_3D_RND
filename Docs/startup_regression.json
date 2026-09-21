@@ -1,0 +1,20 @@
+[
+  {
+    "delay": 0,
+    "errors": [],
+    "state": {
+      "time": 1.313299999995529,
+      "loaded": 5
+    },
+    "pass": true
+  },
+  {
+    "delay": 1000,
+    "errors": [],
+    "state": {
+      "time": 1.5162740000000006,
+      "loaded": 5
+    },
+    "pass": true
+  }
+]

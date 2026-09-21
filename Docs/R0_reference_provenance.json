@@ -1,0 +1,96 @@
+{
+  "commit": "675a9594d26d90c7a787ae100dc92f782b38f245",
+  "manifest_stale_commit": "2ecba9c768b2705bbe5d50a6e82ccd2c44c5c0d0",
+  "files": [
+    {
+      "path": "docs/Q_ARTILLERY_SIX_SHELL_VALIDATION.md",
+      "exact": false,
+      "normalized": true,
+      "sha256": "b2bc1a13655508f82a9090f409daeb419e63369eacaa586fe175411123b4a8c3"
+    },
+    {
+      "path": "src/boss.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "22a8abfea4996215f1824edbf168902e366bac41f732b0dde8566573b87cac9a"
+    },
+    {
+      "path": "src/combat.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "05b89506949cdf843f393652f65920a8ba519af5ffdeffc57c6d237baf6809d3"
+    },
+    {
+      "path": "src/config.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "ddb041fa7ae2ccf077e6d6ec9360e4d857705b6d922304e184da76cb87a2a074"
+    },
+    {
+      "path": "src/core.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "9f0f3e2339d18f8d759a38c287dab46f849a5dc93bc5786e8f251c66135d6de8"
+    },
+    {
+      "path": "src/enemies.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "d7b33cac0a0cca92860c93307fbb218acc0846c616ebbb8d59b6fcb8cc2abe0a"
+    },
+    {
+      "path": "src/geometry.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "cd66d316ee31996e8fd8a679759dd9a2fc0bacb795c78a32f3776917a8589d9d"
+    },
+    {
+      "path": "src/input.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "973c068f98b096cbcf88bfe00c753e35f958f9176706293e88eb149c4de67087"
+    },
+    {
+      "path": "src/main.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "8af8486566415747dc43d4684ade0f86827e156a00baead6fb3b4f2559beae55"
+    },
+    {
+      "path": "src/player.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "1104822b6cedb9878a296d6c48f3ca7b2438793a054c51448da75cf0478a5c71"
+    },
+    {
+      "path": "src/render.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "4eab38f8d73ea74b5a8347447c1b881bb64d360b72b00e0cce55cc4e0e6bbade"
+    },
+    {
+      "path": "src/stages.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "7d2c1e5d77bf5f8f8da2ef5e024efd95cbc9b8a00bbfd447a40fc5564a2e1bac"
+    },
+    {
+      "path": "src/state.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "71578533bf5d1c52fe2706434b2b45d15cbb28ab025e2af8a0290f0bd500c4aa"
+    },
+    {
+      "path": "src/ui.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "3b0c8350c89e886c4d6e910615aaaa39715e3e9e0705b46bae68e1b390387b6b"
+    },
+    {
+      "path": "src/world.js",
+      "exact": false,
+      "normalized": true,
+      "sha256": "a205a63727b4a337291a3fd996b19f5fa8c30c8b078dc84865a70c768f2e25ba"
+    }
+  ]
+}
