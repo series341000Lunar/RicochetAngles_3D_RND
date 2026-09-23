@@ -1,0 +1,262 @@
+{
+  "schema": "G3_TIGER_CANVAS_V1",
+  "timestamp": "2026-09-23T16:11:30.059Z",
+  "pass": true,
+  "checks": {
+    "moduleLoaded": true,
+    "g2ProxyUnchanged": true,
+    "hullExtent": true,
+    "tracksUseG2Bands": true,
+    "turretExtent": true,
+    "gunLength": true,
+    "engineCoreDeck": true,
+    "enginePresentationSeparate": true,
+    "coreReferenceOnly": true,
+    "vehicleCollisionUnchanged": true,
+    "threeCanvasEngineAnchor90": true,
+    "threeCanvasWeakpoints90": true,
+    "threePresentation75": true,
+    "turretTransform": true,
+    "engineLabelOnDeck": true,
+    "traceOnOff": true,
+    "traceG2Baseline": true,
+    "renderReadOnly": true,
+    "focusBulletBossRestart": true,
+    "threeCanvasToggle": true,
+    "noPageErrors": true,
+    "g2HitResults": true,
+    "engineDamage": true
+  },
+  "details": {
+    "geometry": {
+      "hullNormalized": {
+        "minX": -0.5,
+        "maxX": 0.5,
+        "minY": -0.43,
+        "maxY": 0.43
+      },
+      "turretNormalized": {
+        "minX": -0.5,
+        "maxX": 0.5,
+        "minY": -0.5,
+        "maxY": 0.5
+      },
+      "hullVisual": {
+        "x": -2.2805962562561035,
+        "y": 0,
+        "w": 161.8772897720337,
+        "h": 100.02843761444092
+      },
+      "tracks": [
+        {
+          "x": 0,
+          "y": -38.578458070755005,
+          "w": 161.14212608337402,
+          "h": 20.391478061676025
+        },
+        {
+          "x": 0,
+          "y": 38.578458070755005,
+          "w": 161.14212608337402,
+          "h": 20.391478061676025
+        }
+      ],
+      "turret": {
+        "x": 5.036637306213379,
+        "y": 0,
+        "w": 129.36030387878418,
+        "h": 75.19435119628906
+      },
+      "gun": {
+        "x": 125.65553283691406,
+        "y": 0.000003546476364135742,
+        "w": 113.25531578063965,
+        "h": 13.778026044368744
+      },
+      "enginePresentation": {
+        "x": 1019.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      },
+      "corePresentation": {
+        "x": 999.8,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    },
+    "performance": {
+      "iterations": 1000,
+      "milliseconds": 18.100000001490116,
+      "msPerBoss": 0.018100000001490115
+    },
+    "hits": {
+      "shots": [
+        {
+          "name": "front",
+          "zone": "보스 차체",
+          "armor": 155,
+          "module": null
+        },
+        {
+          "name": "side",
+          "zone": "오른쪽 궤도",
+          "armor": 42,
+          "module": "rightTrack"
+        },
+        {
+          "name": "rear",
+          "zone": "보스 차체",
+          "armor": 70,
+          "module": null
+        },
+        {
+          "name": "leftTrack",
+          "zone": "왼쪽 궤도",
+          "armor": 42,
+          "module": "leftTrack"
+        },
+        {
+          "name": "rightTrack",
+          "zone": "오른쪽 궤도",
+          "armor": 42,
+          "module": "rightTrack"
+        }
+      ],
+      "hpBefore": 10,
+      "hpAfter": 9,
+      "collisionRadius": 105
+    },
+    "trace": {
+      "frames": 240,
+      "onHash": "5576cfd04ec1a7273ad2f92a92a1f1ba153c22d7f3dd0eb7bd7dc92b00966075",
+      "offHash": "5576cfd04ec1a7273ad2f92a92a1f1ba153c22d7f3dd0eb7bd7dc92b00966075",
+      "g2Hash": "5576cfd04ec1a7273ad2f92a92a1f1ba153c22d7f3dd0eb7bd7dc92b00966075",
+      "flags": {
+        "focus": true,
+        "bulletTime": true,
+        "bossFire": true,
+        "restart": true,
+        "toggleCount": 4,
+        "renderReadOnly": true
+      },
+      "last": {
+        "hp": 10,
+        "collisionRadius": 105,
+        "state": "playing"
+      }
+    }
+  },
+  "errors": [],
+  "previews": [
+    {
+      "file": "00_G2_Canvas_before.png",
+      "three": false,
+      "heading": 3.141592653589793,
+      "active": "visionSlit",
+      "engine": {
+        "x": 764.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    },
+    {
+      "file": "G3_A_90_Three.png",
+      "three": true,
+      "heading": 3.141592653589793,
+      "active": "visionSlit",
+      "engine": {
+        "x": 764.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    },
+    {
+      "file": "G3_B_90_Canvas.png",
+      "three": false,
+      "heading": 3.141592653589793,
+      "active": "visionSlit",
+      "engine": {
+        "x": 764.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    },
+    {
+      "file": "G3_C_90_overlay.png",
+      "three": false,
+      "heading": 3.141592653589793,
+      "active": "visionSlit",
+      "engine": {
+        "x": 764.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    },
+    {
+      "file": "G3_D_Canvas_front.png",
+      "three": false,
+      "heading": 0,
+      "active": "visionSlit",
+      "engine": {
+        "x": 635.6,
+        "y": 1800,
+        "angle": 0
+      }
+    },
+    {
+      "file": "G3_E_Canvas_side.png",
+      "three": false,
+      "heading": 1.5707963267948966,
+      "active": "visionSlit",
+      "engine": {
+        "x": 700,
+        "y": 1735.6,
+        "angle": 1.5707963267948966
+      }
+    },
+    {
+      "file": "G3_F_Canvas_rear.png",
+      "three": false,
+      "heading": 3.141592653589793,
+      "active": "visionSlit",
+      "engine": {
+        "x": 764.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    },
+    {
+      "file": "G3_G_Engine_Core.png",
+      "three": false,
+      "heading": 3.141592653589793,
+      "active": "engine",
+      "engine": {
+        "x": 764.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    },
+    {
+      "file": "G3_H_weakpoints.png",
+      "three": false,
+      "heading": 3.141592653589793,
+      "active": "gunPort",
+      "engine": {
+        "x": 764.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    },
+    {
+      "file": "G3_I_75_Three.png",
+      "three": true,
+      "heading": 3.141592653589793,
+      "active": "visionSlit",
+      "engine": {
+        "x": 764.4,
+        "y": 1800,
+        "angle": 3.141592653589793
+      }
+    }
+  ]
+}

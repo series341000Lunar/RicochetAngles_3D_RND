@@ -55,7 +55,7 @@ export function createTigerAnchors(THREE,scene,view,roleVisuals,roleConfig){
   ctx.restore();
  }
  const row=document.createElement('div');row.className='controlRow';
- row.innerHTML='<label>G1 Weakpoints <select id="g1Preset"><option>LEGACY</option><option selected>TIGER_REMAP</option></select></label> <label>Debug <select id="g1Debug"><option>OFF</option><option>LEGACY</option><option>3D</option><option>2D</option><option>OVERLAY</option><option>BOUNDS</option></select></label> <label><input id="g1Labels" type="checkbox" checked>3D anchor labels</label><div id="g1Status" style="font-size:11px"></div>';
+ row.innerHTML='<label>Boss spatial preset <select id="g1Preset"><option>LEGACY</option><option>TIGER_REMAP</option><option selected>TIGER_SPATIAL</option></select></label> <label>Debug <select id="g1Debug"><option>OFF</option><option>LEGACY</option><option>3D</option><option>2D</option><option>OVERLAY</option><option>BOUNDS</option></select></label> <label><input id="g1Labels" type="checkbox" checked>3D anchor labels</label><div id="g1Status" style="font-size:11px"></div>';
  document.getElementById('spikePanel').append(row);
  row.querySelector('#g1Preset').onchange=e=>cfg.setPreset(e.target.value);
  row.querySelector('#g1Debug').onchange=e=>{cfg.debug=e.target.value;};

@@ -159,8 +159,9 @@ function buildPrecisionXrayAnalysis(target){
   var info=hit?calculatePenetration({velocityX:s.vx,velocityY:s.vy,normalX:hit.nx,normalY:hit.ny,armor:hit.armor,
     basePenetration:TUNING.playerShellPenetration,distance:Math.hypot(hit.x-s.prevX,hit.y-s.prevY),
     penetrationLoss:TUNING.playerShellPenetrationLoss,ricochetAngle:TUNING.ricochetAngleDegrees}):null;
-  return {targetId:target.id||"boss",name:target.label||"TIGER / LEGACY BOSS",x:target.x,y:target.y,angle:target.angle,
-    w:target.hitW||190,h:target.hitH||112,hit:hit?{x:hit.x,y:hit.y,zone:hit.zone}:null,
+  var hull=target===game.boss&&window.tigerSpatial?.active()?tigerSpatial.transform(target,"hull"):null;
+  return {targetId:target.id||"boss",name:target.label||"TIGER / LEGACY BOSS",x:hull?hull.x:target.x,y:hull?hull.y:target.y,angle:target.angle,
+    w:hull?hull.w:(target.hitW||190),h:hull?hull.h:(target.hitH||112),hit:hit?{x:hit.x,y:hit.y,zone:hit.zone}:null,
     armor:info?info.armor:null,effectiveArmor:info?info.effectiveArmor:null,
     result:first&&first.obstacle?"OBSTACLE BLOCKED":first&&first.target!==target?"OTHER ACTOR BLOCKED":info?info.result:"NO PLATE INTERSECTION",
     weakpoint:target===game.boss?WEAKPOINT_DEFS[getActiveWeakpointName(target)].label:"Hull armor / no special weakpoint"};
@@ -213,12 +214,15 @@ function detonateRndHE(marker,barrage){
   });
   if(b.alive){
     [b.leftTrack,b.rightTrack].forEach(function(track,i){
-      if(!track.destroyed&&rndCircleRect(x,y,r,b,{x:0,y:i?70:-70,w:174,h:25})){
+      var trackName=i?'rightTrack':'leftTrack',sync=window.tigerSpatial?.active();
+      var trackTransform=sync?tigerSpatial.transform(b,trackName):b;
+      var trackRect=sync?{x:0,y:0,w:trackTransform.w,h:trackTransform.h}:{x:0,y:i?70:-70,w:174,h:25};
+      if(!track.destroyed&&rndCircleRect(x,y,r,trackTransform,trackRect)){
         track.hp=0;track.destroyed=true;track.repairRemaining=b.rage?TUNING.rageTrackRepairSeconds:TUNING.normalTrackRepairSeconds;
       }
     });
     var name=getActiveWeakpointName(b),def=WEAKPOINT_DEFS[name],t=getWeakpointTransform(b,def);
-    if(b.weakpointState==="triggerWeakpoint"&&!barrage.bossTriggerApplied&&rndCircleRect(x,y,r,t,{x:0,y:0,w:def.w,h:def.h})){
+    if(b.weakpointState==="triggerWeakpoint"&&!barrage.bossTriggerApplied&&rndCircleRect(x,y,r,t,{x:0,y:0,...getWeakpointShape(def)})){
       exposeEngineWeakpoint();barrage.bossTriggerApplied=true;
     }
     // Mainline Q policy: may expose engine, never directly damage Boss HP.
@@ -311,7 +315,8 @@ function updateTargetContourSelection(){
     if(!a.alive)return;
     var q=worldToLocal(a,point.x,point.y),inside;
     if(a===game.boss){
-      inside=(Math.abs(q.x)<=95&&Math.abs(q.y)<=56)||
+      inside=window.tigerSpatial?.active()?tigerSpatial.hitTestPoint(a,point.x,point.y):
+        (Math.abs(q.x)<=95&&Math.abs(q.y)<=56)||
         (Math.abs(q.x)<=87&&(Math.abs(q.y-70)<=12.5||Math.abs(q.y+70)<=12.5));
     }else inside=Math.abs(q.x)<=a.hitW/2&&Math.abs(q.y)<=a.hitH/2;
     var distance=Math.hypot(q.x,q.y);

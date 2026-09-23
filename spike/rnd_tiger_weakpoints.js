@@ -1,7 +1,7 @@
 // G1 fixed Tiger II ×2 authoring snapshot. Pure 2D gameplay data; never reads Three.js.
 (function(){
 const cfg={
-  "preset": "TIGER_REMAP",
+  "preset": "TIGER_SPATIAL",
   "debug": "OFF",
   "labels3D": true,
   "canonicalScale": 28,
@@ -110,13 +110,14 @@ const cfg={
 };
 cfg.legacy=JSON.parse(JSON.stringify(WEAKPOINT_DEFS));
 cfg.legacyTransform=getWeakpointTransform;
-cfg.setPreset=function(name){if(!['LEGACY','TIGER_REMAP'].includes(name))throw Error('Unknown G1 preset');cfg.preset=name;};
+cfg.setPreset=function(name){if(!['LEGACY','TIGER_REMAP','TIGER_SPATIAL'].includes(name))throw Error('Unknown Boss preset');cfg.preset=name;};
 cfg.remapTransform=function(boss,name){
  const a=cfg.descriptors[name].gameplayAnchorLocal2D,p=localToWorld(boss,cfg.pivotLocal2D.x,cfg.pivotLocal2D.y),c=Math.cos(boss.turretAngle),s=Math.sin(boss.turretAngle);
  return {x:p.x+a.x*c-a.y*s,y:p.y+a.x*s+a.y*c,angle:boss.turretAngle};
 };
 getWeakpointTransform=function(boss,def){
- return cfg.preset==='TIGER_REMAP'&&cfg.descriptors[def.name]?cfg.remapTransform(boss,def.name):cfg.legacyTransform(boss,def);
+ if(cfg.preset==='TIGER_SPATIAL'&&def.name==='engine')return window.tigerSpatial.transform(boss,'engine');
+ return cfg.preset!=='LEGACY'&&cfg.descriptors[def.name]?cfg.remapTransform(boss,def.name):cfg.legacyTransform(boss,def);
 };
 window.tigerWeakpoints=cfg;
 })();

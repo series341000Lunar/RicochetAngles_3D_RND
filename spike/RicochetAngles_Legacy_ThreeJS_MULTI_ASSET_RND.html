@@ -9,7 +9,7 @@
     html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #111713; }
     body { display: grid; place-items: center; font-family: Arial, sans-serif; color: #e9f0df; }
     canvas { width: 100vw; height: 100vh; display: block; background: #253126; cursor: crosshair; }
-  
+
     #world3d { position:fixed; inset:0; z-index:0; pointer-events:none; }
     #game { position:fixed; inset:0; z-index:1; background:transparent; }
     #spikePanel { position:fixed; right:12px; bottom:12px; z-index:2; padding:9px 12px;
@@ -53,6 +53,20 @@
   </div>
   <div id="muzzleDelta" hidden></div><div id="bossSeamStatus" hidden></div>
   <div id="spikeStatus">Three.js 로딩 중 · 현재 Legacy Canvas</div>
+  <details id="spatialPanel"><summary>G2/G3 Boss spatial · Canvas compare</summary>
+    <div class="controlRow">
+      <label><input id="g3CanvasVisual" type="checkbox" checked>G3 Canvas visual</label>
+      <label>Component <select id="spatialComponent"><option>ALL</option><option>HULL</option><option>TURRET</option><option>TRACKS</option><option>ENGINE_CORE</option><option>WEAKPOINTS</option></select></label>
+      <label><input id="spatialOld" type="checkbox">Old proxy</label>
+      <label><input id="spatialNew" type="checkbox">New proxy</label>
+      <label><input id="spatialVisual" type="checkbox">Measured visual</label>
+      <label><input id="spatialCanvasVisual" type="checkbox">Canvas visual outline</label>
+      <label><input id="spatialCollision" type="checkbox">Vehicle collision</label>
+      <label><input id="spatialAnchors" type="checkbox">Semantic anchors</label>
+      <label><input id="spatialLabels" type="checkbox" checked>Labels</label>
+    </div>
+    <div id="spatialStatus">90° authoring · 75° presentation | cyan=new, orange=old, white=mesh, pink=collision | CORE is reference only</div>
+  </details>
   <details><summary>Asset loading details</summary>
     <div id="glbStatus">M41 loading · Primitive fallback</div><div id="roleStatus">Role GLBs loading</div>
   </details>
@@ -228,6 +242,10 @@ var WEAKPOINT_DEFS = {
 };
 var WEAKPOINT_NAMES = ["engine", "gunPort", "visionSlit", "cupola"];
 var TRIGGER_WEAKPOINT_NAMES = ["cupola", "gunPort", "visionSlit"];
+function getWeakpointShape(def) {
+  return window.tigerSpatial?.active() && def.name === "engine" ?
+    { w: tigerSpatial.rects.engine.w, h: tigerSpatial.rects.engine.h } : { w: def.w, h: def.h };
+}
 
 function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 function lerp(a, b, t) { return a + (b - a) * t; }
@@ -1084,9 +1102,13 @@ function chooseEarliest(candidates) {
 function getShellHitWithBoss(s) {
   var b = game.boss;
   var candidates = [];
-  var leftRect = { x: 0, y: -70, w: 174, h: 25 };
-  var rightRect = { x: 0, y: 70, w: 174, h: 25 };
-  var hullRect = { x: 0, y: 0, w: 190, h: 112 };
+  var spatialSync = window.tigerSpatial?.active();
+  var leftTransform = spatialSync ? tigerSpatial.transform(b, "leftTrack") : b;
+  var rightTransform = spatialSync ? tigerSpatial.transform(b, "rightTrack") : b;
+  var hullTransform = spatialSync ? tigerSpatial.transform(b, "hull") : b;
+  var leftRect = spatialSync ? { x: 0, y: 0, w: leftTransform.w, h: leftTransform.h } : { x: 0, y: -70, w: 174, h: 25 };
+  var rightRect = spatialSync ? { x: 0, y: 0, w: rightTransform.w, h: rightTransform.h } : { x: 0, y: 70, w: 174, h: 25 };
+  var hullRect = spatialSync ? { x: 0, y: 0, w: hullTransform.w, h: hullTransform.h } : { x: 0, y: 0, w: 190, h: 112 };
   var h;
 
   // Turret-top weakpoints are a separate visual layer in this 2D prototype.
@@ -1099,15 +1121,15 @@ function getShellHitWithBoss(s) {
   var activeAhead = segmentVsTankRect(
     s.prevX, s.prevY,
     s.prevX + travelDirection.x * 320, s.prevY + travelDirection.y * 320,
-    activeTransform, { x: 0, y: 0, w: activeDef.w, h: activeDef.h }
+    activeTransform, { x: 0, y: 0, ...getWeakpointShape(activeDef) }
   );
   var aimingAtActiveWeakpoint = !!activeAhead;
 
   if (!aimingAtActiveWeakpoint) {
-    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, b, leftRect);
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, leftTransform, leftRect);
     if (h) { h.zone = "왼쪽 궤도"; h.armor = b.leftTrack.destroyed ? TUNING.destroyedTrackArmor : TUNING.trackArmor; h.module = b.leftTrack; }
     candidates.push(h);
-    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, b, rightRect);
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, rightTransform, rightRect);
     if (h) { h.zone = "오른쪽 궤도"; h.armor = b.rightTrack.destroyed ? TUNING.destroyedTrackArmor : TUNING.trackArmor; h.module = b.rightTrack; }
     candidates.push(h);
   }
@@ -1116,7 +1138,7 @@ function getShellHitWithBoss(s) {
     var weakpointName = WEAKPOINT_NAMES[i];
     var def = WEAKPOINT_DEFS[weakpointName];
     var transform = getWeakpointTransform(b, def);
-    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, transform, { x: 0, y: 0, w: def.w, h: def.h });
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, transform, { x: 0, y: 0, ...getWeakpointShape(def) });
     if (h) {
       h.weakpointName = weakpointName;
       h.isActiveWeakpoint = weakpointName === activeWeakpointName;
@@ -1127,8 +1149,9 @@ function getShellHitWithBoss(s) {
   }
 
   if (!aimingAtActiveWeakpoint) {
-    var turretTransform = { x: b.x, y: b.y, angle: b.turretAngle };
-    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, turretTransform, { x: 0, y: 0, w: 76, h: 64 });
+    var turretTransform = spatialSync ? tigerSpatial.transform(b, "turret") : { x: b.x, y: b.y, angle: b.turretAngle };
+    var turretRect = spatialSync ? { x: 0, y: 0, w: turretTransform.w, h: turretTransform.h } : { x: 0, y: 0, w: 76, h: 64 };
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, turretTransform, turretRect);
     if (h) {
       h.zone = "보스 포탑";
       if (h.localNormalX > 0.5) h.armor = TUNING.bossTurretFrontArmor;
@@ -1137,7 +1160,7 @@ function getShellHitWithBoss(s) {
     }
     candidates.push(h);
 
-    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, b, hullRect);
+    h = segmentVsTankRect(s.prevX, s.prevY, s.x, s.y, hullTransform, hullRect);
     if (h) {
       h.zone = "보스 차체";
       if (h.localNormalX > 0.5) h.armor = TUNING.bossFrontArmor;
@@ -1573,6 +1596,18 @@ function drawObstacles() {
     }
   }
 }
+function useG3CanvasBoss() {
+  return window.tigerSpatial?.active() && window.tigerCanvas && document.getElementById("g3CanvasVisual")?.checked;
+}
+function g3CanvasStatusText() {
+  if (!document.getElementById("g3CanvasVisual")?.checked)
+    return "Canvas 비교 · G3 Canvas visual OFF · G2/Legacy 외형";
+  if (!window.tigerCanvas)
+    return "Canvas 비교 · G3 미적용: Canvas 모듈 로딩 실패 · Ctrl+F5 새로고침";
+  if (!window.tigerSpatial?.active())
+    return "Canvas 비교 · G3 미적용: Boss spatial preset을 TIGER_SPATIAL로 변경 (현재 " + (window.tigerWeakpoints?.preset || "unknown") + ")";
+  return "Canvas 비교 · G3 Tiger II visual ON · 동일 gameplay state / R 재시작 / Tab 디버그";
+}
 function drawTankBase(t, player) {
   ctx.save(); ctx.translate(t.x, t.y); ctx.rotate(t.angle);
   if (player) {
@@ -1592,35 +1627,71 @@ function drawTankBase(t, player) {
     ctx.closePath(); ctx.stroke(); ctx.fill();
     ctx.globalAlpha = 1;
   } else {
-    var b = t;
-    drawBossTrack(-70, b.leftTrack, "왼쪽");
-    drawBossTrack(70, b.rightTrack, "오른쪽");
-    ctx.fillStyle = b.alive ? "#786d52" : "#3b3933"; roundedRect(-95, -56, 190, 112, 12);
-    ctx.fillStyle = "#948566"; ctx.beginPath(); ctx.moveTo(96, -48); ctx.lineTo(96, 48); ctx.lineTo(72, 56); ctx.lineTo(72, -56); ctx.fill();
-    ctx.strokeStyle = "#4a4436"; ctx.lineWidth = 4; ctx.strokeRect(-68, -47, 135, 94);
-    if (b.rage) {
-      ctx.fillStyle = "rgba(220,35,24,.28)";
-      roundedRect(-95, -56, 190, 112, 12);
+    var b = t, syncBoss = window.tigerSpatial?.active();
+    if (useG3CanvasBoss()) {
+      tigerCanvas.drawHull(ctx, b, tigerSpatial);
+    } else if (syncBoss) {
+      var hull = tigerSpatial.rects.hull, left = tigerSpatial.rects.leftTrack, right = tigerSpatial.rects.rightTrack;
+      ctx.fillStyle = b.alive ? "#786d52" : "#3b3933";
+      roundedRect(hull.x-hull.w/2, hull.y-hull.h/2, hull.w, hull.h, 12);
+      drawBossTrack(left.y, b.leftTrack, left);
+      drawBossTrack(right.y, b.rightTrack, right);
+      ctx.fillStyle = "#948566";
+      ctx.fillRect(hull.x+hull.w/2-15, -hull.h*.42, 15, hull.h*.84);
+      ctx.strokeStyle = "#4a4436"; ctx.lineWidth = 4;
+      ctx.strokeRect(hull.x-hull.w*.34, -hull.h*.39, hull.w*.68, hull.h*.78);
+      if (b.rage) { ctx.fillStyle = "rgba(220,35,24,.28)"; roundedRect(hull.x-hull.w/2, -hull.h/2, hull.w, hull.h, 12); }
+    } else {
+      drawBossTrack(-70, b.leftTrack);
+      drawBossTrack(70, b.rightTrack);
+      ctx.fillStyle = b.alive ? "#786d52" : "#3b3933"; roundedRect(-95, -56, 190, 112, 12);
+      ctx.fillStyle = "#948566"; ctx.beginPath(); ctx.moveTo(96, -48); ctx.lineTo(96, 48); ctx.lineTo(72, 56); ctx.lineTo(72, -56); ctx.fill();
+      ctx.strokeStyle = "#4a4436"; ctx.lineWidth = 4; ctx.strokeRect(-68, -47, 135, 94);
+      if (b.rage) { ctx.fillStyle = "rgba(220,35,24,.28)"; roundedRect(-95, -56, 190, 112, 12); }
     }
   }
   ctx.restore();
 }
-function drawBossTrack(y, module) {
-  ctx.fillStyle = module.destroyed ? "#332d28" : "#343a31"; roundedRect(-87, y - 13, 174, 26, 7);
-  ctx.strokeStyle = module.destroyed ? "#8b4b36" : "#7b745f"; ctx.lineWidth = 3; ctx.strokeRect(-78, y - 9, 156, 18);
+function drawBossTrack(y, module, rect) {
+  if (!rect) {
+    ctx.fillStyle = module.destroyed ? "#332d28" : "#343a31"; roundedRect(-87, y - 13, 174, 26, 7);
+    ctx.strokeStyle = module.destroyed ? "#8b4b36" : "#7b745f"; ctx.lineWidth = 3; ctx.strokeRect(-78, y - 9, 156, 18);
+    if (module.destroyed) {
+      ctx.strokeStyle = "#e16443"; ctx.lineWidth = 4;
+      ctx.beginPath(); ctx.moveTo(-70, y - 13); ctx.lineTo(-30, y + 10); ctx.lineTo(8, y - 10); ctx.lineTo(55, y + 13); ctx.stroke();
+      ctx.fillStyle = "#ffd0a3"; ctx.font = "bold 13px Arial"; ctx.textAlign = "center";
+      ctx.fillText(module.repairRemaining.toFixed(1) + "s", 0, y + 5);
+    }
+    return;
+  }
+  var x = rect.x-rect.w/2, w = rect.w, h = rect.h;
+  ctx.fillStyle = module.destroyed ? "#332d28" : "#343a31"; roundedRect(x, y-h/2, w, h, 7);
+  ctx.strokeStyle = module.destroyed ? "#8b4b36" : "#7b745f"; ctx.lineWidth = 3; ctx.strokeRect(x+8, y-h/2+4, w-16, h-8);
   if (module.destroyed) {
     ctx.strokeStyle = "#e16443"; ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.moveTo(-70, y - 13); ctx.lineTo(-30, y + 10); ctx.lineTo(8, y - 10); ctx.lineTo(55, y + 13); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x+17, y-h/2); ctx.lineTo(x+w*.33, y+h/2-3); ctx.lineTo(x+w*.55, y-h/2+3); ctx.lineTo(x+w*.82, y+h/2); ctx.stroke();
     ctx.fillStyle = "#ffd0a3"; ctx.font = "bold 13px Arial"; ctx.textAlign = "center";
-    ctx.fillText(module.repairRemaining.toFixed(1) + "s", 0, y + 5);
+    ctx.fillText(module.repairRemaining.toFixed(1) + "s", x+w/2, y + 5);
   }
 }
 function drawTurret(t, player) {
-  ctx.save(); ctx.translate(t.x, t.y); ctx.rotate(t.turretAngle);
+  var syncBoss = !player && window.tigerSpatial?.active();
+  var pose = syncBoss ? tigerSpatial.transform(t, "turret") : t;
+  ctx.save(); ctx.translate(pose.x, pose.y); ctx.rotate(syncBoss ? pose.angle : t.turretAngle);
   if (player) {
     ctx.fillStyle = "#3e4d38"; roundedRect(2, -5, 43, 10, 3);
     ctx.fillStyle = "#83976a"; ctx.beginPath(); ctx.arc(0, 0, 17, 0, TAU); ctx.fill();
     ctx.fillStyle = "#b1bf84"; roundedRect(10, -3, 36, 6, 2);
+  } else if (syncBoss && useG3CanvasBoss()) {
+    tigerCanvas.drawTurret(ctx, t, tigerSpatial, tigerWeakpoints.descriptors);
+  } else if (syncBoss) {
+    var r = tigerSpatial.rects.turret, gun = tigerSpatial.rects.gun;
+    var gunStart = gun.x-r.x-gun.w/2;
+    ctx.fillStyle = t.alive ? "#514b3b" : "#292823"; roundedRect(gunStart, -7, gun.w, 14, 4);
+    ctx.fillStyle = t.alive ? "#887a5d" : "#34322b"; roundedRect(-r.w/2, -r.h/2, r.w, r.h, 14);
+    ctx.strokeStyle = "#4d4638"; ctx.lineWidth = 4; ctx.strokeRect(-r.w/2+6, -r.h/2+6, r.w-12, r.h-12);
+    ctx.fillStyle = "#a0906b"; ctx.beginPath(); ctx.arc(-r.w*.18, -r.h*.12, 16, 0, TAU); ctx.fill();
+    if (t.rage) { ctx.fillStyle = "rgba(235,35,25,.30)"; roundedRect(-r.w/2, -r.h/2, r.w, r.h, 14); }
   } else {
     ctx.fillStyle = t.alive ? "#514b3b" : "#292823"; roundedRect(5, -9, 86, 18, 4);
     ctx.fillStyle = t.alive ? "#887a5d" : "#34322b"; ctx.beginPath(); ctx.arc(0, 0, 38, 0, TAU); ctx.fill();
@@ -1640,25 +1711,27 @@ function drawWeakpoints(sx=0,sy=0) {
   var activeWeakpointName = getActiveWeakpointName(b);
   for (var i = 0; i < WEAKPOINT_NAMES.length; i++) {
     var name = WEAKPOINT_NAMES[i], def = WEAKPOINT_DEFS[name];
-    var transform = getWeakpointTransform(b, def);
-    if(window.tigerWeakpoints?.preset==='TIGER_REMAP'&&tigerWeakpoints.labels3D&&rendererSpike?.enabled){
-      var anchor=rendererSpike.tigerAnchors?.project(name);
+    var transform = getWeakpointTransform(b, def), shape = getWeakpointShape(def);
+    if(window.tigerWeakpoints?.preset!=='LEGACY'&&tigerWeakpoints.labels3D&&rendererSpike?.enabled){
+      var anchor=name==='engine'?rendererSpike.projectSpatialAnchor?.('engine'):rendererSpike.tigerAnchors?.project(name);
       if(anchor)transform={x:anchor.x+camera.x-sx,y:anchor.y+camera.y-sy,angle:transform.angle};
+    } else if (!rendererSpike?.enabled && name==='engine' && useG3CanvasBoss()) {
+      transform=tigerCanvas.presentationAnchor(b,'engine',tigerSpatial)||transform;
     }
     var active = name === activeWeakpointName;
     var warning = b.rage && b.weakpointState === "triggerWeakpoint" && b.weakpointTimer >= TUNING.rageWeakpointChangeSeconds - TUNING.weakpointChangeWarningSeconds;
     var flash = warning ? (Math.sin(game.time * 38) > -0.05 ? 1 : 0.15) : (0.72 + Math.sin(game.time * 8) * 0.22);
     ctx.save(); ctx.translate(transform.x, transform.y); ctx.rotate(transform.angle);
     ctx.fillStyle = active ? "rgba(255,238,120," + (0.24 * flash) + ")" : "rgba(48,43,34,.65)";
-    ctx.fillRect(-def.w / 2, -def.h / 2, def.w, def.h);
+    ctx.fillRect(-shape.w / 2, -shape.h / 2, shape.w, shape.h);
     ctx.strokeStyle = active ? "rgba(255,255,210," + flash + ")" : "rgba(115,103,78,.55)";
     ctx.lineWidth = active ? 3 : 1;
     if (active) { ctx.shadowColor = "#fff2a1"; ctx.shadowBlur = 10; }
-    ctx.strokeRect(-def.w / 2, -def.h / 2, def.w, def.h);
+    ctx.strokeRect(-shape.w / 2, -shape.h / 2, shape.w, shape.h);
     ctx.restore();
     if (active) {
       ctx.fillStyle = "rgba(255,248,197," + flash + ")"; ctx.font = "bold 12px Arial"; ctx.textAlign = "center";
-      ctx.fillText(def.label, transform.x, transform.y - def.h / 2 - 7);
+      ctx.fillText(def.label, transform.x, transform.y - shape.h / 2 - 7);
     }
   }
 }
@@ -1838,14 +1911,16 @@ function drawDebug() {
     ctx.save(); ctx.translate(t.x, t.y); ctx.rotate(t.angle); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.strokeRect(r.x-r.w/2,r.y-r.h/2,r.w,r.h); ctx.restore();
     var pos = localToWorld(t, r.x, r.y); ctx.fillStyle = color; ctx.font = "12px monospace"; ctx.textAlign = "center"; ctx.fillText(label, pos.x, pos.y);
   }
-  outlineRect(b, {x:0,y:0,w:190,h:112}, "#62d7ff", "차체 전" + TUNING.bossFrontArmor + " / 측" + TUNING.bossSideArmor + " / 후" + TUNING.bossRearArmor);
-  outlineRect(b, {x:0,y:-70,w:174,h:25}, "#ffe66b", "L TRACK " + TUNING.trackArmor);
-  outlineRect(b, {x:0,y:70,w:174,h:25}, "#ffe66b", "R TRACK " + TUNING.trackArmor);
+  var synced=window.tigerSpatial?.active();
+  for(const name of ["hull","leftTrack","rightTrack","turret"]){
+    var pose=synced?tigerSpatial.transform(b,name):tigerSpatial.transform(b,name,"LEGACY");
+    outlineRect(pose,{x:0,y:0,w:pose.w,h:pose.h},name==="hull"?"#62d7ff":name==="turret"?"#c6aaff":"#ffe66b",name.toUpperCase());
+  }
   var activeWeakpointName = getActiveWeakpointName(b);
   for (var w = 0; w < WEAKPOINT_NAMES.length; w++) {
     var def = WEAKPOINT_DEFS[WEAKPOINT_NAMES[w]];
     var transform = getWeakpointTransform(b, def);
-    outlineRect(transform, {x:0,y:0,w:def.w,h:def.h}, WEAKPOINT_NAMES[w] === activeWeakpointName ? "#ffffff" : "#a89164", def.label);
+    outlineRect(transform, {x:0,y:0,...getWeakpointShape(def)}, WEAKPOINT_NAMES[w] === activeWeakpointName ? "#ffffff" : "#a89164", def.label);
   }
   outlineRect(game.player, {x:0,y:0,w:66,h:46}, "#72e394", "P 전" + TUNING.playerFrontArmor + " / 측" + TUNING.playerSideArmor + " / 후" + TUNING.playerRearArmor);
   if (b.artilleryPredictedCenter) {
@@ -1986,6 +2061,78 @@ function drawDebug() {
   for (var wl = 0; wl < worldLines.length; wl++) ctx.fillText(worldLines[wl], 830, 128 + wl * 18);
   ctx.restore();
 }
+function drawSpatialOverlay(sx=0,sy=0) {
+  if(!window.tigerSpatial)return;
+  var visualConfig=rendererSpike?.roleConfig;
+  var canonicalVisual=visualConfig?.bossAsset==='tiger2'&&visualConfig.bossScale===2&&visualConfig.bossShape==='uniform';
+  document.getElementById("spatialStatus").textContent=
+    "90° authoring · 75° presentation | cyan=proxy, orange=old, white=mesh, yellow=Canvas, pink=collision | CORE=reference only"+
+    (canonicalVisual?"":" | VISUAL NONCANONICAL: proxy remains Tiger II x2")+
+    " | G3 Canvas "+(document.getElementById("g3CanvasVisual").checked?"ON":"OFF");
+  var old=document.getElementById("spatialOld").checked, fresh=document.getElementById("spatialNew").checked;
+  var visual=document.getElementById("spatialVisual").checked, canvasVisual=document.getElementById("spatialCanvasVisual").checked;
+  var collision=document.getElementById("spatialCollision").checked;
+  var anchors=document.getElementById("spatialAnchors").checked, labels=document.getElementById("spatialLabels").checked;
+  if(!old&&!fresh&&!visual&&!canvasVisual&&!collision&&!anchors)return;
+  var component=document.getElementById("spatialComponent").value, boss=game.boss;
+  var groups={ALL:["hull","turret","leftTrack","rightTrack","engine","core"],HULL:["hull"],TURRET:["turret"],TRACKS:["leftTrack","rightTrack"],ENGINE_CORE:["engine","core"],WEAKPOINTS:[]};
+  var names=groups[component], screenX=x=>x-camera.x+sx, screenY=y=>y-camera.y+sy;
+  var weakCallouts=[],weakIds={"NEW GUN PORT":1,"NEW VISION SLIT":2,"NEW CUPOLA":3,"NEW ENGINE":4,"CORE internal":5};
+  function rect(t,color,dash,label) {
+    if(!t)return;
+    ctx.save();ctx.translate(screenX(t.x),screenY(t.y));ctx.rotate(t.angle);
+    ctx.strokeStyle=color;ctx.lineWidth=2;ctx.setLineDash(dash);ctx.strokeRect(-t.w/2,-t.h/2,t.w,t.h);ctx.setLineDash([]);
+    if(labels){ctx.fillStyle=color;ctx.font="12px monospace";ctx.textAlign="center";ctx.fillText(label,0,-t.h/2-5);}
+    ctx.restore();
+  }
+  function cross(t,color,label) {
+    if(!t)return;
+    ctx.save();ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=2;
+    var x=screenX(t.x),y=screenY(t.y);ctx.beginPath();ctx.moveTo(x-5,y);ctx.lineTo(x+5,y);ctx.moveTo(x,y-5);ctx.lineTo(x,y+5);ctx.stroke();
+    if(labels){
+      ctx.font="12px monospace";ctx.textAlign="left";
+      if(component==="WEAKPOINTS"&&weakIds[label]){
+        ctx.fillText(String(weakIds[label]),x+7,y-7);
+        weakCallouts.push({number:weakIds[label],label:label.replace("NEW ",""),color:color});
+      } else if(component!=="WEAKPOINTS"||!label.includes("deck label"))ctx.fillText(label,x+7,y-7);
+    }ctx.restore();
+  }
+  ctx.save();
+  if(visual){for(const name of (component==="ALL"||component==="TURRET"?[...names,"gun"]:names)){if(name==="engine"||name==="core")continue;rect(tigerSpatial.transform(boss,name,"VISUAL"),"#f5f4df",[6,4],"MESH "+name.toUpperCase());}}
+  if(canvasVisual&&window.tigerCanvas)tigerCanvas.outline(ctx,boss,tigerSpatial,sx-camera.x,sy-camera.y,component);
+  if(old){for(const name of names)rect(tigerSpatial.transform(boss,name,"LEGACY"),"#ff9b55",[5,4],"OLD "+name.toUpperCase());}
+  if(fresh){for(const name of names)rect(tigerSpatial.transform(boss,name),"#54e9f1",[],"NEW "+name.toUpperCase());}
+  if(collision){
+    ctx.strokeStyle="#ff65ce";ctx.lineWidth=2;ctx.setLineDash([3,5]);ctx.beginPath();
+    ctx.arc(screenX(boss.x),screenY(boss.y),boss.collisionRadius,0,TAU);ctx.stroke();ctx.setLineDash([]);
+    if(labels){ctx.fillStyle="#ff65ce";ctx.font="12px monospace";ctx.fillText("VEHICLE COLLISION R="+boss.collisionRadius,screenX(boss.x)+75,screenY(boss.y)+80);}
+  }
+  if(anchors||component==="WEAKPOINTS"||component==="ENGINE_CORE"){
+    for(const name of (component==="ENGINE_CORE"?["engine"]:["gunPort","visionSlit","cupola","engine"])){
+      var def=WEAKPOINT_DEFS[name];
+      if(old)cross(tigerWeakpoints.legacyTransform(boss,tigerWeakpoints.legacy[name]),"#ff9b55","OLD "+def.label);
+      if(fresh||anchors)cross(name==="engine"?tigerSpatial.transform(boss,"engine"):tigerWeakpoints.remapTransform(boss,name),"#54e9f1","NEW "+def.label);
+    }
+    if(fresh||anchors)cross(tigerSpatial.transform(boss,"core"),"#85adff","CORE internal");
+    if(rendererSpike?.enabled&&rendererSpike.projectSpatialAnchor){
+      for(const name of ["engine","core"]){
+        var surface=rendererSpike.projectSpatialAnchor(name);
+        if(surface)cross({x:surface.x+camera.x-sx,y:surface.y+camera.y-sy},"#fff0a4",name.toUpperCase()+" deck label");
+      }
+    }
+  }
+  if(component==="WEAKPOINTS"&&labels&&weakCallouts.length){
+    weakCallouts.sort((a,b)=>a.number-b.number);
+    var lx=Math.min(W-180,screenX(boss.x)+135),ly=Math.max(34,screenY(boss.y)-86);
+    ctx.fillStyle="rgba(13,20,17,.82)";ctx.fillRect(lx-8,ly-17,170,weakCallouts.length*19+13);
+    ctx.font="12px monospace";ctx.textAlign="left";
+    for(var i=0;i<weakCallouts.length;i++){
+      var item=weakCallouts[i];ctx.fillStyle=item.color;
+      ctx.fillText(item.number+"  "+item.label,lx,ly+i*19);
+    }
+  }
+  ctx.restore();
+}
 function drawCrosshair() {
   var p = game.player, dispersion = getPlayerDispersion(p);
   var aimDistance = len(input.mouseWorldX - p.x, input.mouseWorldY - p.y);
@@ -2023,6 +2170,7 @@ function render() {
   if (!use3d) drawShells();
   drawMachineGunEffects(); drawEffects();
   ctx.restore();
+  drawSpatialOverlay(sx,sy);
   drawUI(); drawDebug(); drawRndHUD(); drawCrosshair();
   if(use3d)rendererSpike.tigerAnchors?.drawDebug(sx,sy);
   if(rendererSpike && rendererSpike.enabled && rendererSpike.drawRoleDebug) rendererSpike.drawRoleDebug(sx,sy);
@@ -2066,9 +2214,11 @@ function frame(now) {
 }
 </script>
 
-<script src="./rnd_gameplay.js"></script>
+<script src="./rnd_gameplay.js?v=g3-20260924-2"></script>
 <script src="./rnd_actors.js"></script>
-<script src="./rnd_tiger_weakpoints.js"></script>
+<script src="./rnd_tiger_weakpoints.js?v=g3-20260924-2"></script>
+<script src="./rnd_tiger_spatial.js?v=g3-20260924-2"></script>
+<script src="./rnd_tiger_canvas.js?v=g3-20260924-2"></script>
 <script>
 // Start only after the gameplay and actor scripts have finished loading.
 lastTime = performance.now();
@@ -2092,7 +2242,7 @@ function withVisualRandom(work) {
 try {
   const THREE = await import('./vendor/three.module.js');
   const {createTargetContour}=await import('./rnd_target_contour.js');
-  const {createTigerAnchors}=await import('./rnd_tiger_anchors.js');
+  const {createTigerAnchors}=await import('./rnd_tiger_anchors.js?v=g3-20260924-2');
   const {createFocusMaterial}=await import('./rnd_focus_material.js');
   const {createMuzzleLights}=await import('./rnd_muzzle_light.js');
   const {createWorldGrade}=await import('./rnd_world_grade.js');
@@ -2569,10 +2719,20 @@ try {
   const muzzleLights=createMuzzleLights(THREE,scene);
   const worldGrade=createWorldGrade(renderer,scene,view);
   const tigerAnchors=createTigerAnchors(THREE,scene,view,roleVisuals,roleConfig);
+  document.getElementById('g1Preset').addEventListener('change',()=>{
+    if(!rendererSpike?.enabled)status.textContent=g3CanvasStatusText();
+  });
+  function projectSpatialAnchor(name){
+    const d=window.tigerSpatial?.presentation[name],v=roleVisuals.get('boss');
+    if(!d||!v||v.asset!=='tiger2'||roleConfig.bossScale!==2||roleConfig.bossShape!=='uniform'||!game.boss.alive)return null;
+    const owner=v.root.getObjectByName(d.ownerNode);if(!owner)return null;
+    const p=owner.localToWorld(new THREE.Vector3(d.x,d.y,d.z)).project(view);
+    return {x:(p.x+1)*W/2,y:(1-p.y)*H/2};
+  }
   let frames=0,start=performance.now(),lastSample=performance.now();
   const stats={version:THREE.REVISION,fps:0,drawCalls:0,triangles:0,objects:0,meshes:0,pixelRatio:renderer.getPixelRatio(),shadows:true};
   rendererSpike={enabled:true,config:SPIKE_CONFIG,stats,scene,view,renderer,playerVisual,bossVisual,stressTanks,stressGroup,addStressTank,
-    worldGrade,tigerAnchors,muzzleLights,focusMaterial,capturePlayerFire,hiddenMuzzleParticles,drawMuzzleDebug,qVisuals,qConfig,roleVisuals,roleTemplates,roleConfig,roleLoads,assetMetadata:RND_ASSETS,drawRoleDebug,
+    worldGrade,tigerAnchors,projectSpatialAnchor,muzzleLights,focusMaterial,capturePlayerFire,hiddenMuzzleParticles,drawMuzzleDebug,qVisuals,qConfig,roleVisuals,roleTemplates,roleConfig,roleLoads,assetMetadata:RND_ASSETS,drawRoleDebug,
     targetContour,
     bossMuzzlePolish:{config:bossPolishConfig,group:bossSmokeGroup,puffs:bossPuffs,enemyFX},
     muzzleBridge:{config:bridgeConfig,states:bridgeStates,metrics:bridgeMetrics,flash,smoke,muzzlePosition,shells},
@@ -2620,7 +2780,7 @@ try {
     }
     return result;
   };
-  
+
   async function prepareStartup(){
     const gate=window.rndStartup;
     try{
@@ -2715,10 +2875,11 @@ try {
   };
   document.getElementById('muzzleLight').onchange=e=>{muzzleLights.config.enabled=e.target.checked;if(!e.target.checked)muzzleLights.clear();};
   document.getElementById('focusMaterial').onchange=e=>{focusMaterial.config.enabled=e.target.checked;if(!e.target.checked)focusMaterial.restore();};
+  document.getElementById('g3CanvasVisual').onchange=e=>{if(!rendererSpike.enabled)status.textContent=g3CanvasStatusText();};
   document.getElementById('spikeMode').onclick=e=>{
     muzzleLights.clear();focusMaterial.restore();rendererSpike.enabled=!rendererSpike.enabled; renderer.domElement.style.visibility=rendererSpike.enabled?'visible':'hidden';
     e.target.textContent=rendererSpike.enabled?'2D 비교':'3D 복귀';
-    if(!rendererSpike.enabled)status.textContent='Legacy Canvas 비교 · 동일 gameplay state / R 재시작 / Tab 디버그';
+    if(!rendererSpike.enabled)status.textContent=g3CanvasStatusText();
   };
   });
 } catch(error) {

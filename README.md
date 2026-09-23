@@ -123,4 +123,33 @@ After READY/START, enable Bloom in the scrollable Color Grading / Toon panel. Bl
 
 
 ## G1 Tiger II Weakpoint Remap — 2026-09-21
-Default TIGER_REMAP; switch G1 Weakpoints to LEGACY for the preserved baseline. Use Debug OVERLAY at 90 degrees and 3D anchor labels at 75 degrees. Canonical gameplay offsets are fixed to Tiger II Uniform x2 (28 units/m); visual scale changes do not alter hit coordinates. Surface labels at 75 degrees remain vertically offset from ground-plane hit centers. No collision enlargement or Bloom changes. [G1 report, tests and A-H screenshots](Docs/THREEJS_GAMEPLAY_PHASE_G1_TIGER2_WEAKPOINT_REMAP_20260921.md). Technical PASS; user visual/play review and G2 decision pending.
+G1 originally defaulted to TIGER_REMAP; G2 now defaults to TIGER_SPATIAL. Switch Boss spatial preset to TIGER_REMAP or LEGACY for the preserved comparisons. Use Debug OVERLAY at 90 degrees and 3D anchor labels at 75 degrees. Canonical gameplay offsets are fixed to Tiger II Uniform x2 (28 units/m); visual scale changes do not alter hit coordinates. Surface labels at 75 degrees remain vertically offset from ground-plane hit centers. No collision enlargement or Bloom changes. [G1 report, tests and A-H screenshots](Docs/THREEJS_GAMEPLAY_PHASE_G1_TIGER2_WEAKPOINT_REMAP_20260921.md). Technical PASS; user visual/play review pending. G2 calibration follows below.
+
+## Tiger II Boss spatial sync — G2 (2026-09-24)
+
+The Multi-Asset R&D page now defaults to `TIGER_SPATIAL` at Tiger II / Uniform ×2.
+The G2 panel compares measured 90° visual bounds, old and new 2D projectile proxies,
+weakpoint and ENGINE/CORE anchors, and the unchanged vehicle collision circle.
+Use 75° for the play presentation check. The 2D game remains combat authority; CORE
+is an internal reference only. Switch the preset to `LEGACY` or `TIGER_REMAP` to compare
+prior behavior. Noncanonical visual options show a calibration warning.
+
+[Spatial sync report and previews](Docs/G2_TIGER_BOSS_SPATIAL_SYNC_20260924.md) ·
+[Validation JSON](Docs/g2_spatial/validation.json) ·
+[Original HTML backup](spike/RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.before_spatial_sync.html)
+
+## G3 Tiger II Canvas fallback visual sync (2026-09-24)
+
+The Multi-Asset R&D `2D 비교` mode now draws a Tiger II-like top-down Boss hull,
+tracks, turret, long gun, and rear engine deck from the G2 visual bounds.
+`G3 Canvas visual` toggles this presentation against the G2 primitive baseline.
+To see G3 after `Launch_MultiAsset_RND.bat`, set **G1 Weakpoints → Boss spatial preset**
+to `TIGER_SPATIAL`, leave **G2/G3 Boss spatial → G3 Canvas visual** checked,
+then click **2D 비교**. The Three.js mode continues to display the existing Tiger II GLB.
+The Canvas status now reports when another preset keeps G3 inactive. If an older tab
+still shows the previous UI, reload it with Ctrl+F5 or use the new launcher tab.
+The G2 projectile, armor, weakpoint, collision, and Boss gameplay state stay authoritative.
+Use 90° for Three/Canvas alignment; 75° remains a Three.js presentation check.
+
+[G3 report and A-I previews](Docs/THREEJS_GAMEPLAY_PHASE_G3_2D_FALLBACK_SYNC_20260924.md) ·
+[G3 validation](Docs/g3_canvas/validation.json)

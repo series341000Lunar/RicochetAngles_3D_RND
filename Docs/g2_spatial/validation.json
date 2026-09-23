@@ -1,0 +1,439 @@
+{
+  "schema": "G2_TIGER_SPATIAL_V1",
+  "timestamp": "2026-09-23T16:11:25.553Z",
+  "pass": true,
+  "checks": {
+    "ready": true,
+    "defaultSpatial": true,
+    "measuredHull": true,
+    "projectileTrackSeparation": true,
+    "collisionPreserved": true,
+    "engineAndCoreInsideHull": true,
+    "coreReferenceOnly": true,
+    "engineGameplayShape": true,
+    "legacyTransforms": true,
+    "g1Transforms": true,
+    "visualScaleNotAuthority": true,
+    "frontSideRear": true,
+    "trackModules": true,
+    "engineDamage": true,
+    "renderReadOnly": true,
+    "gameplaySmoke": true,
+    "legacyCombatTrace": true,
+    "engineDeckProjection": true,
+    "noPageErrors": true
+  },
+  "errors": [],
+  "measurements": {
+    "checks": {
+      "ready": true,
+      "defaultSpatial": true,
+      "measuredHull": true,
+      "projectileTrackSeparation": true,
+      "collisionPreserved": true,
+      "engineAndCoreInsideHull": true,
+      "coreReferenceOnly": true,
+      "engineGameplayShape": true,
+      "legacyTransforms": true,
+      "g1Transforms": true,
+      "visualScaleNotAuthority": true,
+      "frontSideRear": true,
+      "trackModules": true,
+      "engineDamage": true,
+      "renderReadOnly": true,
+      "gameplaySmoke": true,
+      "legacyCombatTrace": true,
+      "engineDeckProjection": true,
+      "noPageErrors": true
+    },
+    "samples": [
+      {
+        "name": "front",
+        "from": [
+          190,
+          20
+        ],
+        "to": [
+          0,
+          20
+        ],
+        "zone": "보스 차체",
+        "armor": 155,
+        "weakpoint": null,
+        "module": null
+      },
+      {
+        "name": "side",
+        "from": [
+          35,
+          120
+        ],
+        "to": [
+          35,
+          0
+        ],
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "weakpoint": null,
+        "module": "rightTrack"
+      },
+      {
+        "name": "rear",
+        "from": [
+          -190,
+          25
+        ],
+        "to": [
+          0,
+          25
+        ],
+        "zone": "보스 차체",
+        "armor": 70,
+        "weakpoint": null,
+        "module": null
+      },
+      {
+        "name": "leftTrack",
+        "from": [
+          0,
+          -110
+        ],
+        "to": [
+          0,
+          0
+        ],
+        "zone": "왼쪽 궤도",
+        "armor": 42,
+        "weakpoint": null,
+        "module": "leftTrack"
+      },
+      {
+        "name": "rightTrack",
+        "from": [
+          0,
+          110
+        ],
+        "to": [
+          0,
+          0
+        ],
+        "zone": "오른쪽 궤도",
+        "armor": 42,
+        "weakpoint": null,
+        "module": "rightTrack"
+      }
+    ],
+    "engineDamage": {
+      "before": 10,
+      "after": 9
+    },
+    "rects": {
+      "hull": {
+        "x": -2.2805962562561035,
+        "y": 0,
+        "w": 161.8772897720337,
+        "h": 76
+      },
+      "leftTrack": {
+        "x": 0,
+        "y": -38.578458070755005,
+        "w": 161.14212608337402,
+        "h": 20.391478061676025
+      },
+      "rightTrack": {
+        "x": 0,
+        "y": 38.578458070755005,
+        "w": 161.14212608337402,
+        "h": 20.391478061676025
+      },
+      "turret": {
+        "x": 5.036637306213379,
+        "y": 0,
+        "w": 129.36030387878418,
+        "h": 75.19435119628906
+      },
+      "gun": {
+        "x": 125.65553283691406,
+        "y": 0.000003546476364135742,
+        "w": 113.25531578063965,
+        "h": 13.778026044368744
+      },
+      "engine": {
+        "x": -63,
+        "y": 0,
+        "w": 32.199999999999996,
+        "h": 43.4
+      },
+      "core": {
+        "x": -44.800000000000004,
+        "y": 0,
+        "w": 22.400000000000002,
+        "h": 28
+      }
+    },
+    "visualRects": {
+      "hull": {
+        "x": -2.2805962562561035,
+        "y": 0,
+        "w": 161.8772897720337,
+        "h": 100.02843761444092
+      },
+      "leftTrack": {
+        "x": 0,
+        "y": -38.578458070755005,
+        "w": 161.14212608337402,
+        "h": 20.391478061676025
+      },
+      "rightTrack": {
+        "x": 0,
+        "y": 38.578458070755005,
+        "w": 161.14212608337402,
+        "h": 20.391478061676025
+      },
+      "turret": {
+        "x": 5.036637306213379,
+        "y": 0,
+        "w": 129.36030387878418,
+        "h": 75.19435119628906
+      },
+      "gun": {
+        "x": 125.65553283691406,
+        "y": 0.000003546476364135742,
+        "w": 113.25531578063965,
+        "h": 13.778026044368744
+      }
+    },
+    "legacy": {
+      "hull": {
+        "x": 0,
+        "y": 0,
+        "w": 190,
+        "h": 112
+      },
+      "leftTrack": {
+        "x": 0,
+        "y": -70,
+        "w": 174,
+        "h": 25
+      },
+      "rightTrack": {
+        "x": 0,
+        "y": 70,
+        "w": 174,
+        "h": 25
+      },
+      "turret": {
+        "x": 0,
+        "y": 0,
+        "w": 76,
+        "h": 64
+      },
+      "engine": {
+        "x": -103,
+        "y": 0,
+        "w": 20,
+        "h": 44
+      }
+    },
+    "source": {
+      "asset": "Panzer6B_Tiger2/export/Panzer6B_Tiger2_RND_v01.glb",
+      "sha256": "e0eeeb1988f66089ada78e221ba0e43296518f0ecfde5cabbbc901b048ad6c20"
+    },
+    "unitsPerMeter": 28,
+    "modelReady": false
+  },
+  "previews": [
+    {
+      "file": "01_90_old_new_overlay.png",
+      "elevation": 90,
+      "component": "ALL",
+      "engineScreen": {
+        "x": 704.4,
+        "y": 360.00000000000045
+      },
+      "coreScreen": {
+        "x": 684.8,
+        "y": 360.00000000000045
+      },
+      "bossScreen": {
+        "x": 640,
+        "y": 360
+      },
+      "weakpoint": {
+        "x": 763,
+        "y": 1800,
+        "angle": 3.141592653589793,
+        "w": 32.199999999999996,
+        "h": 43.4
+      }
+    },
+    {
+      "file": "02_75_play_scene.png",
+      "elevation": 75,
+      "component": "ALL",
+      "engineScreen": {
+        "x": 704.4000000000001,
+        "y": 344.9198194499754
+      },
+      "coreScreen": {
+        "x": 684.8000000000001,
+        "y": 344.54469058057197
+      },
+      "bossScreen": {
+        "x": 640,
+        "y": 360
+      },
+      "weakpoint": {
+        "x": 763,
+        "y": 1800,
+        "angle": 3.141592653589793,
+        "w": 32.199999999999996,
+        "h": 43.4
+      }
+    },
+    {
+      "file": "03_90_weakpoint_labels.png",
+      "elevation": 90,
+      "component": "WEAKPOINTS",
+      "engineScreen": {
+        "x": 704.4,
+        "y": 360.00000000000045
+      },
+      "coreScreen": {
+        "x": 684.8,
+        "y": 360.00000000000045
+      },
+      "bossScreen": {
+        "x": 640,
+        "y": 360
+      },
+      "weakpoint": {
+        "x": 763,
+        "y": 1800,
+        "angle": 3.141592653589793,
+        "w": 32.199999999999996,
+        "h": 43.4
+      }
+    },
+    {
+      "file": "04_90_engine_core.png",
+      "elevation": 90,
+      "component": "ENGINE_CORE",
+      "engineScreen": {
+        "x": 704.4,
+        "y": 360.00000000000045
+      },
+      "coreScreen": {
+        "x": 684.8,
+        "y": 360.00000000000045
+      },
+      "bossScreen": {
+        "x": 640,
+        "y": 360
+      },
+      "weakpoint": {
+        "x": 763,
+        "y": 1800,
+        "angle": 3.141592653589793,
+        "w": 32.199999999999996,
+        "h": 43.4
+      }
+    },
+    {
+      "file": "05_90_front.png",
+      "elevation": 90,
+      "component": "ALL",
+      "engineScreen": {
+        "x": 575.6,
+        "y": 360.00000000000045
+      },
+      "coreScreen": {
+        "x": 595.2,
+        "y": 360.00000000000045
+      },
+      "bossScreen": {
+        "x": 640,
+        "y": 360
+      },
+      "weakpoint": {
+        "x": 637,
+        "y": 1800,
+        "angle": 0,
+        "w": 32.199999999999996,
+        "h": 43.4
+      }
+    },
+    {
+      "file": "06_90_side.png",
+      "elevation": 90,
+      "component": "ALL",
+      "engineScreen": {
+        "x": 640,
+        "y": 295.60000000000036
+      },
+      "coreScreen": {
+        "x": 640,
+        "y": 315.2000000000005
+      },
+      "bossScreen": {
+        "x": 640,
+        "y": 360
+      },
+      "weakpoint": {
+        "x": 700,
+        "y": 1737,
+        "angle": 1.5707963267948966,
+        "w": 32.199999999999996,
+        "h": 43.4
+      }
+    },
+    {
+      "file": "07_90_rear.png",
+      "elevation": 90,
+      "component": "ALL",
+      "engineScreen": {
+        "x": 704.4,
+        "y": 360.00000000000045
+      },
+      "coreScreen": {
+        "x": 684.8,
+        "y": 360.00000000000045
+      },
+      "bossScreen": {
+        "x": 640,
+        "y": 360
+      },
+      "weakpoint": {
+        "x": 763,
+        "y": 1800,
+        "angle": 3.141592653589793,
+        "w": 32.199999999999996,
+        "h": 43.4
+      }
+    },
+    {
+      "file": "08_75_old_new_overlay.png",
+      "elevation": 75,
+      "component": "ALL",
+      "engineScreen": {
+        "x": 704.4000000000001,
+        "y": 344.9198194499754
+      },
+      "coreScreen": {
+        "x": 684.8000000000001,
+        "y": 344.54469058057197
+      },
+      "bossScreen": {
+        "x": 640,
+        "y": 360
+      },
+      "weakpoint": {
+        "x": 763,
+        "y": 1800,
+        "angle": 3.141592653589793,
+        "w": 32.199999999999996,
+        "h": 43.4
+      }
+    }
+  ]
+}
