@@ -2786,6 +2786,8 @@ try {
     try{
       gate.setStatus('Loading 0/6 assets...');
       await Promise.all([loadM41(),loadRoleAssets()]);
+      const {loadPlayableEnvironment}=await import('./rnd_static_environment.js');
+      rendererSpike.staticEnvironment=await loadPlayableEnvironment(THREE,scene);
       if(!glbPlayer||roleTemplates.size!==5)throw Error('Required GLB unavailable: '+JSON.stringify(roleLoads));
       gate.setStatus('Loaded / parsed / nodes ready: 6/6 · Preparing renderer...');
       gate.before=JSON.stringify(game);

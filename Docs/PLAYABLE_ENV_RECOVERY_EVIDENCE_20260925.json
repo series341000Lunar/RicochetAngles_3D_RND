@@ -1,0 +1,276 @@
+{
+  "status": "TECHNICAL RECOVERY PASS / USER VISUAL REVIEW REQUIRED",
+  "startingHEAD": "b3924a902db0206dbbdbf258cc50cf1ed20db4bf",
+  "entry": "spike/RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html",
+  "preservation": {
+    "dcc00/workspace/env01/geometry.glb": "DCB1A2A0467F4702B0E495F118828DE8A0BAFFFD3D0B9853144536F1E3A16722",
+    "dcc00/workspace/dcc-map-01/edited.json": "3B6C35459414B4D08B7327D60D3BC2EC2E8CCEBA582248F4C316411EDAF4D2A9",
+    "spike/rnd_gameplay.js": "DCFA4D3E26112F711CA21F5E984D107FCC75B732FFD658C3EA42F18C1C5FE19D",
+    "dcc00/workspace/env01/map.json": "42C2F2C7D7D10D32266BE31A3AFF404C053CB86989A80FDC9966EF1F991D475A",
+    "dcc00/blender_addon/ricochetangles_dcc00/h5e_map.py": "EB7F86DCA7710596AC526EA40A6F9CFE0A647A394E81AF625E0812B36A41B0ED",
+    "dcc00/html/src/canonical_preview.js": "9690272AB90C686F296EC48FAEE34A10BFD55DE08E189AE57A908C222A2F5AC8",
+    "dcc00/html/src/env01_preview.js": "DF7643458E67056BAB08A44B116B66CAD1A0CAEA2A1EB5329234C94B3EF95B30",
+    "spike/rnd_actors.js": "E053436853E1BD15ECCBDE3FC10497A362716053BE62682D3F34CFA8849866FA",
+    "dcc00/html/src/map_reference.js": "07BCDB69662DCF5BAB20588AE610C8F963137CA1331C334515CF75D19FA82BD3",
+    "dcc00/workspace/env01/authoring.blend": "AB171E622E5683196661DF17F51145C7C8F9CE8F1995437B4C26B9AA0A0FDD9E"
+  },
+  "retarget-blender": {
+    "phase": "retarget",
+    "blender": "5.2.1 LTS",
+    "glbSHA256": "4803434d7a3fb0532c4c2b8ea4c37735900a80df7a134d81885530d7d939991d",
+    "blendSHA256": "5d4ef5645ca295e5f8c6ed2b9de953b8b50e31e2b0dffb5dd2a66ec5ec898f70",
+    "objects": 212,
+    "sourcePreserved": true
+  },
+  "refine-blender": {
+    "phase": "refine",
+    "blender": "5.2.1 LTS",
+    "glbSHA256": "3a0650246ea713b0d13eeadf1767228f2211a6fc41086546b29a75711b2312ca",
+    "blendSHA256": "5e55dd4aa5ba18e4378c7c31cbf41ffa5c4692011fbd4c78260db937e2552736",
+    "objects": 212,
+    "sourcePreserved": true
+  },
+  "export-blender": {
+    "phase": "export",
+    "blender": "5.2.1 LTS",
+    "glbSHA256": "4c1f671edc72e8a8fb796ef52cd6f463950fdff76f9da4229ab4d7841cb63f3a",
+    "blendSHA256": "4824ddbbcc75d1994b469633e2e1549971ad527aa7937667ad85393e9a4546b0",
+    "objects": 212,
+    "sourcePreserved": true
+  },
+  "source-verification": {
+    "preservation": true,
+    "savedDerivativeReload": true,
+    "noH5ESemanticData": true,
+    "staticObjects": 212,
+    "referenceOnlyObjects": [
+      "REF Player spawn",
+      "REF Boss spawn",
+      "REF Panzer spawn",
+      "REF Truck spawn",
+      "REF Pak spawn"
+    ],
+    "nativeExportTextPresent": true,
+    "bounds": {
+      "x": [
+        20.000000476837158,
+        1260.0
+      ],
+      "y": [
+        1099.9999694824219,
+        2499.999969482422
+      ],
+      "height": [
+        -22.399998664855957,
+        154.49046516418457
+      ]
+    }
+  },
+  "isolation": {
+    "before": {
+      "startup": {
+        "state": "READY",
+        "error": null,
+        "randomCalls": 3,
+        "nextRandom": 0.35108551452867687,
+        "gameHash": "3ef3205a21f15533dc1542c10a945472ac6170dbb588589e63928eec52b5a4fe"
+      },
+      "traceHash": "700aced8ace6cde44845c357e8ead8a8fdc62ebb5e02bea71e5cd841d7d3c7c4",
+      "flags": {
+        "focus": true,
+        "q": true,
+        "bossActive": true,
+        "projectiles": true,
+        "restart": true
+      },
+      "world": {
+        "width": 1280,
+        "height": 3600,
+        "initialOffsetY": 1440
+      },
+      "errors": []
+    },
+    "after": {
+      "startup": {
+        "state": "READY",
+        "error": null,
+        "randomCalls": 3,
+        "nextRandom": 0.35108551452867687,
+        "env": "READY",
+        "gameHash": "3ef3205a21f15533dc1542c10a945472ac6170dbb588589e63928eec52b5a4fe"
+      },
+      "traceHash": "700aced8ace6cde44845c357e8ead8a8fdc62ebb5e02bea71e5cd841d7d3c7c4",
+      "flags": {
+        "focus": true,
+        "q": true,
+        "bossActive": true,
+        "projectiles": true,
+        "restart": true
+      },
+      "world": {
+        "width": 1280,
+        "height": 3600,
+        "initialOffsetY": 1440
+      },
+      "errors": []
+    },
+    "missing": {
+      "startup": {
+        "state": "READY",
+        "error": null,
+        "randomCalls": 3,
+        "nextRandom": 0.35108551452867687,
+        "env": "MISSING",
+        "gameHash": "3ef3205a21f15533dc1542c10a945472ac6170dbb588589e63928eec52b5a4fe"
+      },
+      "traceHash": "700aced8ace6cde44845c357e8ead8a8fdc62ebb5e02bea71e5cd841d7d3c7c4",
+      "flags": {
+        "focus": true,
+        "q": true,
+        "bossActive": true,
+        "projectiles": true,
+        "restart": true
+      },
+      "world": {
+        "width": 1280,
+        "height": 3600,
+        "initialOffsetY": 1440
+      },
+      "errors": []
+    },
+    "pass": true,
+    "frames": 600
+  },
+  "playable-controls": {
+    "checks": {
+      "W": true,
+      "S": true,
+      "A": true,
+      "D": true,
+      "mouseAim": true,
+      "fire": true,
+      "Focus": true,
+      "QTargeting": true,
+      "QConfirm": true,
+      "enemyBoss": true,
+      "restart": true,
+      "obstacleCollision": true,
+      "environmentAndVehicles": true,
+      "reloadStart": true
+    },
+    "errors": [],
+    "runtime": {
+      "time": 0.5788000000001863,
+      "state": "PLAYING",
+      "env": "READY",
+      "world": {
+        "width": 1280,
+        "height": 3600,
+        "initialOffsetY": 1440
+      },
+      "meshes": 212,
+      "playerHP": 5,
+      "bossHP": 10
+    },
+    "realTimeLoop": true,
+    "pass": true
+  },
+  "G1_interactions": {
+    "rows": [
+      {
+        "preset": "LEGACY",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "왼쪽 궤도"
+      },
+      {
+        "preset": "LEGACY",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "오른쪽 궤도"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "왼쪽 궤도"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "오른쪽 궤도"
+      }
+    ],
+    "checks": {
+      "Q_LEGACY": true,
+      "Q_TIGER_REMAP": true,
+      "tracks": true,
+      "UI": true,
+      "restart": true
+    },
+    "pass": true
+  },
+  "g2_spatial": {
+    "pass": true,
+    "checks": {
+      "ready": true,
+      "defaultSpatial": true,
+      "measuredHull": true,
+      "projectileTrackSeparation": true,
+      "collisionPreserved": true,
+      "engineAndCoreInsideHull": true,
+      "coreReferenceOnly": true,
+      "engineGameplayShape": true,
+      "legacyTransforms": true,
+      "g1Transforms": true,
+      "visualScaleNotAuthority": true,
+      "frontSideRear": true,
+      "trackModules": true,
+      "engineDamage": true,
+      "renderReadOnly": true,
+      "gameplaySmoke": true,
+      "legacyCombatTrace": true,
+      "engineDeckProjection": true,
+      "noPageErrors": true
+    },
+    "errors": []
+  },
+  "g3_canvas": {
+    "pass": true,
+    "checks": {
+      "moduleLoaded": true,
+      "g2ProxyUnchanged": true,
+      "hullExtent": true,
+      "tracksUseG2Bands": true,
+      "turretExtent": true,
+      "gunLength": true,
+      "engineCoreDeck": true,
+      "enginePresentationSeparate": true,
+      "coreReferenceOnly": true,
+      "vehicleCollisionUnchanged": true,
+      "threeCanvasEngineAnchor90": true,
+      "threeCanvasWeakpoints90": true,
+      "threePresentation75": true,
+      "turretTransform": true,
+      "engineLabelOnDeck": true,
+      "traceOnOff": true,
+      "traceG2Baseline": true,
+      "renderReadOnly": true,
+      "focusBulletBossRestart": true,
+      "threeCanvasToggle": true,
+      "noPageErrors": true,
+      "g2HitResults": true,
+      "engineDamage": true
+    },
+    "errors": []
+  }
+}

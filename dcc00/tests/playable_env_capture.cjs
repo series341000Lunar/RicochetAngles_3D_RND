@@ -1,0 +1,10 @@
+const {chromium}=require('C:/Users/LunarGagarin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('fs'),path=require('path');
+const out=path.resolve(__dirname,'../test-output/playable-env-recovery-20260925');
+(async()=>{const b=await chromium.launch({channel:'chrome',headless:true});const p=await b.newPage({viewport:{width:1600,height:1000}});
+await p.goto('http://127.0.0.1:8765/spike/RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html');
+await p.waitForFunction(()=>rndStartup.state==='READY'||rndStartup.error,null,{timeout:60000});
+await p.locator('#startupStart').click();await p.waitForTimeout(300);
+const initial=await p.evaluate(()=>({state:rndStartup.state,env:rendererSpike.staticEnvironment.status,children:rendererSpike.staticEnvironment.root?.children.length,time:game.time}));
+await p.screenshot({path:path.join(out,'first-playable-75.png')});
+console.log(JSON.stringify(initial));await b.close();})().catch(e=>{console.error(e);process.exit(1)});
