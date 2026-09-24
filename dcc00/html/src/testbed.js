@@ -24,8 +24,13 @@ THREE=await world.eval("import('/spike/vendor/three.module.js')");({GLTFLoader:L
 assets=await (await fetch('/dcc00/registry/assets.json')).json();
 world.document.getElementById('world3d').style.visibility='visible';world.document.getElementById('startupGate').style.display='none';world.document.getElementById('spikePanel').style.display='none';world.document.getElementById('game').style.display='none';
 // Leave rndStartup READY: existing simulation remains paused. No game state binding.
+if(new URLSearchParams(location.search).get('mode')==='canonical'){
+ const {canonicalPreview}=await import('./canonical_preview.js');await canonicalPreview(world,THREE);
+}else{
 await reload();$('#reload').onclick=reload;$('#play').onclick=()=>{playing=!playing;$('#play').textContent=playing?'Pause presentation':'Play presentation';};
 function tick(now){const dt=Math.min(.1,(now-last)/1000);last=now;if(playing)$('#seconds').value=(Number($('#seconds').value)+dt).toFixed(3);const seconds=Number($('#seconds').value)||0;
  if(doc){for(const {a,root} of entries){if(a.class!=='PresentationActor')continue;const path=doc.paths.find(p=>p.id===a.path);if(path){const p=samplePath(path.points,seconds,a.startSeconds,a.durationSeconds,a.loop);root.position.set(p.x,p.z,p.y);}}}
  const r=world.rendererSpike,angle=r.config.cameraElevation*Math.PI/180,y=Number($('#worldY').value);r.view.position.set(640,1800*Math.sin(angle),y+1800*Math.cos(angle));r.view.lookAt(640,0,y);r.view.updateMatrixWorld();r.renderer.render(r.scene,r.view);requestAnimationFrame(tick);
 }requestAnimationFrame(tick);
+
+}

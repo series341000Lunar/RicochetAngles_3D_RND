@@ -1,0 +1,296 @@
+{
+  "blender.json": {
+    "pass_": true,
+    "blender": "5.2.1 LTS",
+    "source": "C:\\Users\\LunarGagarin\\Documents\\Topdown Tank\\maps\\H5E_PILOT_MAP_PASS2_14W_v0.1.json",
+    "sourceSHA256": "9346ff550f79f1f91c306ff3fcc9bd1959c3170dd9a7f8ea055cda91097b56d5",
+    "sourceUnchanged": true,
+    "counts": {
+      "objects": 57,
+      "markers": 130,
+      "annotations": 10
+    },
+    "zones": 6,
+    "layers": 5,
+    "noEditExactEquality": true,
+    "noEditToleranceEquality": true,
+    "noEditExportDrift": 0,
+    "maxBlenderProjectionDrift": 0.000732421875,
+    "tolerance": 0.002,
+    "target": "H5E_P1_TUT_COVER_01",
+    "targetOriginal": {
+      "id": "H5E_P1_TUT_COVER_01",
+      "displayName": "Tutorial Upper Cover",
+      "layerId": "COLLISION",
+      "geometry": {
+        "type": "RECT",
+        "x": 3050,
+        "y": 390,
+        "width": 340,
+        "height": 80
+      },
+      "rotationDegrees": -15,
+      "pivot": "CENTER",
+      "visible": true,
+      "locked": false,
+      "editable": true,
+      "notes": "Pass 2 manually repositioned from Pass 1; geometry size, thickness, rotation, and design role retained.",
+      "zoneId": "TUT_01",
+      "collision": {
+        "vehicleCollision": true,
+        "shellCollision": true,
+        "blocksLineOfSight": true,
+        "destructible": false,
+        "destroyedState": "NONE",
+        "designRole": "COVER"
+      }
+    },
+    "targetEdited": {
+      "id": "H5E_P1_TUT_COVER_01",
+      "displayName": "Tutorial Upper Cover",
+      "layerId": "COLLISION",
+      "geometry": {
+        "type": "RECT",
+        "x": 3090.0000610351562,
+        "y": 390,
+        "width": 340,
+        "height": 80
+      },
+      "rotationDegrees": -15,
+      "pivot": "CENTER",
+      "visible": true,
+      "locked": false,
+      "editable": true,
+      "notes": "Pass 2 manually repositioned from Pass 1; geometry size, thickness, rotation, and design role retained.",
+      "zoneId": "TUT_01",
+      "collision": {
+        "vehicleCollision": true,
+        "shellCollision": true,
+        "blocksLineOfSight": true,
+        "destructible": false,
+        "destroyedState": "NONE",
+        "designRole": "COVER"
+      }
+    },
+    "expectedDeltaX": 40,
+    "actualDeltaX": 40.00006103515625,
+    "editDeltaError": 6.103515625e-05,
+    "changedPaths": [
+      "/objects/15/geometry/x"
+    ],
+    "add": 0,
+    "remove": 0,
+    "identityChanges": 0,
+    "unknownPreserved": true,
+    "saveReopen": true,
+    "jsonReimport": true,
+    "blockedCases": {
+      "duplicate_id": "Duplicate canonical ID; no automatic merge/new ID",
+      "identity_change": "Missing or added canonical record; no implicit deletion/addition",
+      "missing_is_not_deletion": "Missing or added canonical record; no implicit deletion/addition",
+      "unsupported_scale": "DCC-MAP-01 supports XY translation only; rotation/scale/Z retained",
+      "unsupported_curve_edit": "Reference geometry edit unsupported; original geometry retained",
+      "locked_record_move": "Locked/noneditable canonical record moved",
+      "source_write_path": "Only DCC-MAP-01 working JSON output is writable",
+      "stale_working_copy": "STALE_WORKING_COPY: output changed externally; save review .blend and reimport",
+      "stale_source": "STALE_CANONICAL_SOURCE: original changed; preserve scene before reimport"
+    }
+  },
+  "browser.json": {
+    "pass": true,
+    "defaultMode": {
+      "count": 15,
+      "actual": 5,
+      "state": "READY"
+    },
+    "before": {
+      "record": {
+        "id": "H5E_P1_TUT_COVER_01",
+        "displayName": "Tutorial Upper Cover",
+        "layerId": "COLLISION",
+        "geometry": {
+          "type": "RECT",
+          "x": 3050,
+          "y": 390,
+          "width": 340,
+          "height": 80
+        },
+        "rotationDegrees": -15,
+        "pivot": "CENTER",
+        "visible": true,
+        "locked": false,
+        "editable": true,
+        "notes": "Pass 2 manually repositioned from Pass 1; geometry size, thickness, rotation, and design role retained.",
+        "zoneId": "TUT_01",
+        "collision": {
+          "vehicleCollision": true,
+          "shellCollision": true,
+          "blocksLineOfSight": true,
+          "destructible": false,
+          "destroyedState": "NONE",
+          "designRole": "COVER"
+        }
+      },
+      "position": [
+        3050,
+        0,
+        390
+      ],
+      "count": 197,
+      "state": "READY",
+      "canvas": "visible"
+    },
+    "after": {
+      "record": {
+        "id": "H5E_P1_TUT_COVER_01",
+        "displayName": "Tutorial Upper Cover",
+        "layerId": "COLLISION",
+        "geometry": {
+          "type": "RECT",
+          "x": 3090.0000610351562,
+          "y": 390,
+          "width": 340,
+          "height": 80
+        },
+        "rotationDegrees": -15,
+        "pivot": "CENTER",
+        "visible": true,
+        "locked": false,
+        "editable": true,
+        "notes": "Pass 2 manually repositioned from Pass 1; geometry size, thickness, rotation, and design role retained.",
+        "zoneId": "TUT_01",
+        "collision": {
+          "vehicleCollision": true,
+          "shellCollision": true,
+          "blocksLineOfSight": true,
+          "destructible": false,
+          "destroyedState": "NONE",
+          "designRole": "COVER"
+        }
+      },
+      "position": [
+        3090.0000610351562,
+        0,
+        390
+      ]
+    },
+    "canonicalPayloadEquality": true,
+    "gameplayUnchanged": true,
+    "errors": []
+  },
+  "native.json": {
+    "pass": true,
+    "blender": "5.2.1 LTS",
+    "scenesAfterImport": [
+      [
+        "DCC-MAP-01 · H5E_PILOT_MAP_PASS2_14W",
+        true
+      ],
+      [
+        "DCC-MAP-01 · H5E_PILOT_MAP_PASS2_14W",
+        true
+      ]
+    ],
+    "sharedScene": true,
+    "canonicalSelection": true,
+    "exportOperator": true,
+    "testbedOperatorsBlocked": true
+  },
+  "mainline-parser.json": {
+    "no-edit": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "edited": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "G1_current_isolation.json": {
+    "checks": {
+      "legacyRenderIsolation": true,
+      "remapRenderIsolation": true
+    },
+    "frames": 600,
+    "historicalSnapshotComparison": "UNVERIFIED: before_g1 incompatible with current gameplay dependency",
+    "pass": true
+  },
+  "G1_interactions.json": {
+    "rows": [
+      {
+        "preset": "LEGACY",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "왼쪽 궤도"
+      },
+      {
+        "preset": "LEGACY",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "오른쪽 궤도"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "왼쪽 궤도"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "오른쪽 궤도"
+      }
+    ],
+    "checks": {
+      "Q_LEGACY": true,
+      "Q_TIGER_REMAP": true,
+      "tracks": true,
+      "UI": true,
+      "restart": true
+    },
+    "pass": true
+  },
+  "summary": {
+    "status": "DCC-MAP-01 PASS",
+    "gates": {
+      "A": "PASS",
+      "B": "PASS",
+      "C": "PASS",
+      "D": "PASS",
+      "E": "NOT RUN (optional)"
+    },
+    "contractTests": 13,
+    "unchangedAtStartingHEAD": [
+      "dcc00/blender_addon/ricochetangles_dcc00/core.py",
+      "dcc00/blender_addon/ricochetangles_dcc00/io_authoring.py",
+      "dcc00/blender_addon/ricochetangles_dcc00/properties.py",
+      "dcc00/blender_addon/ricochetangles_dcc00/presentation.py",
+      "dcc00/server/authoring_server.py",
+      "spike/rnd_gameplay.js",
+      "spike/RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html",
+      "tests/test_g1_isolation.cjs",
+      "tests/test_g1_interactions.cjs"
+    ],
+    "mainlineUntouched": true,
+    "sourceBytes": 135370,
+    "sourceModifiedNs": 1788315562496740600,
+    "userUXGate": "PENDING",
+    "productAuthority": false,
+    "historicalG1Isolation": {
+      "status": "FAIL (pre-existing snapshot dependency mismatch)",
+      "error": "ReferenceError: getWeakpointShape is not defined at detonateRndHE (rnd_gameplay.js:225:110)",
+      "currentRendererIsolation": "PASS; historical comparison not claimed"
+    }
+  }
+}

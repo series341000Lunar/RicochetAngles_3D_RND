@@ -157,3 +157,12 @@ blender --factory-startup --enable-event-simulate --python dcc00/tests/native_wi
 그 테스트 Blender만 종료합니다. 사용자 scene에 대한 테스트 실행 용도가 아닙니다.
 Schema/identity/delete/timing/HTML/Three.js semantics에는 migration이 없습니다.
 **USER UX GATE = PENDING**, long-term spatial authority로 승격하지 않습니다.
+
+## DCC-MAP-01 canonical H5E review
+The floating editor now offers **Import Canonical H5E Map (Read Only)**.
+It creates a separate canonical scene; the local steel-angle-prototype original stays read-only.
+Only unlocked XY translation is supported; full JSON payload is retained.
+**Export H5E Working Copy** writes dcc00/workspace/dcc-map-01/edited.json with source/output conflict checks.
+Use the existing testbed at testbed.html?mode=canonical for original/edited comparison.
+Canonical mode is a paused reference layer, not gameplay integration.
+See [DCC-MAP-01 results](../Docs/DCC_MAP01_ACTUAL_CANONICAL_ROUNDTRIP_20260924.md).

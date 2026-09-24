@@ -1,7 +1,7 @@
 bl_info={'name':'RicochetAngles DCC-00','author':'RicochetAngles R&D','version':(0,2,0),'blender':(5,2,0),'location':'View3D > N > RICOCHETANGLES R&D','description':'Semantic authoring feasibility, no gameplay authority','category':'3D View'}
 import bpy
-from . import properties,operators,panels,presentation,preview,authoring_window
-CLASSES=[properties.DCCActorProperties,properties.DCCSettings,*operators.CLASSES,*authoring_window.CLASSES,*panels.CLASSES]
+from . import properties,operators,panels,presentation,preview,authoring_window,h5e_map
+CLASSES=[properties.DCCActorProperties,properties.DCCSettings,*operators.CLASSES,*authoring_window.CLASSES,*panels.CLASSES,*h5e_map.CLASSES]
 def register():
     for cls in CLASSES:bpy.utils.register_class(cls)
     bpy.types.Object.dcc_actor=bpy.props.PointerProperty(type=properties.DCCActorProperties)

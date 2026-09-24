@@ -6,7 +6,7 @@ from mathutils import Quaternion
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 import ricochetangles_dcc00 as addon
 addon.register()
-if not bpy.context.scene.dcc_settings.source_json:
+if not bpy.context.scene.dcc_settings.source_json and not bpy.context.scene.get('h5e_source_json'):
     result=addon.operators.io_authoring.request()
     addon.operators.io_authoring.load_document(bpy.context.scene,result['document'],result['revision'])
 scene=bpy.context.scene;scene.cursor.location=(640/14,-1800/14,0)

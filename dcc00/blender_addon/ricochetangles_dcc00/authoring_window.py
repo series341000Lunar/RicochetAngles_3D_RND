@@ -6,7 +6,7 @@ MARKER='ra_dcc00_authoring_window'
 _syncing=False
 
 def anchor(obj):
-    while obj and not obj.get('dcc_anchor'): obj=obj.parent
+    while obj and not (obj.get('dcc_anchor') or obj.get('h5e_id')): obj=obj.parent
     return obj
 
 def is_authoring(window):
@@ -24,7 +24,7 @@ def select_index(self,context):
     objects=context.scene.objects
     if not 0<=self.ra_actor_index<len(objects):return
     obj=objects[self.ra_actor_index]
-    if not obj.get('dcc_anchor') or obj.dcc_actor.class_id=='Decoration':return
+    if not obj.get('h5e_id') and (not obj.get('dcc_anchor') or obj.dcc_actor.class_id=='Decoration'):return
     if obj.name not in context.view_layer.objects or context.mode!='OBJECT':return
     for o in context.view_layer.objects:o.select_set(False)
     obj.select_set(True);context.view_layer.objects.active=obj

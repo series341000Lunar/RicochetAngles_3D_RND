@@ -41,7 +41,12 @@ class DCC_PT_authoring_window(bpy.types.Panel):
     @classmethod
     def poll(cls,context):return ui.is_authoring(context.window)
     def draw(self,context):
-        layout=self.layout;layout.label(text='DCC-00 · feasibility only · User UX Gate PENDING');common(layout,context);layout.label(text=context.scene.dcc_settings.status)
+        layout=self.layout
+        if context.scene.get('h5e_source_json'):
+            from .h5e_map import draw_review
+            draw_review(layout,context);return
+        layout.operator('dcc00.import_canonical')
+        layout.label(text='DCC-00 · feasibility only · User UX Gate PENDING');common(layout,context);layout.label(text=context.scene.dcc_settings.status)
         split=layout.split(factor=.32);browser=split.column();rest=split.split(factor=.56);detail=rest.column();checks=rest.column()
         browser.label(text='Actor Browser · Tier A/B',icon='OUTLINER');browser.template_list('DCC_UL_actors','semantic',context.scene,'objects',context.window_manager,'ra_actor_index',rows=12);browser.label(text='Selection shared with main 3D View')
         detail.label(text='Selected Actor Inspector',icon='PROPERTIES');inspector(detail,context)
@@ -50,11 +55,16 @@ class DCC_PT_authoring_window(bpy.types.Panel):
 class DCC_PT_editor(bpy.types.Panel):
     bl_label='DCC-00 Quick Access';bl_idname='DCC_PT_editor';bl_space_type='VIEW_3D';bl_region_type='UI';bl_category='RICOCHETANGLES R&D'
     def draw(self,context):
-        l=self.layout;l.label(text='Feasibility · UX Gate PENDING');obj=ui.anchor(context.view_layer.objects.active);l.label(text='Selected: '+(obj.name if obj else 'None'));l.label(text=validation_summary(ui.scene_issues(context.scene)))
+        l=self.layout
+        if context.scene.get('h5e_source_json'):
+            l.label(text='DCC-MAP-01 canonical review');l.operator('dcc00.open_authoring',text='Open RA Authoring Editor');return
+        l.label(text='Feasibility · UX Gate PENDING');obj=ui.anchor(context.view_layer.objects.active);l.label(text='Selected: '+(obj.name if obj else 'None'));l.label(text=validation_summary(ui.scene_issues(context.scene)))
         l.operator('dcc00.open_authoring',text='Open RA Authoring Editor',icon='WINDOW');row=l.row(align=True);row.operator('dcc00.validate');row.operator('dcc00.save',text='Save')
 
 class DCC_PT_fallback(bpy.types.Panel):
     bl_label='Fallback Editing';bl_idname='DCC_PT_fallback';bl_parent_id='DCC_PT_editor';bl_space_type='VIEW_3D';bl_region_type='UI';bl_category='RICOCHETANGLES R&D';bl_options={'DEFAULT_CLOSED'}
+    @classmethod
+    def poll(cls,context):return not context.scene.get('h5e_source_json')
     def draw(self,context):
         l=self.layout;l.label(text='Use if the dedicated window is unavailable');s=context.scene.dcc_settings;row=l.row();row.operator('dcc00.reload');row.operator('dcc00.save_blend');l.prop(s,'class_to_create');l.operator('dcc00.create');inspector(l,context);validation(l,context)
 CLASSES=[DCC_PT_authoring_window,DCC_PT_editor,DCC_PT_fallback]
