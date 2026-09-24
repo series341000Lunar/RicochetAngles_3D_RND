@@ -1,4 +1,4 @@
-param([switch]$NoBrowser,[switch]$Blender)
+param([switch]$NoBrowser,[switch]$Blender,[switch]$Env01)
 $ErrorActionPreference='Stop'
 $root=$PSScriptRoot
 $base='http://127.0.0.1:8766'
@@ -17,9 +17,11 @@ try {
         for($i=0;$i -lt 30;$i++){try{$reply=Invoke-RestMethod "$base/api/workspace" -TimeoutSec 1;$ready=$reply.document.schema -eq 'ra-dcc00-authoring-v0';if($ready){break}}catch{};Start-Sleep -Milliseconds 300}
         if(-not $ready){throw 'DCC-00 server startup failed. Inspect dcc00/workspace/server logs.'}
     }
+    $testbedUrl="$base/dcc00/html/testbed.html"
+    if($Env01){$testbedUrl+='?mode=env01'}
     Write-Host "Editor:  $base/dcc00/html/editor.html"
-    Write-Host "Testbed: $base/dcc00/html/testbed.html"
-    if(-not $NoBrowser){Start-Process "$base/dcc00/html/editor.html";Start-Process "$base/dcc00/html/testbed.html"}
+    Write-Host "Testbed: $testbedUrl"
+    if(-not $NoBrowser){if(-not $Env01){Start-Process "$base/dcc00/html/editor.html"};Start-Process $testbedUrl}
     if($Blender){
         $candidates=@(Get-ChildItem 'C:\Program Files\Blender Foundation' -Filter blender.exe -Recurse -ErrorAction SilentlyContinue)
         $installed=@(foreach($candidate in $candidates){
@@ -31,6 +33,10 @@ try {
         $exe=$selected.Path
         Write-Host "Primary Blender: $($selected.Version) - $exe"
         $blend=Join-Path $root 'dcc00\workspace\dcc00.review.blend'
+        if($Env01){
+            $blend=Join-Path $root 'dcc00\workspace\env01\authoring.blend'
+            if(-not(Test-Path $blend)){throw 'ENV-01 authoring.blend is missing. See the ENV-01 reproduction instructions; no existing source was overwritten.'}
+        }
         $args=@('--factory-startup');if(Test-Path $blend){$args+=('"'+$blend+'"')}
         $args+=@('--python',('"'+(Join-Path $root 'dcc00\blender_addon\open_authoring.py')+'"'))
         # Visible Blender is the explicitly requested interactive authoring tool.

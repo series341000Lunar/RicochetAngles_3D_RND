@@ -24,7 +24,9 @@ THREE=await world.eval("import('/spike/vendor/three.module.js')");({GLTFLoader:L
 assets=await (await fetch('/dcc00/registry/assets.json')).json();
 world.document.getElementById('world3d').style.visibility='visible';world.document.getElementById('startupGate').style.display='none';world.document.getElementById('spikePanel').style.display='none';world.document.getElementById('game').style.display='none';
 // Leave rndStartup READY: existing simulation remains paused. No game state binding.
-if(new URLSearchParams(location.search).get('mode')==='canonical'){
+if(new URLSearchParams(location.search).get('mode')==='env01'){
+ const {environmentPreview}=await import('./env01_preview.js');await environmentPreview(world,THREE,Loader);
+}else if(new URLSearchParams(location.search).get('mode')==='canonical'){
  const {canonicalPreview}=await import('./canonical_preview.js');await canonicalPreview(world,THREE);
 }else{
 await reload();$('#reload').onclick=reload;$('#play').onclick=()=>{playing=!playing;$('#play').textContent=playing?'Pause presentation':'Play presentation';};

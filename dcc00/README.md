@@ -166,3 +166,10 @@ Only unlocked XY translation is supported; full JSON payload is retained.
 Use the existing testbed at testbed.html?mode=canonical for original/edited comparison.
 Canonical mode is a paused reference layer, not gameplay integration.
 See [DCC-MAP-01 results](../Docs/DCC_MAP01_ACTUAL_CANONICAL_ROUNDTRIP_20260924.md).
+
+## ENV-01 Stage working map + static world review
+Run **Launch_ENV01_Review.bat** at the repository root to open the saved Blender source and
+the existing Three.js testbed in ENV mode. The local derivatives live in dcc00/workspace/env01.
+The original H5E source and prior DCC-MAP-01 working map remain untouched.
+Technical gates pass; USER VISUAL REVIEW is pending.
+See [ENV-01 results and review checklist](../Docs/THREEJSDEV_ENV01_STATIC_WORLD_SLICE_20260924.md).

@@ -1,0 +1,1719 @@
+{
+  "runtime.json": {
+    "pass": true,
+    "tolerance": 0.002,
+    "initial": {
+      "anchors": [
+        {
+          "name": "ENV_ANCHOR_A",
+          "expectedH5E": [
+            3050,
+            390,
+            0
+          ],
+          "three": [
+            3050.0000610351562,
+            390.00000762939453,
+            0
+          ],
+          "error": 6.151014517439689e-05
+        },
+        {
+          "name": "ENV_ANCHOR_B",
+          "expectedH5E": [
+            3250,
+            1050,
+            0
+          ],
+          "three": [
+            3249.9999389648438,
+            1050,
+            0
+          ],
+          "error": 6.103515625e-05
+        },
+        {
+          "name": "ENV_ANCHOR_C",
+          "expectedH5E": [
+            2800,
+            800,
+            0
+          ],
+          "three": [
+            2800,
+            799.9999923706055,
+            0
+          ],
+          "error": 7.62939453125e-06
+        }
+      ],
+      "stats": {
+        "meshes": 19,
+        "triangles": 668,
+        "materials": 8,
+        "drawCalls": 54,
+        "renderTriangles": 1336
+      },
+      "positions": {
+        "ENV_ANCHOR_A": [
+          3050.0000610351562,
+          0,
+          390.00000762939453
+        ],
+        "ENV_ANCHOR_B": [
+          3249.9999389648438,
+          0,
+          1050
+        ],
+        "ENV_ANCHOR_C": [
+          2800,
+          0,
+          799.9999923706055
+        ],
+        "ENV_BUNKER_BACK": [
+          3500,
+          12.00000011920929,
+          270.0000114440918
+        ],
+        "ENV_BUNKER_FLOOR": [
+          3500,
+          0,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_FRONT_L": [
+          3424.9999389648438,
+          12.00000011920929,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_FRONT_R": [
+          3575.0000610351562,
+          12.00000011920929,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_LEFT": [
+          3389.9999389648438,
+          12.00000011920929,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_LINTEL": [
+          3500,
+          87.99999809265137,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_RIGHT": [
+          3610.0000610351562,
+          12.00000011920929,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_ROOF": [
+          3500,
+          115.99999809265137,
+          355.00000762939453
+        ],
+        "ENV_GROUND_01": [
+          3074.9999389648438,
+          -8.000000357627869,
+          700
+        ],
+        "ENV_PROP_BARREL_01": [
+          3624.9998168945312,
+          21.999999523162842,
+          554.9999923706055
+        ],
+        "ENV_PROP_BARREL_02": [
+          3669.9999389648438,
+          21.999999523162842,
+          575.0000228881836
+        ],
+        "ENV_PROP_CRATE_01": [
+          3360,
+          0,
+          565.0000076293945
+        ],
+        "ENV_PROP_CRATE_02": [
+          3420.0000915527344,
+          0,
+          575.0000228881836
+        ],
+        "ENV_PROP_CRATE_03": [
+          3470.0000610351562,
+          0,
+          584.9999847412109
+        ],
+        "ENV_PROP_ROCK_01": [
+          2540.000030517578,
+          20.000000476837158,
+          399.99999618530273
+        ],
+        "ENV_PROP_ROCK_02": [
+          3720.0001220703125,
+          20.000000476837158,
+          1050
+        ],
+        "ENV_ROAD_01": [
+          0,
+          0,
+          0
+        ],
+        "ENV_WALL_01": [
+          3050.0000610351562,
+          0,
+          390.00000762939453
+        ],
+        "ENV_WALL_02": [
+          3249.9999389648438,
+          22.499999284744263,
+          1050
+        ]
+      },
+      "revision": 1,
+      "reloadMilliseconds": 47
+    },
+    "mesh": {
+      "anchors": [
+        {
+          "name": "ENV_ANCHOR_A",
+          "expectedH5E": [
+            3050,
+            390,
+            0
+          ],
+          "three": [
+            3050.0000610351562,
+            390.00000762939453,
+            0
+          ],
+          "error": 6.151014517439689e-05
+        },
+        {
+          "name": "ENV_ANCHOR_B",
+          "expectedH5E": [
+            3250,
+            1050,
+            0
+          ],
+          "three": [
+            3249.9999389648438,
+            1050,
+            0
+          ],
+          "error": 6.103515625e-05
+        },
+        {
+          "name": "ENV_ANCHOR_C",
+          "expectedH5E": [
+            2800,
+            800,
+            0
+          ],
+          "three": [
+            2800,
+            799.9999923706055,
+            0
+          ],
+          "error": 7.62939453125e-06
+        }
+      ],
+      "stats": {
+        "meshes": 19,
+        "triangles": 668,
+        "materials": 8,
+        "drawCalls": 54,
+        "renderTriangles": 1336
+      },
+      "positions": {
+        "ENV_ANCHOR_A": [
+          3050.0000610351562,
+          0,
+          390.00000762939453
+        ],
+        "ENV_ANCHOR_B": [
+          3249.9999389648438,
+          0,
+          1050
+        ],
+        "ENV_ANCHOR_C": [
+          2800,
+          0,
+          799.9999923706055
+        ],
+        "ENV_BUNKER_BACK": [
+          3500,
+          12.00000011920929,
+          270.0000114440918
+        ],
+        "ENV_BUNKER_FLOOR": [
+          3500,
+          0,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_FRONT_L": [
+          3424.9999389648438,
+          12.00000011920929,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_FRONT_R": [
+          3575.0000610351562,
+          12.00000011920929,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_LEFT": [
+          3389.9999389648438,
+          12.00000011920929,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_LINTEL": [
+          3500,
+          87.99999809265137,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_RIGHT": [
+          3610.0000610351562,
+          12.00000011920929,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_ROOF": [
+          3500,
+          115.99999809265137,
+          355.00000762939453
+        ],
+        "ENV_GROUND_01": [
+          3074.9999389648438,
+          -8.000000357627869,
+          700
+        ],
+        "ENV_PROP_BARREL_01": [
+          3624.9998168945312,
+          21.999999523162842,
+          554.9999923706055
+        ],
+        "ENV_PROP_BARREL_02": [
+          3669.9999389648438,
+          21.999999523162842,
+          575.0000228881836
+        ],
+        "ENV_PROP_CRATE_01": [
+          3388,
+          0,
+          565.0000076293945
+        ],
+        "ENV_PROP_CRATE_02": [
+          3420.0000915527344,
+          0,
+          575.0000228881836
+        ],
+        "ENV_PROP_CRATE_03": [
+          3470.0000610351562,
+          0,
+          584.9999847412109
+        ],
+        "ENV_PROP_ROCK_01": [
+          2540.000030517578,
+          20.000000476837158,
+          399.99999618530273
+        ],
+        "ENV_PROP_ROCK_02": [
+          3720.0001220703125,
+          20.000000476837158,
+          1050
+        ],
+        "ENV_ROAD_01": [
+          0,
+          0,
+          0
+        ],
+        "ENV_WALL_01": [
+          3050.0000610351562,
+          0,
+          390.00000762939453
+        ],
+        "ENV_WALL_02": [
+          3249.9999389648438,
+          22.499999284744263,
+          1050
+        ]
+      },
+      "revision": 2,
+      "reloadMilliseconds": 40.70000000298023
+    },
+    "final": {
+      "anchors": [
+        {
+          "name": "ENV_ANCHOR_A",
+          "expectedH5E": [
+            3078,
+            390,
+            0
+          ],
+          "three": [
+            3078.0000610351562,
+            390.00000762939453,
+            0
+          ],
+          "error": 6.151014517439689e-05
+        },
+        {
+          "name": "ENV_ANCHOR_B",
+          "expectedH5E": [
+            3250,
+            1050,
+            0
+          ],
+          "three": [
+            3249.9999389648438,
+            1050,
+            0
+          ],
+          "error": 6.103515625e-05
+        },
+        {
+          "name": "ENV_ANCHOR_C",
+          "expectedH5E": [
+            2800,
+            800,
+            0
+          ],
+          "three": [
+            2800,
+            799.9999923706055,
+            0
+          ],
+          "error": 7.62939453125e-06
+        }
+      ],
+      "stats": {
+        "meshes": 19,
+        "triangles": 668,
+        "materials": 8,
+        "drawCalls": 54,
+        "renderTriangles": 1336
+      },
+      "positions": {
+        "ENV_ANCHOR_A": [
+          3078.0000610351562,
+          0,
+          390.00000762939453
+        ],
+        "ENV_ANCHOR_B": [
+          3249.9999389648438,
+          0,
+          1050
+        ],
+        "ENV_ANCHOR_C": [
+          2800,
+          0,
+          799.9999923706055
+        ],
+        "ENV_BUNKER_BACK": [
+          3500,
+          12.00000011920929,
+          270.0000114440918
+        ],
+        "ENV_BUNKER_FLOOR": [
+          3500,
+          0,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_FRONT_L": [
+          3424.9999389648438,
+          12.00000011920929,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_FRONT_R": [
+          3575.0000610351562,
+          12.00000011920929,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_LEFT": [
+          3389.9999389648438,
+          12.00000011920929,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_LINTEL": [
+          3500,
+          87.99999809265137,
+          440.00000381469727
+        ],
+        "ENV_BUNKER_RIGHT": [
+          3610.0000610351562,
+          12.00000011920929,
+          355.00000762939453
+        ],
+        "ENV_BUNKER_ROOF": [
+          3500,
+          115.99999809265137,
+          355.00000762939453
+        ],
+        "ENV_GROUND_01": [
+          3074.9999389648438,
+          -8.000000357627869,
+          700
+        ],
+        "ENV_PROP_BARREL_01": [
+          3624.9998168945312,
+          21.999999523162842,
+          554.9999923706055
+        ],
+        "ENV_PROP_BARREL_02": [
+          3669.9999389648438,
+          21.999999523162842,
+          575.0000228881836
+        ],
+        "ENV_PROP_CRATE_01": [
+          3388,
+          0,
+          565.0000076293945
+        ],
+        "ENV_PROP_CRATE_02": [
+          3420.0000915527344,
+          0,
+          575.0000228881836
+        ],
+        "ENV_PROP_CRATE_03": [
+          3470.0000610351562,
+          0,
+          584.9999847412109
+        ],
+        "ENV_PROP_ROCK_01": [
+          2540.000030517578,
+          20.000000476837158,
+          399.99999618530273
+        ],
+        "ENV_PROP_ROCK_02": [
+          3720.0001220703125,
+          20.000000476837158,
+          1050
+        ],
+        "ENV_ROAD_01": [
+          0,
+          0,
+          0
+        ],
+        "ENV_WALL_01": [
+          3078.0000610351562,
+          0,
+          390.00000762939453
+        ],
+        "ENV_WALL_02": [
+          3249.9999389648438,
+          22.499999284744263,
+          1050
+        ]
+      },
+      "revision": 3,
+      "reloadMilliseconds": 44.600000001490116
+    },
+    "initialGlb": {
+      "bytes": 53572,
+      "meshes": 19,
+      "materials": 8,
+      "triangles": 668,
+      "externalDependencies": 0,
+      "nodeNames": [
+        "ENV_ANCHOR_A",
+        "ENV_ANCHOR_B",
+        "ENV_ANCHOR_C",
+        "ENV_BUNKER_BACK",
+        "ENV_BUNKER_FLOOR",
+        "ENV_BUNKER_FRONT_L",
+        "ENV_BUNKER_FRONT_R",
+        "ENV_BUNKER_LEFT",
+        "ENV_BUNKER_LINTEL",
+        "ENV_BUNKER_RIGHT",
+        "ENV_BUNKER_ROOF",
+        "ENV_GROUND_01",
+        "ENV_PROP_BARREL_01",
+        "ENV_PROP_BARREL_02",
+        "ENV_PROP_CRATE_01",
+        "ENV_PROP_CRATE_02",
+        "ENV_PROP_CRATE_03",
+        "ENV_PROP_ROCK_01",
+        "ENV_PROP_ROCK_02",
+        "ENV_ROAD_01",
+        "ENV_WALL_01",
+        "ENV_WALL_02"
+      ],
+      "sha256": "b6e8b628a98c33e08194a2343b429506e9d44d7a98a11116d5d261a8d1ba210a"
+    },
+    "finalGlb": {
+      "bytes": 53572,
+      "meshes": 19,
+      "materials": 8,
+      "triangles": 668,
+      "externalDependencies": 0,
+      "nodeNames": [
+        "ENV_ANCHOR_A",
+        "ENV_ANCHOR_B",
+        "ENV_ANCHOR_C",
+        "ENV_BUNKER_BACK",
+        "ENV_BUNKER_FLOOR",
+        "ENV_BUNKER_FRONT_L",
+        "ENV_BUNKER_FRONT_R",
+        "ENV_BUNKER_LEFT",
+        "ENV_BUNKER_LINTEL",
+        "ENV_BUNKER_RIGHT",
+        "ENV_BUNKER_ROOF",
+        "ENV_GROUND_01",
+        "ENV_PROP_BARREL_01",
+        "ENV_PROP_BARREL_02",
+        "ENV_PROP_CRATE_01",
+        "ENV_PROP_CRATE_02",
+        "ENV_PROP_CRATE_03",
+        "ENV_PROP_ROCK_01",
+        "ENV_PROP_ROCK_02",
+        "ENV_ROAD_01",
+        "ENV_WALL_01",
+        "ENV_WALL_02"
+      ],
+      "sha256": "eac0cf4170a66048f680c596924c8533b33ed7825b8c5179ab2b092ffb0a50cc"
+    },
+    "meshChangedOnly": [
+      "ENV_PROP_CRATE_01"
+    ],
+    "mapChangedOnly": [
+      "/objects/15/geometry/x"
+    ],
+    "mapAlignmentMeshesChanged": [
+      "ENV_ANCHOR_A",
+      "ENV_WALL_01"
+    ],
+    "wallFootprint": {
+      "position": [
+        3078.0000610351562,
+        0,
+        390.00000762939453
+      ],
+      "rotation": [
+        0,
+        0.2617994102232619,
+        0,
+        "XYZ"
+      ]
+    },
+    "missingAssetFailSoft": true,
+    "badMapRetainsStage": true,
+    "toggles": true,
+    "stableIdSelection": true,
+    "gameplayUnchanged": true,
+    "errors": []
+  },
+  "geometry-and-regression.json": {
+    "pass": true,
+    "measured": {
+      "wall": {
+        "expected": [
+          3078,
+          390
+        ],
+        "actual": [
+          3078.0000610351562,
+          390.00000762939453
+        ],
+        "error": 6.151014517439689e-05
+      },
+      "circularWall": {
+        "expected": [
+          3250,
+          1050
+        ],
+        "actual": [
+          3249.9999389648438,
+          1050
+        ],
+        "height": 22.499999284744263,
+        "error": 6.103515625e-05
+      },
+      "roadCrossSection": {
+        "expected": [
+          2800,
+          800
+        ],
+        "error": 7.62939453125e-06,
+        "position": [
+          2800,
+          2.1000000834465027,
+          799.9999923706055
+        ]
+      }
+    },
+    "cleanStats": {
+      "meshes": 19,
+      "triangles": 668,
+      "materials": 8,
+      "drawCalls": 39,
+      "renderTriangles": 1336
+    },
+    "modes": {
+      "canonical": {
+        "records": 197
+      },
+      "default": {
+        "records": 15,
+        "actualGLB": 5
+      }
+    },
+    "errors": []
+  },
+  "native.json": {
+    "pass": true,
+    "blender": "5.2.1 LTS",
+    "maxFloatAccessorDelta": 5.960464477539063e-08,
+    "sharedScene": true,
+    "mapExport": true,
+    "glbExport": true,
+    "mapHashEqual": true,
+    "glbStructureEqual": true,
+    "glbNumericTolerance": true
+  },
+  "G1_current_isolation.json": {
+    "checks": {
+      "legacyRenderIsolation": true,
+      "remapRenderIsolation": true
+    },
+    "frames": 600,
+    "historicalSnapshotComparison": "UNVERIFIED: before_g1 incompatible with current gameplay dependency",
+    "pass": true
+  },
+  "G1_interactions.json": {
+    "rows": [
+      {
+        "preset": "LEGACY",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "왼쪽 궤도"
+      },
+      {
+        "preset": "LEGACY",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "오른쪽 궤도"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "왼쪽 궤도"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "오른쪽 궤도"
+      }
+    ],
+    "checks": {
+      "Q_LEGACY": true,
+      "Q_TIGER_REMAP": true,
+      "tracks": true,
+      "UI": true,
+      "restart": true
+    },
+    "pass": true
+  },
+  "init-blender.json": {
+    "phase": "init",
+    "blender": "5.2.1 LTS",
+    "seconds": 1.0250279000028968,
+    "objects": [
+      {
+        "name": "ENV_GROUND_01",
+        "type": "MESH",
+        "blenderPosition": [
+          219.64285278320312,
+          -50.0,
+          -0.5714285969734192
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ROAD_01",
+        "type": "MESH",
+        "blenderPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_WALL_01",
+        "type": "MESH",
+        "blenderPosition": [
+          217.85714721679688,
+          -27.85714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_WALL_02",
+        "type": "MESH",
+        "blenderPosition": [
+          232.14285278320312,
+          -75.0,
+          1.6071428060531616
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FLOOR",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -25.35714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_BACK",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -19.285715103149414,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_LEFT",
+        "type": "MESH",
+        "blenderPosition": [
+          242.14285278320312,
+          -25.35714340209961,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_RIGHT",
+        "type": "MESH",
+        "blenderPosition": [
+          257.8571472167969,
+          -25.35714340209961,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FRONT_L",
+        "type": "MESH",
+        "blenderPosition": [
+          244.64285278320312,
+          -31.428571701049805,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FRONT_R",
+        "type": "MESH",
+        "blenderPosition": [
+          255.35714721679688,
+          -31.428571701049805,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_LINTEL",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -31.428571701049805,
+          6.285714149475098
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_ROOF",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -25.35714340209961,
+          8.285714149475098
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_01",
+        "type": "MESH",
+        "blenderPosition": [
+          240.0,
+          -40.35714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_02",
+        "type": "MESH",
+        "blenderPosition": [
+          244.2857208251953,
+          -41.07143020629883,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_03",
+        "type": "MESH",
+        "blenderPosition": [
+          247.85714721679688,
+          -41.78571319580078,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_BARREL_01",
+        "type": "MESH",
+        "blenderPosition": [
+          258.9285583496094,
+          -39.64285659790039,
+          1.5714285373687744
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_BARREL_02",
+        "type": "MESH",
+        "blenderPosition": [
+          262.1428527832031,
+          -41.07143020629883,
+          1.5714285373687744
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_ROCK_01",
+        "type": "MESH",
+        "blenderPosition": [
+          181.42857360839844,
+          -28.571428298950195,
+          1.4285714626312256
+        ],
+        "blenderScale": [
+          3.4285714626312256,
+          2.2857143878936768,
+          2.142857074737549
+        ]
+      },
+      {
+        "name": "ENV_PROP_ROCK_02",
+        "type": "MESH",
+        "blenderPosition": [
+          265.71429443359375,
+          -75.0,
+          1.4285714626312256
+        ],
+        "blenderScale": [
+          3.4285714626312256,
+          2.2857143878936768,
+          2.142857074737549
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_A",
+        "type": "EMPTY",
+        "blenderPosition": [
+          217.85714721679688,
+          -27.85714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_B",
+        "type": "EMPTY",
+        "blenderPosition": [
+          232.14285278320312,
+          -75.0,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_C",
+        "type": "EMPTY",
+        "blenderPosition": [
+          200.0,
+          -57.14285659790039,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "mapSHA256": "3b6c35459414b4d08b7327d60d3bc2ec2e8cceba582248f4c316411edaf4d2a9",
+    "glbSHA256": "73c308d0b4a2b50f261ace106d5d54a88bc359634071034d7a453670070d08b9"
+  },
+  "mesh-blender.json": {
+    "phase": "mesh",
+    "blender": "5.2.1 LTS",
+    "seconds": 0.681521899998188,
+    "objects": [
+      {
+        "name": "ENV_GROUND_01",
+        "type": "MESH",
+        "blenderPosition": [
+          219.64285278320312,
+          -50.0,
+          -0.5714285969734192
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ROAD_01",
+        "type": "MESH",
+        "blenderPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_WALL_01",
+        "type": "MESH",
+        "blenderPosition": [
+          217.85714721679688,
+          -27.85714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_WALL_02",
+        "type": "MESH",
+        "blenderPosition": [
+          232.14285278320312,
+          -75.0,
+          1.6071428060531616
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FLOOR",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -25.35714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_BACK",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -19.285715103149414,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_LEFT",
+        "type": "MESH",
+        "blenderPosition": [
+          242.14285278320312,
+          -25.35714340209961,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_RIGHT",
+        "type": "MESH",
+        "blenderPosition": [
+          257.8571472167969,
+          -25.35714340209961,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FRONT_L",
+        "type": "MESH",
+        "blenderPosition": [
+          244.64285278320312,
+          -31.428571701049805,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FRONT_R",
+        "type": "MESH",
+        "blenderPosition": [
+          255.35714721679688,
+          -31.428571701049805,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_LINTEL",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -31.428571701049805,
+          6.285714149475098
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_ROOF",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -25.35714340209961,
+          8.285714149475098
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_01",
+        "type": "MESH",
+        "blenderPosition": [
+          242.0,
+          -40.35714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_02",
+        "type": "MESH",
+        "blenderPosition": [
+          244.2857208251953,
+          -41.07143020629883,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_03",
+        "type": "MESH",
+        "blenderPosition": [
+          247.85714721679688,
+          -41.78571319580078,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_BARREL_01",
+        "type": "MESH",
+        "blenderPosition": [
+          258.9285583496094,
+          -39.64285659790039,
+          1.5714285373687744
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_BARREL_02",
+        "type": "MESH",
+        "blenderPosition": [
+          262.1428527832031,
+          -41.07143020629883,
+          1.5714285373687744
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_ROCK_01",
+        "type": "MESH",
+        "blenderPosition": [
+          181.42857360839844,
+          -28.571428298950195,
+          1.4285714626312256
+        ],
+        "blenderScale": [
+          3.4285714626312256,
+          2.2857143878936768,
+          2.142857074737549
+        ]
+      },
+      {
+        "name": "ENV_PROP_ROCK_02",
+        "type": "MESH",
+        "blenderPosition": [
+          265.71429443359375,
+          -75.0,
+          1.4285714626312256
+        ],
+        "blenderScale": [
+          3.4285714626312256,
+          2.2857143878936768,
+          2.142857074737549
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_A",
+        "type": "EMPTY",
+        "blenderPosition": [
+          217.85714721679688,
+          -27.85714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_B",
+        "type": "EMPTY",
+        "blenderPosition": [
+          232.14285278320312,
+          -75.0,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_C",
+        "type": "EMPTY",
+        "blenderPosition": [
+          200.0,
+          -57.14285659790039,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "mapSHA256": "3b6c35459414b4d08b7327d60d3bc2ec2e8cceba582248f4c316411edaf4d2a9",
+    "glbSHA256": "1c3492fa8719c59dda1258fbd4196c331f685838a9858428fa20f5eb65b027e8"
+  },
+  "map-blender.json": {
+    "phase": "map",
+    "blender": "5.2.1 LTS",
+    "seconds": 0.6716035999997985,
+    "objects": [
+      {
+        "name": "ENV_GROUND_01",
+        "type": "MESH",
+        "blenderPosition": [
+          219.64285278320312,
+          -50.0,
+          -0.5714285969734192
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ROAD_01",
+        "type": "MESH",
+        "blenderPosition": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_WALL_01",
+        "type": "MESH",
+        "blenderPosition": [
+          219.85714721679688,
+          -27.85714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_WALL_02",
+        "type": "MESH",
+        "blenderPosition": [
+          232.14285278320312,
+          -75.0,
+          1.6071428060531616
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FLOOR",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -25.35714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_BACK",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -19.285715103149414,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_LEFT",
+        "type": "MESH",
+        "blenderPosition": [
+          242.14285278320312,
+          -25.35714340209961,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_RIGHT",
+        "type": "MESH",
+        "blenderPosition": [
+          257.8571472167969,
+          -25.35714340209961,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FRONT_L",
+        "type": "MESH",
+        "blenderPosition": [
+          244.64285278320312,
+          -31.428571701049805,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_FRONT_R",
+        "type": "MESH",
+        "blenderPosition": [
+          255.35714721679688,
+          -31.428571701049805,
+          0.8571428656578064
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_LINTEL",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -31.428571701049805,
+          6.285714149475098
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_BUNKER_ROOF",
+        "type": "MESH",
+        "blenderPosition": [
+          250.0,
+          -25.35714340209961,
+          8.285714149475098
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_01",
+        "type": "MESH",
+        "blenderPosition": [
+          242.0,
+          -40.35714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_02",
+        "type": "MESH",
+        "blenderPosition": [
+          244.2857208251953,
+          -41.07143020629883,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_CRATE_03",
+        "type": "MESH",
+        "blenderPosition": [
+          247.85714721679688,
+          -41.78571319580078,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_BARREL_01",
+        "type": "MESH",
+        "blenderPosition": [
+          258.9285583496094,
+          -39.64285659790039,
+          1.5714285373687744
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_BARREL_02",
+        "type": "MESH",
+        "blenderPosition": [
+          262.1428527832031,
+          -41.07143020629883,
+          1.5714285373687744
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_PROP_ROCK_01",
+        "type": "MESH",
+        "blenderPosition": [
+          181.42857360839844,
+          -28.571428298950195,
+          1.4285714626312256
+        ],
+        "blenderScale": [
+          3.4285714626312256,
+          2.2857143878936768,
+          2.142857074737549
+        ]
+      },
+      {
+        "name": "ENV_PROP_ROCK_02",
+        "type": "MESH",
+        "blenderPosition": [
+          265.71429443359375,
+          -75.0,
+          1.4285714626312256
+        ],
+        "blenderScale": [
+          3.4285714626312256,
+          2.2857143878936768,
+          2.142857074737549
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_A",
+        "type": "EMPTY",
+        "blenderPosition": [
+          219.85714721679688,
+          -27.85714340209961,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_B",
+        "type": "EMPTY",
+        "blenderPosition": [
+          232.14285278320312,
+          -75.0,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "name": "ENV_ANCHOR_C",
+        "type": "EMPTY",
+        "blenderPosition": [
+          200.0,
+          -57.14285659790039,
+          0.0
+        ],
+        "blenderScale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "mapSHA256": "42c2f2c7d7d10d32266be31a3aff404c053cb86989a80fdc9966ef1f991d475a",
+    "glbSHA256": "eac0cf4170a66048f680c596924c8533b33ed7825b8c5179ab2b092ffb0a50cc"
+  },
+  "summary": {
+    "status": "ThreeJSDEV-ENV-01 PARTIAL PASS",
+    "technicalGates": "PASS",
+    "userVisualReview": "PENDING",
+    "authorityPromotion": false,
+    "preservation": {
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\dcc00\\workspace\\dcc-map-01\\edited.json": "3b6c35459414b4d08b7327d60d3bc2ec2e8cceba582248f4c316411edaf4d2a9",
+      "C:\\Users\\LunarGagarin\\Documents\\Topdown Tank\\maps\\H5E_PILOT_MAP_PASS2_14W_v0.1.json": "9346ff550f79f1f91c306ff3fcc9bd1959c3170dd9a7f8ea055cda91097b56d5"
+    },
+    "unchangedBaselineFiles": [
+      "spike/rnd_gameplay.js",
+      "spike/RicochetAngles_Legacy_ThreeJS_MULTI_ASSET_RND.html",
+      "dcc00/blender_addon/ricochetangles_dcc00/core.py",
+      "dcc00/server/authoring_server.py",
+      "dcc00/html/src/editor.js"
+    ],
+    "contractTestsPassed": 13,
+    "finalFiles": {
+      "authoring.blend": {
+        "sha256": "21124c233cce1d7cd3463478f70879fadb76d464b15ebf716b3ded62b6148a26",
+        "bytes": 209475
+      },
+      "geometry.glb": {
+        "sha256": "3743cdc07e5e705221b541961b0ec4cae18d6cd429f0a2e63e192de1dd1769b1",
+        "bytes": 53572
+      },
+      "map.json": {
+        "sha256": "42c2f2c7d7d10d32266be31a3aff404c053cb86989a80fdc9966ef1f991d475a",
+        "bytes": 145974
+      }
+    },
+    "finalGLBSceneCount": 1,
+    "externalDependencies": 0,
+    "coordinateContract": "Blender (x/14,-y/14,zB) -> native glTF (x/14,zB,y/14) -> Three uniform scale 14",
+    "oldHistoricalG1": "Not rerun; known snapshot mismatch retained"
+  },
+  "firstNativePass": {
+    "pass": true,
+    "blender": "5.2.1 LTS",
+    "maxFloatAccessorDelta": 5.960464477539063e-08,
+    "sharedScene": true,
+    "mapExport": true,
+    "glbExport": true,
+    "mapHashEqual": true,
+    "glbStructureEqual": true,
+    "glbNumericTolerance": true
+  }
+}

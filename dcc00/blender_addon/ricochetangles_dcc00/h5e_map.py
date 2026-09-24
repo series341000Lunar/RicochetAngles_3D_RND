@@ -185,7 +185,11 @@ class H5E_UL_records(bpy.types.UIList):
 def draw_review(l,context):
     scene=context.scene
     l.label(text='Canonical H5E · original read-only / XY translation slice')
-    l.label(text=scene.get('h5e_status',''));l.operator('dcc00.export_canonical')
+    l.label(text=scene.get('h5e_status',''))
+    if scene.get('env01'):
+        from .env01 import draw_actions
+        draw_actions(l)
+    else:l.operator('dcc00.export_canonical')
     split=l.split(factor=.5);browser=split.column();detail=split.column()
     browser.label(text='Canonical records · stable IDs')
     browser.template_list('H5E_UL_records','canonical',scene,'objects',
