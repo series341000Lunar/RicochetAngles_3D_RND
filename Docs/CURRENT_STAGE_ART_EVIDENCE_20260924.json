@@ -1,0 +1,247 @@
+{
+  "status": "TECHNICAL WORK COMPLETE / USER REVIEW REQUIRED",
+  "stage": "ThreeJSDEV Current Stage",
+  "baseline": "06618fa",
+  "branch": "dcc-00-semantic-authoring",
+  "contractTests": 13,
+  "h5e": "KEEP / HOLD / NOT USED",
+  "mainline": "UNTOUCHED",
+  "baseline-hashes": [
+    {
+      "Path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\dcc00\\test-output\\art-production-20260924\\before\\authoring.blend",
+      "Hash": "21124C233CCE1D7CD3463478F70879FADB76D464B15EBF716B3DED62B6148A26"
+    },
+    {
+      "Path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\dcc00\\test-output\\art-production-20260924\\before\\geometry.glb",
+      "Hash": "8C1D2A1516826A52168537127099EBD9285B2BF2D17B5F0E2FCEE84EB9EE67F8"
+    },
+    {
+      "Path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\dcc00\\test-output\\art-production-20260924\\before\\map.json",
+      "Hash": "42C2F2C7D7D10D32266BE31A3AFF404C053CB86989A80FDC9966EF1F991D475A"
+    }
+  ],
+  "structure-blender": {
+    "pass": "structure",
+    "blender": "5.2.1 LTS",
+    "mapUnchanged": true,
+    "mapSHA256": "42c2f2c7d7d10d32266be31a3aff404c053cb86989a80fdc9966ef1f991d475a",
+    "glbSHA256": "e246a58c0b788193943b3e980ee993bb4e77cbe8d9c44c800649639c89fdb100",
+    "blendSHA256": "8b2ce2941eea963fa444f740976e63c31db0f0d203dd6946c3a86df0699d33a3",
+    "glbBytes": 290520,
+    "staticObjects": 114
+  },
+  "refine-blender": {
+    "pass": "refine",
+    "blender": "5.2.1 LTS",
+    "mapUnchanged": true,
+    "mapSHA256": "42c2f2c7d7d10d32266be31a3aff404c053cb86989a80fdc9966ef1f991d475a",
+    "glbSHA256": "3beec63b3515ef6b0511f2bad14187313350142a5c4f5c0425b90e1d806dd64d",
+    "blendSHA256": "7f81c9e263a32bff4f211b5651c56d2b5bd94949df64574c7ecec1390ea7af32",
+    "glbBytes": 402292,
+    "staticObjects": 215
+  },
+  "browser-review": {
+    "first": {
+      "stats": {
+        "meshes": 111,
+        "triangles": 4056,
+        "materials": 12,
+        "drawCalls": 222,
+        "renderTriangles": 8112
+      },
+      "revision": 1
+    },
+    "final": {
+      "stats": {
+        "meshes": 212,
+        "triangles": 4812,
+        "materials": 14,
+        "drawCalls": 424,
+        "renderTriangles": 9624
+      },
+      "revision": 2,
+      "anchors": [
+        {
+          "name": "ENV_ANCHOR_A",
+          "expectedH5E": [
+            3078,
+            390,
+            0
+          ],
+          "three": [
+            3078.0000610351562,
+            390.00000762939453,
+            0
+          ],
+          "error": 6.151014517439689E-05
+        },
+        {
+          "name": "ENV_ANCHOR_B",
+          "expectedH5E": [
+            3250,
+            1050,
+            0
+          ],
+          "three": [
+            3249.9999389648438,
+            1050,
+            0
+          ],
+          "error": 6.103515625E-05
+        },
+        {
+          "name": "ENV_ANCHOR_C",
+          "expectedH5E": [
+            2800,
+            800,
+            0
+          ],
+          "three": [
+            2800,
+            799.9999923706055,
+            0
+          ],
+          "error": 7.62939453125E-06
+        }
+      ],
+      "state": "READY",
+      "warning": ""
+    },
+    "errors": [],
+    "liveReload": true,
+    "gameplayUnchanged": true,
+    "userVisualReview": "REQUIRED"
+  },
+  "final-smoke": {
+    "first": {
+      "stats": {
+        "meshes": 212,
+        "triangles": 4812,
+        "materials": 14,
+        "drawCalls": 424,
+        "renderTriangles": 9624
+      },
+      "revision": 1
+    },
+    "final": {
+      "stats": {
+        "meshes": 212,
+        "triangles": 4812,
+        "materials": 14,
+        "drawCalls": 424,
+        "renderTriangles": 9624
+      },
+      "revision": 2,
+      "anchors": [
+        {
+          "name": "ENV_ANCHOR_A",
+          "expectedH5E": [
+            3078,
+            390,
+            0
+          ],
+          "three": [
+            3078.0000610351562,
+            390.00000762939453,
+            0
+          ],
+          "error": 6.151014517439689E-05
+        },
+        {
+          "name": "ENV_ANCHOR_B",
+          "expectedH5E": [
+            3250,
+            1050,
+            0
+          ],
+          "three": [
+            3249.9999389648438,
+            1050,
+            0
+          ],
+          "error": 6.103515625E-05
+        },
+        {
+          "name": "ENV_ANCHOR_C",
+          "expectedH5E": [
+            2800,
+            800,
+            0
+          ],
+          "three": [
+            2800,
+            799.9999923706055,
+            0
+          ],
+          "error": 7.62939453125E-06
+        }
+      ],
+      "state": "READY",
+      "warning": ""
+    },
+    "errors": [],
+    "liveReload": true,
+    "gameplayUnchanged": true,
+    "userVisualReview": "REQUIRED"
+  },
+  "source-preservation": {
+    "savedBlendReload": "PASS",
+    "nonStaticSceneDataUnchanged": true,
+    "nonStaticObjects": 394,
+    "staticObjects": 215,
+    "mapUnchanged": true
+  },
+  "G1_current_isolation": {
+    "checks": {
+      "legacyRenderIsolation": true,
+      "remapRenderIsolation": true
+    },
+    "frames": 600,
+    "historicalSnapshotComparison": "UNVERIFIED: before_g1 incompatible with current gameplay dependency",
+    "pass": true
+  },
+  "G1_interactions": {
+    "rows": [
+      {
+        "preset": "LEGACY",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "왼쪽 궤도"
+      },
+      {
+        "preset": "LEGACY",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "오른쪽 궤도"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": -1,
+        "left": 1,
+        "right": 2,
+        "hp": 10,
+        "zone": "왼쪽 궤도"
+      },
+      {
+        "preset": "TIGER_REMAP",
+        "side": 1,
+        "left": 2,
+        "right": 1,
+        "hp": 10,
+        "zone": "오른쪽 궤도"
+      }
+    ],
+    "checks": {
+      "Q_LEGACY": true,
+      "Q_TIGER_REMAP": true,
+      "tracks": true,
+      "UI": true,
+      "restart": true
+    },
+    "pass": true
+  }
+}
