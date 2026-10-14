@@ -1,0 +1,25 @@
+{
+  "checked": 2645,
+  "changed": [
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\dcc00\\workspace\\playable-env\\authoring.blend",
+    "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\dcc00\\workspace\\playable-env\\geometry.glb"
+  ],
+  "missing": [],
+  "pass": false,
+  "status": "WARN_OUT_OF_SCOPE_ASSET_DRIFT",
+  "unchanged": 2643,
+  "changedDetails": [
+    {
+      "file": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\dcc00\\workspace\\playable-env\\authoring.blend",
+      "before": "112b096991ac98582e537bab4ca9de41e50ef8a2239213af0c98d16de82d583d",
+      "after": "abf8c7291981e90ba710b8acbd28d52a7b08166f5ee820cbd9831106f9391934",
+      "mtimeUtc": "2026-10-14T13:59:08.102Z"
+    },
+    {
+      "file": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\dcc00\\workspace\\playable-env\\geometry.glb",
+      "before": "587780d3bc65b45e9fbdb77473ec36eab3ef2d008806e9bd376e007445c4cf39",
+      "after": "986358839e65ddfeccd102133632661128539e06f260071282f4d12f5ed019b9",
+      "mtimeUtc": "2026-10-14T13:59:08.071Z"
+    }
+  ]
+}

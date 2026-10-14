@@ -1,0 +1,47 @@
+{
+  "pass": true,
+  "errors": [],
+  "state": {
+    "mode": "CLEAN_OUTLINE",
+    "zoom": 1.0000000001000013,
+    "frames": 367,
+    "effects": {
+      "mode": "CLEAN_OUTLINE",
+      "outlineMeshes": 230,
+      "visibleOutlineMeshes": 150,
+      "shaderMaterials": 6,
+      "geometryBytes": 13558200,
+      "outlinedEnvironment": [
+        "ENC_Infantry_Cover_Position_001",
+        "ENC_Infantry_Cover_Position_002"
+      ]
+    },
+    "field": {
+      "minX": 640,
+      "maxX": 731.4285714285714,
+      "minZ": 0,
+      "maxZ": 102.85714285714286,
+      "sourceZone": "ENC_01"
+    },
+    "footprint": [
+      {
+        "x": 640,
+        "z": 86.31792856279667
+      },
+      {
+        "x": 731.4285714194284,
+        "z": 86.31792856279667
+      },
+      {
+        "x": 731.4285714194284,
+        "z": 17.746499998225318
+      },
+      {
+        "x": 640,
+        "z": 17.746499998225318
+      }
+    ]
+  },
+  "videoPath": null,
+  "videoUnavailable": "browser.newPage: Executable doesn't exist at C:\\Users\\LunarGagarin\\AppData\\Local\\ms-playwright\\ffmpeg-1011\\ffmpeg-win64.exe\n╔═════════════════════════════════════════════════════════════════╗\n║ Video rendering requires ffmpeg binary.                         ║\n║ Downloading it will not affect any of the system-wide settings. ║\n║ Please run the following command:                               ║\n║                                                                 ║\n║     npx playwright install ffmpeg                               ║\n║                                                                 ║\n║ <3 Playwright Team                                              ║\n╚═════════════════════════════════════════════════════════════════╝"
+}

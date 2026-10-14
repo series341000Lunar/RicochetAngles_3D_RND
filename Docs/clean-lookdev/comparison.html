@@ -1,0 +1,27 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RA · Clean LookDev A/B/C/D</title><link rel="icon" href="data:,">
+<style>
+body{margin:0;background:#171d17;color:#dce3d7;font:14px Segoe UI,Arial,sans-serif}main{max-width:1280px;margin:auto;padding:24px}
+h1{font-size:24px;font-weight:500;margin:0 0 8px}p{color:#abb8a7;line-height:1.6;margin:8px 0 18px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}button,a{color:#dce3c7;background:#2c372b;border:1px solid #57654d;padding:9px 14px;border-radius:3px;text-decoration:none;cursor:pointer}
+button.active{background:#515d3c;border-color:#ccc28d}.frame{position:relative;border:1px solid #4b5544;overflow:hidden;background:#111}
+.frame img{width:100%;display:block}.frame .over{position:absolute;inset:0;width:100%;height:100%;clip-path:inset(0 50% 0 0)}
+.marker{position:absolute;top:0;bottom:0;left:50%;border-left:2px solid #f3edbc;pointer-events:none}
+.wipe{display:flex;gap:12px;align-items:center;margin:16px 0}.wipe input{flex:1;accent-color:#c4bc88}.wipe[hidden],img[hidden],.marker[hidden]{display:none}
+footer{margin-top:24px;font-size:12px;color:#b8c4af}video{display:block;width:100%;margin-top:16px;background:#111}summary{cursor:pointer}
+</style><main>
+<h1>Clean low-poly battlefield · A/B/C/D</h1><p>같은 카메라·배치·DPR 1에서 캡처했습니다. B/C/D는 같은 조명·팔레트입니다. C는 주요 부품 hull, D는 내부 경계 없는 전체 실루엣입니다. 최종 미술 승인 전 후보입니다.</p>
+<nav><button data-mode="A">A · Mainline reference</button><button data-mode="B">B · Clean low-poly</button><button data-mode="C" class="active">C · Clean + black outline</button><button data-mode="D">D · Contour only</button><button data-mode="E">E · 적 1대 contour</button><button data-mode="F">F · 보스 1대 contour</button><button data-mode="wipe">B/C 슬라이드 비교</button><a href="../../lookdev/?look=contour-only">실시간 LookDev · D</a></nav>
+<div class="frame"><img id="main" src="C-clean-black-outline-world.png" alt="Clean low-poly with black outline"><img id="over" class="over" src="C-clean-black-outline-world.png" alt="Black outline overlay" hidden><div class="marker" id="marker" hidden></div></div>
+<div class="wipe" id="wipe" hidden><span>C · outline</span><input id="amount" type="range" min="0" max="100" value="50"><span>B · plain</span></div>
+<details><summary>이동 / Pan / Zoom 캡처</summary><p>실제 키보드·마우스 조작 검증입니다. 영상 인코더가 없어 정지 캡처와 검증 기록을 제공합니다.</p><img src="motion-pan.png" width="100%" alt="C camera pan"><img src="motion-zoom-in.png" width="100%" alt="C zoom"><img src="contour-motion.png" width="100%" alt="D camera movement"></details>
+<footer>1.15px 기준 · 중요 오브젝트 선택 적용 · 원본 GLB / Mainline reference 보존 · 상세 근거: validation.json / contour-validation.json / pixel-validation.json / motion-validation.json</footer>
+</main><script>
+const paths={A:'A-mainline-reference-world.png',B:'B-clean-low-poly-world.png',C:'C-clean-black-outline-world.png',D:'D-contour-only-all-world.png',E:'E-contour-only-selected-world.png',F:'F-contour-only-boss-world.png'};
+document.querySelectorAll('button[data-mode]').forEach(button=>button.onclick=()=>{
+ const mode=button.dataset.mode,isWipe=mode==='wipe';document.getElementById('main').src=paths[isWipe?'B':mode];
+ for(const id of ['wipe','over','marker'])document.getElementById(id).hidden=!isWipe;
+ document.querySelectorAll('button[data-mode]').forEach(b=>b.classList.toggle('active',b===button));
+});
+document.getElementById('amount').oninput=e=>{const v=e.target.value;document.getElementById('over').style.clipPath=`inset(0 ${100-v}% 0 0)`;document.getElementById('marker').style.left=v+'%';};
+</script></html>

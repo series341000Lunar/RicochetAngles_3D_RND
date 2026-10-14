@@ -4,15 +4,23 @@
 <link rel="icon" href="data:,"><title>RicochetAngles · Global LookDev</title><link rel="stylesheet" href="lookdev.css"></head>
 <body>
 <aside>
-  <header><span class="eyebrow">RICOCHET ANGLES / R&D</span><h1>Global LookDev</h1><p>Stage 1 · Mainline visual reference</p></header>
+  <header><span class="eyebrow">RICOCHET ANGLES / R&D</span><h1>Global LookDev</h1><p>Stage 1 · Clean low-poly comparison</p></header>
   <div id="status" role="status">환경과 모델을 준비하고 있습니다…</div>
   <fieldset id="controls" disabled>
-    <div class="actions"><button id="baseline">Mainline 기준 복귀</button><button id="home">필드 중심</button></div>
+    <div class="lookChoices"><button id="baseline">A · Mainline reference</button><button id="candidatePlain">B · Clean low-poly</button><button id="candidateOutline">C · Clean + black outline</button><button id="candidateContour">D · Black outline contour only</button></div>
+    <button id="home">필드 중심</button>
+    <div class="lookControls">
+      <label>World saturation <output id="saturationValue"></output><input id="worldSaturation" type="range" min="0" max="1" step="0.02" value="0.48"></label>
+      <label>Black outline <output id="outlineValue"></output><input id="outlineWidth" type="range" min="0.6" max="2.4" step="0.05" value="1.15"></label>
+      <label>Contour only 범위 <select id="contourScope"><option value="all">필드 전체 중요 대상</option><option value="selected">선택 대상 1대 · Shift 조준 방식</option></select></label>
+    </div>
     <label>Zoom <output id="zoomValue"></output><input id="zoom" type="range" min="0.1" max="8" step="0.01" value="1.4"></label>
     <label>Camera <select id="elevation"><option value="75">75° · Mainline / R&D</option><option value="90">90° · 투영 비교</option><option value="45">45° · 진단</option></select></label>
     <details open><summary>Lighting &amp; output</summary>
       <label>Hemisphere <output id="ambientValue"></output><input id="ambient" type="range" min="0" max="3" step="0.05" value="0.85"></label>
       <label>Sun <output id="sunValue"></output><input id="sun" type="range" min="0" max="5" step="0.05" value="2.3"></label>
+      <label>Sun direction <output id="azimuthValue"></output><input id="sunAzimuth" type="range" min="-180" max="180" step="1" value="-41"></label>
+      <label>Sun elevation <output id="elevationValue"></output><input id="sunElevation" type="range" min="25" max="80" step="1" value="43"></label>
       <label>Exposure <output id="exposureValue"></output><input id="exposure" type="range" min="0.1" max="3" step="0.05" value="1"></label>
       <label>Tone mapping <select id="tone"><option>None</option><option>ACES</option><option>Reinhard</option><option>Cineon</option></select></label>
       <label class="check"><input id="shadows" type="checkbox" checked> ENV + actor shadows</label>
@@ -26,6 +34,7 @@
     <details open><summary>Models <span id="assetCount"></span></summary>
       <div class="actions"><button id="roster">기본 배치</button><button id="solo">선택만 표시</button></div>
       <label>Inspect <select id="assetSelect"></select></label><button id="focus">선택 모델로 이동</button>
+      <label class="check"><input id="wreck" type="checkbox"> 선택 모델 Wreck 재질 비교</label><p class="hint">R&amp;D 정지 재질 비교 · 게임 상태/파괴 판정 없음</p>
       <div id="assetList"></div><pre id="inspector"></pre>
     </details>
   </fieldset>

@@ -1,0 +1,2474 @@
+{
+  "pass": true,
+  "checks": {
+    "loaded": true,
+    "worldPaletteChanged": true,
+    "selective": true,
+    "noOutlineShadow": true,
+    "widthPixels": true,
+    "rosterOutlineCoverage": true,
+    "wreckDifference": true,
+    "referenceRestores": true,
+    "sourceGeometryPreserved": true,
+    "materialsRestored": true,
+    "boundary_800_0.1": true,
+    "boundary_800_1": true,
+    "boundary_800_4": true,
+    "boundary_800_100": true,
+    "boundary_2200_0.1": true,
+    "boundary_2200_1": true,
+    "boundary_2200_4": true,
+    "boundary_2200_100": true,
+    "boundary_1600_0.1": true,
+    "boundary_1600_1": true,
+    "boundary_1600_4": true,
+    "boundary_1600_100": true,
+    "deterministicReturn": true,
+    "shadowOff": true,
+    "boundedCache": true,
+    "noErrors": true,
+    "dispose": true
+  },
+  "errors": [],
+  "samples": [
+    {
+      "name": "A-mainline-reference",
+      "settings": {
+        "name": "CURRENT MAINLINE VISUAL REFERENCE",
+        "pixelsPerMeter": 14,
+        "elevation": 75,
+        "yaw": 0,
+        "cameraDistance": 300,
+        "cameraFar": 700,
+        "clearColor": 8884363,
+        "hemisphereSky": 13360368,
+        "hemisphereGround": 8549198,
+        "ambientIntensity": 0.85,
+        "sunColor": 16773076,
+        "sunIntensity": 2.3,
+        "sunX": -70,
+        "sunY": 100,
+        "sunZ": 80,
+        "shadowHalfSpan": 105,
+        "shadowMapSize": 2048,
+        "shadowNear": 0.1,
+        "shadowFar": 400,
+        "shadowBias": -0.001,
+        "shadowNormalBias": 0.2,
+        "shadows": true,
+        "exposure": 1,
+        "tone": "None",
+        "pixelRatio": 1
+      },
+      "effects": {
+        "mode": "MAINLINE_REFERENCE",
+        "outlineMeshes": 230,
+        "visibleOutlineMeshes": 0,
+        "shaderMaterials": 6,
+        "geometryBytes": 13558200,
+        "outlinedEnvironment": [
+          "ENC_Infantry_Cover_Position_001",
+          "ENC_Infantry_Cover_Position_002"
+        ]
+      },
+      "draws": 268,
+      "triangles": 508074,
+      "geometries": 499,
+      "programs": 5,
+      "footprint": [
+        {
+          "x": 640.0000000045716,
+          "z": 85.71428571085711
+        },
+        {
+          "x": 731.428571424,
+          "z": 85.71428571085711
+        },
+        {
+          "x": 731.428571424,
+          "z": 17.142857146285763
+        },
+        {
+          "x": 640.0000000045716,
+          "z": 17.142857146285763
+        }
+      ]
+    },
+    {
+      "name": "B-clean-low-poly",
+      "settings": {
+        "name": "CLEAN LOW-POLY CANDIDATE",
+        "pixelsPerMeter": 14,
+        "elevation": 75,
+        "yaw": 0,
+        "cameraDistance": 300,
+        "cameraFar": 700,
+        "clearColor": 8884363,
+        "hemisphereSky": 14410725,
+        "hemisphereGround": 8947062,
+        "ambientIntensity": 1.15,
+        "sunColor": 16774367,
+        "sunIntensity": 2.05,
+        "sunX": -55,
+        "sunY": 115,
+        "sunZ": 40,
+        "shadowHalfSpan": 90,
+        "shadowMapSize": 2048,
+        "shadowNear": 0.1,
+        "shadowFar": 400,
+        "shadowBias": -0.0003,
+        "shadowNormalBias": 0.035,
+        "shadows": true,
+        "exposure": 1.05,
+        "tone": "ACES",
+        "pixelRatio": 1
+      },
+      "effects": {
+        "mode": "CLEAN_LOW_POLY",
+        "outlineMeshes": 230,
+        "visibleOutlineMeshes": 0,
+        "shaderMaterials": 6,
+        "geometryBytes": 13558200,
+        "outlinedEnvironment": [
+          "ENC_Infantry_Cover_Position_001",
+          "ENC_Infantry_Cover_Position_002"
+        ]
+      },
+      "draws": 268,
+      "triangles": 508074,
+      "geometries": 499,
+      "programs": 8,
+      "footprint": [
+        {
+          "x": 640.0000000045716,
+          "z": 85.71428571085711
+        },
+        {
+          "x": 731.428571424,
+          "z": 85.71428571085711
+        },
+        {
+          "x": 731.428571424,
+          "z": 17.142857146285763
+        },
+        {
+          "x": 640.0000000045716,
+          "z": 17.142857146285763
+        }
+      ]
+    },
+    {
+      "name": "C-clean-black-outline",
+      "settings": {
+        "name": "CLEAN LOW-POLY CANDIDATE",
+        "pixelsPerMeter": 14,
+        "elevation": 75,
+        "yaw": 0,
+        "cameraDistance": 300,
+        "cameraFar": 700,
+        "clearColor": 8884363,
+        "hemisphereSky": 14410725,
+        "hemisphereGround": 8947062,
+        "ambientIntensity": 1.15,
+        "sunColor": 16774367,
+        "sunIntensity": 2.05,
+        "sunX": -55,
+        "sunY": 115,
+        "sunZ": 40,
+        "shadowHalfSpan": 90,
+        "shadowMapSize": 2048,
+        "shadowNear": 0.1,
+        "shadowFar": 400,
+        "shadowBias": -0.0003,
+        "shadowNormalBias": 0.035,
+        "shadows": true,
+        "exposure": 1.05,
+        "tone": "ACES",
+        "pixelRatio": 1
+      },
+      "effects": {
+        "mode": "CLEAN_OUTLINE",
+        "outlineMeshes": 230,
+        "visibleOutlineMeshes": 150,
+        "shaderMaterials": 6,
+        "geometryBytes": 13558200,
+        "outlinedEnvironment": [
+          "ENC_Infantry_Cover_Position_001",
+          "ENC_Infantry_Cover_Position_002"
+        ]
+      },
+      "draws": 418,
+      "triangles": 944616,
+      "geometries": 645,
+      "programs": 8,
+      "footprint": [
+        {
+          "x": 640.0000000045716,
+          "z": 85.71428571085711
+        },
+        {
+          "x": 731.428571424,
+          "z": 85.71428571085711
+        },
+        {
+          "x": 731.428571424,
+          "z": 17.142857146285763
+        },
+        {
+          "x": 640.0000000045716,
+          "z": 17.142857146285763
+        }
+      ]
+    },
+    {
+      "name": "D-major-target",
+      "settings": {
+        "name": "CLEAN LOW-POLY CANDIDATE",
+        "pixelsPerMeter": 14,
+        "elevation": 75,
+        "yaw": 0,
+        "cameraDistance": 300,
+        "cameraFar": 700,
+        "clearColor": 8884363,
+        "hemisphereSky": 14410725,
+        "hemisphereGround": 8947062,
+        "ambientIntensity": 1.15,
+        "sunColor": 16774367,
+        "sunIntensity": 2.05,
+        "sunX": -55,
+        "sunY": 115,
+        "sunZ": 40,
+        "shadowHalfSpan": 90,
+        "shadowMapSize": 2048,
+        "shadowNear": 0.1,
+        "shadowFar": 400,
+        "shadowBias": -0.0003,
+        "shadowNormalBias": 0.035,
+        "shadows": true,
+        "exposure": 1.05,
+        "tone": "ACES",
+        "pixelRatio": 1
+      },
+      "effects": {
+        "mode": "CLEAN_OUTLINE",
+        "outlineMeshes": 230,
+        "visibleOutlineMeshes": 25,
+        "shaderMaterials": 6,
+        "geometryBytes": 13558200,
+        "outlinedEnvironment": [
+          "ENC_Infantry_Cover_Position_001",
+          "ENC_Infantry_Cover_Position_002"
+        ]
+      },
+      "draws": 109,
+      "triangles": 249074,
+      "geometries": 645,
+      "programs": 8,
+      "footprint": [
+        {
+          "x": 660.3174603220318,
+          "z": 81.04761904761904
+        },
+        {
+          "x": 711.1111111156827,
+          "z": 81.04761904761904
+        },
+        {
+          "x": 711.1111111156827,
+          "z": 42.95238095238095
+        },
+        {
+          "x": 660.3174603220318,
+          "z": 42.95238095238095
+        }
+      ]
+    }
+  ],
+  "outline": {
+    "outlines": [
+      {
+        "name": "CLEAN_OUTLINE_Mesh071",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 0.8049999999999999
+      },
+      {
+        "name": "CLEAN_OUTLINE_Mesh071_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 0.8049999999999999
+      },
+      {
+        "name": "CLEAN_OUTLINE_Mesh071_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 0.8049999999999999
+      },
+      {
+        "name": "CLEAN_OUTLINE_Mesh071_3",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 0.8049999999999999
+      },
+      {
+        "name": "CLEAN_OUTLINE_Mesh071",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 0.8049999999999999
+      },
+      {
+        "name": "CLEAN_OUTLINE_Mesh071_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 0.8049999999999999
+      },
+      {
+        "name": "CLEAN_OUTLINE_Mesh071_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 0.8049999999999999
+      },
+      {
+        "name": "CLEAN_OUTLINE_Mesh071_3",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 0.8049999999999999
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_v03",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_v03_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_v03_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_v03",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_v03_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_v03_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_PROP_geometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_PROP_geometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_PROP_geometry_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.035
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_3",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_4",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_5",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_6",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FL_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FL_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FL_Mesh_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FR_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FR_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FR_Mesh_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RND_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RND_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RND_Mesh_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RND_Mesh_4",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FL_RND_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FL_RND_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FR_RND_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_FR_RND_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_RL_RND_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_RL_RND_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_RR_RND_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_WHEEL_RR_RND_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.3224999999999998
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_ContactSimple",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_ContactSimple_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_ContactSimple",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_ContactSimple_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_NormalPreserved",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_NormalPreserved_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_NormalPreserved_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_RuntimeGeometry_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_RuntimeGeometry_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_ADDON_SIDE_L_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_ADDON_SIDE_L_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_AUX_TRACK_L",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_ADDON_SIDE_R_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_ADDON_SIDE_R_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_AUX_TRACK_R",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_ADDON_FRONT_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_ADDON_FRONT_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_ADDON_TURRET",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_L_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TRACK_R_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_TURRET_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUN_Mesh_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_1",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_2",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_HULL_3",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_CARRIAGE_N",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_FOUNDATION_N",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_CARRIAGE_S",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_FOUNDATION_S",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUNHOUSE",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_CONCRETE_CASEMATE",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_FORTIFICATION_BASE",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_CARRIAGE_N",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_FOUNDATION_N",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_CARRIAGE_S",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_FOUNDATION_S",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_CARRIAGE_N",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_FOUNDATION_N",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_CARRIAGE_S",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_COUPLER_FOUNDATION_S",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.15
+      },
+      {
+        "name": "CLEAN_OUTLINE_GUNHOUSE",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_CONCRETE_CASEMATE",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      },
+      {
+        "name": "CLEAN_OUTLINE_FORTIFICATION_BASE",
+        "cast": false,
+        "receive": false,
+        "side": 1,
+        "depth": true,
+        "write": false,
+        "width": 1.265
+      }
+    ],
+    "metrics": {
+      "mode": "CLEAN_OUTLINE",
+      "outlineMeshes": 230,
+      "visibleOutlineMeshes": 150,
+      "shaderMaterials": 6,
+      "geometryBytes": 13558200,
+      "outlinedEnvironment": [
+        "ENC_Infantry_Cover_Position_001",
+        "ENC_Infantry_Cover_Position_002"
+      ]
+    },
+    "protectedColor": "f9c742"
+  },
+  "cache": {
+    "g": 645,
+    "p": 11,
+    "effects": {
+      "mode": "CLEAN_OUTLINE",
+      "outlineMeshes": 230,
+      "visibleOutlineMeshes": 150,
+      "shaderMaterials": 6,
+      "geometryBytes": 13558200,
+      "outlinedEnvironment": [
+        "ENC_Infantry_Cover_Position_001",
+        "ENC_Infantry_Cover_Position_002"
+      ]
+    }
+  },
+  "afterCache": {
+    "g": 645,
+    "p": 11,
+    "effects": {
+      "mode": "CLEAN_OUTLINE",
+      "outlineMeshes": 230,
+      "visibleOutlineMeshes": 150,
+      "shaderMaterials": 6,
+      "geometryBytes": 13558200,
+      "outlinedEnvironment": [
+        "ENC_Infantry_Cover_Position_001",
+        "ENC_Infantry_Cover_Position_002"
+      ]
+    }
+  },
+  "performance": [
+    {
+      "mode": "MAINLINE_REFERENCE",
+      "cpuMedianMs": 1.5,
+      "cpuP95Ms": 2,
+      "draws": 268,
+      "triangles": 508074,
+      "effects": {
+        "mode": "MAINLINE_REFERENCE",
+        "outlineMeshes": 230,
+        "visibleOutlineMeshes": 0,
+        "shaderMaterials": 6,
+        "geometryBytes": 13558200,
+        "outlinedEnvironment": [
+          "ENC_Infantry_Cover_Position_001",
+          "ENC_Infantry_Cover_Position_002"
+        ]
+      }
+    },
+    {
+      "mode": "CLEAN_LOW_POLY",
+      "cpuMedianMs": 1.5,
+      "cpuP95Ms": 1.9000000059604645,
+      "draws": 268,
+      "triangles": 508074,
+      "effects": {
+        "mode": "CLEAN_LOW_POLY",
+        "outlineMeshes": 230,
+        "visibleOutlineMeshes": 0,
+        "shaderMaterials": 6,
+        "geometryBytes": 13558200,
+        "outlinedEnvironment": [
+          "ENC_Infantry_Cover_Position_001",
+          "ENC_Infantry_Cover_Position_002"
+        ]
+      }
+    },
+    {
+      "mode": "CLEAN_OUTLINE",
+      "cpuMedianMs": 1.8000000044703484,
+      "cpuP95Ms": 2.3000000044703484,
+      "draws": 418,
+      "triangles": 944616,
+      "effects": {
+        "mode": "CLEAN_OUTLINE",
+        "outlineMeshes": 230,
+        "visibleOutlineMeshes": 150,
+        "shaderMaterials": 6,
+        "geometryBytes": 13558200,
+        "outlinedEnvironment": [
+          "ENC_Infantry_Cover_Position_001",
+          "ENC_Infantry_Cover_Position_002"
+        ]
+      }
+    }
+  ],
+  "disposal": {
+    "status": "DISPOSED",
+    "geometries": 0,
+    "disposed": true
+  },
+  "palette": {
+    "baselineWorld": {
+      "materials": 33,
+      "meanSaturation": 0.3832988603988027
+    },
+    "candidateWorld": {
+      "materials": 33,
+      "meanSaturation": 0.21175845474668764
+    }
+  }
+}

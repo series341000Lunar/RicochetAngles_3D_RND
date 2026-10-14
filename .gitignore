@@ -98,3 +98,7 @@ Thumbs.db
 /Docs/global-lookdev/**/*.jpg
 /Docs/global-lookdev/**/*.jpeg
 /Docs/global-lookdev/**/*.webp
+/Docs/clean-lookdev/**/*.png
+/Docs/clean-lookdev/**/*.jpg
+/Docs/clean-lookdev/**/*.webp
+/Docs/clean-lookdev/**/*.webm

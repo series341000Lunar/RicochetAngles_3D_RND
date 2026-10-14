@@ -1,0 +1,25 @@
+{
+  "head": "fdebae8e753d272ea28af5d2f666bcc184f8e83d",
+  "entries": [
+    {
+      "file": "lookdev/baseline.mjs",
+      "sha256": "86346aeacd45ca71af9f87ceabce0370f616a070496874d30535f0a4b0e83cf9"
+    },
+    {
+      "file": "lookdev/camera-boundary.mjs",
+      "sha256": "3786c0db9c41d86f39e9d16d535784ff7f6dd3fac8abd8226d89d3ad55940e46"
+    },
+    {
+      "file": "lookdev/manifest.json",
+      "sha256": "846b56e04252744a2c412bebb9cee4ccb5cc06ff84db594349a53290063da952"
+    },
+    {
+      "file": "spike/vendor/three.module.js",
+      "sha256": "43220d5592788b8897e12a1b7f912d151e4babead5971a920be1442ac28b3dd8"
+    },
+    {
+      "file": "spike/vendor/GLTFLoader.js",
+      "sha256": "1f9b02acfbf219a6ebb77f09e355500449a3ba9e6a77d87e0de72c0b9315ea4e"
+    }
+  ]
+}

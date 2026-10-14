@@ -29,6 +29,23 @@ The full ground-projected viewport is clamped to the canonical ENC region.
 Mainline baseline reset restores lighting, shadows, tone, color and camera angle.
 Model visibility, inspection and Solo allow comparison without a scene editor.
 
+The 2026-10-14 visual candidate adds **B · Clean low-poly** and
+**C · Clean + black outline** beside **A · Mainline reference**. The launcher opens
+C by default; `Launch_Global_LookDev.ps1 -Reference` or the A button returns to
+the preserved reference. The bare `/lookdev/` URL also starts at A.
+The clean candidate uses a restrained world palette, balanced directional light,
+contact-oriented shadows and selective pixel-width black hulls. Source GLB
+geometry/material settings can be restored exactly. The Wreck checkbox is a
+static material comparison, with no gameplay/death authority.
+See [candidate report](Docs/CLEAN_LOW_POLY_LOOKDEV_REPORT_20261014.md) and
+[A/B/C/D comparison](http://127.0.0.1:8765/Docs/clean-lookdev/comparison.html).
+**D · Black outline contour only** adds a shared silhouette mask and black
+composite, with no internal part outlines. Choose all eligible visible targets
+or the selected model alone (the Shift targeting approach), and adjust pixel
+width. `/lookdev/?look=contour-only` opens D directly. It adapts the existing
+R&D target-mask technique without changing that page or gameplay controls.
+The HUD counts color/mask/composite passes; the report also measures shadows.
+
 Fresh-clone asset injection: `node tools/audit-lookdev-assets.mjs`, then
 `node tools/prepare-lookdev.mjs` on a machine with the read-only NAS sources and
 Mainline reference. Production GLBs remain ignored/local-only; source/hash/URL

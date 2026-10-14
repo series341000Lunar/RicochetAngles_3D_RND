@@ -2,10 +2,13 @@ import * as THREE from '../spike/vendor/three.module.js';
 import {GLTFLoader} from '../spike/vendor/GLTFLoader.js';
 import {BASELINE,applyActorShadows} from './baseline.mjs';
 import {syncCamera,clampGroundView,groundFootprint,groundAt,validateGroundRectangle} from './camera-boundary.mjs';
+import {CLEAN_SETTINGS,LOOK_MODES,createCleanLook} from './clean-look.mjs';
+import {createContourOnly} from './contour-only.mjs';
 
 const $=id=>document.getElementById(id), viewport=$('viewport'),canvas=$('world');
 const app={status:'LOADING',settings:{...BASELINE},assets:[],environment:null,frames:0,
-  prewarmDraws:0,prewarmQueue:[],disposed:false,suspended:false,errors:[],raf:0,manifest:null,threeRevision:THREE.REVISION};
+  prewarmDraws:0,prewarmQueue:[],disposed:false,suspended:false,errors:[],raf:0,manifest:null,threeRevision:THREE.REVISION,
+  lookMode:'MAINLINE_REFERENCE',cleanLook:null,contourOnly:null,frameStats:null};
 window.lookdev=app;
 let renderer,scene,camera,fill,sun,center,clamp,drag=null,lastTime=0,resizeObserver;
 const keys=new Set(),loader=new GLTFLoader();
@@ -28,6 +31,8 @@ function resize(){
   if(!renderer||app.disposed)return;
   const w=Math.max(1,viewport.clientWidth),h=Math.max(1,viewport.clientHeight);
   renderer.setPixelRatio(BASELINE.pixelRatio);renderer.setSize(w,h,false);updateCamera();
+  app.cleanLook?.resize(w,h);
+  app.contourOnly?.resize(w,h);
 }
 function updateCamera(){
   if(!camera||!app.manifest)return;
@@ -62,18 +67,43 @@ function applySettings(){
   shadow.camera.updateProjectionMatrix();shadow.bias=s.shadowBias;shadow.normalBias=s.shadowNormalBias;
   renderer.shadowMap.needsUpdate=true;
   // ENV follows source Mainline policy (all ENV meshes cast+receive).
-  app.environment?.root?.traverse(n=>{if(n.isMesh){n.castShadow=s.shadows;n.receiveShadow=s.shadows;}});
+  app.environment?.root?.traverse(n=>{if(n.isMesh){
+    n.castShadow=s.shadows&&!(app.lookMode!=='MAINLINE_REFERENCE'&&/^ENV_GROUND/.test(n.name))&&!n.userData.lookdevOutline;
+    n.receiveShadow=s.shadows&&!n.userData.lookdevOutline;
+  }});
   for(const a of app.assets)if(a.root)applyActorShadows(a.root,s.shadows);
+  app.cleanLook?.apply();
+  if(app.cleanLook)app.contourOnly?.setWidth(app.cleanLook.state.outlinePixels);
   $('ambient').value=s.ambientIntensity;$('ambientValue').value=s.ambientIntensity.toFixed(2);
   $('sun').value=s.sunIntensity;$('sunValue').value=s.sunIntensity.toFixed(2);
   $('exposure').value=s.exposure;$('exposureValue').value=s.exposure.toFixed(2);
   $('tone').value=s.tone;$('elevation').value=s.elevation;$('shadows').checked=s.shadows;
   $('bias').value=s.shadowBias;$('normalBias').value=s.shadowNormalBias;$('shadowSize').value=s.shadowMapSize;
+  $('sunAzimuth').value=Math.atan2(s.sunX,s.sunZ)*180/Math.PI;
+  $('sunElevation').value=Math.atan2(s.sunY,Math.hypot(s.sunX,s.sunZ))*180/Math.PI;
+  $('azimuthValue').value=Number($('sunAzimuth').value).toFixed(0)+'°';$('elevationValue').value=Number($('sunElevation').value).toFixed(0)+'°';
+  if(app.cleanLook){
+    $('worldSaturation').value=app.cleanLook.state.worldSaturation;$('saturationValue').value=app.cleanLook.state.worldSaturation.toFixed(2);
+    $('outlineWidth').value=app.cleanLook.state.outlinePixels;$('outlineValue').value=app.cleanLook.state.outlinePixels.toFixed(2)+'px';
+  }
+  $('worldSaturation').disabled=app.lookMode==='MAINLINE_REFERENCE';$('outlineWidth').disabled=!['CLEAN_OUTLINE','BLACK_OUTLINE_CONTOUR_ONLY'].includes(app.lookMode);
+  $('contourScope').disabled=app.lookMode!=='BLACK_OUTLINE_CONTOUR_ONLY';
+  for(const [id,mode] of [['baseline','MAINLINE_REFERENCE'],['candidatePlain','CLEAN_LOW_POLY'],['candidateOutline','CLEAN_OUTLINE'],['candidateContour','BLACK_OUTLINE_CONTOUR_ONLY']]){
+    $(id).classList.toggle('activeLook',app.lookMode===mode);$(id).setAttribute('aria-pressed',app.lookMode===mode);
+  }
   const baseline=Object.keys(BASELINE).every(k=>s[k]===BASELINE[k]);
-  $('baselineState').textContent=baseline?'MAINLINE BASELINE':'LOOKDEV EXPERIMENT';
+  $('baselineState').textContent=baseline&&app.lookMode==='MAINLINE_REFERENCE'?'MAINLINE BASELINE':
+    app.lookMode==='CLEAN_LOW_POLY'?'CLEAN LOW-POLY':app.lookMode==='CLEAN_OUTLINE'?'CLEAN LOW-POLY + BLACK OUTLINE':
+    app.lookMode==='BLACK_OUTLINE_CONTOUR_ONLY'?'BLACK OUTLINE CONTOUR ONLY':'LOOKDEV EXPERIMENT';
+  if(app.status==='READY')$('status').textContent=app.lookMode==='MAINLINE_REFERENCE'?'Mainline 기준 준비 완료 · ENC 필드':'Clean low-poly 후보 준비 완료 · ENC 필드';
   updateCamera();inspectSelection();
 }
-function resetBaseline(){Object.assign(app.settings,BASELINE);applySettings();}
+function setLookMode(mode){
+  if(!LOOK_MODES.includes(mode))throw Error('Unknown LookDev comparison');
+  app.lookMode=mode;Object.assign(app.settings,mode==='MAINLINE_REFERENCE'?BASELINE:CLEAN_SETTINGS);
+  app.cleanLook?.setMode(mode);applySettings();
+}
+function resetBaseline(){setLookMode('MAINLINE_REFERENCE');}
 function validateModel(root){
   root.updateMatrixWorld(true);const box=new THREE.Box3().setFromObject(root),size=box.getSize(new THREE.Vector3());
   if(!Number.isFinite(box.min.length()+box.max.length())||size.length()===0)throw Error('Nonfinite or empty geometry');
@@ -115,6 +145,7 @@ async function load(descriptor,isEnvironment=false){
       record.root=wrapper;applyActorShadows(wrapper);
     }
     record.validation=validateModel(record.root);record.status='READY';scene.add(record.root);
+    record.authoredNodeNames=(parsed.parser.json.nodes||[]).map(n=>n.name).filter(Boolean);
     record.animationNames=parsed.animations.map(a=>a.name);record.hashVerified=true;
   }catch(error){
     if(parsed)disposeRoot(parsed.scene);record.root=null;record.status='MISSING';record.error=error.message;
@@ -126,10 +157,15 @@ async function load(descriptor,isEnvironment=false){
 function selected(){return app.assets.find(a=>a.id===$('assetSelect').value);}
 function inspectSelection(){
   const a=selected();if(!a)return;
-  const flags={cast:0,receive:0};a.root?.traverse(n=>{if(n.isMesh){flags.cast+=Number(n.castShadow);flags.receive+=Number(n.receiveShadow);}});
+  const flags={cast:0,receive:0};a.root?.traverse(n=>{if(n.isMesh&&!n.userData.lookdevOutline){flags.cast+=Number(n.castShadow);flags.receive+=Number(n.receiveShadow);}});
+  const liveMaterials=new Map();a.root?.traverse(n=>{if(n.isMesh&&!n.userData.lookdevOutline)
+    for(const m of Array.isArray(n.material)?n.material:[n.material])if(m?.color)liveMaterials.set(m.id,m);});
+  $('wreck').disabled=app.lookMode==='MAINLINE_REFERENCE'||!a.root;$('wreck').checked=!!a.lookdevWreck;
   $('inspector').textContent=JSON.stringify({status:a.status,sourceRole:a.sourceRole,mainline:a.mainlineReference,
+    presentationState:a.lookdevWreck?'WRECK_COMPARE':'LIVE',lookMode:app.lookMode,
     scale:a.scale,groundOffset:a.groundOffset,basis:a.transformBasis,pivot:'authored local hierarchy retained',
-    materials:a.validation?.materials,meshes:a.validation?.meshes,normalMeshes:a.validation?.normals,
+    sourceMaterials:a.validation?.materials,currentMaterials:[...liveMaterials.values()].map(m=>({name:m.name,color:m.color.getHexString(),roughness:m.roughness,metalness:m.metalness})),
+    meshes:a.validation?.meshes,normalMeshes:a.validation?.normals,
     cast:flags.cast,receive:flags.receive,size:a.validation?.bounds.size,
     animationClips:a.animationNames,error:a.error},null,2);
 }
@@ -153,16 +189,27 @@ function focus(){
   const box=new THREE.Box3().setFromObject(a.root),point=box.getCenter(new THREE.Vector3());
   center.x=point.x;center.z=point.z;updateCamera();
 }
+function renderFrame(){
+  renderer.render(scene,camera);
+  const worldCalls=renderer.info.render.calls,worldTriangles=renderer.info.render.triangles;
+  const contour=app.lookMode==='BLACK_OUTLINE_CONTOUR_ONLY'&&app.contourOnly?
+    app.contourOnly.render(renderer,camera,$('assetSelect').value):{maskCalls:0,maskTriangles:0,compositeCalls:0,compositeTriangles:0};
+  // Three resets info on each render. Accumulate the actual world + mask + composite.
+  const totalCalls=worldCalls+contour.maskCalls+contour.compositeCalls;
+  const totalTriangles=worldTriangles+contour.maskTriangles+contour.compositeTriangles;
+  renderer.info.render.calls=totalCalls;renderer.info.render.triangles=totalTriangles;
+  app.frameStats={worldCalls,worldTriangles,...contour,totalCalls,totalTriangles};return app.frameStats;
+}
 function prepareOne(){
   const a=app.prewarmQueue.shift(),visible=a.root.visible,meshes=[];
   a.root.visible=true;a.root.traverse(n=>{if(n.isMesh){meshes.push([n,n.frustumCulled]);n.frustumCulled=false;}});
-  try{renderer.compile(scene,camera);renderer.render(scene,camera);if(app.status!=='FAILED'){a.gpuPrepared=true;app.prewarmDraws++;}}
+  try{renderer.compile(scene,camera);renderFrame();if(app.status!=='FAILED'){a.gpuPrepared=true;app.prewarmDraws++;}}
   finally{a.root.visible=visible;meshes.forEach(([n,v])=>n.frustumCulled=v);}
   if(app.status==='FAILED')return;
   $('status').textContent='GPU 준비 '+app.prewarmDraws+' / '+(app.assets.filter(a=>a.root).length+Number(!!app.environment.root));
   if(!app.prewarmQueue.length){
     app.status=app.errors.length?'DEGRADED':'READY';$('controls').disabled=false;
-    $('status').textContent=app.status==='READY'?'Mainline 기준 준비 완료 · ENC 필드':
+    $('status').textContent=app.status==='READY'?(app.lookMode==='MAINLINE_REFERENCE'?'Mainline 기준 준비 완료 · ENC 필드':'Clean low-poly 후보 준비 완료 · ENC 필드'):
       '일부 자산을 사용할 수 없습니다. 사용 가능한 모델은 계속 표시됩니다. '+app.errors.join(' / ');
     assetUI();
   }
@@ -173,19 +220,24 @@ function frame(time){
   if(keys.size){const speed=35/camera.zoom*dt;pan(((keys.has('d')||keys.has('ArrowRight'))?speed:0)-((keys.has('a')||keys.has('ArrowLeft'))?speed:0),
     ((keys.has('s')||keys.has('ArrowDown'))?speed:0)-((keys.has('w')||keys.has('ArrowUp'))?speed:0));}
   try{
-    if(app.status==='PREPARING')prepareOne();else renderer.render(scene,camera);
-    if(app.frames%15===0)$('metrics').textContent='r'+THREE.REVISION+' · '+renderer.info.render.calls+' draws · '+
+    if(app.status==='PREPARING')prepareOne();else renderFrame();
+    if(app.frames%15===0)$('metrics').textContent='r'+THREE.REVISION+' · '+renderer.info.render.calls+' color draws · '+
       Math.round(renderer.info.render.triangles/1000)+'k tris · '+camera.zoom.toFixed(2)+'×';
   }catch(e){fail(e.message);return;}
   if(app.status!=='FAILED')app.raf=requestAnimationFrame(frame);
 }
 function dispose(){
   if(app.disposed)return;app.disposed=true;cancelAnimationFrame(app.raf);resizeObserver?.disconnect();keys.clear();drag=null;
+  app.cleanLook?.dispose();
+  app.contourOnly?.dispose();
   for(const a of [app.environment,...app.assets])if(a?.root){scene.remove(a.root);disposeRoot(a.root);a.root=null;}
   sun?.shadow.dispose();renderer?.dispose();app.status='DISPOSED';
 }
 function controls(){
   $('baseline').onclick=resetBaseline;$('home').onclick=home;$('roster').onclick=roster;$('solo').onclick=solo;
+  $('candidatePlain').onclick=()=>setLookMode('CLEAN_LOW_POLY');$('candidateOutline').onclick=()=>setLookMode('CLEAN_OUTLINE');
+  $('candidateContour').onclick=()=>setLookMode('BLACK_OUTLINE_CONTOUR_ONLY');
+  $('contourScope').onchange=e=>{if(app.contourOnly)app.contourOnly.state.scope=e.target.value;};
   $('focus').onclick=focus;$('assetSelect').onchange=inspectSelection;
   $('zoom').oninput=e=>setZoom(Number(e.target.value));
   for(const [id,key] of [['ambient','ambientIntensity'],['sun','sunIntensity'],['exposure','exposure'],['bias','shadowBias'],['normalBias','shadowNormalBias'],['shadowSize','shadowMapSize'],['elevation','elevation']]){
@@ -193,6 +245,15 @@ function controls(){
   }
   $('tone').onchange=e=>{app.settings.tone=e.target.value;applySettings();};
   $('shadows').onchange=e=>{app.settings.shadows=e.target.checked;applySettings();};
+  for(const id of ['sunAzimuth','sunElevation'])$(id).oninput=()=>{
+    const az=Number($('sunAzimuth').value)*Math.PI/180,el=Number($('sunElevation').value)*Math.PI/180;
+    const distance=Math.hypot(app.settings.sunX,app.settings.sunY,app.settings.sunZ);
+    app.settings.sunX=Math.sin(az)*Math.cos(el)*distance;app.settings.sunY=Math.sin(el)*distance;
+    app.settings.sunZ=Math.cos(az)*Math.cos(el)*distance;applySettings();
+  };
+  $('worldSaturation').oninput=e=>{if(app.cleanLook){app.cleanLook.state.worldSaturation=Number(e.target.value);applySettings();}};
+  $('outlineWidth').oninput=e=>{if(app.cleanLook){app.cleanLook.state.outlinePixels=Number(e.target.value);applySettings();}};
+  $('wreck').onchange=e=>{const a=selected();if(a){a.lookdevWreck=e.target.checked;app.cleanLook?.apply();inspectSelection();}};
   canvas.addEventListener('wheel',e=>{e.preventDefault();setZoom(camera.zoom*Math.exp(-Math.max(-100,Math.min(100,e.deltaY))*0.001));},{passive:false});
   const ndc=e=>{const r=canvas.getBoundingClientRect();return [(e.clientX-r.left)/r.width*2-1,1-(e.clientY-r.top)/r.height*2];};
   canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;const p=groundAt(camera,...ndc(e));if(p){drag={point:p,id:e.pointerId};canvas.setPointerCapture(e.pointerId);canvas.style.cursor='grabbing';}});
@@ -222,7 +283,7 @@ async function start(){
     center={x:0,z:0};fill=new THREE.HemisphereLight();sun=new THREE.DirectionalLight();scene.add(fill,sun,sun.target);
     renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
     renderer.debug.onShaderError=()=>fail('GLB shader 준비에 실패했습니다.');
-    Object.assign(app,{renderer,scene,camera,center,pan,setZoom,resize,resetBaseline,focus,dispose,
+    Object.assign(app,{renderer,scene,camera,center,pan,setZoom,resize,resetBaseline,setLookMode,focus,dispose,renderFrame,
       footprint:()=>groundFootprint(camera),setElevation:value=>{app.settings.elevation=value;applySettings();}});
     home();applySettings();resize();controls();resizeObserver=new ResizeObserver(resize);resizeObserver.observe(viewport);
     app.raf=requestAnimationFrame(frame);
@@ -242,7 +303,11 @@ async function start(){
       $('status').textContent='모델 로딩 '+app.assets.length+' / '+app.manifest.actors.length;
     }
     app.assets.sort((a,b)=>app.manifest.actors.findIndex(m=>m.id===a.id)-app.manifest.actors.findIndex(m=>m.id===b.id));
-    assetUI();applySettings();app.prewarmQueue=[app.environment,...app.assets].filter(a=>a.root);app.status='PREPARING';
+    app.cleanLook=createCleanLook(app.environment,app.assets);app.cleanLook.resize(viewport.clientWidth,viewport.clientHeight);
+    app.contourOnly=createContourOnly(app.environment,app.assets);app.contourOnly.resize(viewport.clientWidth,viewport.clientHeight);
+    assetUI();const requested=new URLSearchParams(location.search).get('look');
+    setLookMode(requested==='contour-only'?'BLACK_OUTLINE_CONTOUR_ONLY':requested==='clean-outline'?'CLEAN_OUTLINE':requested==='clean'?'CLEAN_LOW_POLY':'MAINLINE_REFERENCE');
+    app.prewarmQueue=[app.environment,...app.assets].filter(a=>a.root);app.status='PREPARING';
   }catch(e){fail(e.message);}
 }
 start();
