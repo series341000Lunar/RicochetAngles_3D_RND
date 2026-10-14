@@ -1,0 +1,4968 @@
+{
+  "asset": "Stage1_CostalBattery / BOSS A Coastal Battery",
+  "class": "COASTAL_BATTERY",
+  "source_path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\MODEL\\Stage1_CostalBattery\\CoastalBattery_Master_v005.max",
+  "source_sha256": "b2eca1a898cc1ae6ba71c31eac6b10abd09e8ec2d33a4f6b383ec3d286a18569",
+  "source_timestamp_utc": "2026-10-09T13:20:20.5020000Z",
+  "source_authority": "Current live Max saved v005, dirty=false; user addendum declares Functional Master reviewed. New derivative approval not implied.",
+  "source_live_pid": 64104,
+  "source_nodes": 79,
+  "source_unit": "meters x1",
+  "source_root_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "pipeline": "Max2026.3.4 evaluated flat FBX -> Blender5.2.1 LTS -> glTF2 exporter -> actual reimport + Three.js r160 WebGL2",
+  "exporter_class": "MAX_FBX_TO_BLENDER_BRIDGE; Autodesk/Khronos Direct GLB NOT RUN",
+  "status": "PASS WITH CONDITIONS",
+  "technical_validation": "PASS",
+  "packaging": {
+    "SHARED": {
+      "file": "CoastalBattery_SHARED.glb",
+      "sha256": "52fd0f7de760bbb2a639e16df302369f586f7f466f0bb3e45cebad1c5d58d4dd",
+      "root": "COASTAL_BATTERY_ROOT",
+      "attach_to": "external asset-instance group, sibling of other component scenes",
+      "component_scene_local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "root_local_matrix_encoded_in_glb": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "semantic_nodes": [
+        {
+          "name": "COASTAL_BATTERY_ROOT",
+          "path_in_component": "COASTAL_BATTERY_ROOT",
+          "source_parent": null,
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "BATTERY_TURRET",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET",
+          "source_parent": "COASTAL_BATTERY_ROOT",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.799999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.799999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                2.799999952316284
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation_axis": null,
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "TURRET_ROTATION_DECK",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/TURRET_ROTATION_DECK",
+          "source_parent": "BATTERY_TURRET",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.799999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "ELEVATION_CRADLE",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE",
+          "source_parent": "BATTERY_TURRET",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.3500001430511475
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                3.049999952316284
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                1.3500001430511475
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              0.0,
+              0.0,
+              1.1920928955078125e-07
+            ],
+            "translation_axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "ELEVATION_CROSSHEAD",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/ELEVATION_CROSSHEAD",
+          "source_parent": "ELEVATION_CRADLE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RECOIL_CRADLE_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_A",
+          "source_parent": "ELEVATION_CRADLE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                1.100000023841858
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              -0.8499999046325684,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "RECOIL_SLEEVE_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_A/RECOIL_SLEEVE_A",
+          "source_parent": "RECOIL_CRADLE_A",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "BREECH_BLOCK_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_A/BREECH_BLOCK_A",
+          "source_parent": "RECOIL_CRADLE_A",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -1.399999976158142
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.649999976158142
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "BARREL_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_A/BARREL_A",
+          "source_parent": "RECOIL_CRADLE_A",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "MUZZLE_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_A/BARREL_A/MUZZLE_A",
+          "source_parent": "BARREL_A",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              11.269999504089355
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              14.31999945640564
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "BORE_SHADOW_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_A/BARREL_A/MUZZLE_A/BORE_SHADOW_A",
+          "source_parent": "MUZZLE_A",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -0.39999961853027344
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              13.919999837875366
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RECOIL_CRADLE_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_B",
+          "source_parent": "ELEVATION_CRADLE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -1.100000023841858
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              -0.8499999046325684,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "RECOIL_SLEEVE_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_B/RECOIL_SLEEVE_B",
+          "source_parent": "RECOIL_CRADLE_B",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "BREECH_BLOCK_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_B/BREECH_BLOCK_B",
+          "source_parent": "RECOIL_CRADLE_B",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -1.399999976158142
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.649999976158142
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "BARREL_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_B/BARREL_B",
+          "source_parent": "RECOIL_CRADLE_B",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "MUZZLE_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_B/BARREL_B/MUZZLE_B",
+          "source_parent": "BARREL_B",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              11.269999504089355
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              14.31999945640564
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "BORE_SHADOW_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/RECOIL_CRADLE_B/BARREL_B/MUZZLE_B/BORE_SHADOW_B",
+          "source_parent": "MUZZLE_B",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -0.39999961853027344
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              13.919999837875366
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "ELEVATION_TRUNNION_S",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/ELEVATION_TRUNNION_S",
+          "source_parent": "ELEVATION_CRADLE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -3.75
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -3.75
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "ELEVATION_TRUNNION_N",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/ELEVATION_CRADLE/ELEVATION_TRUNNION_N",
+          "source_parent": "ELEVATION_CRADLE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              3.75
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              3.049999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              3.75
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "GUNHOUSE",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/GUNHOUSE",
+          "source_parent": "BATTERY_TURRET",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.799999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "GUNHOUSE_PORT_LINER",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/GUNHOUSE/GUNHOUSE_PORT_LINER",
+          "source_parent": "GUNHOUSE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.799999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "READINESS_RAIL_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/READINESS_RAIL_A",
+          "source_parent": "BATTERY_TURRET",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              3.0200002193450928
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              5.820000171661377
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "READINESS_SLIDER_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/READINESS_RAIL_A/READINESS_SLIDER_A",
+          "source_parent": "READINESS_RAIL_A",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.029999732971191406
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              5.849999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.029999732971191406
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              1.600000023841858,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "SLIDER_INSERT_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/READINESS_RAIL_A/READINESS_SLIDER_A/SLIDER_INSERT_A",
+          "source_parent": "READINESS_SLIDER_A",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.570000171661377
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              6.420000076293945
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "READINESS_RAIL_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/READINESS_RAIL_B",
+          "source_parent": "BATTERY_TURRET",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              3.0200002193450928
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              5.820000171661377
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "READINESS_SLIDER_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/READINESS_RAIL_B/READINESS_SLIDER_B",
+          "source_parent": "READINESS_RAIL_B",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.029999732971191406
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              5.849999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.029999732971191406
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              1.600000023841858,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "SLIDER_INSERT_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/BATTERY_TURRET/READINESS_RAIL_B/READINESS_SLIDER_B/SLIDER_INSERT_B",
+          "source_parent": "READINESS_SLIDER_B",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.570000171661377
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              6.420000076293945
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "FORTIFICATION_BASE",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE",
+          "source_parent": "COASTAL_BATTERY_ROOT",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RELOAD_FOUNDATION",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_FOUNDATION",
+          "source_parent": "FORTIFICATION_BASE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.899999618530273
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.899999618530273
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RELOAD_ASSEMBLY_E",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E",
+          "source_parent": "FORTIFICATION_BASE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -8.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.299999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -8.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.299999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RAMMER_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E/RAMMER_A",
+          "source_parent": "RELOAD_ASSEMBLY_E",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.6999998092651367
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.8500001430511475
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -6.300000190734863
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                1.6999998092651367
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                1.8500001430511475
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                1.100000023841858
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              0.9000000953674316,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "RAMMER_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E/RAMMER_B",
+          "source_parent": "RELOAD_ASSEMBLY_E",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              1.6999998092651367
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.8500001430511475
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -6.300000190734863
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.150000095367432
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                1.6999998092651367
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                1.8500001430511475
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -1.100000023841858
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              0.0,
+              0.31999969482421875,
+              0.20000004768371582
+            ],
+            "translation_axis": [
+              0.0,
+              0.847998020046152,
+              0.529999394337207
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "TRANSFER_BLOCK",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E/TRANSFER_BLOCK",
+          "source_parent": "RELOAD_ASSEMBLY_E",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -0.05000019073486328
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.049999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -8.050000190734863
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.349999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "SERVICE_COVER",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E/SERVICE_COVER",
+          "source_parent": "RELOAD_ASSEMBLY_E",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -2.8999996185302734
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.450000047683716
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -10.899999618530273
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              4.75
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RELOAD_HOUSING",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E/RELOAD_HOUSING",
+          "source_parent": "RELOAD_ASSEMBLY_E",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -8.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.299999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RAMMER_TRACK_A",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E/RELOAD_HOUSING/RAMMER_TRACK_A",
+          "source_parent": "RELOAD_HOUSING",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -0.4499998092651367
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.4500000476837158
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -8.449999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              3.75
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RAMMER_TRACK_B",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E/RELOAD_HOUSING/RAMMER_TRACK_B",
+          "source_parent": "RELOAD_HOUSING",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -0.4499998092651367
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.4500000476837158
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -8.449999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              3.75
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "RELOAD_END_HOUSING",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/RELOAD_ASSEMBLY_E/RELOAD_HOUSING/RELOAD_END_HOUSING",
+          "source_parent": "RELOAD_HOUSING",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -4.300000190734863
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -12.300000190734863
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.299999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "CONCRETE_CASEMATE",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/CONCRETE_CASEMATE",
+          "source_parent": "FORTIFICATION_BASE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "CASEMATE_TOP_APRON",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/CONCRETE_CASEMATE/CASEMATE_TOP_APRON",
+          "source_parent": "CONCRETE_CASEMATE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "CASEMATE_BUTTRESS_01",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/CONCRETE_CASEMATE/CASEMATE_BUTTRESS_01",
+          "source_parent": "CONCRETE_CASEMATE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              7.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              4.349999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              7.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              4.349999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "CASEMATE_BUTTRESS_02",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/CONCRETE_CASEMATE/CASEMATE_BUTTRESS_02",
+          "source_parent": "CONCRETE_CASEMATE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              7.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -4.349999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              7.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -4.349999904632568
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "CASEMATE_BUTTRESS_03",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/CONCRETE_CASEMATE/CASEMATE_BUTTRESS_03",
+          "source_parent": "CONCRETE_CASEMATE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              7.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              7.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "CASEMATE_BUTTRESS_04",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/CONCRETE_CASEMATE/CASEMATE_BUTTRESS_04",
+          "source_parent": "CONCRETE_CASEMATE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "CASEMATE_BUTTRESS_05",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/CONCRETE_CASEMATE/CASEMATE_BUTTRESS_05",
+          "source_parent": "CONCRETE_CASEMATE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -4.949749946594238
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              4.949749946594238
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -4.949749946594238
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              4.949749946594238
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "CASEMATE_EMBRASURE_LOUVERS",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/CONCRETE_CASEMATE/CASEMATE_EMBRASURE_LOUVERS",
+          "source_parent": "CONCRETE_CASEMATE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "ARMORED_BARBETTE",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/ARMORED_BARBETTE",
+          "source_parent": "FORTIFICATION_BASE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "BARBETTE_UPPER_RING",
+          "path_in_component": "COASTAL_BATTERY_ROOT/FORTIFICATION_BASE/ARMORED_BARBETTE/BARBETTE_UPPER_RING",
+          "source_parent": "ARMORED_BARBETTE",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        }
+      ]
+    },
+    "COUPLER_N": {
+      "file": "CoastalBattery_COUPLER_N.glb",
+      "sha256": "1ab679c6a16c4355b20e484a1910d3b549fff7e227215423b23d6748f115c97d",
+      "root": "COUPLER_ASSEMBLY_N",
+      "attach_to": "external asset-instance group, sibling of other component scenes",
+      "component_scene_local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "root_local_matrix_encoded_in_glb": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -9.949999809265137
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.350000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -7.510000228881836
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "semantic_nodes": [
+        {
+          "name": "COUPLER_ASSEMBLY_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N",
+          "source_parent": null,
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_TRACK_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/COUPLER_TRACK_N",
+          "source_parent": "COUPLER_ASSEMBLY_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_HOOD_L_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/COUPLER_HOOD_L_N",
+          "source_parent": "COUPLER_ASSEMBLY_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              2.2679996490478516
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.44999992847442627
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -7.682000160217285
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.7999999523162842
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                2.2679996490478516
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.44999992847442627
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              3.7100000381469727,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "COUPLER_HOOD_R_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/COUPLER_HOOD_R_N",
+          "source_parent": "COUPLER_ASSEMBLY_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -2.2679996490478516
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.44999992847442627
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -12.217999458312988
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.7999999523162842
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                -2.2679996490478516
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.44999992847442627
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              -3.710000991821289,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "COUPLER_RING_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/COUPLER_RING_N",
+          "source_parent": "COUPLER_ASSEMBLY_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_CARRIAGE_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/COUPLER_CARRIAGE_N",
+          "source_parent": "COUPLER_ASSEMBLY_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.2999999523162842
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.649999976158142
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.2999999523162842
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              -1.0500001907348633,
+              0.0,
+              -1.0500001907348633
+            ],
+            "translation_axis": [
+              -0.7071067811865476,
+              0.0,
+              -0.7071067811865476
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "COUPLER_COLLAR_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/COUPLER_CARRIAGE_N/COUPLER_COLLAR_N",
+          "source_parent": "COUPLER_CARRIAGE_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.5000001192092896
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.1500000953674316
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_GEAR_TEETH_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/COUPLER_CARRIAGE_N/COUPLER_COLLAR_N/COUPLER_GEAR_TEETH_N",
+          "source_parent": "COUPLER_COLLAR_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.1500000953674316
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_FOUNDATION_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/COUPLER_FOUNDATION_N",
+          "source_parent": "COUPLER_ASSEMBLY_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -7.510000228881836
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "SERVICE_TRUNK_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/SERVICE_TRUNK_N",
+          "source_parent": "COUPLER_ASSEMBLY_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -1.787520408630371
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -2.8450794219970703
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -11.737520217895508
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -10.355079650878906
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "TRUNK_ARMORED_LID_N",
+          "path_in_component": "COUPLER_ASSEMBLY_N/SERVICE_TRUNK_N/TRUNK_ARMORED_LID_N",
+          "source_parent": "SERVICE_TRUNK_N",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.25
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -11.737520217895508
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.25
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -10.355079650878906
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        }
+      ]
+    },
+    "COUPLER_S": {
+      "file": "CoastalBattery_COUPLER_S.glb",
+      "sha256": "f6b7294c35087cf8d55b24b2934366835bf7f6463a5288e7f93c49c70bc6180c",
+      "root": "COUPLER_ASSEMBLY_S",
+      "attach_to": "external asset-instance group, sibling of other component scenes",
+      "component_scene_local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "root_local_matrix_encoded_in_glb": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -9.949999809265137
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          1.350000023841858
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -32.48999786376953
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "semantic_nodes": [
+        {
+          "name": "COUPLER_ASSEMBLY_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S",
+          "source_parent": null,
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_TRACK_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/COUPLER_TRACK_S",
+          "source_parent": "COUPLER_ASSEMBLY_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_HOOD_L_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/COUPLER_HOOD_L_S",
+          "source_parent": "COUPLER_ASSEMBLY_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              2.2679996490478516
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.44999992847442627
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -7.682000160217285
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.7999999523162842
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                2.2679996490478516
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.44999992847442627
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              3.7100000381469727,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "COUPLER_HOOD_R_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/COUPLER_HOOD_R_S",
+          "source_parent": "COUPLER_ASSEMBLY_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -2.2679996490478516
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.44999992847442627
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -12.217999458312988
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.7999999523162842
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                -2.2679996490478516
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.44999992847442627
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              -3.710000991821289,
+              0.0,
+              0.0
+            ],
+            "translation_axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "COUPLER_RING_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/COUPLER_RING_S",
+          "source_parent": "COUPLER_ASSEMBLY_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_CARRIAGE_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/COUPLER_CARRIAGE_S",
+          "source_parent": "COUPLER_ASSEMBLY_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.2999999523162842
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.649999976158142
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": {
+            "neutral_local_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.2999999523162842
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "sampled_translation_delta": [
+              -1.0500001907348633,
+              0.0,
+              1.0499992370605469
+            ],
+            "translation_axis": [
+              -0.7071071023054079,
+              0.0,
+              0.7071064600675413
+            ],
+            "rotation_authority": "exact source local rotation matrices; RAMMER_B/OFFLINE are coupled TRS, not assumed single-axis"
+          }
+        },
+        {
+          "name": "COUPLER_COLLAR_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/COUPLER_CARRIAGE_S/COUPLER_COLLAR_S",
+          "source_parent": "COUPLER_CARRIAGE_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.5000001192092896
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.1500000953674316
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_GEAR_TEETH_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/COUPLER_CARRIAGE_S/COUPLER_COLLAR_S/COUPLER_GEAR_TEETH_S",
+          "source_parent": "COUPLER_COLLAR_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              2.1500000953674316
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "COUPLER_FOUNDATION_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/COUPLER_FOUNDATION_S",
+          "source_parent": "COUPLER_ASSEMBLY_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -9.949999809265137
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -32.48999786376953
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "SERVICE_TRUNK_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/SERVICE_TRUNK_S",
+          "source_parent": "COUPLER_ASSEMBLY_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -1.787520408630371
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -1.350000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              2.8450794219970703
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -11.737520217895508
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -29.64491844177246
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        },
+        {
+          "name": "TRUNK_ARMORED_LID_S",
+          "path_in_component": "COUPLER_ASSEMBLY_S/SERVICE_TRUNK_S/TRUNK_ARMORED_LID_S",
+          "source_parent": "SERVICE_TRUNK_S",
+          "GLB_neutral_local_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.25
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "GLB_neutral_world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              -11.737520217895508
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              1.25
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -29.64491844177246
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "motion_authority": null
+        }
+      ]
+    }
+  },
+  "basis_max_to_glb": [
+    [
+      -1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "units": "meter +X neutral forward +Y up",
+  "composition": "Identity attachment of selected GLTF component scenes under same instance group. Preserve encoded root offsets; qualified lookups. No runtime hierarchy recovery.",
+  "placement_condition": "S handed kit preserves source offsets; second main battery world placement is P6-owned",
+  "neutral_frame": 0,
+  "animation": {
+    "master": "original keys/expressions/references preserved",
+    "production_glb_clips": 0,
+    "reference": "separate .blend:53 actual Max-evaluated samples,0-260f step5,30fps",
+    "inter_sample": "UNVERIFIED approximation",
+    "validation_animated_GLB": "NOT CREATED optional"
+  },
+  "material": "source IDs1-4 -> concrete/armor/mechanical/accent; source diffuse sRGB -> linear; roughness=1-glossiness; no textures",
+  "files": [
+    {
+      "kind": "STATIC_PRODUCTION_TARGET_CANDIDATE",
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Stage1_CostalBattery\\export\\CoastalBattery_SHARED.glb",
+      "filename": "CoastalBattery_SHARED.glb",
+      "sha256": "52fd0f7de760bbb2a639e16df302369f586f7f466f0bb3e45cebad1c5d58d4dd",
+      "bytes": 202656,
+      "nodes": 48,
+      "meshes": 42,
+      "triangles": 4072,
+      "materials": 4,
+      "animations": 0
+    },
+    {
+      "kind": "STATIC_PRODUCTION_TARGET_CANDIDATE",
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Stage1_CostalBattery\\export\\CoastalBattery_COUPLER_N.glb",
+      "filename": "CoastalBattery_COUPLER_N.glb",
+      "sha256": "1ab679c6a16c4355b20e484a1910d3b549fff7e227215423b23d6748f115c97d",
+      "bytes": 71212,
+      "nodes": 11,
+      "meshes": 10,
+      "triangles": 1336,
+      "materials": 3,
+      "animations": 0
+    },
+    {
+      "kind": "STATIC_PRODUCTION_TARGET_CANDIDATE",
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Stage1_CostalBattery\\export\\CoastalBattery_COUPLER_S.glb",
+      "filename": "CoastalBattery_COUPLER_S.glb",
+      "sha256": "f6b7294c35087cf8d55b24b2934366835bf7f6463a5288e7f93c49c70bc6180c",
+      "bytes": 71208,
+      "nodes": 11,
+      "meshes": 10,
+      "triangles": 1336,
+      "materials": 3,
+      "animations": 0
+    },
+    {
+      "kind": "EDITABLE_STATIC_BRIDGE",
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Stage1_CostalBattery\\source\\CoastalBattery_GLB_BRIDGE.blend",
+      "filename": "CoastalBattery_GLB_BRIDGE.blend",
+      "sha256": "627c6c00eba227258e72f2e3f4fff22ae22489d32834482f2b9f0dbc9a4bd23a",
+      "bytes": 180578
+    },
+    {
+      "kind": "SAMPLED_REFERENCE_NOT_RUNTIME",
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Stage1_CostalBattery\\source\\CoastalBattery_ANIM_REFERENCE.blend",
+      "filename": "CoastalBattery_ANIM_REFERENCE.blend",
+      "sha256": "c665caaa6b4da2af46eeff2f968aa54e101f6e3a87a644aba35e8aebf4ba6197",
+      "bytes": 243638
+    }
+  ],
+  "excluded": [
+    {
+      "name": "Plane001",
+      "layer": "CB_REF_User",
+      "class": "Editable_Poly",
+      "parent": null
+    },
+    {
+      "name": "Cylinder001",
+      "layer": "CB_REF_User",
+      "class": "Editable_Poly",
+      "parent": null
+    },
+    {
+      "name": "Box001",
+      "layer": "CB_REF_User",
+      "class": "Editable_Poly",
+      "parent": null
+    },
+    {
+      "name": "REVIEW_HERO_ISO",
+      "layer": "CB_ReviewCameras",
+      "class": "Freecamera",
+      "parent": null
+    },
+    {
+      "name": "REVIEW_TOP",
+      "layer": "CB_ReviewCameras",
+      "class": "Freecamera",
+      "parent": null
+    },
+    {
+      "name": "REVIEW_FRONT_WEST",
+      "layer": "CB_ReviewCameras",
+      "class": "Freecamera",
+      "parent": null
+    },
+    {
+      "name": "REVIEW_SIDE_SOUTH",
+      "layer": "CB_ReviewCameras",
+      "class": "Freecamera",
+      "parent": null
+    },
+    {
+      "name": "REVIEW_GAMEPLAY_75",
+      "layer": "CB_ReviewCameras",
+      "class": "Freecamera",
+      "parent": null
+    },
+    {
+      "name": "COUPLER_MIRROR_PLANE",
+      "layer": "COUPLER_S",
+      "class": "Point",
+      "parent": null
+    }
+  ],
+  "limitations": [
+    "57 original source files SHA256 preserved; live Max sequence6155 unchanged",
+    "15 inherited zero-area triangulation faces retained, undefined source zero normals excluded from angle measurement",
+    "v005 source-log-reported interference retained, NOT REMEASURED in this job",
+    "S handed kit preserves source offsets; second main battery world placement is P6-owned",
+    "full-angle/stroke clearance UNVERIFIED",
+    "reference animation53 sampled poses is not native Max controller preservation in Blender; inter-sample motion UNVERIFIED",
+    "final derivative user visual review REQUIRED",
+    "production H5E/P6/registry/Unity/gameplay integration NOT STARTED"
+  ],
+  "P6": "NOT STARTED"
+}

@@ -19,6 +19,27 @@ Offline Three.js runtime and its license remain tracked under `spike/vendor/`.
 See [repository baseline](Docs/GIT_BASELINE_20260921.md) and
 [upstream reference policy](Docs/UPSTREAM_REFERENCE.md).
 
+## Global LookDev (2026-10-14)
+
+`Launch_Global_LookDev.bat` opens the independent Stage 1 LookDev field at
+`http://127.0.0.1:8765/lookdev/`. It reuses the existing local server and vendored
+Three r160. Original model/game-language/DCC launch paths remain available.
+Drag or WASD/arrows to pan; wheel/slider to zoom; Home to return to the field.
+The full ground-projected viewport is clamped to the canonical ENC region.
+Mainline baseline reset restores lighting, shadows, tone, color and camera angle.
+Model visibility, inspection and Solo allow comparison without a scene editor.
+
+Fresh-clone asset injection: `node tools/audit-lookdev-assets.mjs`, then
+`node tools/prepare-lookdev.mjs` on a machine with the read-only NAS sources and
+Mainline reference. Production GLBs remain ignored/local-only; source/hash/URL
+mapping is in `lookdev/manifest.json`. See
+[comparison and provenance](Docs/GLOBAL_LOOKDEV_COMPARISON_20261014.md) and
+[implementation/validation report](Docs/GLOBAL_LOOKDEV_REPORT_20261014.md).
+
+Future primary DCC authoring direction: **Autodesk 3ds Max**. Keep the existing
+Blender bridge and its current development/test target. A 3ds Max bridge,
+importer/exporter, MCP connection or DCC UI redesign is outside this task.
+
 The original R&D history follows unchanged.
 
 ---

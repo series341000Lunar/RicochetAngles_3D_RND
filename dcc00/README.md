@@ -3,6 +3,11 @@
 **기술 검증 PASS / 사용자 UX Gate PENDING.** 이 도구는 R&D authoring frontend이며
 HTML gameplay, H5E, Unity, 장기 spatial source of truth의 권한을 갖지 않습니다.
 
+2026-10-14 향후 방향: PRIMARY DCC DIRECTION = **Autodesk 3ds Max**.
+EXISTING BLENDER BRIDGE = **KEEP**. 아래 Blender 구현·개발/검증 대상은 유지합니다.
+3DS MAX BRIDGE IMPLEMENTATION = **NOT IN THIS TASK**; importer/exporter,
+MCP 연결, 변환 시스템 및 DCC UI 변경은 수행하지 않습니다.
+
 ## 시작
 
 저장소 루트의 `Launch_DCC00_Authoring.bat`를 실행합니다. 설치된 최신 Blender 5.2.x LTS

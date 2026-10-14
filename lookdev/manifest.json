@@ -1,0 +1,1331 @@
+{
+  "schema": "ra-global-lookdev-v1",
+  "referenceDate": "2026-10-14",
+  "pixelsPerMeter": 14,
+  "reference": {
+    "root": "C:\\Users\\LunarGagarin\\Documents\\Topdown Tank",
+    "map": "maps/H5E_PILOT_MAP_PASS2_14W_v0.1.json",
+    "renderer": "src/unified-world.js",
+    "lighting": "src/hybrid-environment.js",
+    "actors": "src/hybrid-player.js"
+  },
+  "field": {
+    "minX": 640,
+    "maxX": 731.4285714285714,
+    "minZ": 0,
+    "maxZ": 102.85714285714286,
+    "sourceZone": "ENC_01"
+  },
+  "environment": {
+    "id": "8eb88f8312e183e1",
+    "label": "Stage 1 static world",
+    "url": "./assets/8eb88f8312e183e1.glb",
+    "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\ENV\\Stage1\\glb\\Stage1_StaticWorld_RND_v01.glb",
+    "bytes": 1757008,
+    "sha256": "8eb88f8312e183e14c476b9c60248e70107d44b7016715875cc04738ec0ddee2",
+    "sourceBounds": {
+      "min": [
+        -80,
+        -0.8209180401617573,
+        -51
+      ],
+      "max": [
+        1320,
+        15.452693939208984,
+        154
+      ],
+      "size": [
+        1400,
+        16.27361197937074,
+        205
+      ]
+    },
+    "mainlineReference": "assets/environment/stage1/Stage1_StaticWorld_RND_v01.glb",
+    "scale": 1,
+    "groundOffset": 0,
+    "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+    "sourceRole": "CURRENT_MAINLINE_ENV_EXACT_BYTES",
+    "coastal": false,
+    "animations": [],
+    "visible": false,
+    "aliases": [
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\ENV\\Stage1\\glb\\Stage1_StaticWorld_RND_v01.glb",
+      "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\ENV\\Stage1\\glb\\validation_RND_v01\\Stage1_STATIC_REPRODUCTION.glb"
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  "actors": [
+    {
+      "id": "a7794709a89de65a",
+      "label": "75mm_PAK_40 / export / 75mm_PAK_40_RND_v01.glb",
+      "url": "./assets/a7794709a89de65a.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\75mm_PAK_40\\export\\75mm_PAK_40_RND_v01.glb",
+      "bytes": 329276,
+      "sha256": "a7794709a89de65aa6f249dc90d2f1fcfbf8ed75a398cd6d6ecb260cdef9dcd4",
+      "sourceBounds": {
+        "min": [
+          -2.319999933242798,
+          0,
+          -1.2699999809265137
+        ],
+        "max": [
+          3.0199999809265137,
+          1.600000023841858,
+          1.2699999809265137
+        ],
+        "size": [
+          5.3399999141693115,
+          1.600000023841858,
+          2.5399999618530273
+        ]
+      },
+      "mainlineReference": "assets/models/at/GE_Pak40/75mm_PAK_40_RND_v01.glb",
+      "scale": 1.25,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\75mm_PAK_40\\export\\75mm_PAK_40_RND_v01.glb"
+      ],
+      "position": [
+        652,
+        0,
+        30
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "c6593c84fa17c03f",
+      "label": "88mm_PAK_43 / export / 88mm_PAK_43_RND_v01.glb",
+      "url": "./assets/c6593c84fa17c03f.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\88mm_PAK_43\\export\\88mm_PAK_43_RND_v01.glb",
+      "bytes": 1471012,
+      "sha256": "c6593c84fa17c03f537ab1b79fa7f1471b36dc0140fa49ad00c5887004080b5a",
+      "sourceBounds": {
+        "min": [
+          -3.6050002574920654,
+          0.0005001389072276652,
+          -1.915000319480896
+        ],
+        "max": [
+          4.133000463247299,
+          2.2405238151550293,
+          1.9149997234344482
+        ],
+        "size": [
+          7.738000720739365,
+          2.2400236762478016,
+          3.8300000429153442
+        ]
+      },
+      "mainlineReference": "assets/models/at/GE_Pak43/88mm_PAK_43_RND_v01.glb",
+      "scale": 1.4285714285714286,
+      "groundOffset": -0.0007144841531823788,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\88mm_PAK_43\\export\\88mm_PAK_43_RND_v01.glb"
+      ],
+      "position": [
+        668,
+        0,
+        30
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "6c3ecaf3e08de99b",
+      "label": "ATGun_Traverse / export / ATGun_Traverse_RND_v02.glb",
+      "url": "./assets/6c3ecaf3e08de99b.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\ATGun_Traverse\\export\\ATGun_Traverse_RND_v02.glb",
+      "bytes": 2189108,
+      "sha256": "6c3ecaf3e08de99ba40d8eed007e721ebbf203fba4f97c3387c7b5254b43afe5",
+      "sourceBounds": {
+        "min": [
+          -0.9132331609725952,
+          -2.9286630898184285e-9,
+          -0.9399999976158142
+        ],
+        "max": [
+          2.5400002002716064,
+          1.8370710611343384,
+          0.9399999976158142
+        ],
+        "size": [
+          3.4532333612442017,
+          1.8370710640630015,
+          1.8799999952316284
+        ]
+      },
+      "mainlineReference": "assets/models/at/GE_PakTraverse/ATGun_Traverse_RND_v02.glb",
+      "scale": 1.1428571428571428,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\ATGun_Traverse\\export\\ATGun_Traverse_RND_v02.glb"
+      ],
+      "position": [
+        684,
+        0,
+        30
+      ],
+      "yaw": 50
+    },
+    {
+      "id": "f83da00d98b47d31",
+      "label": "LV_GEHalfTrack / export / LV_GEHalfTrack_RND_v01.glb",
+      "url": "./assets/f83da00d98b47d31.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\LV_GEHalfTrack\\export\\LV_GEHalfTrack_RND_v01.glb",
+      "bytes": 1355528,
+      "sha256": "f83da00d98b47d31a1c514750c1ea972fc044fc7f5b604347f04ad7a585e314b",
+      "sourceBounds": {
+        "min": [
+          -2.5205178260803223,
+          0.006999969482421875,
+          -1.2899998426437378
+        ],
+        "max": [
+          2.6382174491882324,
+          2.805000066757202,
+          1.2900002002716064
+        ],
+        "size": [
+          5.158735275268555,
+          2.7980000972747803,
+          2.5800000429153442
+        ]
+      },
+      "mainlineReference": "assets/models/lightvehicle/GE_Halftrack/LV_GEHalfTrack_RND_v01.glb",
+      "scale": 1,
+      "groundOffset": -0.006999969482421875,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\LV_GEHalfTrack\\export\\LV_GEHalfTrack_RND_v01.glb"
+      ],
+      "position": [
+        700,
+        0,
+        30
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "27d1c3a84c663f66",
+      "label": "LV_Kubelwagen / export / LV_Kubelwagen_RND_v01.glb",
+      "url": "./assets/27d1c3a84c663f66.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\LV_Kubelwagen\\export\\LV_Kubelwagen_RND_v01.glb",
+      "bytes": 832376,
+      "sha256": "27d1c3a84c663f6681eb15b018d6abc4558c1672a55a63c64fa46998009602f6",
+      "sourceBounds": {
+        "min": [
+          -1.7999999523162842,
+          9.220093488693237e-8,
+          -1.0080000162124634
+        ],
+        "max": [
+          1.725000023841858,
+          1.8560000387951732,
+          1.0080000162124634
+        ],
+        "size": [
+          3.524999976158142,
+          1.8559999465942383,
+          2.0160000324249268
+        ]
+      },
+      "mainlineReference": "assets/models/lightvehicle/GE_Kubelwagen/LV_Kubelwagen_RND_v01.glb",
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\LV_Kubelwagen\\export\\LV_Kubelwagen_RND_v01.glb"
+      ],
+      "position": [
+        716,
+        0,
+        30
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "3f54488e2e46fe7e",
+      "label": "M41 / export / M41_RND_v01.glb",
+      "url": "./assets/3f54488e2e46fe7e.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\M41\\export\\M41_RND_v01.glb",
+      "bytes": 866348,
+      "sha256": "3f54488e2e46fe7e7f99552e7cc4fc472e6c0d6ef2a938119d9fad422fbca666",
+      "sourceBounds": {
+        "min": [
+          -2.3900002017617226,
+          0.0729999989271164,
+          -1.4250000715255737
+        ],
+        "max": [
+          3.8700000271201134,
+          3.542999744415283,
+          1.4250000715255737
+        ],
+        "size": [
+          6.260000228881836,
+          3.469999745488167,
+          2.8500001430511475
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": -0.0729999989271164,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\M41\\export\\M41_RND_v01.glb"
+      ],
+      "position": [
+        652,
+        0,
+        30
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "985dd03f5aaf8355",
+      "label": "M41 / export / M41_RND_v02_muzzle.glb",
+      "url": "./assets/985dd03f5aaf8355.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\M41\\export\\M41_RND_v02_muzzle.glb",
+      "bytes": 866420,
+      "sha256": "985dd03f5aaf8355ee4c186032dff2ff35faa783cb3ce39931ab86efc77f90ea",
+      "sourceBounds": {
+        "min": [
+          -2.3900002017617226,
+          0.0729999989271164,
+          -1.4250000715255737
+        ],
+        "max": [
+          3.8700000271201134,
+          3.542999744415283,
+          1.4250000715255737
+        ],
+        "size": [
+          6.260000228881836,
+          3.469999745488167,
+          2.8500001430511475
+        ]
+      },
+      "mainlineReference": "assets/models/tank/reference/US_M41/M41_RND_v02_muzzle.glb",
+      "scale": 1,
+      "groundOffset": -0.0729999989271164,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "MAINLINE_FILE_EXACT_BYTES / no active descriptor",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\M41\\export\\M41_RND_v02_muzzle.glb"
+      ],
+      "position": [
+        652,
+        0,
+        46
+      ],
+      "yaw": 50
+    },
+    {
+      "id": "925abbd718459b1e",
+      "label": "M4A3E2 / export / M4A3E2_RND_v01.glb",
+      "url": "./assets/925abbd718459b1e.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\M4A3E2\\export\\M4A3E2_RND_v01.glb",
+      "bytes": 983520,
+      "sha256": "925abbd718459b1e9a93316f3a5e27429b285640e1dc780ea0cdee93a202a9de",
+      "sourceBounds": {
+        "min": [
+          -3.083815813064575,
+          0,
+          -1.7400000095367432
+        ],
+        "max": [
+          4.139999866485596,
+          4.002500057220459,
+          1.7400000095367432
+        ],
+        "size": [
+          7.223815679550171,
+          4.002500057220459,
+          3.4800000190734863
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\M4A3E2\\export\\M4A3E2_RND_v01.glb"
+      ],
+      "position": [
+        668,
+        0,
+        46
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "839beace5f7c00db",
+      "label": "M4A3E8 / export / M4A3E8_RND_v01.glb",
+      "url": "./assets/839beace5f7c00db.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\M4A3E8\\export\\M4A3E8_RND_v01.glb",
+      "bytes": 1013384,
+      "sha256": "839beace5f7c00dba48387cc85e577b4951a81b7377f0bb3544bd31e03d198a7",
+      "sourceBounds": {
+        "min": [
+          -3.083815813064575,
+          0,
+          -1.7400000095367432
+        ],
+        "max": [
+          4.139999866485596,
+          4.002500057220459,
+          1.7400000095367432
+        ],
+        "size": [
+          7.223815679550171,
+          4.002500057220459,
+          3.4800000190734863
+        ]
+      },
+      "mainlineReference": "assets/models/tank/US_M4A3E8/M4A3E8_RND_v01.glb",
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\M4A3E8\\export\\M4A3E8_RND_v01.glb"
+      ],
+      "position": [
+        684,
+        0,
+        46
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "5a2a4a8198439c5a",
+      "label": "Panzer3 / export / Panzer3_RND_v01.glb",
+      "url": "./assets/5a2a4a8198439c5a.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer3\\export\\Panzer3_RND_v01.glb",
+      "bytes": 337372,
+      "sha256": "5a2a4a8198439c5ad6e8ebee074165dcd1b6bfa5aa583ba38bb5feaf61bda07f",
+      "sourceBounds": {
+        "min": [
+          -2.320000171661377,
+          0.18000000715255737,
+          -1.6400001049041748
+        ],
+        "max": [
+          2.320000171661377,
+          3.1000001430511475,
+          1.6400001049041748
+        ],
+        "size": [
+          4.640000343322754,
+          2.92000013589859,
+          3.2800002098083496
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": -0.18000000715255737,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer3\\export\\Panzer3_RND_v01.glb"
+      ],
+      "position": [
+        668,
+        0,
+        30
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "a19801d1fb9d4558",
+      "label": "Panzer3 / export / Panzer3_RND_v02.glb",
+      "url": "./assets/a19801d1fb9d4558.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer3\\export\\Panzer3_RND_v02.glb",
+      "bytes": 346000,
+      "sha256": "a19801d1fb9d455871d4fbe1bc23e7f87493a37928239992eea927b30fe41be9",
+      "sourceBounds": {
+        "min": [
+          -2.236114501953125,
+          0.14499999582767487,
+          -1.6400001049041748
+        ],
+        "max": [
+          2.2904999181628227,
+          3.1000001430511475,
+          1.6400001049041748
+        ],
+        "size": [
+          4.526614420115948,
+          2.9550001472234726,
+          3.2800002098083496
+        ]
+      },
+      "mainlineReference": "assets/models/tank/GE_Panzer3/Panzer3_RND_v02.glb",
+      "scale": 1,
+      "groundOffset": -0.145,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer3\\export\\Panzer3_RND_v02.glb"
+      ],
+      "position": [
+        700,
+        0,
+        46
+      ],
+      "yaw": 50
+    },
+    {
+      "id": "46740441f423449e",
+      "label": "Panzer4 / bridge / Panzer4.glb",
+      "url": "./assets/46740441f423449e.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\bridge\\Panzer4.glb",
+      "bytes": 1573248,
+      "sha256": "46740441f423449e74d659e710188896fda4c129bd88643df3fd13953fab9a94",
+      "sourceBounds": {
+        "min": [
+          -2.3499999046325684,
+          -3.725290298461914e-8,
+          -1.5699999332427979
+        ],
+        "max": [
+          2.9540000334382057,
+          2.56499981880188,
+          1.5699999332427979
+        ],
+        "size": [
+          5.303999938070774,
+          2.564999856054783,
+          3.1399998664855957
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 3.725290298461914e-8,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\bridge\\Panzer4.glb"
+      ],
+      "position": [
+        684,
+        0,
+        30
+      ],
+      "yaw": 50
+    },
+    {
+      "id": "c0e2d05df011b196",
+      "label": "Panzer4 / bridge / Panzer4_v002.glb",
+      "url": "./assets/c0e2d05df011b196.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\bridge\\Panzer4_v002.glb",
+      "bytes": 1573272,
+      "sha256": "c0e2d05df011b196f127b2086955c79f0421a0e609f9aad1d6216420b2b2f71b",
+      "sourceBounds": {
+        "min": [
+          -2.3499999046325684,
+          -3.725290298461914e-8,
+          -1.5699999332427979
+        ],
+        "max": [
+          2.9540000334382057,
+          2.56499981880188,
+          1.5699999332427979
+        ],
+        "size": [
+          5.303999938070774,
+          2.564999856054783,
+          3.1399998664855957
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 3.725290298461914e-8,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\bridge\\Panzer4_v002.glb"
+      ],
+      "position": [
+        700,
+        0,
+        30
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "7e3f885547f4f5f9",
+      "label": "Panzer4 / bridge / Panzer4_v003.glb",
+      "url": "./assets/7e3f885547f4f5f9.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\bridge\\Panzer4_v003.glb",
+      "bytes": 2061560,
+      "sha256": "7e3f885547f4f5f944e183ac83b783b28f8521dbd3bc28430504712a158c4288",
+      "sourceBounds": {
+        "min": [
+          -2.3499999046325684,
+          -3.725290298461914e-8,
+          -1.5699999332427979
+        ],
+        "max": [
+          2.9540000334382057,
+          2.56499981880188,
+          1.5699999332427979
+        ],
+        "size": [
+          5.303999938070774,
+          2.564999856054783,
+          3.1399998664855957
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 3.725290298461914e-8,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\bridge\\Panzer4_v003.glb"
+      ],
+      "position": [
+        716,
+        0,
+        30
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "6d7c124d6ec62fec",
+      "label": "Panzer4 / schurzen_variants / armored / Panzer4.glb",
+      "url": "./assets/6d7c124d6ec62fec.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\schurzen_variants\\armored\\Panzer4.glb",
+      "bytes": 2197592,
+      "sha256": "6d7c124d6ec62fec4f7002bd3b666d9e78c79f3748789fbc417f027e2cc4b555",
+      "sourceBounds": {
+        "min": [
+          -2.3499999046325684,
+          -8.344650304081824e-9,
+          -1.5699999332427979
+        ],
+        "max": [
+          2.9540000334382057,
+          2.56499981880188,
+          1.5699999332427979
+        ],
+        "size": [
+          5.303999938070774,
+          2.56499982714653,
+          3.1399998664855957
+        ]
+      },
+      "mainlineReference": "assets/models/tank/GE_Panzer4/Panzer4_SCHURZEN.glb",
+      "scale": 1,
+      "groundOffset": 8.344650304081824e-9,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "MAINLINE_FILE_EXACT_BYTES / no active descriptor",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\schurzen_variants\\armored\\Panzer4.glb"
+      ],
+      "position": [
+        716,
+        0,
+        66
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "27c4c0bdb245f5c8",
+      "label": "Panzer4 / schurzen_variants / base / Panzer4.glb",
+      "url": "./assets/27c4c0bdb245f5c8.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\schurzen_variants\\base\\Panzer4.glb",
+      "bytes": 1233168,
+      "sha256": "27c4c0bdb245f5c88deaafa2c7108c1a0712f53176cdfdc7c8aaa107d3ef3a36",
+      "sourceBounds": {
+        "min": [
+          -2.3499999046325684,
+          -8.344650304081824e-9,
+          -1.4600000381469727
+        ],
+        "max": [
+          2.9540000334382057,
+          2.56499981880188,
+          1.4600000381469727
+        ],
+        "size": [
+          5.303999938070774,
+          2.56499982714653,
+          2.9200000762939453
+        ]
+      },
+      "mainlineReference": "assets/models/tank/GE_Panzer4/Panzer4_BASE.glb",
+      "scale": 1.25,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\schurzen_variants\\base\\Panzer4.glb"
+      ],
+      "position": [
+        652,
+        0,
+        62
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "e76a71a43550fbba",
+      "label": "Panzer4 / simple_track / bridge / Panzer4_v003.glb",
+      "url": "./assets/e76a71a43550fbba.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\simple_track\\bridge\\Panzer4_v003.glb",
+      "bytes": 1782828,
+      "sha256": "e76a71a43550fbbae1223a1d86f9dded7756198dea9a36bd054ec9fc02870e26",
+      "sourceBounds": {
+        "min": [
+          -2.3499999046325684,
+          -8.344650304081824e-9,
+          -1.5699999332427979
+        ],
+        "max": [
+          2.9540000334382057,
+          2.56499981880188,
+          1.5699999332427979
+        ],
+        "size": [
+          5.303999938070774,
+          2.56499982714653,
+          3.1399998664855957
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 8.344650304081824e-9,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\simple_track\\bridge\\Panzer4_v003.glb",
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\simple_track\\validation\\repeat\\Panzer4.glb"
+      ],
+      "position": [
+        652,
+        0,
+        46
+      ],
+      "yaw": 50
+    },
+    {
+      "id": "e0eeeb1988f66089",
+      "label": "Panzer6B_Tiger2 / export / Panzer6B_Tiger2_RND_v01.glb",
+      "url": "./assets/e0eeeb1988f66089.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer6B_Tiger2\\export\\Panzer6B_Tiger2_RND_v01.glb",
+      "bytes": 1731556,
+      "sha256": "e0eeeb1988f66089ada78e221ba0e43296518f0ecfde5cabbbc901b048ad6c20",
+      "sourceBounds": {
+        "min": [
+          -2.9721157550811768,
+          0,
+          -1.7862221002578735
+        ],
+        "max": [
+          6.392016634345055,
+          3.795574903488159,
+          1.7862221002578735
+        ],
+        "size": [
+          9.364132389426231,
+          3.795574903488159,
+          3.572444200515747
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer6B_Tiger2\\export\\Panzer6B_Tiger2_RND_v01.glb"
+      ],
+      "position": [
+        668,
+        0,
+        62
+      ],
+      "yaw": 50
+    },
+    {
+      "id": "8c688e6019884743",
+      "label": "Panzer6B_Tiger2_Stage1Boss / export / Panzer6B_Tiger2_Stage1Boss_RND_v01.glb",
+      "url": "./assets/8c688e6019884743.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer6B_Tiger2_Stage1Boss\\export\\Panzer6B_Tiger2_Stage1Boss_RND_v01.glb",
+      "bytes": 3679008,
+      "sha256": "8c688e6019884743dccedb023db67fdb50b12bb3467f7573100628375d690ebd",
+      "sourceBounds": {
+        "min": [
+          -3.555000066757202,
+          7.450580596923828e-8,
+          -2.9650003910064697
+        ],
+        "max": [
+          6.392016634345055,
+          4.280000239610672,
+          2.9650003910064697
+        ],
+        "size": [
+          9.947016701102257,
+          4.280000165104866,
+          5.9300007820129395
+        ]
+      },
+      "mainlineReference": "assets/models/tank/GE_Panzer6B_Tiger2_Boss/Panzer6B_Tiger2_Stage1Boss_RND_v01.glb",
+      "scale": 1.7142857142857142,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer6B_Tiger2_Stage1Boss\\export\\Panzer6B_Tiger2_Stage1Boss_RND_v01.glb"
+      ],
+      "position": [
+        684,
+        0,
+        62
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "6c9e616ff2a7db62",
+      "label": "Panzer6_Tiger1 / export / Panzer6_Tiger1_RND_v01.glb",
+      "url": "./assets/6c9e616ff2a7db62.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v01.glb",
+      "bytes": 365968,
+      "sha256": "6c9e616ff2a7db62141f79f36da3504c6ce51593a257b24f9c7a8af4ca749b4d",
+      "sourceBounds": {
+        "min": [
+          -3.2459025382995605,
+          0.10000000149011612,
+          -2.0493650436401367
+        ],
+        "max": [
+          5.326099827885628,
+          3.9827499389648438,
+          2.014000177383423
+        ],
+        "size": [
+          8.572002366185188,
+          3.8827499374747276,
+          4.06336522102356
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": -0.10000000149011612,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v01.glb"
+      ],
+      "position": [
+        668,
+        0,
+        46
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "e0763a96cfe8f88a",
+      "label": "Panzer6_Tiger1 / export / Panzer6_Tiger1_RND_v02.glb",
+      "url": "./assets/e0763a96cfe8f88a.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v02.glb",
+      "bytes": 358940,
+      "sha256": "e0763a96cfe8f88a60d85a2738473e8edf102e7932827e1e1ca8af72218427e8",
+      "sourceBounds": {
+        "min": [
+          -3.220292568206787,
+          0,
+          -2.0493650436401367
+        ],
+        "max": [
+          5.351709797978401,
+          3.8827500343322754,
+          2.014000177383423
+        ],
+        "size": [
+          8.572002366185188,
+          3.8827500343322754,
+          4.06336522102356
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": true,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer6_Tiger1\\export\\Panzer6_Tiger1_RND_v02.glb"
+      ],
+      "position": [
+        700,
+        0,
+        62
+      ],
+      "yaw": 25
+    },
+    {
+      "id": "e0677e303d8aa042",
+      "label": "SHIP_LCT / export / SHIP_LCT_RND_v01.glb",
+      "url": "./assets/e0677e303d8aa042.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\SHIP_LCT\\export\\SHIP_LCT_RND_v01.glb",
+      "bytes": 4713436,
+      "sha256": "e0677e303d8aa0420965b01404c8ff09d914cfb3dbaa9893609fccd77ae67d15",
+      "sourceBounds": {
+        "min": [
+          -18.700000762939453,
+          0,
+          -4.214686393737793
+        ],
+        "max": [
+          18.296661376953125,
+          11.63700008392334,
+          4.239837169647217
+        ],
+        "size": [
+          36.99666213989258,
+          11.63700008392334,
+          8.45452356338501
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": false,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\SHIP_LCT\\export\\SHIP_LCT_RND_v01.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "1ab679c6a16c4355",
+      "label": "Stage1_CostalBattery / bridge / CoastalBattery_COUPLER_N_v001.glb",
+      "url": "./assets/1ab679c6a16c4355.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery\\bridge\\CoastalBattery_COUPLER_N_v001.glb",
+      "bytes": 71212,
+      "sha256": "1ab679c6a16c4355b20e484a1910d3b549fff7e227215423b23d6748f115c97d",
+      "sourceBounds": {
+        "min": [
+          -16.70619010925293,
+          0,
+          -17.064355850219727
+        ],
+        "max": [
+          -1.7925920486450195,
+          3.700000047683716,
+          -0.43938398361206055
+        ],
+        "size": [
+          14.91359806060791,
+          3.700000047683716,
+          16.624971866607666
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": true,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery\\bridge\\CoastalBattery_COUPLER_N_v001.glb",
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\backup_pre_p6b1\\CoastalBattery_COUPLER_N.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "f6b7294c35087cf8",
+      "label": "Stage1_CostalBattery / bridge / CoastalBattery_COUPLER_S_v001.glb",
+      "url": "./assets/f6b7294c35087cf8.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery\\bridge\\CoastalBattery_COUPLER_S_v001.glb",
+      "bytes": 71208,
+      "sha256": "f6b7294c35087cf8d55b24b2934366835bf7f6463a5288e7f93c49c70bc6180c",
+      "sourceBounds": {
+        "min": [
+          -16.70619010925293,
+          0,
+          -39.56061553955078
+        ],
+        "max": [
+          -1.7925920486450195,
+          3.700000047683716,
+          -22.93564224243164
+        ],
+        "size": [
+          14.91359806060791,
+          3.700000047683716,
+          16.62497329711914
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": true,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery\\bridge\\CoastalBattery_COUPLER_S_v001.glb",
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\backup_pre_p6b1\\CoastalBattery_COUPLER_S.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "52fd0f7de760bbb2",
+      "label": "Stage1_CostalBattery_P6B1_20261010 / delivery / CoastalBattery_SHARED.glb",
+      "url": "./assets/52fd0f7de760bbb2.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\delivery\\CoastalBattery_SHARED.glb",
+      "bytes": 202656,
+      "sha256": "52fd0f7de760bbb2a639e16df302369f586f7f466f0bb3e45cebad1c5d58d4dd",
+      "sourceBounds": {
+        "min": [
+          -14.199999809265137,
+          0,
+          -8.100000381469727
+        ],
+        "max": [
+          14.31999945640564,
+          6.480000019073486,
+          8.100000381469727
+        ],
+        "size": [
+          28.519999265670776,
+          6.480000019073486,
+          16.200000762939453
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": true,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery\\bridge\\CoastalBattery_SHARED_v001.glb",
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\backup_pre_p6b1\\CoastalBattery_SHARED.glb",
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\delivery\\CoastalBattery_SHARED.glb",
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\backup_pre_p6b2\\CoastalBattery_SHARED.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "2cbeed10b92c1c41",
+      "label": "Stage1_CostalBattery_P6B1_20261010 / delivery / CoastalBattery_COUPLER_N.glb",
+      "url": "./assets/2cbeed10b92c1c41.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\delivery\\CoastalBattery_COUPLER_N.glb",
+      "bytes": 100984,
+      "sha256": "2cbeed10b92c1c41642eed842472313044185ab4d2ab750353ee0a1bdf1440bf",
+      "sourceBounds": {
+        "min": [
+          -16.70619010925293,
+          -0.361846923828125,
+          -17.064355850219727
+        ],
+        "max": [
+          -1.7925920486450195,
+          3.700000047683716,
+          -0.43938398361206055
+        ],
+        "size": [
+          14.91359806060791,
+          4.061846971511841,
+          16.624971866607666
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0.361846923828125,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": true,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\delivery\\CoastalBattery_COUPLER_N.glb",
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\backup_pre_p6b2\\CoastalBattery_COUPLER_N.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "d16d097ef2e1e110",
+      "label": "Stage1_CostalBattery_P6B1_20261010 / delivery / CoastalBattery_COUPLER_S.glb",
+      "url": "./assets/d16d097ef2e1e110.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\delivery\\CoastalBattery_COUPLER_S.glb",
+      "bytes": 100980,
+      "sha256": "d16d097ef2e1e1103a33c5c2895207a747182d7122aa3cdb7ca73d8000c07d31",
+      "sourceBounds": {
+        "min": [
+          -16.70619010925293,
+          -0.361846923828125,
+          -39.56061553955078
+        ],
+        "max": [
+          -1.7925920486450195,
+          3.700000047683716,
+          -22.93564224243164
+        ],
+        "size": [
+          14.91359806060791,
+          4.061846971511841,
+          16.62497329711914
+        ]
+      },
+      "mainlineReference": null,
+      "scale": 1,
+      "groundOffset": 0.361846923828125,
+      "transformBasis": "SOURCE_SCALE_1 / measured minimum-Y grounding",
+      "sourceRole": "RND_COMPARISON_SOURCE / approval not inferred",
+      "coastal": true,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B1_20261010\\delivery\\CoastalBattery_COUPLER_S.glb",
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\backup_pre_p6b2\\CoastalBattery_COUPLER_S.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "0dd9fecb5c1b35cb",
+      "label": "Stage1_CostalBattery_P6B2_20261010 / delivery / CoastalBattery_COUPLER_N.glb",
+      "url": "./assets/0dd9fecb5c1b35cb.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\delivery\\CoastalBattery_COUPLER_N.glb",
+      "bytes": 93208,
+      "sha256": "0dd9fecb5c1b35cb46ea921e08ba84f6f899c2166c83b8b183a1c5f0262c1ae7",
+      "sourceBounds": {
+        "min": [
+          -19.96531126180914,
+          -0.361846923828125,
+          -11.152361869812012
+        ],
+        "max": [
+          -6.496516704559326,
+          3.700000047683716,
+          -4.056516647338867
+        ],
+        "size": [
+          13.468794557249815,
+          4.061846971511841,
+          7.0958452224731445
+        ]
+      },
+      "mainlineReference": "assets/models/boss/stage1_costalbattery/CoastalBattery_COUPLER_N.glb",
+      "scale": 1.0973663624865837,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": true,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\delivery\\CoastalBattery_COUPLER_N.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "402a712c633bb0e3",
+      "label": "Stage1_CostalBattery_P6B2_20261010 / delivery / CoastalBattery_COUPLER_S.glb",
+      "url": "./assets/402a712c633bb0e3.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\delivery\\CoastalBattery_COUPLER_S.glb",
+      "bytes": 93204,
+      "sha256": "402a712c633bb0e34a658047240b094f320212a1ba3eda4e9384059b8c16fddb",
+      "sourceBounds": {
+        "min": [
+          -19.96531078497184,
+          -0.361846923828125,
+          -35.9434814453125
+        ],
+        "max": [
+          -6.496516704559326,
+          3.700000047683716,
+          -28.847637176513672
+        ],
+        "size": [
+          13.468794080412515,
+          4.061846971511841,
+          7.095844268798828
+        ]
+      },
+      "mainlineReference": "assets/models/boss/stage1_costalbattery/CoastalBattery_COUPLER_S.glb",
+      "scale": 1.0973663624865837,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": true,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\delivery\\CoastalBattery_COUPLER_S.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    },
+    {
+      "id": "47c30b86e0fa2a51",
+      "label": "Stage1_CostalBattery_P6B2_20261010 / delivery / CoastalBattery_SHARED.glb",
+      "url": "./assets/47c30b86e0fa2a51.glb",
+      "source": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\delivery\\CoastalBattery_SHARED.glb",
+      "bytes": 202040,
+      "sha256": "47c30b86e0fa2a51e0699b8d1c25a2d09066355242f65af75d62550ef59e6859",
+      "sourceBounds": {
+        "min": [
+          -14.877622604370117,
+          0,
+          -8.100000381469727
+        ],
+        "max": [
+          17.899999618530273,
+          7.400000095367432,
+          8.100000381469727
+        ],
+        "size": [
+          32.77762222290039,
+          7.400000095367432,
+          16.200000762939453
+        ]
+      },
+      "mainlineReference": "assets/models/boss/stage1_costalbattery/CoastalBattery_SHARED.glb",
+      "scale": 1.0973663624865837,
+      "groundOffset": 0,
+      "transformBasis": "MAINLINE_DESCRIPTOR / 14px per metre",
+      "sourceRole": "MAINLINE_DESCRIPTOR_EXACT_BYTES",
+      "coastal": true,
+      "animations": [],
+      "visible": false,
+      "aliases": [
+        "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Stage1_CostalBattery_P6B2_20261010\\delivery\\CoastalBattery_SHARED.glb"
+      ],
+      "position": [
+        688,
+        0,
+        65
+      ],
+      "yaw": 0
+    }
+  ]
+}

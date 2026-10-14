@@ -1,0 +1,67 @@
+{
+  "status": "PASS_WITH_CONDITIONS",
+  "vehicle": "Panzer4",
+  "source_status": "SOURCE_CANDIDATE_NOT_PRODUCTION_APPROVED",
+  "source_master": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\master\\Panzer4_MASTER.max",
+  "simple_track_master": "\\\\192.168.87.201\\Projects\\RicochetAngles\\00_Asset\\GLB_Export\\Panzer4\\simple_track\\master\\Panzer4_SIMPLE_TRACK_MASTER.max",
+  "validated_variants": {
+    "armored": {
+      "status": "PASS_WITH_CONDITIONS",
+      "triangles": 46444,
+      "mesh_nodes": 10,
+      "nodes": 13,
+      "file_bytes": 2197592,
+      "max_normal_deg": 0.06182003725281952,
+      "max_position_error_m": 2.384185791015625e-07
+    },
+    "base": {
+      "status": "PASS_WITH_CONDITIONS",
+      "triangles": 33652,
+      "mesh_nodes": 5,
+      "nodes": 8,
+      "file_bytes": 1233168,
+      "max_normal_deg": 0.06182003725281952,
+      "max_position_error_m": 2.9802322387695312e-08
+    }
+  },
+  "delivery": [
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer4\\source\\Panzer4_BASE.blend",
+      "bytes": 2948364,
+      "sha256": "302bb2d920867613fd2d9e6d1bcb33f5ffdb6afb1af8cb969b9003407737ca49"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer4\\source\\Panzer4_SCHURZEN.blend",
+      "bytes": 4408433,
+      "sha256": "6d6ea3836001b7b2ad7acabb7a1e80a781817a22385e333642840fe0160af564"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer4\\export\\Panzer4_BASE.glb",
+      "bytes": 1233168,
+      "sha256": "27c4c0bdb245f5c88deaafa2c7108c1a0712f53176cdfdc7c8aaa107d3ef3a36"
+    },
+    {
+      "path": "\\\\192.168.87.201\\Projects\\RicochetAngles\\01_RND\\ThreeJSDEV\\Panzer4\\export\\Panzer4_SCHURZEN.glb",
+      "bytes": 2197592,
+      "sha256": "6d7c124d6ec62fec4f7002bd3b666d9e78c79f3748789fbc417f027e2cc4b555"
+    }
+  ],
+  "armor_nodes": {
+    "SCHURZEN_HULL_L": "HULL",
+    "SCHURZEN_HULL_R": "HULL",
+    "SCHURZEN_TURRET_L": "TURRET",
+    "SCHURZEN_TURRET_R": "TURRET",
+    "SCHURZEN_TURRET_REAR": "TURRET"
+  },
+  "runtime_damage_implemented": false,
+  "visual_user_approval": "USER_REVIEW_REQUIRED",
+  "source_preservation": {
+    "status": "PASS",
+    "checked_panzer4_source_files": 64,
+    "changed": [],
+    "master_byte_identical": true,
+    "tiger2_reference_unchanged": true,
+    "max_live_scene_journal": "UNCHANGED seq46320",
+    "production_or_registry_changes": false
+  }
+}

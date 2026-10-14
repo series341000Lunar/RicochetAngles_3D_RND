@@ -91,3 +91,10 @@ Thumbs.db
 # DCC-00 local authoring state and generated review artifacts
 /dcc00/workspace/
 /dcc00/test-output/
+
+# LookDev GLB derivatives follow the production-asset rules above.
+# Keep generated browser evidence locally; text audit/results remain trackable.
+/Docs/global-lookdev/**/*.png
+/Docs/global-lookdev/**/*.jpg
+/Docs/global-lookdev/**/*.jpeg
+/Docs/global-lookdev/**/*.webp
